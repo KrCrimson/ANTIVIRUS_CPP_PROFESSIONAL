@@ -1,0 +1,77 @@
+cmake_minimum_required(VERSION 3.20)
+project(AntivirusCPP VERSION 1.0.0 LANGUAGES CXX)
+
+# C++20 Standard
+set(CMAKE_CXX_STANDARD 20)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+
+# Compiler optimizations
+if(CMAKE_BUILD_TYPE STREQUAL "Release")
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -O3 -DNDEBUG")
+endif()
+
+# Find packages
+find_package(Threads REQUIRED)
+
+# Include directories
+include_directories(${CMAKE_SOURCE_DIR}/include)
+include_directories(${CMAKE_SOURCE_DIR}/src)
+
+# External libraries paths (will be set up with vcpkg or conan)
+set(ONNXRUNTIME_ROOT_PATH "C:/libs/onnxruntime")
+set(CROW_ROOT_PATH "C:/libs/crow")
+set(SPDLOG_ROOT_PATH "C:/libs/spdlog")
+
+# Source files
+file(GLOB_RECURSE SOURCES
+    "src/core/*.cpp"
+    "src/plugins/*.cpp"
+    "src/ml/*.cpp"
+    "src/api/*.cpp"
+    "src/data/*.cpp"
+    "src/utils/*.cpp"
+)
+
+# Header files
+file(GLOB_RECURSE HEADERS
+    "include/*.hpp"
+    "src/core/*.hpp"
+    "src/plugins/*.hpp"
+    "src/ml/*.hpp"
+    "src/api/*.hpp"
+    "src/data/*.hpp"
+    "src/utils/*.hpp"
+)
+
+# Main executable
+add_executable(${PROJECT_NAME} ${SOURCES} ${HEADERS})
+
+# Link libraries
+target_link_libraries(${PROJECT_NAME} 
+    PRIVATE 
+    Threads::Threads
+    # Add external libs here when available
+    # onnxruntime
+    # crow
+    # spdlog
+)
+
+# Windows specific
+if(WIN32)
+    target_link_libraries(${PROJECT_NAME} PRIVATE ws2_32 wsock32 pdh psapi)
+endif()
+
+# Plugin system - build plugins as shared libraries
+add_subdirectory(src/plugins/behavior_detector)
+add_subdirectory(src/plugins/network_detector)
+add_subdirectory(src/plugins/ml_detector)
+add_subdirectory(src/plugins/heuristic_detector)
+
+# Tests
+enable_testing()
+add_subdirectory(tests)
+
+# Installation
+install(TARGETS ${PROJECT_NAME} DESTINATION bin)
+install(DIRECTORY config/ DESTINATION config)
+install(DIRECTORY models/ DESTINATION models)
