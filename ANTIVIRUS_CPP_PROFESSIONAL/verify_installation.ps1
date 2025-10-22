@@ -27,12 +27,12 @@ function Test-Command {
         
         if ($LASTEXITCODE -eq 0) {
             $version = ($result | Select-Object -First 1).ToString().Trim()
-            Write-ColorOutput "✅ $Name`: $version" "Success"
+            Write-ColorOutput "[OK] $Name`: $version" "Success"
             return $true
         }
     }
     catch {
-        Write-ColorOutput "❌ $Name`: NO INSTALADO" "Error"
+        Write-ColorOutput "[ERROR] $Name`: NO INSTALADO" "Error"
         return $false
     }
     return $false
@@ -197,10 +197,10 @@ Show-NextSteps -AllReady $allCriticalReady
 
 if ($allCriticalReady) {
     Write-ColorOutput "`n🎯 Estado actual del proyecto:" "Header"
-    Write-ColorOutput "Sprint 1: ✅ COMPLETADO (Backend C++)" "Success"
-    Write-ColorOutput "Sprint 2: 🔄 EN PROGRESO (Frontend React)" "Warning"
-    Write-ColorOutput "Sprint 3: ⏳ PENDIENTE (Detección Avanzada)" "Info"
-    Write-ColorOutput "Sprint 4: ⏳ PENDIENTE (Producción)" "Info"
+    Write-ColorOutput "Sprint 1: [OK] COMPLETADO (Backend C++)" "Success"
+    Write-ColorOutput "Sprint 2: [WIP] EN PROGRESO (Frontend React)" "Warning"
+    Write-ColorOutput "Sprint 3: [TODO] PENDIENTE (Deteccion Avanzada)" "Info"
+    Write-ColorOutput "Sprint 4: [TODO] PENDIENTE (Produccion)" "Info"
     exit 0
 }
 else {
