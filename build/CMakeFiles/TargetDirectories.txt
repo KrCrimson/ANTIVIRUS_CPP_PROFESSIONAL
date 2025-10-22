@@ -1,0 +1,4 @@
+C:/Users/windows10/Documents/GitHub/proyecto-Anti-keylogger/build/CMakeFiles/AntivirusCPP.dir
+C:/Users/windows10/Documents/GitHub/proyecto-Anti-keylogger/build/CMakeFiles/AntivirusCPP_Full.dir
+C:/Users/windows10/Documents/GitHub/proyecto-Anti-keylogger/build/CMakeFiles/ALL_BUILD.dir
+C:/Users/windows10/Documents/GitHub/proyecto-Anti-keylogger/build/CMakeFiles/ZERO_CHECK.dir

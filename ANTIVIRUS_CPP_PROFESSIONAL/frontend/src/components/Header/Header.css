@@ -1,0 +1,340 @@
+/* Header Styles */
+.header {
+    height: 80px;
+    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+    border-bottom: 1px solid #333;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 30px;
+    color: #fff;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    backdrop-filter: blur(10px);
+    -webkit-app-region: drag; /* Make header draggable */
+}
+
+/* Make interactive elements non-draggable */
+.header button,
+.header .header-controls,
+.header .system-stats,
+.header .notification-center {
+    -webkit-app-region: no-drag;
+}
+
+.header-left {
+    flex: 1;
+    display: flex;
+    align-items: center;
+}
+
+.page-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.page-icon {
+    font-size: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    background: rgba(0, 255, 136, 0.1);
+    border: 1px solid rgba(0, 255, 136, 0.2);
+    border-radius: 12px;
+    animation: icon-glow 3s ease-in-out infinite;
+}
+
+@keyframes icon-glow {
+    0%, 100% {
+        box-shadow: 0 0 5px rgba(0, 255, 136, 0.3);
+    }
+    50% {
+        box-shadow: 0 0 15px rgba(0, 255, 136, 0.6);
+    }
+}
+
+.page-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.page-title {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: 500;
+    background: linear-gradient(45deg, #fff, #00ff88);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.page-breadcrumb {
+    font-size: 0.8rem;
+    color: #999;
+    margin-top: 2px;
+}
+
+.header-center {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    max-width: 400px;
+}
+
+.system-stats {
+    display: flex;
+    gap: 20px;
+    padding: 10px 20px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 25px;
+    backdrop-filter: blur(10px);
+}
+
+.stat-item {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 0.8rem;
+}
+
+.stat-icon {
+    font-size: 1rem;
+}
+
+.stat-label {
+    color: #ccc;
+    margin-right: 3px;
+}
+
+.stat-value {
+    font-weight: bold;
+    color: #00ff88;
+}
+
+.stat-value.protected {
+    color: #00ff88;
+}
+
+.stat-value.offline {
+    color: #f44336;
+}
+
+.header-right {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 20px;
+}
+
+.header-controls {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.notification-center {
+    position: relative;
+}
+
+.notification-btn {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.notification-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(0, 255, 136, 0.3);
+}
+
+.notification-icon {
+    font-size: 1.2rem;
+}
+
+.notification-count {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background: #f44336;
+    color: white;
+    border-radius: 50%;
+    width: 18px;
+    height: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.7rem;
+    font-weight: bold;
+    animation: pulse 2s infinite;
+}
+
+.system-menu-btn {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: #ccc;
+}
+
+.system-menu-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(0, 255, 136, 0.3);
+    color: #fff;
+}
+
+.system-menu-icon {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.window-controls {
+    display: flex;
+    gap: 5px;
+}
+
+.window-control {
+    width: 30px;
+    height: 30px;
+    border: none;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+
+.window-control.minimize {
+    background: rgba(255, 193, 7, 0.1);
+    color: #FFC107;
+}
+
+.window-control.minimize:hover {
+    background: #FFC107;
+    color: #000;
+}
+
+.window-control.maximize {
+    background: rgba(76, 175, 80, 0.1);
+    color: #4CAF50;
+}
+
+.window-control.maximize:hover {
+    background: #4CAF50;
+    color: #000;
+}
+
+.window-control.close {
+    background: rgba(244, 67, 54, 0.1);
+    color: #f44336;
+}
+
+.window-control.close:hover {
+    background: #f44336;
+    color: #fff;
+}
+
+.time-display {
+    text-align: right;
+    font-family: 'Courier New', monospace;
+}
+
+.current-time {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #00ff88;
+    margin-bottom: 2px;
+}
+
+.current-date {
+    font-size: 0.75rem;
+    color: #999;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .header {
+        padding: 0 20px;
+    }
+    
+    .system-stats {
+        gap: 15px;
+        padding: 8px 15px;
+    }
+    
+    .stat-item {
+        font-size: 0.75rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .header {
+        padding: 0 15px;
+        height: 60px;
+    }
+    
+    .page-title {
+        font-size: 1.2rem;
+    }
+    
+    .page-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 1.5rem;
+    }
+    
+    .system-stats {
+        display: none;
+    }
+    
+    .time-display .current-date {
+        display: none;
+    }
+    
+    .window-controls {
+        display: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .header {
+        flex-direction: column;
+        height: auto;
+        padding: 10px;
+        gap: 10px;
+    }
+    
+    .header-left,
+    .header-center,
+    .header-right {
+        flex: none;
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .page-info {
+        justify-content: center;
+    }
+}

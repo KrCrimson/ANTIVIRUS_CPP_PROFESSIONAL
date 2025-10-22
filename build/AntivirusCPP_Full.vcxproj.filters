@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="C:\Users\windows10\Documents\GitHub\proyecto-Anti-keylogger\ANTIVIRUS_CPP_PROFESSIONAL\backend\src\main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\windows10\Documents\GitHub\proyecto-Anti-keylogger\ANTIVIRUS_CPP_PROFESSIONAL\backend\src\core\DetectionEngine.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\windows10\Documents\GitHub\proyecto-Anti-keylogger\ANTIVIRUS_CPP_PROFESSIONAL\backend\src\ml\MLEngine.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\windows10\Documents\GitHub\proyecto-Anti-keylogger\ANTIVIRUS_CPP_PROFESSIONAL\backend\src\api\APIServer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\windows10\Documents\GitHub\proyecto-Anti-keylogger\ANTIVIRUS_CPP_PROFESSIONAL\backend\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{FF132B5A-8C19-3A41-A49D-DAEACEC45E49}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
