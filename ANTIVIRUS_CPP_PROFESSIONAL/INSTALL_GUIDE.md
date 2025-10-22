@@ -1,81 +1,134 @@
-# 🛠️ GUÍA DE INSTALACIÓN DE HERRAMIENTAS DE DESARROLLO
+# � INSTALACIÓN RÁPIDA - ANTIVIRUS C++ PROFESSIONAL
 
-## 📥 OPCIÓN 1: CMake (Recomendado)
+## ⚡ INSTALACIÓN AUTOMÁTICA (RECOMENDADA)
 
-### Descarga Manual:
-1. Ve a: https://cmake.org/download/
-2. Descarga: "Windows x64 Installer" 
-3. Ejecuta el instalador
-4. ✅ Marca "Add CMake to system PATH"
-5. Reinicia PowerShell
+### 🎯 **OPCIÓN 1: PC NUEVA (Todo automático - 10 minutos)**
 
-### Verificar instalación:
-```bash
-cmake --version
-```
-
-## 📥 OPCIÓN 2: Visual Studio 2022 (Completo)
-
-### Descarga:
-1. Ve a: https://visualstudio.microsoft.com/
-2. Descarga "Visual Studio Community 2022" (GRATIS)
-3. Durante instalación, selecciona:
-   - ✅ "Desktop development with C++"
-   - ✅ "CMake tools for Visual Studio"
-   - ✅ "Windows 10/11 SDK"
-
-## 📥 OPCIÓN 3: Build Tools Only (Ligero)
-
-### Descarga:
-1. Ve a: https://visualstudio.microsoft.com/downloads/
-2. Busca "Build Tools for Visual Studio 2022"
-3. Descarga e instala
-4. Selecciona "C++ build tools"
-
-## 📥 OPCIÓN 4: MinGW-w64 (Alternativa ligera)
-
-### Descarga:
-1. Ve a: https://www.mingw-w64.org/downloads/
-2. Descarga "w64devkit" o "MSYS2"
-3. Extrae y agrega al PATH
-
-## 🚀 OPCIÓN 5: Scoop (Gestor de paquetes)
-
-### Instalar Scoop:
 ```powershell
+# 1. Clonar proyecto
+git clone https://github.com/KrCrimson/ANTIVIRUS_CPP_PROFESSIONAL.git
+cd ANTIVIRUS_CPP_PROFESSIONAL
+
+# 2. Abrir PowerShell COMO ADMINISTRADOR
 Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
-irm get.scoop.sh | iex
-```
+.\install_dependencies.ps1
 
-### Instalar herramientas:
-```powershell
-scoop install cmake
-scoop install gcc
-```
-
-## ⚡ COMPILACIÓN INMEDIATA (Sin instalaciones)
-
-Si no quieres instalar nada ahora, puedes usar el compilador online:
-
-1. Ve a: https://compiler-explorer.com/
-2. Copia el código de `simple_main.cpp`
-3. Compila y ejecuta directamente en el navegador
-
-## 🎯 PRÓXIMOS PASOS
-
-1. **Instala CMake** (Opción 1 recomendada)
-2. **Ejecuta**: `cmake --version` para verificar
-3. **Navega a**: `backend/`
-4. **Ejecuta**: `cmake -B build -S .`
-5. **Compila**: `cmake --build build`
-
-## 🔥 COMPILACIÓN RÁPIDA (AHORA MISMO)
-
-Si tienes cualquier compilador, ejecuta:
-
-```bash
+# 3. Ejecutar antivirus
 cd backend
-./compile.bat
+cmake --build build --config Debug --target AntivirusCPP
+.\build\Debug\AntivirusCPP.exe
 ```
 
-Esto detectará automáticamente tu compilador y creará un antivirus simple funcional!
+**✅ Instala automáticamente: Visual Studio 2022, CMake, Node.js, Git**
+
+---
+
+### ⚡ **OPCIÓN 2: YA TIENES HERRAMIENTAS (2 minutos)**
+
+```powershell
+# 1. Verificar lo que tienes
+.\verify_installation.ps1
+
+# 2. Si sale todo ✅, ejecutar:
+cd backend
+cmake --build build --config Debug --target AntivirusCPP
+.\build\Debug\AntivirusCPP.exe
+
+# 3. Si falta algo:
+.\quick_setup.ps1
+```
+
+---
+
+### �️ **OPCIÓN 3: INSTALACIÓN MANUAL**
+
+**Solo si los scripts automáticos fallan:**
+
+1. **Visual Studio 2022:** https://visualstudio.microsoft.com/downloads/
+   - Descargar "Build Tools for Visual Studio 2022" 
+   - Seleccionar "C++ build tools"
+
+2. **CMake:** https://cmake.org/download/
+   - Descargar "Windows x64 Installer"
+   - ✅ Marcar "Add CMake to system PATH"
+
+3. **Node.js:** https://nodejs.org/
+   - Descargar LTS version
+
+4. **Configurar proyecto:**
+```powershell
+.\quick_setup.ps1
+```
+
+---
+
+## 🔍 **VERIFICAR INSTALACIÓN**
+
+```powershell
+.\verify_installation.ps1
+```
+
+**Debe mostrar:**
+```
+✅ Git: OK
+✅ CMake: OK  
+✅ Node.js: OK
+✅ Visual Studio Build Tools: OK
+📊 Resultado: 8/8 verificaciones exitosas
+```
+
+---
+
+## 🎉 **EJECUTAR EL ANTIVIRUS**
+
+```powershell
+# Backend (Terminal 1)
+cd backend
+cmake --build build --config Debug --target AntivirusCPP
+.\build\Debug\AntivirusCPP.exe
+
+# Frontend (Terminal 2) 
+cd frontend
+npm start
+```
+
+**URLs:**
+- 🔗 Backend API: http://localhost:8080/api/status
+- 🖥️ Frontend: Se abre automáticamente
+
+---
+
+## 🚨 **SOLUCIÓN DE PROBLEMAS**
+
+| Error | Solución |
+|-------|----------|
+| "No se puede ejecutar scripts" | `Set-ExecutionPolicy RemoteSigned -Scope CurrentUser` |
+| "Requiere administrador" | Click derecho → "Ejecutar como administrador" |
+| "CMake no encontrado" | Ejecutar `.\install_dependencies.ps1` |
+| "Visual Studio no encontrado" | Instalar VS2022 Build Tools manualmente |
+
+---
+
+## ⏱️ **TIEMPOS DE INSTALACIÓN**
+
+| Método | Tiempo | Para quién |
+|--------|--------|------------|
+| `install_dependencies.ps1` | 10-15 min | PC nueva |
+| `quick_setup.ps1` | 2-3 min | Ya tienes VS/CMake |
+| `verify_installation.ps1` | 30 seg | Verificar estado |
+| Manual | 20-30 min | Scripts fallan |
+
+---
+
+## 🎯 **RESULTADO FINAL**
+
+Si todo funciona verás:
+```
+🛡️ Antivirus Professional C++ - Starting...
+✅ Detection engine initialized
+✅ ML engine initialized  
+✅ API server started
+🌐 API Server: http://localhost:8080
+```
+
+**¡Antivirus funcionando! 🚀**
