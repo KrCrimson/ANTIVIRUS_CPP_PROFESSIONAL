@@ -56,11 +56,10 @@ class AntivirusApp {
 
         // Load the app
         if (isDev) {
-            // Load our HTML file directly during development
-            this.mainWindow.loadFile(path.join(__dirname, 'index.html'));
+            this.mainWindow.loadURL('http://localhost:3000');
             this.mainWindow.webContents.openDevTools();
         } else {
-            this.mainWindow.loadFile(path.join(__dirname, 'index.html'));
+            this.mainWindow.loadFile(path.join(__dirname, 'dist', 'index.html'));
         }
 
         // Show window when ready

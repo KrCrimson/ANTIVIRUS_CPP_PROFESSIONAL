@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🛡️ Antivirus Professional C++</title>
+    <meta name="description" content="Antivirus de alta performance desarrollado en C++ con interfaz moderna">
+    
+    <!-- Electron Security -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline' 'unsafe-eval' data: http://localhost:* ws://localhost:*;">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛡️</text></svg>">
+    
+    <!-- Styles for initial loading -->
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            overflow: hidden;
+            height: 100vh;
+        }
+        
+        #loading-screen {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-align: center;
+        }
+        
+        .loading-logo {
+            font-size: 6rem;
+            margin-bottom: 20px;
+            animation: pulse 2s infinite;
+        }
+        
+        .loading-title {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        
+        .loading-subtitle {
+            font-size: 1rem;
+            opacity: 0.8;
+            margin-bottom: 30px;
+        }
+        
+        .loading-spinner {
+            width: 50px;
+            height: 50px;
+            border: 4px solid rgba(255, 255, 255, 0.3);
+            border-top: 4px solid white;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+        
+        .loading-status {
+            margin-top: 20px;
+            font-size: 0.9rem;
+            opacity: 0.7;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        /* Hide loading when React loads */
+        #root:not(:empty) + #loading-screen {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- React App Container -->
+    <div id="root"></div>
+    
+    <!-- Loading Screen (shown until React loads) -->
+    <div id="loading-screen">
+        <div class="loading-logo">🛡️</div>
+        <h1 class="loading-title">Antivirus Professional C++</h1>
+        <p class="loading-subtitle">Sistema de protección avanzado</p>
+        <div class="loading-spinner"></div>
+        <p class="loading-status">Iniciando interfaz...</p>
+    </div>
+    
+    <!-- React will be bundled here by webpack -->
+    <script>
+        // Remove loading screen when window loads
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                const loadingScreen = document.getElementById('loading-screen');
+                const root = document.getElementById('root');
+                
+                // Only hide loading if React has loaded
+                if (root && root.children.length > 0) {
+                    loadingScreen.style.display = 'none';
+                }
+            }, 1000);
+        });
+        
+        // Error handling
+        window.addEventListener('error', (event) => {
+            console.error('Application error:', event.error);
+            const loadingScreen = document.getElementById('loading-screen');
+            if (loadingScreen) {
+                loadingScreen.innerHTML = `
+                    <div class="loading-logo">⚠️</div>
+                    <h1 class="loading-title">Error de Carga</h1>
+                    <p class="loading-subtitle">No se pudo iniciar la aplicación</p>
+                    <p class="loading-status">Verifique la consola para más detalles</p>
+                `;
+            }
+        });
+    </script>
+</body>
+</html>
