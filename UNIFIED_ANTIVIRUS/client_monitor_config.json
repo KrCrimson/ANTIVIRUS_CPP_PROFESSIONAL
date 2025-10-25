@@ -1,0 +1,16 @@
+{
+  "server_url": "http://localhost:8888",
+  "api_endpoint": "/api/recibir_logs",
+  "batch_size": 10,
+  "send_interval": 30,
+  "retry_attempts": 3,
+  "retry_delay": 5,
+  "timeout": 10,
+  "pc_identifier": "auto",
+  "log_level": "INFO",
+  "enabled": true,
+  "fallback_storage": true,
+  "max_stored_logs": 1000,
+  "compression": false,
+  "encryption": false
+}

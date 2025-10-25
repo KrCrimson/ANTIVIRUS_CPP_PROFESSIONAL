@@ -16118,3 +16118,603 @@
 2025-10-20 15:29:18,172 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_behavior_change: python.exe - Detección de suspicious_behavior_change en proceso python.exe
 2025-10-20 15:29:18,807 - core.engine - INFO - 🛑 Iniciando shutdown del sistema...
 2025-10-20 15:29:18,808 - core.event_bus - INFO - 📢 Publicando evento 'system_shutdown_started' de 'UnifiedEngine' a 0 suscriptores
+2025-10-25 09:47:54,002 - core.plugin_registry - INFO - 🏪 PluginRegistry inicializado (Singleton)
+2025-10-25 09:47:54,003 - core.plugin_manager - INFO - 🎛️ PluginManager inicializado
+2025-10-25 09:47:54,004 - core.engine - INFO - ⚠️ Engine ejecutándose en hilo secundario, señales deshabilitadas
+2025-10-25 09:47:54,005 - core.engine - INFO - 🛡️ UnifiedAntivirusEngine inicializado
+2025-10-25 09:47:54,006 - core.engine - INFO - 🚀 Iniciando Sistema Anti-Keylogger Unificado...
+2025-10-25 09:47:54,007 - PluginManager - INFO - 🔍 Iniciando descubrimiento de plugins...
+2025-10-25 09:47:54,007 - core.plugin_registry - INFO - 🔍 Descubriendo plugins en: plugins
+2025-10-25 09:47:54,080 - core.plugin_registry - INFO - ✅ Plugin 'behavior_detector' registrado en categoría 'detectors'
+2025-10-25 09:47:54,081 - core.plugin_registry - WARNING - ⚠️ Plugin 'behavior_detector' ya registrado, sobrescribiendo
+2025-10-25 09:47:54,081 - core.plugin_registry - INFO - ✅ Plugin 'behavior_detector' registrado en categoría 'detectors'
+2025-10-25 09:47:54,761 - core.plugin_registry - INFO - ✅ Plugin 'ml_detector' registrado en categoría 'detectors'
+2025-10-25 09:47:54,761 - core.plugin_registry - WARNING - ⚠️ Plugin 'ml_detector' ya registrado, sobrescribiendo
+2025-10-25 09:47:54,761 - core.plugin_registry - INFO - ✅ Plugin 'ml_detector' registrado en categoría 'detectors'
+2025-10-25 09:47:54,849 - core.plugin_registry - INFO - ✅ Plugin 'network_detector' registrado en categoría 'detectors'
+2025-10-25 09:47:55,002 - core.plugin_registry - INFO - ✅ Plugin 'alert_manager' registrado en categoría 'handlers'
+2025-10-25 09:47:55,015 - core.plugin_registry - INFO - ✅ Plugin 'logger_handler' registrado en categoría 'handlers'
+2025-10-25 09:47:55,027 - core.plugin_registry - INFO - ✅ Plugin 'quarantine_handler' registrado en categoría 'handlers'
+2025-10-25 09:47:55,027 - core.plugin_registry - INFO - ✅ Descubiertos 6 plugins
+2025-10-25 09:47:55,027 - PluginManager - INFO - ✅ Descubrimiento completado: 6 plugins encontrados
+2025-10-25 09:47:55,027 - core.event_bus - INFO - 📋 'UnifiedEngine' suscrito a eventos 'threat_detected'
+2025-10-25 09:47:55,028 - core.event_bus - INFO - 📋 'UnifiedEngine' suscrito a eventos 'plugin_error'
+2025-10-25 09:47:55,028 - plugins.detectors.behavior_detector.plugin - INFO - Configuración cargada desde C:\Users\HP\Documents\GitHub\ANTIVIRUS_CPP_PROFESSIONAL\UNIFIED_ANTIVIRUS\plugins\detectors\behavior_detector\config.json
+2025-10-25 09:47:55,029 - plugins.detectors.behavior_detector.plugin - INFO - [PLUGIN] behavior_detector inicializado
+2025-10-25 09:47:55,029 - core.plugin_registry - INFO - 🏭 Plugin 'behavior_detector' creado exitosamente
+2025-10-25 09:47:55,032 - plugin.behavior_detector - INFO - 📄 Configuración cargada desde C:\Users\HP\Documents\GitHub\ANTIVIRUS_CPP_PROFESSIONAL\UNIFIED_ANTIVIRUS\plugins\detectors\behavior_detector\config.json
+2025-10-25 09:47:55,033 - plugins.detectors.behavior_detector.plugin - INFO - Inicializando behavior_detector...
+2025-10-25 09:47:55,034 - plugins.detectors.behavior_detector.rule_engine - INFO - [RULE_ENGINE] Cargadas 6 reglas de detección
+2025-10-25 09:47:55,034 - plugins.detectors.behavior_detector.rule_engine - INFO - [RULE_ENGINE] Inicializado con 6 reglas
+2025-10-25 09:47:55,035 - plugins.detectors.behavior_detector.whitelist_manager - INFO - [WHITELIST] Cargados 18 procesos y 7 directorios
+2025-10-25 09:47:55,035 - plugins.detectors.behavior_detector.whitelist_manager - INFO - [WHITELIST] Inicializado: 18 procesos, 7 directorios
+2025-10-25 09:47:55,035 - plugins.detectors.behavior_detector.behavior_engine - INFO - [BEHAVIOR_ENGINE] Inicializado (threshold: 0.7, advanced: True)
+2025-10-25 09:47:55,035 - plugins.detectors.behavior_detector.plugin - INFO - ✅ behavior_detector inicializado correctamente
+2025-10-25 09:47:55,036 - plugins.detectors.behavior_detector.plugin - INFO - Iniciando behavior_detector...
+2025-10-25 09:47:55,036 - plugins.detectors.behavior_detector.plugin - INFO - [BEHAVIOR_DETECTOR] Iniciando monitoreo real de procesos
+2025-10-25 09:47:55,037 - plugins.detectors.behavior_detector.plugin - INFO - ✅ behavior_detector iniciado correctamente
+2025-10-25 09:47:55,042 - plugins.detectors.behavior_detector.plugin - ERROR - Error analizando proceso sospechoso: 'NoneType' object has no attribute 'lower'
+2025-10-25 09:47:55,042 - plugin.behavior_detector - INFO - ✅ Plugin 'behavior_detector' activado exitosamente
+2025-10-25 09:47:55,051 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: discord.exe - patrón: capture
+2025-10-25 09:47:55,052 - core.event_bus - INFO - 📢 Publicando evento 'plugin_activated' de 'PluginManager' a 0 suscriptores
+2025-10-25 09:47:55,052 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: Discord.exe - Detección de suspicious_new_process en proceso Discord.exe
+2025-10-25 09:47:55,053 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: githubdesktop.exe - patrón: capture
+2025-10-25 09:47:55,053 - PluginManager - INFO - ✅ Plugin 'behavior_detector' activado
+2025-10-25 09:47:55,053 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: GitHubDesktop.exe - Detección de suspicious_new_process en proceso GitHubDesktop.exe
+2025-10-25 09:47:55,055 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: adskaccessuihost.exe - patrón: capture
+2025-10-25 09:47:55,055 - plugins.detectors.ml_detector.plugin - INFO - [ML_DETECTOR] Configuración cargada: 8 secciones
+2025-10-25 09:47:55,055 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: AdskAccessUIHost.exe - Detección de suspicious_new_process en proceso AdskAccessUIHost.exe
+2025-10-25 09:47:55,055 - plugins.detectors.ml_detector.plugin - INFO - [ML_DETECTOR] Plugin inicializado con configuración desde C:\Users\HP\Documents\GitHub\ANTIVIRUS_CPP_PROFESSIONAL\UNIFIED_ANTIVIRUS\plugins\detectors\ml_detector\config.json
+2025-10-25 09:47:55,056 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: chrome.exe - patrón: monitor
+2025-10-25 09:47:55,056 - core.plugin_registry - INFO - 🏭 Plugin 'ml_detector' creado exitosamente
+2025-10-25 09:47:55,056 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: chrome.exe - Detección de suspicious_new_process en proceso chrome.exe
+2025-10-25 09:47:55,057 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: nvdisplay.container.exe - patrón: .log
+2025-10-25 09:47:55,057 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: NVDisplay.Container.exe - Detección de suspicious_new_process en proceso NVDisplay.Container.exe
+2025-10-25 09:47:55,059 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: code.exe - patrón: capture
+2025-10-25 09:47:55,060 - plugin.ml_detector - INFO - 📄 Configuración cargada desde C:\Users\HP\Documents\GitHub\ANTIVIRUS_CPP_PROFESSIONAL\UNIFIED_ANTIVIRUS\plugins\detectors\ml_detector\config.json
+2025-10-25 09:47:55,062 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: Code.exe - Detección de suspicious_new_process en proceso Code.exe
+2025-10-25 09:47:55,062 - plugins.detectors.ml_detector.plugin - INFO - [ML_DETECTOR] Inicializando componentes ML...
+2025-10-25 09:47:55,068 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: cmd.exe - patrón: monitor
+2025-10-25 09:47:55,069 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: cmd.exe - Detección de suspicious_new_process en proceso cmd.exe
+2025-10-25 09:47:55,070 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: chrome.exe - patrón: capture
+2025-10-25 09:47:55,070 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: chrome.exe - Detección de suspicious_new_process en proceso chrome.exe
+2025-10-25 09:47:55,071 - plugins.detectors.ml_detector.ml_engine - INFO - [ML_ENGINE] Clases cargadas: ['Benign', 'Keylogger']
+2025-10-25 09:47:55,071 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: chrome.exe - patrón: capture
+2025-10-25 09:47:55,072 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: chrome.exe - Detección de suspicious_new_process en proceso chrome.exe
+2025-10-25 09:47:55,072 - plugins.detectors.ml_detector.ml_engine - INFO - [ML_ENGINE] Metadatos cargados: 81 características
+2025-10-25 09:47:55,073 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: code.exe - patrón: capture
+2025-10-25 09:47:55,074 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: Code.exe - Detección de suspicious_new_process en proceso Code.exe
+2025-10-25 09:47:55,076 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: python.exe - patrón: monitor
+2025-10-25 09:47:55,077 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: python.exe - Detección de suspicious_new_process en proceso python.exe
+2025-10-25 09:47:55,080 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: code.exe - patrón: capture
+2025-10-25 09:47:55,080 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: Code.exe - Detección de suspicious_new_process en proceso Code.exe
+2025-10-25 09:47:55,082 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: nvdisplay.container.exe - patrón: .log
+2025-10-25 09:47:55,082 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: NVDisplay.Container.exe - Detección de suspicious_new_process en proceso NVDisplay.Container.exe
+2025-10-25 09:47:55,083 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: msedgewebview2.exe - patrón: monitor
+2025-10-25 09:47:55,083 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: msedgewebview2.exe - Detección de suspicious_new_process en proceso msedgewebview2.exe
+2025-10-25 09:47:55,084 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: code.exe - patrón: capture
+2025-10-25 09:47:55,084 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: Code.exe - Detección de suspicious_new_process en proceso Code.exe
+2025-10-25 09:47:55,084 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: chrome.exe - patrón: capture
+2025-10-25 09:47:55,084 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: chrome.exe - Detección de suspicious_new_process en proceso chrome.exe
+2025-10-25 09:47:55,085 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: discord.exe - patrón: monitor
+2025-10-25 09:47:55,085 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: Discord.exe - Detección de suspicious_new_process en proceso Discord.exe
+2025-10-25 09:47:55,086 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: chrome.exe - patrón: capture
+2025-10-25 09:47:55,086 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: chrome.exe - Detección de suspicious_new_process en proceso chrome.exe
+2025-10-25 09:47:55,087 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: code.exe - patrón: capture
+2025-10-25 09:47:55,087 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: Code.exe - Detección de suspicious_new_process en proceso Code.exe
+2025-10-25 09:47:55,088 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: discord.exe - patrón: capture
+2025-10-25 09:47:55,088 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: Discord.exe - Detección de suspicious_new_process en proceso Discord.exe
+2025-10-25 09:47:55,089 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: code.exe - patrón: monitor
+2025-10-25 09:47:55,089 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: Code.exe - Detección de suspicious_new_process en proceso Code.exe
+2025-10-25 09:48:37,738 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: python.exe - patrón: monitor
+2025-10-25 09:48:37,738 - plugins.detectors.ml_detector.ml_engine - INFO - [ML_ENGINE] ✅ Modelo ONNX validado: modelo_keylogger_from_datos.onnx
+2025-10-25 09:48:37,739 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: python.exe - Detección de suspicious_new_process en proceso python.exe
+2025-10-25 09:48:37,740 - plugins.detectors.ml_detector.ml_engine - INFO - [ML_ENGINE] ✅ Modelo ONNX cargado en 42.67s
+2025-10-25 09:48:37,748 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Incremento súbito de memoria en python.exe: 119476224 -> 350711808
+2025-10-25 09:48:37,749 - plugins.detectors.ml_detector.ml_engine - INFO - [ML_ENGINE] Inicializado (ONNX: True, Modelo: ONNX)
+2025-10-25 09:48:37,749 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_behavior_change: python.exe - Detección de suspicious_behavior_change en proceso python.exe
+2025-10-25 09:48:37,749 - plugins.detectors.ml_detector.feature_extractor - INFO - [FEATURES] NetworkFeatureExtractor inicializado con 81 características
+2025-10-25 09:48:37,751 - plugins.detectors.ml_detector.plugin - INFO - [ML_DETECTOR] ✅ Plugin inicializado (Modelo: ONNX)
+2025-10-25 09:48:37,751 - plugins.detectors.ml_detector.plugin - INFO - [ML_DETECTOR] ✅ Plugin iniciado y listo para detecciones
+2025-10-25 09:48:37,752 - plugin.ml_detector - INFO - ✅ Plugin 'ml_detector' activado exitosamente
+2025-10-25 09:48:37,752 - core.event_bus - INFO - 📢 Publicando evento 'plugin_activated' de 'PluginManager' a 0 suscriptores
+2025-10-25 09:48:37,753 - PluginManager - INFO - ✅ Plugin 'ml_detector' activado
+2025-10-25 09:48:37,754 - network_detector - INFO - 🌐 Inicializando Network Detector Plugin...
+2025-10-25 09:48:37,755 - network_detector - INFO - 📋 Configuración cargada: 13 secciones
+2025-10-25 09:48:37,755 - network_detector - INFO - 🔧 Componentes básicos inicializados
+2025-10-25 09:48:37,756 - network_detector - INFO - 🛡️ Datos de seguridad básicos configurados
+2025-10-25 09:48:37,756 - network_detector - INFO - 📡 Preparado para suscribirse a 4 tipos de eventos
+2025-10-25 09:48:37,757 - network_detector - INFO - ✅ Network Detector Plugin inicializado correctamente
+2025-10-25 09:48:37,757 - core.plugin_registry - INFO - 🏭 Plugin 'network_detector' creado exitosamente
+2025-10-25 09:48:37,757 - network_detector - INFO - 🚀 Activando Network Detector Plugin...
+2025-10-25 09:48:37,757 - network_detector - INFO - ✅ Componentes verificados (modo básico)
+2025-10-25 09:48:37,758 - network_detector - INFO - ✅ Network Detector Plugin activado
+2025-10-25 09:48:37,758 - core.event_bus - INFO - 📢 Publicando evento 'plugin_activated' de 'PluginManager' a 0 suscriptores
+2025-10-25 09:48:37,764 - PluginManager - INFO - ✅ Plugin 'network_detector' activado
+2025-10-25 09:48:37,765 - PluginManager - INFO - 📂 Categoría 'detectors': 3/3 activados
+2025-10-25 09:48:37,765 - core.engine - INFO - ✅ Categoría 'detectors' activada
+2025-10-25 09:48:37,765 - PluginManager - INFO - 📂 Categoría 'monitors': 0/0 activados
+2025-10-25 09:48:37,766 - core.engine - WARNING - ⚠️ Problemas activando categoría 'monitors'
+2025-10-25 09:48:37,766 - core.plugin_registry - ERROR - ❌ Error creando plugin 'alert_manager': Can't instantiate abstract class AlertManagerPlugin without an implementation for abstract methods 'get_plugin_info', 'initialize', 'start', 'stop'
+2025-10-25 09:48:37,766 - core.plugin_registry - ERROR - ❌ Error creando plugin 'logger_handler': Can't instantiate abstract class LoggerHandlerPlugin without an implementation for abstract methods 'get_plugin_info', 'initialize', 'start', 'stop'
+2025-10-25 09:48:37,767 - core.plugin_registry - ERROR - ❌ Error creando plugin 'quarantine_handler': Can't instantiate abstract class QuarantineHandlerPlugin without an implementation for abstract methods 'get_plugin_info', 'initialize', 'start', 'stop'
+2025-10-25 09:48:37,767 - PluginManager - INFO - 📂 Categoría 'handlers': 0/3 activados
+2025-10-25 09:48:37,767 - core.engine - WARNING - ⚠️ Problemas activando categoría 'handlers'
+2025-10-25 09:48:37,768 - PluginManager - INFO - 📂 Categoría 'interfaces': 0/0 activados
+2025-10-25 09:48:37,768 - core.engine - WARNING - ⚠️ Problemas activando categoría 'interfaces'
+2025-10-25 09:48:37,770 - core.event_bus - INFO - 📢 Publicando evento 'system_started' de 'UnifiedEngine' a 0 suscriptores
+2025-10-25 09:48:37,771 - core.engine - INFO - ✅ Sistema iniciado exitosamente
+2025-10-25 09:48:37,771 - core.engine - INFO - 📊 Plugins activos: 3
+2025-10-25 09:48:37,771 - core.engine - INFO - 🚀 Iniciando Sistema Anti-Keylogger Unificado...
+2025-10-25 09:48:37,772 - PluginManager - INFO - 🔍 Iniciando descubrimiento de plugins...
+2025-10-25 09:48:37,772 - core.plugin_registry - INFO - 🔍 Descubriendo plugins en: plugins
+2025-10-25 09:48:37,773 - core.plugin_registry - WARNING - ⚠️ Plugin 'behavior_detector' ya registrado, sobrescribiendo
+2025-10-25 09:48:37,773 - core.plugin_registry - INFO - ✅ Plugin 'behavior_detector' registrado en categoría 'detectors'
+2025-10-25 09:48:37,773 - core.plugin_registry - WARNING - ⚠️ Plugin 'ml_detector' ya registrado, sobrescribiendo
+2025-10-25 09:48:37,777 - core.plugin_registry - INFO - ✅ Plugin 'ml_detector' registrado en categoría 'detectors'
+2025-10-25 09:48:37,777 - core.plugin_registry - WARNING - ⚠️ Plugin 'network_detector' ya registrado, sobrescribiendo
+2025-10-25 09:48:37,778 - core.plugin_registry - INFO - ✅ Plugin 'network_detector' registrado en categoría 'detectors'
+2025-10-25 09:48:37,779 - core.plugin_registry - WARNING - ⚠️ Plugin 'alert_manager' ya registrado, sobrescribiendo
+2025-10-25 09:48:37,779 - core.plugin_registry - INFO - ✅ Plugin 'alert_manager' registrado en categoría 'handlers'
+2025-10-25 09:48:37,780 - core.plugin_registry - WARNING - ⚠️ Plugin 'logger_handler' ya registrado, sobrescribiendo
+2025-10-25 09:48:37,781 - core.plugin_registry - INFO - ✅ Plugin 'logger_handler' registrado en categoría 'handlers'
+2025-10-25 09:48:37,783 - core.plugin_registry - WARNING - ⚠️ Plugin 'quarantine_handler' ya registrado, sobrescribiendo
+2025-10-25 09:48:37,783 - core.plugin_registry - INFO - ✅ Plugin 'quarantine_handler' registrado en categoría 'handlers'
+2025-10-25 09:48:37,783 - core.plugin_registry - INFO - ✅ Descubiertos 6 plugins
+2025-10-25 09:48:37,784 - PluginManager - INFO - ✅ Descubrimiento completado: 6 plugins encontrados
+2025-10-25 09:48:37,785 - core.event_bus - INFO - 📋 'UnifiedEngine' suscrito a eventos 'threat_detected'
+2025-10-25 09:48:37,786 - core.event_bus - INFO - 📋 'UnifiedEngine' suscrito a eventos 'plugin_error'
+2025-10-25 09:48:37,786 - PluginManager - WARNING - ⚠️ Plugin 'behavior_detector' ya está activo
+2025-10-25 09:48:37,787 - PluginManager - WARNING - ⚠️ Plugin 'ml_detector' ya está activo
+2025-10-25 09:48:37,788 - PluginManager - WARNING - ⚠️ Plugin 'network_detector' ya está activo
+2025-10-25 09:48:37,789 - PluginManager - INFO - 📂 Categoría 'detectors': 3/3 activados
+2025-10-25 09:48:37,792 - core.event_bus - INFO - 📢 Publicando evento 'system_started' de 'UnifiedEngine' a 0 suscriptores
+2025-10-25 09:48:37,793 - core.engine - INFO - ✅ Sistema iniciado exitosamente
+2025-10-25 09:48:37,794 - core.engine - INFO - 📊 Plugins activos: 3
+2025-10-25 09:48:39,803 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: updater.exe - patrón: .log
+2025-10-25 09:48:39,804 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: updater.exe - Detección de suspicious_new_process en proceso updater.exe
+2025-10-25 09:48:39,810 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: updater.exe - patrón: .log
+2025-10-25 09:48:39,810 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: updater.exe - Detección de suspicious_new_process en proceso updater.exe
+2025-10-25 09:48:39,813 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: updater.exe - patrón: .log
+2025-10-25 09:48:39,814 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: updater.exe - Detección de suspicious_new_process en proceso updater.exe
+2025-10-25 09:48:41,822 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Incremento súbito de memoria en msedgewebview2.exe: 48406528 -> 133545984
+2025-10-25 09:48:41,822 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_behavior_change: msedgewebview2.exe - Detección de suspicious_behavior_change en proceso msedgewebview2.exe
+2025-10-25 09:48:41,834 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Incremento súbito de memoria en msedgewebview2.exe: 61231104 -> 161574912
+2025-10-25 09:48:41,834 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_behavior_change: msedgewebview2.exe - Detección de suspicious_behavior_change en proceso msedgewebview2.exe
+2025-10-25 09:48:45,880 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Uso elevado de CPU: MemCompression - 161.2%
+2025-10-25 09:48:45,880 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_behavior_change: MemCompression - Detección de suspicious_behavior_change en proceso MemCompression
+2025-10-25 09:48:51,979 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: python.exe - patrón: keylog
+2025-10-25 09:48:51,980 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: python.exe - Detección de suspicious_new_process en proceso python.exe
+2025-10-25 09:48:54,025 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Incremento súbito de memoria en python.exe: 23420928 -> 108851200
+2025-10-25 09:48:54,040 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_behavior_change: python.exe - Detección de suspicious_behavior_change en proceso python.exe
+2025-10-25 09:49:16,453 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Uso elevado de CPU: python.exe - 113.5%
+2025-10-25 09:49:16,453 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_behavior_change: python.exe - Detección de suspicious_behavior_change en proceso python.exe
+2025-10-25 09:49:22,526 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Uso elevado de CPU: python.exe - 110.5%
+2025-10-25 09:49:22,527 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_behavior_change: python.exe - Detección de suspicious_behavior_change en proceso python.exe
+2025-10-25 09:49:26,561 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Uso elevado de CPU: sqlservr.exe - 111.1%
+2025-10-25 09:49:26,562 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_behavior_change: sqlservr.exe - Detección de suspicious_behavior_change en proceso sqlservr.exe
+2025-10-25 09:49:34,700 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Uso elevado de CPU: python.exe - 83.7%
+2025-10-25 09:49:34,700 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_behavior_change: python.exe - Detección de suspicious_behavior_change en proceso python.exe
+2025-10-25 09:49:38,761 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Uso elevado de CPU: ekrn.exe - 81.4%
+2025-10-25 09:49:38,761 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_behavior_change: ekrn.exe - Detección de suspicious_behavior_change en proceso ekrn.exe
+2025-10-25 09:49:38,770 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: python.exe - patrón: keylog
+2025-10-25 09:49:38,770 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: python.exe - Detección de suspicious_new_process en proceso python.exe
+2025-10-25 09:49:38,776 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Uso elevado de CPU: python.exe - 118.1%
+2025-10-25 09:49:38,776 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_behavior_change: python.exe - Detección de suspicious_behavior_change en proceso python.exe
+2025-10-25 09:49:40,802 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Uso elevado de CPU: python.exe - 155.3%
+2025-10-25 09:49:40,803 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_behavior_change: python.exe - Detección de suspicious_behavior_change en proceso python.exe
+2025-10-25 09:49:40,808 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Uso elevado de CPU: python.exe - 135.6%
+2025-10-25 09:49:40,809 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_behavior_change: python.exe - Detección de suspicious_behavior_change en proceso python.exe
+2025-10-25 09:49:42,830 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Uso elevado de CPU: python.exe - 92.2%
+2025-10-25 09:49:42,830 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_behavior_change: python.exe - Detección de suspicious_behavior_change en proceso python.exe
+2025-10-25 09:49:44,856 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Uso elevado de CPU: python.exe - 101.9%
+2025-10-25 09:49:44,856 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_behavior_change: python.exe - Detección de suspicious_behavior_change en proceso python.exe
+2025-10-25 09:49:46,901 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Uso elevado de CPU: python.exe - 165.8%
+2025-10-25 09:49:46,901 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_behavior_change: python.exe - Detección de suspicious_behavior_change en proceso python.exe
+2025-10-25 09:49:48,916 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Uso elevado de CPU: python.exe - 128.5%
+2025-10-25 09:49:48,916 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_behavior_change: python.exe - Detección de suspicious_behavior_change en proceso python.exe
+2025-10-25 09:49:57,146 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Uso elevado de CPU: python.exe - 113.5%
+2025-10-25 09:49:57,147 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_behavior_change: python.exe - Detección de suspicious_behavior_change en proceso python.exe
+2025-10-25 09:49:59,168 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Uso elevado de CPU: python.exe - 93.1%
+2025-10-25 09:49:59,168 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_behavior_change: python.exe - Detección de suspicious_behavior_change en proceso python.exe
+2025-10-25 09:50:01,202 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Uso elevado de CPU: python.exe - 107.6%
+2025-10-25 09:50:01,202 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_behavior_change: python.exe - Detección de suspicious_behavior_change en proceso python.exe
+2025-10-25 09:50:03,229 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Uso elevado de CPU: python.exe - 102.7%
+2025-10-25 09:50:03,229 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_behavior_change: python.exe - Detección de suspicious_behavior_change en proceso python.exe
+2025-10-25 09:50:05,253 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Uso elevado de CPU: python.exe - 93.6%
+2025-10-25 09:50:05,253 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_behavior_change: python.exe - Detección de suspicious_behavior_change en proceso python.exe
+2025-10-25 09:50:07,282 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Uso elevado de CPU: python.exe - 93.7%
+2025-10-25 09:50:07,282 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_behavior_change: python.exe - Detección de suspicious_behavior_change en proceso python.exe
+2025-10-25 09:50:11,429 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Uso elevado de CPU: python.exe - 101.8%
+2025-10-25 09:50:11,429 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_behavior_change: python.exe - Detección de suspicious_behavior_change en proceso python.exe
+2025-10-25 09:50:11,435 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Uso elevado de CPU: python.exe - 91.3%
+2025-10-25 09:50:11,435 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_behavior_change: python.exe - Detección de suspicious_behavior_change en proceso python.exe
+2025-10-25 09:50:13,461 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Uso elevado de CPU: python.exe - 104.2%
+2025-10-25 09:50:13,462 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_behavior_change: python.exe - Detección de suspicious_behavior_change en proceso python.exe
+2025-10-25 09:50:17,526 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Uso elevado de CPU: python.exe - 115.9%
+2025-10-25 09:50:17,526 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_behavior_change: python.exe - Detección de suspicious_behavior_change en proceso python.exe
+2025-10-25 09:50:19,552 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Uso elevado de CPU: GitHubDesktop.exe - 100.2%
+2025-10-25 09:50:19,552 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_behavior_change: GitHubDesktop.exe - Detección de suspicious_behavior_change en proceso GitHubDesktop.exe
+2025-10-25 09:50:19,570 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Uso elevado de CPU: python.exe - 102.5%
+2025-10-25 09:50:19,586 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_behavior_change: python.exe - Detección de suspicious_behavior_change en proceso python.exe
+2025-10-25 09:50:21,619 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Uso elevado de CPU: python.exe - 150.2%
+2025-10-25 09:50:21,620 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_behavior_change: python.exe - Detección de suspicious_behavior_change en proceso python.exe
+2025-10-25 09:50:23,644 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Uso elevado de CPU: python.exe - 92.2%
+2025-10-25 09:50:23,644 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_behavior_change: python.exe - Detección de suspicious_behavior_change en proceso python.exe
+2025-10-25 09:50:25,669 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Uso elevado de CPU: python.exe - 95.9%
+2025-10-25 09:50:25,683 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_behavior_change: python.exe - Detección de suspicious_behavior_change en proceso python.exe
+2025-10-25 09:50:27,708 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Uso elevado de CPU: python.exe - 93.0%
+2025-10-25 09:50:27,708 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_behavior_change: python.exe - Detección de suspicious_behavior_change en proceso python.exe
+2025-10-25 09:50:29,733 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Uso elevado de CPU: python.exe - 98.7%
+2025-10-25 09:50:29,750 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_behavior_change: python.exe - Detección de suspicious_behavior_change en proceso python.exe
+2025-10-25 09:50:31,774 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Uso elevado de CPU: python.exe - 137.3%
+2025-10-25 09:50:31,774 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_behavior_change: python.exe - Detección de suspicious_behavior_change en proceso python.exe
+2025-10-25 09:50:33,797 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Uso elevado de CPU: sqlservr.exe - 126.6%
+2025-10-25 09:50:33,798 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_behavior_change: sqlservr.exe - Detección de suspicious_behavior_change en proceso sqlservr.exe
+2025-10-25 09:50:33,800 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Uso elevado de CPU: python.exe - 88.8%
+2025-10-25 09:50:33,800 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_behavior_change: python.exe - Detección de suspicious_behavior_change en proceso python.exe
+2025-10-25 09:50:35,825 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Uso elevado de CPU: python.exe - 118.8%
+2025-10-25 09:50:35,825 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_behavior_change: python.exe - Detección de suspicious_behavior_change en proceso python.exe
+2025-10-25 09:50:37,861 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Uso elevado de CPU: python.exe - 89.0%
+2025-10-25 09:50:37,861 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_behavior_change: python.exe - Detección de suspicious_behavior_change en proceso python.exe
+2025-10-25 09:50:37,868 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Uso elevado de CPU: python.exe - 106.3%
+2025-10-25 09:50:37,868 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_behavior_change: python.exe - Detección de suspicious_behavior_change en proceso python.exe
+2025-10-25 09:50:39,909 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Uso elevado de CPU: python.exe - 99.1%
+2025-10-25 09:50:39,913 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_behavior_change: python.exe - Detección de suspicious_behavior_change en proceso python.exe
+2025-10-25 09:50:43,962 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Uso elevado de CPU: python.exe - 108.3%
+2025-10-25 09:50:43,962 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_behavior_change: python.exe - Detección de suspicious_behavior_change en proceso python.exe
+2025-10-25 09:50:45,989 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Uso elevado de CPU: python.exe - 86.7%
+2025-10-25 09:50:45,989 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_behavior_change: python.exe - Detección de suspicious_behavior_change en proceso python.exe
+2025-10-25 09:50:48,023 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Uso elevado de CPU: python.exe - 105.1%
+2025-10-25 09:50:48,023 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_behavior_change: python.exe - Detección de suspicious_behavior_change en proceso python.exe
+2025-10-25 09:50:50,057 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Uso elevado de CPU: python.exe - 139.8%
+2025-10-25 09:50:50,057 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_behavior_change: python.exe - Detección de suspicious_behavior_change en proceso python.exe
+2025-10-25 09:50:52,082 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Uso elevado de CPU: python.exe - 86.2%
+2025-10-25 09:50:52,082 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_behavior_change: python.exe - Detección de suspicious_behavior_change en proceso python.exe
+2025-10-25 09:50:54,108 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Uso elevado de CPU: python.exe - 94.1%
+2025-10-25 09:50:54,123 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_behavior_change: python.exe - Detección de suspicious_behavior_change en proceso python.exe
+2025-10-25 09:50:56,147 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Uso elevado de CPU: python.exe - 117.7%
+2025-10-25 09:50:56,147 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_behavior_change: python.exe - Detección de suspicious_behavior_change en proceso python.exe
+2025-10-25 09:50:58,172 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Uso elevado de CPU: python.exe - 103.0%
+2025-10-25 09:50:58,172 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_behavior_change: python.exe - Detección de suspicious_behavior_change en proceso python.exe
+2025-10-25 09:51:00,202 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Uso elevado de CPU: python.exe - 96.5%
+2025-10-25 09:51:00,202 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_behavior_change: python.exe - Detección de suspicious_behavior_change en proceso python.exe
+2025-10-25 09:51:02,231 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Uso elevado de CPU: python.exe - 132.7%
+2025-10-25 09:51:02,231 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_behavior_change: python.exe - Detección de suspicious_behavior_change en proceso python.exe
+2025-10-25 09:51:04,255 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Uso elevado de CPU: python.exe - 98.3%
+2025-10-25 09:51:04,255 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_behavior_change: python.exe - Detección de suspicious_behavior_change en proceso python.exe
+2025-10-25 09:51:06,280 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Uso elevado de CPU: python.exe - 104.3%
+2025-10-25 09:51:06,281 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_behavior_change: python.exe - Detección de suspicious_behavior_change en proceso python.exe
+2025-10-25 09:51:08,319 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Uso elevado de CPU: python.exe - 146.3%
+2025-10-25 09:51:08,319 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_behavior_change: python.exe - Detección de suspicious_behavior_change en proceso python.exe
+2025-10-25 09:51:10,339 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Uso elevado de CPU: python.exe - 108.0%
+2025-10-25 09:51:10,340 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_behavior_change: python.exe - Detección de suspicious_behavior_change en proceso python.exe
+2025-10-25 09:51:12,364 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Uso elevado de CPU: python.exe - 94.5%
+2025-10-25 09:51:12,364 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_behavior_change: python.exe - Detección de suspicious_behavior_change en proceso python.exe
+2025-10-25 09:51:14,389 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Uso elevado de CPU: python.exe - 123.6%
+2025-10-25 09:51:14,389 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_behavior_change: python.exe - Detección de suspicious_behavior_change en proceso python.exe
+2025-10-25 09:51:16,416 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Uso elevado de CPU: python.exe - 112.5%
+2025-10-25 09:51:16,416 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_behavior_change: python.exe - Detección de suspicious_behavior_change en proceso python.exe
+2025-10-25 09:51:18,443 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Uso elevado de CPU: python.exe - 102.6%
+2025-10-25 09:51:18,444 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_behavior_change: python.exe - Detección de suspicious_behavior_change en proceso python.exe
+2025-10-25 09:51:19,077 - core.plugin_registry - INFO - 🏪 PluginRegistry inicializado (Singleton)
+2025-10-25 09:51:19,078 - core.plugin_manager - INFO - 🎛️ PluginManager inicializado
+2025-10-25 09:51:19,078 - core.engine - INFO - ⚠️ Engine ejecutándose en hilo secundario, señales deshabilitadas
+2025-10-25 09:51:19,078 - core.engine - INFO - 🛡️ UnifiedAntivirusEngine inicializado
+2025-10-25 09:51:19,079 - core.engine - INFO - 🚀 Iniciando Sistema Anti-Keylogger Unificado...
+2025-10-25 09:51:19,079 - PluginManager - INFO - 🔍 Iniciando descubrimiento de plugins...
+2025-10-25 09:51:19,079 - core.plugin_registry - INFO - 🔍 Descubriendo plugins en: plugins
+2025-10-25 09:51:19,090 - core.plugin_registry - INFO - ✅ Plugin 'behavior_detector' registrado en categoría 'detectors'
+2025-10-25 09:51:19,090 - core.plugin_registry - WARNING - ⚠️ Plugin 'behavior_detector' ya registrado, sobrescribiendo
+2025-10-25 09:51:19,091 - core.plugin_registry - INFO - ✅ Plugin 'behavior_detector' registrado en categoría 'detectors'
+2025-10-25 09:51:19,625 - core.plugin_registry - INFO - ✅ Plugin 'ml_detector' registrado en categoría 'detectors'
+2025-10-25 09:51:19,625 - core.plugin_registry - WARNING - ⚠️ Plugin 'ml_detector' ya registrado, sobrescribiendo
+2025-10-25 09:51:19,625 - core.plugin_registry - INFO - ✅ Plugin 'ml_detector' registrado en categoría 'detectors'
+2025-10-25 09:51:19,641 - core.plugin_registry - INFO - ✅ Plugin 'network_detector' registrado en categoría 'detectors'
+2025-10-25 09:51:19,674 - core.plugin_registry - INFO - ✅ Plugin 'alert_manager' registrado en categoría 'handlers'
+2025-10-25 09:51:19,676 - core.plugin_registry - INFO - ✅ Plugin 'logger_handler' registrado en categoría 'handlers'
+2025-10-25 09:51:19,678 - core.plugin_registry - INFO - ✅ Plugin 'quarantine_handler' registrado en categoría 'handlers'
+2025-10-25 09:51:19,678 - core.plugin_registry - INFO - ✅ Descubiertos 6 plugins
+2025-10-25 09:51:19,678 - PluginManager - INFO - ✅ Descubrimiento completado: 6 plugins encontrados
+2025-10-25 09:51:19,678 - core.event_bus - INFO - 📋 'UnifiedEngine' suscrito a eventos 'threat_detected'
+2025-10-25 09:51:19,678 - core.event_bus - INFO - 📋 'UnifiedEngine' suscrito a eventos 'plugin_error'
+2025-10-25 09:51:19,679 - plugins.detectors.behavior_detector.plugin - INFO - Configuración cargada desde C:\Users\HP\Documents\GitHub\ANTIVIRUS_CPP_PROFESSIONAL\UNIFIED_ANTIVIRUS\plugins\detectors\behavior_detector\config.json
+2025-10-25 09:51:19,680 - plugins.detectors.behavior_detector.plugin - INFO - [PLUGIN] behavior_detector inicializado
+2025-10-25 09:51:19,680 - core.plugin_registry - INFO - 🏭 Plugin 'behavior_detector' creado exitosamente
+2025-10-25 09:51:19,681 - plugin.behavior_detector - INFO - 📄 Configuración cargada desde C:\Users\HP\Documents\GitHub\ANTIVIRUS_CPP_PROFESSIONAL\UNIFIED_ANTIVIRUS\plugins\detectors\behavior_detector\config.json
+2025-10-25 09:51:19,682 - plugins.detectors.behavior_detector.plugin - INFO - Inicializando behavior_detector...
+2025-10-25 09:51:19,683 - plugins.detectors.behavior_detector.rule_engine - INFO - [RULE_ENGINE] Cargadas 6 reglas de detección
+2025-10-25 09:51:19,683 - plugins.detectors.behavior_detector.rule_engine - INFO - [RULE_ENGINE] Inicializado con 6 reglas
+2025-10-25 09:51:19,683 - plugins.detectors.behavior_detector.whitelist_manager - INFO - [WHITELIST] Cargados 18 procesos y 7 directorios
+2025-10-25 09:51:19,683 - plugins.detectors.behavior_detector.whitelist_manager - INFO - [WHITELIST] Inicializado: 18 procesos, 7 directorios
+2025-10-25 09:51:19,684 - plugins.detectors.behavior_detector.behavior_engine - INFO - [BEHAVIOR_ENGINE] Inicializado (threshold: 0.7, advanced: True)
+2025-10-25 09:51:19,684 - plugins.detectors.behavior_detector.plugin - INFO - ✅ behavior_detector inicializado correctamente
+2025-10-25 09:51:19,684 - plugins.detectors.behavior_detector.plugin - INFO - Iniciando behavior_detector...
+2025-10-25 09:51:19,685 - plugins.detectors.behavior_detector.plugin - INFO - [BEHAVIOR_DETECTOR] Iniciando monitoreo real de procesos
+2025-10-25 09:51:19,685 - plugins.detectors.behavior_detector.plugin - INFO - ✅ behavior_detector iniciado correctamente
+2025-10-25 09:51:19,690 - plugins.detectors.behavior_detector.plugin - ERROR - Error analizando proceso sospechoso: 'NoneType' object has no attribute 'lower'
+2025-10-25 09:51:19,690 - plugin.behavior_detector - INFO - ✅ Plugin 'behavior_detector' activado exitosamente
+2025-10-25 09:51:19,696 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: discord.exe - patrón: capture
+2025-10-25 09:51:19,698 - core.event_bus - INFO - 📢 Publicando evento 'plugin_activated' de 'PluginManager' a 0 suscriptores
+2025-10-25 09:51:19,698 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: Discord.exe - Detección de suspicious_new_process en proceso Discord.exe
+2025-10-25 09:51:19,699 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: githubdesktop.exe - patrón: capture
+2025-10-25 09:51:19,699 - PluginManager - INFO - ✅ Plugin 'behavior_detector' activado
+2025-10-25 09:51:19,699 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: GitHubDesktop.exe - Detección de suspicious_new_process en proceso GitHubDesktop.exe
+2025-10-25 09:51:19,701 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: adskaccessuihost.exe - patrón: capture
+2025-10-25 09:51:19,701 - plugins.detectors.ml_detector.plugin - INFO - [ML_DETECTOR] Configuración cargada: 8 secciones
+2025-10-25 09:51:19,701 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: AdskAccessUIHost.exe - Detección de suspicious_new_process en proceso AdskAccessUIHost.exe
+2025-10-25 09:51:19,702 - plugins.detectors.ml_detector.plugin - INFO - [ML_DETECTOR] Plugin inicializado con configuración desde C:\Users\HP\Documents\GitHub\ANTIVIRUS_CPP_PROFESSIONAL\UNIFIED_ANTIVIRUS\plugins\detectors\ml_detector\config.json
+2025-10-25 09:51:19,702 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: chrome.exe - patrón: monitor
+2025-10-25 09:51:19,702 - core.plugin_registry - INFO - 🏭 Plugin 'ml_detector' creado exitosamente
+2025-10-25 09:51:19,702 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: chrome.exe - Detección de suspicious_new_process en proceso chrome.exe
+2025-10-25 09:51:19,703 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: nvdisplay.container.exe - patrón: .log
+2025-10-25 09:51:19,703 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: NVDisplay.Container.exe - Detección de suspicious_new_process en proceso NVDisplay.Container.exe
+2025-10-25 09:51:19,705 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: code.exe - patrón: capture
+2025-10-25 09:51:19,705 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: Code.exe - Detección de suspicious_new_process en proceso Code.exe
+2025-10-25 09:51:19,711 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: cmd.exe - patrón: monitor
+2025-10-25 09:51:19,706 - plugin.ml_detector - INFO - 📄 Configuración cargada desde C:\Users\HP\Documents\GitHub\ANTIVIRUS_CPP_PROFESSIONAL\UNIFIED_ANTIVIRUS\plugins\detectors\ml_detector\config.json
+2025-10-25 09:51:19,712 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: cmd.exe - Detección de suspicious_new_process en proceso cmd.exe
+2025-10-25 09:51:19,715 - plugins.detectors.ml_detector.plugin - INFO - [ML_DETECTOR] Inicializando componentes ML...
+2025-10-25 09:51:19,716 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: chrome.exe - patrón: capture
+2025-10-25 09:51:19,717 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: chrome.exe - Detección de suspicious_new_process en proceso chrome.exe
+2025-10-25 09:51:19,718 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: python.exe - patrón: keylog
+2025-10-25 09:51:19,718 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: python.exe - Detección de suspicious_new_process en proceso python.exe
+2025-10-25 09:51:19,718 - plugins.detectors.ml_detector.ml_engine - INFO - [ML_ENGINE] Clases cargadas: ['Benign', 'Keylogger']
+2025-10-25 09:51:19,719 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: code.exe - patrón: capture
+2025-10-25 09:51:19,720 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: Code.exe - Detección de suspicious_new_process en proceso Code.exe
+2025-10-25 09:51:19,720 - plugins.detectors.ml_detector.ml_engine - INFO - [ML_ENGINE] Metadatos cargados: 81 características
+2025-10-25 09:51:19,722 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: python.exe - patrón: monitor
+2025-10-25 09:51:19,722 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: python.exe - Detección de suspicious_new_process en proceso python.exe
+2025-10-25 09:51:19,723 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: code.exe - patrón: capture
+2025-10-25 09:51:19,723 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: Code.exe - Detección de suspicious_new_process en proceso Code.exe
+2025-10-25 09:51:19,724 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: nvdisplay.container.exe - patrón: .log
+2025-10-25 09:51:19,724 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: NVDisplay.Container.exe - Detección de suspicious_new_process en proceso NVDisplay.Container.exe
+2025-10-25 09:51:19,724 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: msedgewebview2.exe - patrón: monitor
+2025-10-25 09:51:19,724 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: msedgewebview2.exe - Detección de suspicious_new_process en proceso msedgewebview2.exe
+2025-10-25 09:51:19,725 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: code.exe - patrón: capture
+2025-10-25 09:51:19,725 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: Code.exe - Detección de suspicious_new_process en proceso Code.exe
+2025-10-25 09:51:19,726 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: chrome.exe - patrón: capture
+2025-10-25 09:51:19,726 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: chrome.exe - Detección de suspicious_new_process en proceso chrome.exe
+2025-10-25 09:51:19,726 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: discord.exe - patrón: monitor
+2025-10-25 09:51:19,727 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: Discord.exe - Detección de suspicious_new_process en proceso Discord.exe
+2025-10-25 09:51:19,729 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: chrome.exe - patrón: capture
+2025-10-25 09:51:19,733 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: chrome.exe - Detección de suspicious_new_process en proceso chrome.exe
+2025-10-25 09:51:19,735 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: code.exe - patrón: capture
+2025-10-25 09:51:19,735 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: Code.exe - Detección de suspicious_new_process en proceso Code.exe
+2025-10-25 09:51:19,737 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: discord.exe - patrón: capture
+2025-10-25 09:51:19,737 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: Discord.exe - Detección de suspicious_new_process en proceso Discord.exe
+2025-10-25 09:51:19,738 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: code.exe - patrón: monitor
+2025-10-25 09:51:19,739 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: Code.exe - Detección de suspicious_new_process en proceso Code.exe
+2025-10-25 09:51:20,470 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Incremento súbito de memoria en python.exe: 57290752 -> 528146432
+2025-10-25 09:51:20,470 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_behavior_change: python.exe - Detección de suspicious_behavior_change en proceso python.exe
+2025-10-25 09:51:20,478 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Uso elevado de CPU: python.exe - 103.6%
+2025-10-25 09:51:20,479 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_behavior_change: python.exe - Detección de suspicious_behavior_change en proceso python.exe
+2025-10-25 09:51:21,658 - core.engine - INFO - 🛑 Iniciando shutdown del sistema...
+2025-10-25 09:51:21,659 - core.event_bus - INFO - 📢 Publicando evento 'system_shutdown_started' de 'UnifiedEngine' a 0 suscriptores
+2025-10-25 09:52:01,219 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: chrome.exe - patrón: capture
+2025-10-25 09:52:01,220 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: chrome.exe - Detección de suspicious_new_process en proceso chrome.exe
+2025-10-25 09:52:01,220 - plugins.detectors.ml_detector.ml_engine - INFO - [ML_ENGINE] ✅ Modelo ONNX validado: modelo_keylogger_from_datos.onnx
+2025-10-25 09:52:01,224 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Incremento súbito de memoria en python.exe: 114905088 -> 350060544
+2025-10-25 09:52:01,224 - plugins.detectors.ml_detector.ml_engine - INFO - [ML_ENGINE] ✅ Modelo ONNX cargado en 41.51s
+2025-10-25 09:52:01,225 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_behavior_change: python.exe - Detección de suspicious_behavior_change en proceso python.exe
+2025-10-25 09:52:01,226 - plugins.detectors.ml_detector.ml_engine - INFO - [ML_ENGINE] Inicializado (ONNX: True, Modelo: ONNX)
+2025-10-25 09:52:01,237 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: python.exe - patrón: monitor
+2025-10-25 09:52:01,237 - plugins.detectors.ml_detector.feature_extractor - INFO - [FEATURES] NetworkFeatureExtractor inicializado con 81 características
+2025-10-25 09:52:01,238 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: python.exe - Detección de suspicious_new_process en proceso python.exe
+2025-10-25 09:52:01,238 - plugins.detectors.ml_detector.plugin - INFO - [ML_DETECTOR] ✅ Plugin inicializado (Modelo: ONNX)
+2025-10-25 09:52:01,242 - plugins.detectors.ml_detector.plugin - INFO - [ML_DETECTOR] ✅ Plugin iniciado y listo para detecciones
+2025-10-25 09:52:01,242 - plugin.ml_detector - INFO - ✅ Plugin 'ml_detector' activado exitosamente
+2025-10-25 09:52:01,242 - core.event_bus - INFO - 📢 Publicando evento 'plugin_activated' de 'PluginManager' a 0 suscriptores
+2025-10-25 09:52:01,243 - PluginManager - INFO - ✅ Plugin 'ml_detector' activado
+2025-10-25 09:52:01,244 - network_detector - INFO - 🌐 Inicializando Network Detector Plugin...
+2025-10-25 09:52:01,246 - network_detector - INFO - 📋 Configuración cargada: 13 secciones
+2025-10-25 09:52:01,246 - network_detector - INFO - 🔧 Componentes básicos inicializados
+2025-10-25 09:52:01,247 - network_detector - INFO - 🛡️ Datos de seguridad básicos configurados
+2025-10-25 09:52:01,247 - network_detector - INFO - 📡 Preparado para suscribirse a 4 tipos de eventos
+2025-10-25 09:52:01,247 - network_detector - INFO - ✅ Network Detector Plugin inicializado correctamente
+2025-10-25 09:52:01,247 - core.plugin_registry - INFO - 🏭 Plugin 'network_detector' creado exitosamente
+2025-10-25 09:52:01,248 - network_detector - INFO - 🚀 Activando Network Detector Plugin...
+2025-10-25 09:52:01,248 - network_detector - INFO - ✅ Componentes verificados (modo básico)
+2025-10-25 09:52:01,248 - network_detector - INFO - ✅ Network Detector Plugin activado
+2025-10-25 09:52:01,248 - core.event_bus - INFO - 📢 Publicando evento 'plugin_activated' de 'PluginManager' a 0 suscriptores
+2025-10-25 09:52:01,249 - PluginManager - INFO - ✅ Plugin 'network_detector' activado
+2025-10-25 09:52:01,249 - PluginManager - INFO - 📂 Categoría 'detectors': 3/3 activados
+2025-10-25 09:52:01,249 - core.engine - INFO - ✅ Categoría 'detectors' activada
+2025-10-25 09:52:01,249 - PluginManager - INFO - 📂 Categoría 'monitors': 0/0 activados
+2025-10-25 09:52:01,250 - core.engine - WARNING - ⚠️ Problemas activando categoría 'monitors'
+2025-10-25 09:52:01,250 - core.plugin_registry - ERROR - ❌ Error creando plugin 'alert_manager': Can't instantiate abstract class AlertManagerPlugin without an implementation for abstract methods 'get_plugin_info', 'initialize', 'start', 'stop'
+2025-10-25 09:52:01,250 - core.plugin_registry - ERROR - ❌ Error creando plugin 'logger_handler': Can't instantiate abstract class LoggerHandlerPlugin without an implementation for abstract methods 'get_plugin_info', 'initialize', 'start', 'stop'
+2025-10-25 09:52:01,250 - core.plugin_registry - ERROR - ❌ Error creando plugin 'quarantine_handler': Can't instantiate abstract class QuarantineHandlerPlugin without an implementation for abstract methods 'get_plugin_info', 'initialize', 'start', 'stop'
+2025-10-25 09:52:01,250 - PluginManager - INFO - 📂 Categoría 'handlers': 0/3 activados
+2025-10-25 09:52:01,251 - core.engine - WARNING - ⚠️ Problemas activando categoría 'handlers'
+2025-10-25 09:52:01,251 - PluginManager - INFO - 📂 Categoría 'interfaces': 0/0 activados
+2025-10-25 09:52:01,251 - core.engine - WARNING - ⚠️ Problemas activando categoría 'interfaces'
+2025-10-25 09:52:01,252 - core.event_bus - INFO - 📢 Publicando evento 'system_started' de 'UnifiedEngine' a 0 suscriptores
+2025-10-25 09:52:01,252 - core.engine - INFO - ✅ Sistema iniciado exitosamente
+2025-10-25 09:52:01,252 - core.engine - INFO - 📊 Plugins activos: 3
+2025-10-25 09:52:01,252 - core.engine - INFO - 🚀 Iniciando Sistema Anti-Keylogger Unificado...
+2025-10-25 09:52:01,253 - PluginManager - INFO - 🔍 Iniciando descubrimiento de plugins...
+2025-10-25 09:52:01,253 - core.plugin_registry - INFO - 🔍 Descubriendo plugins en: plugins
+2025-10-25 09:52:01,253 - core.plugin_registry - WARNING - ⚠️ Plugin 'behavior_detector' ya registrado, sobrescribiendo
+2025-10-25 09:52:01,254 - core.plugin_registry - INFO - ✅ Plugin 'behavior_detector' registrado en categoría 'detectors'
+2025-10-25 09:52:01,254 - core.plugin_registry - WARNING - ⚠️ Plugin 'ml_detector' ya registrado, sobrescribiendo
+2025-10-25 09:52:01,254 - core.plugin_registry - INFO - ✅ Plugin 'ml_detector' registrado en categoría 'detectors'
+2025-10-25 09:52:01,255 - core.plugin_registry - WARNING - ⚠️ Plugin 'network_detector' ya registrado, sobrescribiendo
+2025-10-25 09:52:01,255 - core.plugin_registry - INFO - ✅ Plugin 'network_detector' registrado en categoría 'detectors'
+2025-10-25 09:52:01,256 - core.plugin_registry - WARNING - ⚠️ Plugin 'alert_manager' ya registrado, sobrescribiendo
+2025-10-25 09:52:01,258 - core.plugin_registry - INFO - ✅ Plugin 'alert_manager' registrado en categoría 'handlers'
+2025-10-25 09:52:01,258 - core.plugin_registry - WARNING - ⚠️ Plugin 'logger_handler' ya registrado, sobrescribiendo
+2025-10-25 09:52:01,259 - core.plugin_registry - INFO - ✅ Plugin 'logger_handler' registrado en categoría 'handlers'
+2025-10-25 09:52:01,259 - core.plugin_registry - WARNING - ⚠️ Plugin 'quarantine_handler' ya registrado, sobrescribiendo
+2025-10-25 09:52:01,259 - core.plugin_registry - INFO - ✅ Plugin 'quarantine_handler' registrado en categoría 'handlers'
+2025-10-25 09:52:01,260 - core.plugin_registry - INFO - ✅ Descubiertos 6 plugins
+2025-10-25 09:52:01,260 - PluginManager - INFO - ✅ Descubrimiento completado: 6 plugins encontrados
+2025-10-25 09:52:01,260 - core.event_bus - INFO - 📋 'UnifiedEngine' suscrito a eventos 'threat_detected'
+2025-10-25 09:52:01,260 - core.event_bus - INFO - 📋 'UnifiedEngine' suscrito a eventos 'plugin_error'
+2025-10-25 09:52:01,261 - PluginManager - WARNING - ⚠️ Plugin 'behavior_detector' ya está activo
+2025-10-25 09:52:01,261 - PluginManager - WARNING - ⚠️ Plugin 'ml_detector' ya está activo
+2025-10-25 09:52:01,262 - PluginManager - WARNING - ⚠️ Plugin 'network_detector' ya está activo
+2025-10-25 09:52:01,262 - PluginManager - INFO - 📂 Categoría 'detectors': 3/3 activados
+2025-10-25 09:52:01,263 - core.event_bus - INFO - 📢 Publicando evento 'system_started' de 'UnifiedEngine' a 0 suscriptores
+2025-10-25 09:52:01,263 - core.engine - INFO - ✅ Sistema iniciado exitosamente
+2025-10-25 09:52:01,263 - core.engine - INFO - 📊 Plugins activos: 3
+2025-10-25 09:52:09,360 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: python.exe - patrón: monitor
+2025-10-25 09:52:10,119 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: python.exe - Detección de suspicious_new_process en proceso python.exe
+2025-10-25 09:52:20,306 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Uso elevado de CPU: python.exe - 88.8%
+2025-10-25 09:52:20,307 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_behavior_change: python.exe - Detección de suspicious_behavior_change en proceso python.exe
+2025-10-25 09:52:24,354 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Uso elevado de CPU: python.exe - 91.2%
+2025-10-25 09:52:24,354 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_behavior_change: python.exe - Detección de suspicious_behavior_change en proceso python.exe
+2025-10-25 09:52:32,480 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Uso elevado de CPU: python.exe - 140.8%
+2025-10-25 09:52:32,481 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_behavior_change: python.exe - Detección de suspicious_behavior_change en proceso python.exe
+2025-10-25 09:52:40,578 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Uso elevado de CPU: sqlservr.exe - 104.1%
+2025-10-25 09:52:40,578 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_behavior_change: sqlservr.exe - Detección de suspicious_behavior_change en proceso sqlservr.exe
+2025-10-25 09:52:42,615 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Uso elevado de CPU: sqlservr.exe - 86.3%
+2025-10-25 09:52:42,615 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_behavior_change: sqlservr.exe - Detección de suspicious_behavior_change en proceso sqlservr.exe
+2025-10-25 09:52:42,619 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Uso elevado de CPU: python.exe - 80.2%
+2025-10-25 09:52:42,619 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_behavior_change: python.exe - Detección de suspicious_behavior_change en proceso python.exe
+2025-10-25 09:52:42,626 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Uso elevado de CPU: sqlservr.exe - 216.2%
+2025-10-25 09:52:42,626 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_behavior_change: sqlservr.exe - Detección de suspicious_behavior_change en proceso sqlservr.exe
+2025-10-25 09:52:44,645 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Incremento súbito de memoria en Compil32.exe: 58032128 -> 168312832
+2025-10-25 09:52:44,645 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_behavior_change: Compil32.exe - Detección de suspicious_behavior_change en proceso Compil32.exe
+2025-10-25 09:52:44,655 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Uso elevado de CPU: sqlservr.exe - 206.3%
+2025-10-25 09:52:44,655 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_behavior_change: sqlservr.exe - Detección de suspicious_behavior_change en proceso sqlservr.exe
+2025-10-25 09:52:46,676 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Uso elevado de CPU: Compil32.exe - 136.3%
+2025-10-25 09:52:46,676 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_behavior_change: Compil32.exe - Detección de suspicious_behavior_change en proceso Compil32.exe
+2025-10-25 09:52:48,702 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Uso elevado de CPU: Compil32.exe - 98.3%
+2025-10-25 09:52:48,703 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_behavior_change: Compil32.exe - Detección de suspicious_behavior_change en proceso Compil32.exe
+2025-10-25 09:52:50,743 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Uso elevado de CPU: Compil32.exe - 366.8%
+2025-10-25 09:52:50,743 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_behavior_change: Compil32.exe - Detección de suspicious_behavior_change en proceso Compil32.exe
+2025-10-25 09:52:50,749 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: code.exe - patrón: capture
+2025-10-25 09:52:50,749 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: Code.exe - Detección de suspicious_new_process en proceso Code.exe
+2025-10-25 09:52:50,754 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Uso elevado de CPU: python.exe - 103.4%
+2025-10-25 09:52:50,754 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_behavior_change: python.exe - Detección de suspicious_behavior_change en proceso python.exe
+2025-10-25 09:52:50,767 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: code.exe - patrón: capture
+2025-10-25 09:52:50,769 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: Code.exe - Detección de suspicious_new_process en proceso Code.exe
+2025-10-25 09:52:52,785 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Uso elevado de CPU: Compil32.exe - 148.3%
+2025-10-25 09:52:52,785 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_behavior_change: Compil32.exe - Detección de suspicious_behavior_change en proceso Compil32.exe
+2025-10-25 09:52:52,791 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Uso elevado de CPU: python.exe - 130.1%
+2025-10-25 09:52:52,791 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_behavior_change: python.exe - Detección de suspicious_behavior_change en proceso python.exe
+2025-10-25 09:52:56,843 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Uso elevado de CPU: Compil32.exe - 181.6%
+2025-10-25 09:52:56,843 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_behavior_change: Compil32.exe - Detección de suspicious_behavior_change en proceso Compil32.exe
+2025-10-25 09:52:58,870 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Uso elevado de CPU: Compil32.exe - 123.0%
+2025-10-25 09:52:58,871 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_behavior_change: Compil32.exe - Detección de suspicious_behavior_change en proceso Compil32.exe
+2025-10-25 09:53:00,912 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Uso elevado de CPU: Compil32.exe - 195.8%
+2025-10-25 09:53:00,912 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_behavior_change: Compil32.exe - Detección de suspicious_behavior_change en proceso Compil32.exe
+2025-10-25 09:53:02,944 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Uso elevado de CPU: Compil32.exe - 132.6%
+2025-10-25 09:53:02,949 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_behavior_change: Compil32.exe - Detección de suspicious_behavior_change en proceso Compil32.exe
+2025-10-25 09:53:02,954 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Uso elevado de CPU: python.exe - 80.1%
+2025-10-25 09:53:02,954 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_behavior_change: python.exe - Detección de suspicious_behavior_change en proceso python.exe
+2025-10-25 09:53:04,974 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Uso elevado de CPU: Compil32.exe - 140.1%
+2025-10-25 09:53:04,974 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_behavior_change: Compil32.exe - Detección de suspicious_behavior_change en proceso Compil32.exe
+2025-10-25 09:53:07,001 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Uso elevado de CPU: Compil32.exe - 174.7%
+2025-10-25 09:53:07,002 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_behavior_change: Compil32.exe - Detección de suspicious_behavior_change en proceso Compil32.exe
+2025-10-25 09:53:09,039 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Uso elevado de CPU: Compil32.exe - 83.8%
+2025-10-25 09:53:09,040 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_behavior_change: Compil32.exe - Detección de suspicious_behavior_change en proceso Compil32.exe
+2025-10-25 09:53:11,065 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Uso elevado de CPU: Compil32.exe - 168.7%
+2025-10-25 09:53:11,065 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_behavior_change: Compil32.exe - Detección de suspicious_behavior_change en proceso Compil32.exe
+2025-10-25 09:53:13,090 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Uso elevado de CPU: Compil32.exe - 164.2%
+2025-10-25 09:53:13,098 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_behavior_change: Compil32.exe - Detección de suspicious_behavior_change en proceso Compil32.exe
+2025-10-25 09:53:15,132 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Uso elevado de CPU: Compil32.exe - 139.8%
+2025-10-25 09:53:15,132 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_behavior_change: Compil32.exe - Detección de suspicious_behavior_change en proceso Compil32.exe
+2025-10-25 09:53:17,158 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Uso elevado de CPU: Compil32.exe - 127.6%
+2025-10-25 09:53:17,158 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_behavior_change: Compil32.exe - Detección de suspicious_behavior_change en proceso Compil32.exe
+2025-10-25 09:53:19,185 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Uso elevado de CPU: Compil32.exe - 154.2%
+2025-10-25 09:53:19,200 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_behavior_change: Compil32.exe - Detección de suspicious_behavior_change en proceso Compil32.exe
+2025-10-25 09:53:19,205 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Uso elevado de CPU: python.exe - 128.6%
+2025-10-25 09:53:19,205 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_behavior_change: python.exe - Detección de suspicious_behavior_change en proceso python.exe
+2025-10-25 09:53:21,231 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Uso elevado de CPU: Compil32.exe - 140.9%
+2025-10-25 09:53:21,232 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_behavior_change: Compil32.exe - Detección de suspicious_behavior_change en proceso Compil32.exe
+2025-10-25 09:53:23,260 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Uso elevado de CPU: Compil32.exe - 170.8%
+2025-10-25 09:53:23,261 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_behavior_change: Compil32.exe - Detección de suspicious_behavior_change en proceso Compil32.exe
+2025-10-25 09:53:25,286 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Uso elevado de CPU: Compil32.exe - 148.3%
+2025-10-25 09:53:25,286 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_behavior_change: Compil32.exe - Detección de suspicious_behavior_change en proceso Compil32.exe
+2025-10-25 09:53:27,325 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Uso elevado de CPU: Compil32.exe - 105.1%
+2025-10-25 09:53:27,339 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_behavior_change: Compil32.exe - Detección de suspicious_behavior_change en proceso Compil32.exe
+2025-10-25 09:53:27,350 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Uso elevado de CPU: python.exe - 134.9%
+2025-10-25 09:53:27,351 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_behavior_change: python.exe - Detección de suspicious_behavior_change en proceso python.exe
+2025-10-25 09:53:29,385 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Uso elevado de CPU: Compil32.exe - 149.7%
+2025-10-25 09:53:29,409 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_behavior_change: Compil32.exe - Detección de suspicious_behavior_change en proceso Compil32.exe
+2025-10-25 09:53:29,420 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Uso elevado de CPU: python.exe - 102.6%
+2025-10-25 09:53:29,420 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_behavior_change: python.exe - Detección de suspicious_behavior_change en proceso python.exe
+2025-10-25 09:53:31,445 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Uso elevado de CPU: Compil32.exe - 117.6%
+2025-10-25 09:53:31,445 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_behavior_change: Compil32.exe - Detección de suspicious_behavior_change en proceso Compil32.exe
+2025-10-25 09:53:31,450 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Uso elevado de CPU: python.exe - 106.2%
+2025-10-25 09:53:31,450 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_behavior_change: python.exe - Detección de suspicious_behavior_change en proceso python.exe
+2025-10-25 09:53:33,476 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Uso elevado de CPU: Compil32.exe - 108.7%
+2025-10-25 09:53:33,477 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_behavior_change: Compil32.exe - Detección de suspicious_behavior_change en proceso Compil32.exe
+2025-10-25 09:53:33,498 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: python.exe - patrón: monitor
+2025-10-25 09:53:33,498 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: python.exe - Detección de suspicious_new_process en proceso python.exe
+2025-10-25 09:53:35,508 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Uso elevado de CPU: Compil32.exe - 174.8%
+2025-10-25 09:53:35,508 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_behavior_change: Compil32.exe - Detección de suspicious_behavior_change en proceso Compil32.exe
+2025-10-25 09:53:35,526 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Incremento súbito de memoria en python.exe: 9936896 -> 108494848
+2025-10-25 09:53:35,527 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_behavior_change: python.exe - Detección de suspicious_behavior_change en proceso python.exe
+2025-10-25 09:53:37,539 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Uso elevado de CPU: Compil32.exe - 192.6%
+2025-10-25 09:53:37,539 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_behavior_change: Compil32.exe - Detección de suspicious_behavior_change en proceso Compil32.exe
+2025-10-25 09:53:37,540 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Incremento súbito de memoria en python.exe: 34525184 -> 108785664
+2025-10-25 09:53:37,540 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_behavior_change: python.exe - Detección de suspicious_behavior_change en proceso python.exe
+2025-10-25 09:53:39,575 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Uso elevado de CPU: Compil32.exe - 89.6%
+2025-10-25 09:53:39,575 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_behavior_change: Compil32.exe - Detección de suspicious_behavior_change en proceso Compil32.exe
+2025-10-25 09:53:41,600 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Uso elevado de CPU: Compil32.exe - 192.1%
+2025-10-25 09:53:41,600 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_behavior_change: Compil32.exe - Detección de suspicious_behavior_change en proceso Compil32.exe
+2025-10-25 09:53:43,627 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Uso elevado de CPU: Compil32.exe - 185.7%
+2025-10-25 09:53:43,627 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_behavior_change: Compil32.exe - Detección de suspicious_behavior_change en proceso Compil32.exe
+2025-10-25 09:53:45,654 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Uso elevado de CPU: Compil32.exe - 161.0%
+2025-10-25 09:53:45,655 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_behavior_change: Compil32.exe - Detección de suspicious_behavior_change en proceso Compil32.exe
+2025-10-25 09:53:45,658 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Uso elevado de CPU: sqlservr.exe - 157.1%
+2025-10-25 09:53:45,658 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_behavior_change: sqlservr.exe - Detección de suspicious_behavior_change en proceso sqlservr.exe
+2025-10-25 09:53:47,686 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Uso elevado de CPU: Compil32.exe - 167.3%
+2025-10-25 09:53:51,391 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_behavior_change: Compil32.exe - Detección de suspicious_behavior_change en proceso Compil32.exe
+2025-10-25 09:53:51,398 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Uso elevado de CPU: ekrn.exe - 127.7%
+2025-10-25 09:53:51,398 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_behavior_change: ekrn.exe - Detección de suspicious_behavior_change en proceso ekrn.exe
+2025-10-25 09:53:59,514 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Uso elevado de CPU: Antivirus_Instalador.tmp - 86.7%
+2025-10-25 09:53:59,514 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_behavior_change: Antivirus_Instalador.tmp - Detección de suspicious_behavior_change en proceso Antivirus_Instalador.tmp
+2025-10-25 09:54:01,539 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Uso elevado de CPU: Antivirus_Instalador.tmp - 114.0%
+2025-10-25 09:54:01,539 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_behavior_change: Antivirus_Instalador.tmp - Detección de suspicious_behavior_change en proceso Antivirus_Instalador.tmp
+2025-10-25 09:54:03,567 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Uso elevado de CPU: Antivirus_Instalador.tmp - 96.3%
+2025-10-25 09:54:03,567 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_behavior_change: Antivirus_Instalador.tmp - Detección de suspicious_behavior_change en proceso Antivirus_Instalador.tmp
+2025-10-25 09:54:05,588 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Uso elevado de CPU: python.exe - 121.1%
+2025-10-25 09:54:05,594 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_behavior_change: python.exe - Detección de suspicious_behavior_change en proceso python.exe
+2025-10-25 09:54:05,605 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Uso elevado de CPU: Antivirus_Instalador.tmp - 121.8%
+2025-10-25 09:54:05,605 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_behavior_change: Antivirus_Instalador.tmp - Detección de suspicious_behavior_change en proceso Antivirus_Instalador.tmp
+2025-10-25 09:54:09,660 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Incremento súbito de memoria en SearchApp.exe: 107122688 -> 220209152
+2025-10-25 09:54:09,660 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_behavior_change: SearchApp.exe - Detección de suspicious_behavior_change en proceso SearchApp.exe
+2025-10-25 09:54:15,727 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Uso elevado de CPU: ekrn.exe - 111.6%
+2025-10-25 09:54:15,727 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_behavior_change: ekrn.exe - Detección de suspicious_behavior_change en proceso ekrn.exe
+2025-10-25 09:54:17,754 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Uso elevado de CPU: ekrn.exe - 81.4%
+2025-10-25 09:54:17,754 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_behavior_change: ekrn.exe - Detección de suspicious_behavior_change en proceso ekrn.exe
+2025-10-25 09:54:17,764 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Uso elevado de CPU: professional_ui_robust.exe - 94.2%
+2025-10-25 09:54:17,764 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_behavior_change: professional_ui_robust.exe - Detección de suspicious_behavior_change en proceso professional_ui_robust.exe
+2025-10-25 09:54:21,808 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Uso elevado de CPU: python.exe - 113.0%
+2025-10-25 09:54:21,809 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_behavior_change: python.exe - Detección de suspicious_behavior_change en proceso python.exe
+2025-10-25 09:54:21,818 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Uso elevado de CPU: professional_ui_robust.exe - 146.2%
+2025-10-25 09:54:21,818 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_behavior_change: professional_ui_robust.exe - Detección de suspicious_behavior_change en proceso professional_ui_robust.exe
+2025-10-25 09:54:46,209 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Uso elevado de CPU: python.exe - 92.7%
+2025-10-25 09:54:46,209 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_behavior_change: python.exe - Detección de suspicious_behavior_change en proceso python.exe
+2025-10-25 09:54:48,256 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Uso elevado de CPU: ekrn.exe - 87.0%
+2025-10-25 09:54:48,256 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_behavior_change: ekrn.exe - Detección de suspicious_behavior_change en proceso ekrn.exe
+2025-10-25 09:54:48,257 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Uso elevado de CPU: python.exe - 117.6%
+2025-10-25 09:54:48,257 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_behavior_change: python.exe - Detección de suspicious_behavior_change en proceso python.exe
+2025-10-25 09:54:48,269 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Uso elevado de CPU: professional_ui_robust.exe - 87.3%
+2025-10-25 09:54:48,269 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_behavior_change: professional_ui_robust.exe - Detección de suspicious_behavior_change en proceso professional_ui_robust.exe
+2025-10-25 09:54:50,315 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Incremento súbito de memoria en chrome.exe: 32833536 -> 90976256
+2025-10-25 09:54:50,316 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_behavior_change: chrome.exe - Detección de suspicious_behavior_change en proceso chrome.exe
+2025-10-25 09:54:50,322 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Uso elevado de CPU: python.exe - 83.0%
+2025-10-25 09:54:50,322 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_behavior_change: python.exe - Detección de suspicious_behavior_change en proceso python.exe
+2025-10-25 09:54:50,330 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: chrome.exe - patrón: capture
+2025-10-25 09:54:50,330 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: chrome.exe - Detección de suspicious_new_process en proceso chrome.exe
+2025-10-25 09:54:50,335 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Uso elevado de CPU: professional_ui_robust.exe - 137.2%
+2025-10-25 09:54:50,336 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_behavior_change: professional_ui_robust.exe - Detección de suspicious_behavior_change en proceso professional_ui_robust.exe
+2025-10-25 09:54:50,338 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: chrome.exe - patrón: capture
+2025-10-25 09:54:50,338 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: chrome.exe - Detección de suspicious_new_process en proceso chrome.exe
+2025-10-25 09:54:52,366 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: chrome.exe - patrón: capture
+2025-10-25 09:54:52,366 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: chrome.exe - Detección de suspicious_new_process en proceso chrome.exe
+2025-10-25 09:54:54,386 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Uso elevado de CPU: professional_ui_robust.exe - 96.7%
+2025-10-25 09:54:54,386 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_behavior_change: professional_ui_robust.exe - Detección de suspicious_behavior_change en proceso professional_ui_robust.exe
+2025-10-25 09:55:02,481 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Uso elevado de CPU: python.exe - 107.6%
+2025-10-25 09:55:02,481 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_behavior_change: python.exe - Detección de suspicious_behavior_change en proceso python.exe
+2025-10-25 09:55:02,490 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Uso elevado de CPU: professional_ui_robust.exe - 95.4%
+2025-10-25 09:55:02,490 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_behavior_change: professional_ui_robust.exe - Detección de suspicious_behavior_change en proceso professional_ui_robust.exe
+2025-10-25 09:55:16,716 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Uso elevado de CPU: ctfmon.exe - 94.7%
+2025-10-25 09:55:16,717 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_behavior_change: ctfmon.exe - Detección de suspicious_behavior_change en proceso ctfmon.exe
+2025-10-25 09:55:16,725 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Uso elevado de CPU: professional_ui_robust.exe - 85.3%
+2025-10-25 09:55:16,726 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_behavior_change: professional_ui_robust.exe - Detección de suspicious_behavior_change en proceso professional_ui_robust.exe

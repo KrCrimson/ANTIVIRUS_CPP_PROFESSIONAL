@@ -15,9 +15,13 @@ import time
 import json
 import math
 import os
+import sys
+import subprocess
 import psutil
 from datetime import datetime
+from pathlib import Path
 from collections import defaultdict, deque, Counter
+
 def is_admin():
     try:
         return os.getuid() == 0
@@ -30,12 +34,6 @@ if not is_admin():
     ctypes.windll.shell32.ShellExecuteW(
         None, "runas", sys.executable, " ".join(sys.argv), None, 1)
     sys.exit()
-import os
-import subprocess
-from datetime import datetime
-from pathlib import Path
-import sys
-from collections import defaultdict, deque
 
 # Agregar path
 sys.path.insert(0, str(Path(__file__).parent))
@@ -54,6 +52,11 @@ class RobustAntivirusUI:
         self.engine_thread = None
         self.engine_running = threading.Event()
         self.data_queue = queue.Queue()
+        
+        # Sistema de monitoreo web integrado
+        self.web_monitoring = None
+        self.web_monitor_enabled = False
+        self._init_web_monitoring()
         
         # Variables de estado
         self.is_protection_active = False
@@ -129,6 +132,59 @@ class RobustAntivirusUI:
                 json.dump(self.ui_config, f, indent=2)
         except Exception as e:
             print(f"Error guardando configuración: {e}")
+    
+    def _init_web_monitoring(self):
+        """Inicializa el sistema de monitoreo web"""
+        try:
+            # Verificar si está habilitado en configuración
+            web_config_file = "client_monitor_config.json"
+            if os.path.exists(web_config_file):
+                with open(web_config_file, 'r', encoding='utf-8') as f:
+                    web_config = json.load(f)
+                
+                # Importar e inicializar log sender
+                from utils.log_sender import init_log_sender
+                self.web_monitoring = init_log_sender(**web_config)
+                
+                if self.web_monitoring:
+                    self.web_monitoring.start()
+                    self.web_monitor_enabled = True
+                    print("✅ Sistema de monitoreo web iniciado")
+                    
+                    # Enviar log inicial
+                    self.web_monitoring.send_manual_log(
+                        "INFO", 
+                        "Antivirus professional_ui_robust iniciado con monitoreo web",
+                        "antivirus_main"
+                    )
+                else:
+                    print("⚠️ No se pudo inicializar el monitoreo web")
+            else:
+                print("ℹ️ Configuración de monitoreo web no encontrada")
+                
+        except ImportError:
+            print("ℹ️ Módulo de monitoreo web no disponible")
+        except Exception as e:
+            print(f"⚠️ Error inicializando monitoreo web: {e}")
+    
+    def _send_web_log(self, level: str, message: str, logger_name: str = "antivirus_ui"):
+        """Envía un log al sistema de monitoreo web"""
+        if self.web_monitoring and self.web_monitor_enabled:
+            try:
+                self.web_monitoring.send_manual_log(level, message, logger_name)
+            except Exception as e:
+                print(f"Error enviando log web: {e}")
+    
+    def _stop_web_monitoring(self):
+        """Detiene el sistema de monitoreo web"""
+        if self.web_monitoring and self.web_monitor_enabled:
+            try:
+                self._send_web_log("INFO", "Antivirus professional_ui_robust detenido", "antivirus_main")
+                self.web_monitoring.stop()
+                self.web_monitor_enabled = False
+                print("✅ Sistema de monitoreo web detenido")
+            except Exception as e:
+                print(f"Error deteniendo monitoreo web: {e}")
     
     def create_main_window(self):
         """Crea la ventana principal"""
@@ -1773,6 +1829,9 @@ class RobustAntivirusUI:
         
         self.add_smart_log_entry("INFO", "Iniciando protección con filtrado inteligente...")
         
+        # Enviar log al monitoreo web
+        self._send_web_log("INFO", "Protección antivirus iniciada", "antivirus_protection")
+        
         # Cambiar UI de forma thread-safe
         self.root.after(0, self._update_protection_ui_start)
         
@@ -1807,6 +1866,9 @@ class RobustAntivirusUI:
             return
         
         self.add_smart_log_entry("WARNING", "Deteniendo protección...")
+        
+        # Enviar log al monitoreo web
+        self._send_web_log("WARNING", "Protección antivirus detenida", "antivirus_protection")
         
         # Detener engine de forma limpia
         if hasattr(self, 'engine_running'):
@@ -2118,11 +2180,24 @@ class RobustAntivirusUI:
                 # Solo mostrar en log si es realmente nuevo o importante
                 if not self.is_common_false_positive(threat_data):
                     self.add_smart_log_entry("WARNING", f"Nueva amenaza: {aggregated['key']}")
+                    # Log para monitoreo web
+                    self._send_web_log("WARNING", f"Nueva amenaza detectada: {aggregated['key']}", extra_data={
+                        'threat_type': threat_data.get('type', 'unknown'),
+                        'process': threat_data.get('process', 'unknown'),
+                        'threat_count': aggregated['count']
+                    })
             else:
                 self.metrics['filtered_events'] += 1
                 # Solo logear cada 10 ocurrencias de la misma amenaza
                 if aggregated['count'] % 10 == 0:
                     self.add_smart_log_entry("INFO", f"Amenaza repetida x{aggregated['count']}: {aggregated['key']}")
+                    # Log para monitoreo web cada 10 repeticiones
+                    self._send_web_log("INFO", f"Amenaza repetida x{aggregated['count']}: {aggregated['key']}", extra_data={
+                        'threat_type': threat_data.get('type', 'unknown'),
+                        'process': threat_data.get('process', 'unknown'),
+                        'threat_count': aggregated['count'],
+                        'is_repeated': True
+                    })
             
             # Actualizar display
             self.update_threat_display()
@@ -2168,6 +2243,14 @@ class RobustAntivirusUI:
             quarantine_dir = os.path.join(os.getcwd(), "quarantine")
             os.makedirs(quarantine_dir, exist_ok=True)
             
+            # Log para monitoreo web - inicio de cuarentena
+            self._send_web_log("ACTION", f"Iniciando cuarentena de amenaza: {process_name}", extra_data={
+                'action': 'quarantine_start',
+                'process': process_name,
+                'pid': pid,
+                'threat_type': threat_data.get('type', 'unknown')
+            })
+            
             # Terminar proceso si está corriendo
             if pid:
                 try:
@@ -2175,8 +2258,20 @@ class RobustAntivirusUI:
                     proc = psutil.Process(pid)
                     proc.terminate()
                     self.add_smart_log_entry("ACTION", f"Proceso {process_name} (PID: {pid}) terminado")
-                except:
-                    pass
+                    # Log para monitoreo web - proceso terminado
+                    self._send_web_log("SUCCESS", f"Proceso terminado exitosamente: {process_name}", extra_data={
+                        'action': 'process_terminated',
+                        'process': process_name,
+                        'pid': pid
+                    })
+                except Exception as e:
+                    # Log para monitoreo web - error terminando proceso
+                    self._send_web_log("ERROR", f"Error terminando proceso {process_name}: {str(e)}", extra_data={
+                        'action': 'process_termination_failed',
+                        'process': process_name,
+                        'pid': pid,
+                        'error': str(e)
+                    })
             
             # Mover archivo a cuarentena si es posible
             quarantine_path = None
@@ -2187,8 +2282,22 @@ class RobustAntivirusUI:
                     quarantine_path = os.path.join(quarantine_dir, f"{process_name}_{int(time.time())}")
                     shutil.move(file_path, quarantine_path)
                     self.add_smart_log_entry("ACTION", f"Archivo movido a cuarentena: {quarantine_path}")
+                    # Log para monitoreo web - archivo en cuarentena
+                    self._send_web_log("SUCCESS", f"Archivo movido a cuarentena exitosamente", extra_data={
+                        'action': 'file_quarantined',
+                        'process': process_name,
+                        'original_path': file_path,
+                        'quarantine_path': quarantine_path
+                    })
                 except Exception as e:
                     self.add_smart_log_entry("WARNING", f"No se pudo mover archivo: {e}")
+                    # Log para monitoreo web - error moviendo archivo
+                    self._send_web_log("WARNING", f"Error moviendo archivo a cuarentena: {str(e)}", extra_data={
+                        'action': 'file_quarantine_failed',
+                        'process': process_name,
+                        'original_path': threat_data.get('path', 'N/A'),
+                        'error': str(e)
+                    })
             
             # Registrar en cuarentena
             quarantine_record = {
@@ -2212,9 +2321,25 @@ class RobustAntivirusUI:
             records.append(quarantine_record)
             with open(quarantine_log, 'w') as f:
                 json.dump(records, f, indent=2)
+                
+            # Log para monitoreo web - cuarentena completada
+            self._send_web_log("SUCCESS", f"Amenaza enviada a cuarentena completamente: {process_name}", extra_data={
+                'action': 'quarantine_completed',
+                'process': process_name,
+                'threat_type': threat_data.get('type', 'unknown'),
+                'has_file': quarantine_path is not None,
+                'quarantine_record': quarantine_record
+            })
             
         except Exception as e:
             self.add_smart_log_entry("ERROR", f"Error en cuarentena: {e}")
+            # Log para monitoreo web - error general en cuarentena
+            self._send_web_log("ERROR", f"Error crítico en proceso de cuarentena: {str(e)}", extra_data={
+                'action': 'quarantine_error',
+                'process': process_name,
+                'threat_type': threat_data.get('type', 'unknown'),
+                'error': str(e)
+            })
 
     def add_to_whitelist(self, threat_data):
         """Añade un proceso a la lista blanca"""
@@ -2238,11 +2363,30 @@ class RobustAntivirusUI:
                     json.dump(whitelist, f, indent=2)
                 
                 self.add_smart_log_entry("ACTION", f"Proceso {process_name} añadido a lista blanca")
+                # Log para monitoreo web - proceso agregado a whitelist
+                self._send_web_log("ACTION", f"Proceso agregado a lista blanca: {process_name}", extra_data={
+                    'action': 'whitelist_added',
+                    'process': process_name,
+                    'threat_type': threat_data.get('type', 'unknown'),
+                    'whitelist_size': len(whitelist)
+                })
             else:
                 self.add_smart_log_entry("INFO", f"Proceso {process_name} ya está en lista blanca")
+                # Log para monitoreo web - proceso ya en whitelist
+                self._send_web_log("INFO", f"Proceso ya existe en lista blanca: {process_name}", extra_data={
+                    'action': 'whitelist_duplicate',
+                    'process': process_name,
+                    'threat_type': threat_data.get('type', 'unknown')
+                })
             
         except Exception as e:
             self.add_smart_log_entry("ERROR", f"Error añadiendo a lista blanca: {e}")
+            # Log para monitoreo web - error en whitelist
+            self._send_web_log("ERROR", f"Error agregando a lista blanca: {str(e)}", extra_data={
+                'action': 'whitelist_error',
+                'process': process_name,
+                'error': str(e)
+            })
 
     def show_threat_details(self, threat_data):
         """Muestra detalles completos de una amenaza"""

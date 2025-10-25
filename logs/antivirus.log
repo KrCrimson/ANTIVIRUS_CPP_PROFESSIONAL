@@ -1,0 +1,62 @@
+2025-10-25 09:48:20,241 - core.plugin_registry - INFO - 🏪 PluginRegistry inicializado (Singleton)
+2025-10-25 09:48:20,242 - core.plugin_manager - INFO - 🎛️ PluginManager inicializado
+2025-10-25 09:48:20,242 - core.engine - INFO - ⚠️ Engine ejecutándose en hilo secundario, señales deshabilitadas
+2025-10-25 09:48:20,242 - core.engine - INFO - 🛡️ UnifiedAntivirusEngine inicializado
+2025-10-25 09:48:20,242 - core.engine - INFO - 🚀 Iniciando Sistema Anti-Keylogger Unificado...
+2025-10-25 09:48:20,243 - PluginManager - INFO - 🔍 Iniciando descubrimiento de plugins...
+2025-10-25 09:48:20,243 - core.plugin_registry - INFO - 🔍 Descubriendo plugins en: plugins
+2025-10-25 09:48:20,247 - core.plugin_registry - INFO - ✅ Descubiertos 0 plugins
+2025-10-25 09:48:20,248 - PluginManager - WARNING - ⚠️ No se encontraron plugins
+2025-10-25 09:48:20,248 - core.engine - ERROR - ❌ Falló el descubrimiento de plugins
+2025-10-25 09:48:20,248 - core.engine - INFO - 🚀 Iniciando Sistema Anti-Keylogger Unificado...
+2025-10-25 09:48:20,248 - PluginManager - INFO - 🔍 Iniciando descubrimiento de plugins...
+2025-10-25 09:48:20,248 - core.plugin_registry - INFO - 🔍 Descubriendo plugins en: plugins
+2025-10-25 09:48:20,249 - core.plugin_registry - INFO - ✅ Descubiertos 0 plugins
+2025-10-25 09:48:20,250 - PluginManager - WARNING - ⚠️ No se encontraron plugins
+2025-10-25 09:48:20,250 - core.engine - ERROR - ❌ Falló el descubrimiento de plugins
+2025-10-25 09:48:20,250 - core.engine - INFO - 🛑 Iniciando shutdown del sistema...
+2025-10-25 09:48:20,250 - core.event_bus - INFO - 📢 Publicando evento 'system_shutdown_started' de 'UnifiedEngine' a 0 suscriptores
+2025-10-25 09:48:20,251 - PluginManager - INFO - 🛑 Shutdown: 0/0 plugins
+2025-10-25 09:48:20,251 - core.event_bus - INFO - 🧹 Historial de eventos limpiado
+2025-10-25 09:48:20,251 - core.engine - INFO - ✅ Sistema detenido exitosamente
+2025-10-25 10:02:41,108 - core.plugin_registry - INFO - 🏪 PluginRegistry inicializado (Singleton)
+2025-10-25 10:02:41,109 - core.plugin_manager - INFO - 🎛️ PluginManager inicializado
+2025-10-25 10:02:41,110 - core.engine - INFO - ⚠️ Engine ejecutándose en hilo secundario, señales deshabilitadas
+2025-10-25 10:02:41,110 - core.engine - INFO - 🛡️ UnifiedAntivirusEngine inicializado
+2025-10-25 10:02:41,111 - core.engine - INFO - 🚀 Iniciando Sistema Anti-Keylogger Unificado...
+2025-10-25 10:02:41,112 - PluginManager - INFO - 🔍 Iniciando descubrimiento de plugins...
+2025-10-25 10:02:41,113 - core.plugin_registry - INFO - 🔍 Descubriendo plugins en: plugins
+2025-10-25 10:02:41,116 - core.plugin_registry - INFO - ✅ Descubiertos 0 plugins
+2025-10-25 10:02:41,117 - PluginManager - WARNING - ⚠️ No se encontraron plugins
+2025-10-25 10:02:41,117 - core.engine - ERROR - ❌ Falló el descubrimiento de plugins
+2025-10-25 10:02:41,117 - core.engine - INFO - 🚀 Iniciando Sistema Anti-Keylogger Unificado...
+2025-10-25 10:02:41,118 - PluginManager - INFO - 🔍 Iniciando descubrimiento de plugins...
+2025-10-25 10:02:41,118 - core.plugin_registry - INFO - 🔍 Descubriendo plugins en: plugins
+2025-10-25 10:02:41,118 - core.plugin_registry - INFO - ✅ Descubiertos 0 plugins
+2025-10-25 10:02:41,118 - PluginManager - WARNING - ⚠️ No se encontraron plugins
+2025-10-25 10:02:41,119 - core.engine - ERROR - ❌ Falló el descubrimiento de plugins
+2025-10-25 10:02:41,119 - core.engine - INFO - 🛑 Iniciando shutdown del sistema...
+2025-10-25 10:02:41,119 - core.event_bus - INFO - 📢 Publicando evento 'system_shutdown_started' de 'UnifiedEngine' a 0 suscriptores
+2025-10-25 10:02:41,121 - PluginManager - INFO - 🛑 Shutdown: 0/0 plugins
+2025-10-25 10:02:41,121 - core.event_bus - INFO - 🧹 Historial de eventos limpiado
+2025-10-25 10:02:41,122 - core.engine - INFO - ✅ Sistema detenido exitosamente
+2025-10-25 10:04:51,410 - core.plugin_manager - INFO - 🎛️ PluginManager inicializado
+2025-10-25 10:04:51,410 - core.engine - INFO - ⚠️ Engine ejecutándose en hilo secundario, señales deshabilitadas
+2025-10-25 10:04:51,411 - core.engine - INFO - 🛡️ UnifiedAntivirusEngine inicializado
+2025-10-25 10:04:51,411 - core.engine - INFO - 🚀 Iniciando Sistema Anti-Keylogger Unificado...
+2025-10-25 10:04:51,411 - PluginManager - INFO - 🔍 Iniciando descubrimiento de plugins...
+2025-10-25 10:04:51,411 - core.plugin_registry - INFO - 🔍 Descubriendo plugins en: plugins
+2025-10-25 10:04:51,411 - core.plugin_registry - INFO - ✅ Descubiertos 0 plugins
+2025-10-25 10:04:51,412 - PluginManager - WARNING - ⚠️ No se encontraron plugins
+2025-10-25 10:04:51,412 - core.engine - ERROR - ❌ Falló el descubrimiento de plugins
+2025-10-25 10:04:51,412 - core.engine - INFO - 🚀 Iniciando Sistema Anti-Keylogger Unificado...
+2025-10-25 10:04:51,412 - PluginManager - INFO - 🔍 Iniciando descubrimiento de plugins...
+2025-10-25 10:04:51,412 - core.plugin_registry - INFO - 🔍 Descubriendo plugins en: plugins
+2025-10-25 10:04:51,413 - core.plugin_registry - INFO - ✅ Descubiertos 0 plugins
+2025-10-25 10:04:51,414 - PluginManager - WARNING - ⚠️ No se encontraron plugins
+2025-10-25 10:04:51,414 - core.engine - ERROR - ❌ Falló el descubrimiento de plugins
+2025-10-25 10:04:51,414 - core.engine - INFO - 🛑 Iniciando shutdown del sistema...
+2025-10-25 10:04:51,414 - core.event_bus - INFO - 📢 Publicando evento 'system_shutdown_started' de 'UnifiedEngine' a 0 suscriptores
+2025-10-25 10:04:51,415 - PluginManager - INFO - 🛑 Shutdown: 0/0 plugins
+2025-10-25 10:04:51,415 - core.event_bus - INFO - 🧹 Historial de eventos limpiado
+2025-10-25 10:04:51,415 - core.engine - INFO - ✅ Sistema detenido exitosamente

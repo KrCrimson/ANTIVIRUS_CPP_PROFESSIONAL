@@ -4,6 +4,7 @@ Logger Utility - Advanced logging system for the Unified Antivirus
 
 Sistema de logging avanzado con múltiples niveles, rotación de archivos
 y formateo especializado para el sistema antivirus.
+Incluye integración con servidor web de monitoreo.
 """
 
 import logging
@@ -15,6 +16,15 @@ from pathlib import Path
 from typing import Optional, Dict, Any
 import json
 import threading
+
+# Importar log sender (será None si no está disponible)
+try:
+    from .log_sender import get_log_sender, init_log_sender
+    LOG_SENDER_AVAILABLE = True
+except ImportError:
+    LOG_SENDER_AVAILABLE = False
+    get_log_sender = lambda: None
+    init_log_sender = lambda *args, **kwargs: None
 
 
 class Logger:
@@ -150,6 +160,15 @@ class Logger:
     def critical(self, message: str, extra: Dict[str, Any] = None, exc_info: bool = False):
         """Log mensaje crítico"""
         self.logger.critical(message, extra=extra or {}, exc_info=exc_info)
+        
+        # Enviar logs críticos inmediatamente al servidor si está disponible
+        if LOG_SENDER_AVAILABLE:
+            sender = get_log_sender()
+            if sender:
+                try:
+                    sender.send_manual_log("CRITICAL", message, self.name)
+                except Exception:
+                    pass  # No fallar si el envío falla
     
     def log_event(self, event_type: str, data: Dict[str, Any], level: str = "INFO"):
         """
@@ -255,6 +274,43 @@ class JsonFormatter(logging.Formatter):
         
         return json.dumps(log_entry, ensure_ascii=False)
 
+
+# =================== WEB MONITORING INTEGRATION ===================
+def setup_web_monitoring(server_url: str, **kwargs):
+    """
+    Configura el envío de logs al servidor web de monitoreo
+    
+    Args:
+        server_url: URL del servidor web (ej: http://servidor:8000)
+        **kwargs: Parámetros adicionales para LogSender
+    """
+    if not LOG_SENDER_AVAILABLE:
+        print("⚠️ Log sender no disponible. Instalar dependencias de monitoreo web.")
+        return None
+    
+    try:
+        sender = init_log_sender(server_url, **kwargs)
+        sender.start()
+        
+        # Log inicial
+        sender.send_manual_log("INFO", "Sistema de monitoreo web iniciado", "web_monitor")
+        
+        print(f"✅ Monitoreo web configurado: {server_url}")
+        return sender
+    except Exception as e:
+        print(f"❌ Error configurando monitoreo web: {e}")
+        return None
+
+def get_web_monitoring_status() -> Dict[str, Any]:
+    """Obtiene el estado del sistema de monitoreo web"""
+    if not LOG_SENDER_AVAILABLE:
+        return {"enabled": False, "reason": "log_sender_not_available"}
+    
+    sender = get_log_sender()
+    if not sender:
+        return {"enabled": False, "reason": "not_initialized"}
+    
+    return {"enabled": True, "status": sender.get_status()}
 
 # =================== CONVENIENCE FUNCTIONS ===================
 def get_logger(name: str, log_dir: str = "logs", level: str = "INFO") -> Logger:

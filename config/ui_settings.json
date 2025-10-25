@@ -1,0 +1,37 @@
+{
+  "window_size": "1200x800",
+  "theme": "dark",
+  "auto_start": false,
+  "max_threats_display": 100,
+  "aggregate_duplicates": true,
+  "update_interval": 500,
+  "threat_filter_keywords": [
+    "opera",
+    "discord",
+    "steam",
+    "capture"
+  ],
+  "presets": {
+    "basic": {
+      "sensitivity": "low",
+      "features": [
+        "behavior"
+      ]
+    },
+    "standard": {
+      "sensitivity": "medium",
+      "features": [
+        "behavior",
+        "ml"
+      ]
+    },
+    "advanced": {
+      "sensitivity": "high",
+      "features": [
+        "behavior",
+        "ml",
+        "network"
+      ]
+    }
+  }
+}

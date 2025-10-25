@@ -1,0 +1,15 @@
+{
+  "server": {
+    "host": "0.0.0.0",
+    "port": 8000,
+    "admin_username": "admin",
+    "admin_password": "antivirus2025",
+    "database_path": "web_monitor.db"
+  },
+  "client": {
+    "server_url": "http://localhost:8000",
+    "send_interval": 30,
+    "batch_size": 100,
+    "max_retries": 3
+  }
+}

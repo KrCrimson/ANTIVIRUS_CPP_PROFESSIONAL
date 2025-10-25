@@ -926,3 +926,7 @@ Este proyecto demuestra que es posible crear **soluciones de seguridad efectivas
 **🔬 Especialización:** Machine Learning Security & Behavioral Analysis  
 **📅 Versión:** 2025.10 Technical Deep Dive Extended  
 **📊 Total de Preguntas Respondidas:** 56
+
+& "C:/Program Files/Python313/python.exe" -m PyInstaller --onefile --windowed --icon=keylogger.ico --hidden-import=psutil --hidden-import=tkinter --hidden-import=queue --hidden-import=requests --hidden-import=fastapi --hidden-import=uvicorn --hidden-import=jinja2 --hidden-import=sqlite3 --add-data "config;config" --add-data "core;core" --add-data "plugins;plugins" --add-data "models;models" --add-data "utils;utils" --add-data "web_templates;web_templates" professional_ui_robust.py
+
+inno setup
