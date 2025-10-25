@@ -20,3 +20,6 @@ Name: "{userdesktop}\Antivirus Profesional"; Filename: "{app}\professional_ui_ro
 
 [Dirs]
 Name: "{app}\logs"
+
+& "C:/Program Files/Python313/python.exe" -m PyInstaller --onefile --windowed --icon=keylogger.ico --hidden-import=psutil --hidden-import=tkinter --hidden-import=queue --add-data "config;config" --add-data "core;core" --add-data "plugins;plugins" --add-data "models;models" 
+--add-data "utils;utils" professional_ui_robust.py
