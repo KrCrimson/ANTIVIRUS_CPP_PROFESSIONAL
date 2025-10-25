@@ -19,6 +19,9 @@ from .event_bus import event_bus, Event
 from .plugin_registry import PluginRegistry
 
 # Configurar logging principal
+import os
+# Asegurar que la carpeta de logs existe
+os.makedirs('logs', exist_ok=True)
 logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',

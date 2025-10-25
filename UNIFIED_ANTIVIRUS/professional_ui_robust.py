@@ -18,6 +18,18 @@ import os
 import psutil
 from datetime import datetime
 from collections import defaultdict, deque, Counter
+def is_admin():
+    try:
+        return os.getuid() == 0
+    except AttributeError:
+        import ctypes
+        return ctypes.windll.shell32.IsUserAnAdmin() != 0
+
+if not is_admin():
+    import ctypes
+    ctypes.windll.shell32.ShellExecuteW(
+        None, "runas", sys.executable, " ".join(sys.argv), None, 1)
+    sys.exit()
 import os
 import subprocess
 from datetime import datetime
