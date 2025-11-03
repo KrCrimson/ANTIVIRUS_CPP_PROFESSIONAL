@@ -41,6 +41,19 @@
                 ],
                 "deep_packet_inspection": false
             }
+        },
+        "keylogger_detector": {
+            "enabled": true,
+            "priority": 1,
+            "config": {
+                "detection_sensitivity": "medium",
+                "detection_threshold": 0.6,
+                "monitor_hooks": true,
+                "monitor_files": true,
+                "monitor_stealth": true,
+                "auto_response": true,
+                "log_level": "info"
+            }
         }
     },
     "interfaces": {

@@ -75,6 +75,18 @@ def register_all_plugins():
     except ImportError as e:
         logger.warning(f"⚠️  No se pudo importar NetworkDetectorPlugin: {e}")
     
+    # Keylogger Detector Plugin - ESPECIALIZADO EN KEYLOGGERS
+    try:
+        from plugins.detectors.keylogger_detector.keylogger_detector import KeyloggerDetector
+        registry.register_plugin(
+            plugin_class=KeyloggerDetector,
+            plugin_name="keylogger_detector",
+            category="detectors"
+        )
+        logger.info("✅ KeyloggerDetector registrado (especializado)")
+    except ImportError as e:
+        logger.warning(f"⚠️  No se pudo importar KeyloggerDetector: {e}")
+    
     # =================== MONITOR PLUGINS ===================
     
     try:

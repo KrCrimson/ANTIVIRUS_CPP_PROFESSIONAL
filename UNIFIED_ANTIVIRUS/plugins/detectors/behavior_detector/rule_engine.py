@@ -140,19 +140,25 @@ class APICallRule(BaseRule):
         
     def evaluate(self, data: Dict[str, Any]) -> Tuple[bool, float, Dict[str, Any]]:
         try:
+            # Buscar datos en múltiples formatos para compatibilidad
             behaviors = data.get('behaviors', [])
+            stealth_patterns = data.get('stealth_patterns', [])
+            
+            # APIs: buscar en ambos formatos (KeyloggerDetector y legacy)
             api_calls = data.get('api_calls', [])
+            suspicious_apis = data.get('suspicious_apis', [])
+            all_apis = list(api_calls) + list(suspicious_apis)
             
             # Verificar comportamientos conocidos
-            if 'api_hooking' in behaviors:
+            if 'api_hooking' in behaviors or 'api_hooking' in stealth_patterns:
                 self.match_count += 1
                 return True, self.risk_weight, {
                     'detected_behavior': 'api_hooking',
                     'rule_type': 'dangerous_api_usage'
                 }
             
-            # Verificar llamadas API específicas
-            for api_call in api_calls:
+            # Verificar llamadas API específicas (formato unificado)
+            for api_call in all_apis:
                 api_name = api_call.lower() if isinstance(api_call, str) else str(api_call).lower()
                 if api_name in self.dangerous_apis:
                     self.match_count += 1
@@ -178,11 +184,16 @@ class NetworkBehaviorRule(BaseRule):
     def evaluate(self, data: Dict[str, Any]) -> Tuple[bool, float, Dict[str, Any]]:
         try:
             behaviors = data.get('behaviors', [])
-            network_activity = data.get('network_activity', {})
+            stealth_patterns = data.get('stealth_patterns', [])
             
-            # Verificar patrones en comportamientos
+            # Red: buscar en múltiples formatos para compatibilidad
+            network_activity = data.get('network_activity', {})
+            network_connections = data.get('network_connections', [])
+            
+            # Verificar patrones en comportamientos (formato unificado)
+            all_patterns = list(behaviors) + list(stealth_patterns)
             for pattern in self.suspicious_patterns:
-                if pattern in behaviors:
+                if any(pattern in behavior_pattern for behavior_pattern in all_patterns):
                     self.match_count += 1
                     return True, self.risk_weight, {
                         'detected_pattern': pattern,
@@ -203,6 +214,14 @@ class NetworkBehaviorRule(BaseRule):
                         'rule_type': 'data_exfiltration_pattern'
                     }
             
+            # Verificar conexiones específicas de keyloggers
+            if network_connections and len(network_connections) > 0:
+                self.match_count += 1
+                return True, self.risk_weight * 0.6, {
+                    'network_connections_count': len(network_connections),
+                    'rule_type': 'keylogger_network_activity'
+                }
+            
             return False, 0.0, {}
             
         except Exception as e:
@@ -220,23 +239,31 @@ class FileBehaviorRule(BaseRule):
     def evaluate(self, data: Dict[str, Any]) -> Tuple[bool, float, Dict[str, Any]]:
         try:
             behaviors = data.get('behaviors', [])
+            stealth_patterns = data.get('stealth_patterns', [])
+            
+            # Archivos: buscar en múltiples formatos para compatibilidad
             file_accesses = data.get('file_accesses', [])
+            file_operations = data.get('file_operations', [])
+            created_files = data.get('created_files', [])
+            all_files = list(file_accesses) + list(file_operations) + list(created_files)
             
             # Verificar comportamiento de acceso a credenciales
-            if 'suspicious_file_access' in behaviors:
+            if ('suspicious_file_access' in behaviors or 
+                'suspicious_file_access' in stealth_patterns):
                 self.match_count += 1
                 return True, self.risk_weight, {
                     'detected_behavior': 'suspicious_file_access',
                     'rule_type': 'credential_file_access'
                 }
             
-            # Verificar patrones de archivos específicos
-            for file_path in file_accesses:
+            # Verificar patrones de archivos específicos (formato unificado)
+            for file_path in all_files:
+                file_str = str(file_path)  # Convertir a string por si es Path
                 for pattern in self.file_patterns:
-                    if pattern.search(file_path):
+                    if pattern.search(file_str):
                         self.match_count += 1
                         return True, self.risk_weight, {
-                            'suspicious_file': file_path,
+                            'suspicious_file': file_str,
                             'matched_pattern': pattern.pattern,
                             'rule_type': 'suspicious_file_pattern'
                         }
