@@ -603,6 +603,166 @@ class NetworkAnalyzer:
         
         return burst_patterns
     
+    def analyze_port_usage(self, network_data: Dict[str, Any]) -> Dict[str, Any]:
+        """
+        🔍 TDD #2: Análisis de puertos sospechosos para detección de malware.
+        
+        IMPLEMENTACIÓN INTEGRADA desde TDD al NetworkAnalyzer real del antivirus.
+        Detecta patrones de comunicación C&C, beaconing y exfiltración de datos.
+        
+        Args:
+            network_data: Diccionario con información de conexiones de red:
+                - process_name: Nombre del proceso
+                - connections: Lista de conexiones con puertos
+                
+        Returns:
+            Diccionario con resultado del análisis:
+            {
+                'is_suspicious': bool,
+                'risk_score': float (0.0-1.0),
+                'threat_indicators': list[str],
+                'suspicious_ports': list[int],
+                'connection_frequency': float,
+                'details': dict
+            }
+        """
+        from datetime import datetime, timedelta
+        
+        # Inicializar resultado
+        result = {
+            'is_suspicious': False,
+            'risk_score': 0.0,
+            'threat_indicators': [],
+            'suspicious_ports': [],
+            'connection_frequency': 0.0,
+            'details': {
+                'total_connections': 0,
+                'port_risk_breakdown': {},
+                'patterns_detected': []
+            }
+        }
+        
+        connections = network_data.get('connections', [])
+        if not connections:
+            return result
+        
+        result['details']['total_connections'] = len(connections)
+        
+        # Configuración de puertos desde config del antivirus
+        port_config = self.config.get('suspicious_ports', {
+            'high_risk': [1337, 4444, 5555, 31337, 6667, 1234, 12345, 54321],
+            'medium_risk': [8080, 9999, 1234, 3128, 8888, 7777],
+            'legitimate': [80, 443, 53, 3306, 5432, 25, 110, 993, 995, 143, 587, 465]
+        })
+        
+        high_risk_ports = set(port_config.get('high_risk', []))
+        medium_risk_ports = set(port_config.get('medium_risk', []))
+        legitimate_ports = set(port_config.get('legitimate', []))
+        
+        # Analizar cada conexión
+        total_risk_score = 0.0
+        suspicious_ports_found = []
+        patterns = []
+        
+        # Análisis de frecuencia de conexiones (para beaconing)
+        if len(connections) > 1:
+            timestamps = []
+            for conn in connections:
+                if 'timestamp' in conn:
+                    try:
+                        if isinstance(conn['timestamp'], str):
+                            ts = datetime.fromisoformat(conn['timestamp'].replace('Z', '+00:00'))
+                        else:
+                            ts = conn['timestamp']
+                        timestamps.append(ts)
+                    except:
+                        pass
+            
+            # Calcular frecuencia si tenemos timestamps
+            if len(timestamps) >= 2:
+                timestamps.sort()
+                time_diff = (max(timestamps) - min(timestamps)).total_seconds()
+                if time_diff > 0:
+                    result['connection_frequency'] = len(connections) / time_diff
+                    
+                    # Detectar beaconing (más de 1 conexión cada 60 segundos)
+                    if result['connection_frequency'] > (1.0 / 60.0):
+                        patterns.append('beaconing_pattern')
+        
+        # Analizar puertos en cada conexión
+        for conn in connections:
+            remote_port = conn.get('remote_port')
+            if not remote_port:
+                continue
+                
+            port_risk = 0.0
+            port_category = 'unknown'
+            
+            # Clasificar puerto por nivel de riesgo
+            if remote_port in high_risk_ports:
+                port_risk = 0.9
+                port_category = 'high_risk'
+                suspicious_ports_found.append(remote_port)
+                if remote_port in [1337, 4444, 5555, 31337]:
+                    patterns.append('c2_communication')
+            elif remote_port in medium_risk_ports:
+                port_risk = 0.6
+                port_category = 'medium_risk'
+                suspicious_ports_found.append(remote_port)
+            elif remote_port in legitimate_ports:
+                port_risk = 0.1
+                port_category = 'legitimate'
+            else:
+                # Puerto desconocido - riesgo bajo-medio
+                port_risk = 0.3
+                port_category = 'unknown'
+            
+            total_risk_score += port_risk
+            result['details']['port_risk_breakdown'][remote_port] = {
+                'category': port_category,
+                'risk': port_risk
+            }
+        
+        # Calcular score final
+        if connections:
+            # Normalizar por número de conexiones, pero dar peso extra a múltiples puertos sospechosos
+            base_score = total_risk_score / len(connections)
+            
+            # Bonus por múltiples puertos sospechosos diferentes
+            unique_suspicious = len(set(suspicious_ports_found))
+            if unique_suspicious > 1:
+                base_score += 0.2 * (unique_suspicious - 1)  # +20% por cada puerto adicional
+                patterns.append('multiple_suspicious_ports')
+            
+            result['risk_score'] = min(round(base_score, 10), 1.0)
+        
+        # Determinar si es sospechoso
+        result['suspicious_ports'] = list(set(suspicious_ports_found))
+        result['threat_indicators'] = list(set(patterns))
+        result['details']['patterns_detected'] = patterns
+        
+        # Umbrales de decisión
+        thresholds = self.config.get('thresholds', {
+            'high_risk_score': 0.8,
+            'medium_risk_score': 0.5
+        })
+        high_threshold = thresholds.get('high_risk_score', 0.8)
+        medium_threshold = thresholds.get('medium_risk_score', 0.5)
+        
+        if result['risk_score'] >= high_threshold or 'c2_communication' in patterns:
+            result['is_suspicious'] = True
+        elif result['risk_score'] >= medium_threshold and suspicious_ports_found:
+            result['is_suspicious'] = True
+        elif 'beaconing_pattern' in patterns:
+            result['is_suspicious'] = True
+        
+        # Log del análisis si es sospechoso
+        if result['is_suspicious']:
+            self.logger.warning(f"[PORT_ANALYSIS] Proceso sospechoso: {network_data.get('process_name', 'unknown')} "
+                               f"(Score: {result['risk_score']:.2f}, Puertos: {result['suspicious_ports']})")
+        
+        return result
+    
     # ==================== UTILIDADES ====================
     
     def _is_local_ip(self, ip: str) -> bool:

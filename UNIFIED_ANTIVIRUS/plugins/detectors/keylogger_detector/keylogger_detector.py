@@ -1260,6 +1260,150 @@ class KeyloggerDetector(BasePlugin):
         except Exception as e:
             logger.error(f"[KEYLOGGER_DETECTOR] Error al detener: {e}")
             return False
+    
+    def analyze_api_usage(self, process_data: Dict[str, Any]) -> Dict[str, Any]:
+        """
+        Analiza las APIs utilizadas por un proceso para detectar comportamiento de keylogger.
+        
+        IMPLEMENTACIÓN TDD - FASE REFACTOR: Algoritmo robusto y escalable.
+        
+        Args:
+            process_data: Diccionario con información del proceso:
+                - name: Nombre del proceso
+                - apis_called: Lista de APIs utilizadas
+                - pid: Process ID (opcional)
+                
+        Returns:
+            Diccionario con resultado del análisis:
+            {
+                'is_suspicious': bool,
+                'risk_score': float (0.0-1.0),
+                'threat_indicators': list[str],
+                'suspicious_apis': list[str],
+                'details': dict - Información adicional del análisis
+            }
+        """
+        # Inicializar resultado
+        result = {
+            'is_suspicious': False,
+            'risk_score': 0.0,
+            'threat_indicators': [],
+            'suspicious_apis': [],
+            'details': {
+                'api_categories': {},
+                'total_apis_analyzed': 0,
+                'risk_breakdown': {}
+            }
+        }
+        
+        apis_called = process_data.get('apis_called', [])
+        if not apis_called:
+            return result
+        
+        result['details']['total_apis_analyzed'] = len(apis_called)
+        
+        # Definir categorías de APIs con sus pesos de riesgo
+        api_categories = {
+            'critical_hooking': {
+                'apis': ['SetWindowsHookEx', 'UnhookWindowsHookEx', 'CallNextHookEx'],
+                'weight': 0.9,
+                'description': 'APIs críticas de hooking de teclado/mouse'
+            },
+            'keystate_monitoring': {
+                'apis': ['GetAsyncKeyState', 'GetKeyState', 'GetKeyboardState'],
+                'weight': 0.8,
+                'description': 'APIs de monitoreo de estado de teclas'
+            },
+            'window_tracking': {
+                'apis': ['GetForegroundWindow', 'GetActiveWindow', 'GetWindowText'],
+                'weight': 0.7,
+                'description': 'APIs de tracking de ventanas activas'
+            },
+            'file_logging': {
+                'apis': ['CreateFileA', 'CreateFileW', 'WriteFile', 'WriteFileEx'],
+                'weight': 0.6,
+                'description': 'APIs de escritura de archivos (logs)'
+            },
+            'time_tracking': {
+                'apis': ['GetSystemTime', 'GetLocalTime', 'GetTickCount'],
+                'weight': 0.4,
+                'description': 'APIs de timestamp para logs'
+            },
+            'legitimate_ui': {
+                'apis': ['CreateWindow', 'ShowWindow', 'GetMessage', 'UpdateWindow'],
+                'weight': 0.1,
+                'description': 'APIs legítimas de interfaz de usuario'
+            }
+        }
+        
+        # Analizar cada categoría de APIs
+        total_score = 0.0
+        detected_categories = []
+        
+        for category, info in api_categories.items():
+            category_apis = info['apis']
+            weight = info['weight']
+            
+            # Contar APIs de esta categoría presentes
+            found_apis = [api for api in apis_called if api in category_apis]
+            
+            if found_apis:
+                # Calcular score de esta categoría
+                coverage = len(found_apis) / len(category_apis)
+                category_score = weight * coverage
+                
+                # Solo contar categorías sospechosas (weight > 0.5)
+                if weight > 0.5:
+                    total_score += category_score
+                    detected_categories.append(category)
+                    result['suspicious_apis'].extend(found_apis)
+                
+                # Registrar información de la categoría
+                result['details']['api_categories'][category] = {
+                    'found_apis': found_apis,
+                    'coverage': coverage,
+                    'score': category_score,
+                    'weight': weight
+                }
+        
+        # Calcular score final (normalizado a 0.0-1.0)
+        # Redondear para evitar problemas de precisión de float
+        result['risk_score'] = min(round(total_score, 10), 1.0)
+        
+        # Determinar si es sospechoso basado en umbral y patrones específicos
+        is_suspicious = False
+        
+        # Patrón crítico: Hooking + Keystate monitoring
+        if 'critical_hooking' in detected_categories and 'keystate_monitoring' in detected_categories:
+            result['threat_indicators'].append('api_hooking')
+            is_suspicious = True
+        
+        # Patrón medio: File logging + time tracking
+        if 'file_logging' in detected_categories and 'time_tracking' in detected_categories:
+            result['threat_indicators'].append('file_logging')
+            if result['risk_score'] >= 0.4:
+                is_suspicious = True
+        
+        # Umbral general de riesgo
+        if result['risk_score'] >= 0.8:
+            is_suspicious = True
+            
+        result['is_suspicious'] = is_suspicious
+        
+        # Agregar detalles del breakdown de riesgo
+        result['details']['risk_breakdown'] = {
+            'categories_detected': len(detected_categories),
+            'critical_patterns': 'api_hooking' in result['threat_indicators'],
+            'file_logging_pattern': 'file_logging' in result['threat_indicators'],
+            'total_suspicious_apis': len(result['suspicious_apis'])
+        }
+        
+        # Log del análisis si es sospechoso
+        if is_suspicious:
+            logger.info(f"[API_ANALYSIS] Proceso sospechoso: {process_data.get('name', 'unknown')} "
+                       f"(Score: {result['risk_score']:.2f}, APIs: {len(result['suspicious_apis'])})")
+        
+        return result
 
 
 # Función de factory para el plugin manager

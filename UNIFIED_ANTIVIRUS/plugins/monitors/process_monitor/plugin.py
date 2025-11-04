@@ -417,3 +417,220 @@ class ProcessMonitorPlugin(BasePlugin, MonitorPluginInterface):
         if self.stats['monitoring_start_time']:
             return (datetime.now() - self.stats['monitoring_start_time']).total_seconds()
         return 0.0
+    
+    def is_process_safe(self, process_data: Dict[str, Any]) -> Dict[str, Any]:
+        """
+        🔍 TDD #3: Validación de procesos seguros para prevención de falsos positivos.
+        
+        IMPLEMENTACIÓN INTEGRADA desde TDD al ProcessMonitorPlugin real del antivirus.
+        Sistema inteligente de whitelist/blacklist para evitar alertas innecesarias.
+        
+        Args:
+            process_data: Diccionario con información del proceso:
+                - name: Nombre del proceso
+                - path: Ruta completa del ejecutable
+                - digital_signature: Firma digital (opcional)
+                
+        Returns:
+            Diccionario con resultado de la validación completa:
+            {
+                'is_safe': bool,
+                'confidence': float (0.0-1.0),
+                'threat_score': float (0.0-1.0),
+                'category': str,
+                'threat_indicators': list[str],
+                'trust_factors': list[str],
+                'requires_investigation': bool,
+                'recommendation': str
+            }
+        """
+        import re
+        
+        # Inicializar resultado
+        result = {
+            'is_safe': None,  # None = requiere investigación
+            'confidence': 0.5,  # Neutral por defecto
+            'threat_score': 0.5,  # Neutral por defecto
+            'category': 'unknown',
+            'threat_indicators': [],
+            'trust_factors': [],
+            'requires_investigation': True,  # Por defecto requiere investigación
+            'recommendation': 'monitor'
+        }
+        
+        process_name = process_data.get('name', '').lower()
+        process_path = process_data.get('path', '').lower()
+        digital_signature = process_data.get('digital_signature')
+        signature_valid = process_data.get('signature_valid', False)
+        
+        # Configuración de procesos seguros desde config del antivirus
+        safe_processes_config = self.config.get('safe_processes', {
+            'system_processes': [
+                'notepad.exe', 'calc.exe', 'mspaint.exe', 'explorer.exe',
+                'dwm.exe', 'winlogon.exe', 'csrss.exe', 'smss.exe'
+            ],
+            'browsers': [
+                'chrome.exe', 'firefox.exe', 'msedge.exe', 'opera.exe',
+                'brave.exe', 'safari.exe', 'iexplore.exe'
+            ],
+            'productivity': [
+                'winword.exe', 'excel.exe', 'powerpnt.exe', 'outlook.exe',
+                'notepad++.exe', 'code.exe', 'devenv.exe'
+            ],
+            'gaming': [
+                'steam.exe', 'discord.exe', 'spotify.exe', 'vlc.exe',
+                'obs64.exe', 'epicgameslauncher.exe'
+            ]
+        })
+        
+        suspicious_processes_config = self.config.get('suspicious_processes', {
+            'obvious_malware': [
+                'keylogger.exe', 'stealer.exe', 'backdoor.exe', 
+                'rootkit.exe', 'trojan.exe', 'virus.exe'
+            ],
+            'suspicious_patterns': [
+                r'^[a-f0-9]{8,}\.exe$',  # Nombres hexadecimales
+                r'^[0-9]+\.exe$',        # Solo números
+                r'^.{1,3}\.exe$',        # Muy cortos
+                r'.*temp.*\.exe$'        # En carpeta temp
+            ]
+        })
+        
+        trusted_locations = [loc.lower() for loc in self.config.get('trusted_locations', [
+            'C:\\Windows\\System32\\',
+            'C:\\Windows\\',
+            'C:\\Program Files\\',
+            'C:\\Program Files (x86)\\'
+        ])]
+        
+        # Variables para scoring
+        confidence_score = 0.5
+        threat_score = 0.5
+        trust_factors = []
+        threat_indicators = []
+        category = 'unknown'
+        
+        # ANÁLISIS 1: Procesos conocidos seguros
+        all_safe = []
+        category_mapping = {
+            'system_processes': 'system_process',
+            'browsers': 'browser', 
+            'productivity': 'productivity',
+            'gaming': 'gaming'
+        }
+        
+        for cat_name, processes in safe_processes_config.items():
+            for proc in processes:
+                all_safe.append(proc.lower())
+                if process_name == proc.lower():
+                    category = category_mapping.get(cat_name, cat_name)
+                    confidence_score += 0.4
+                    threat_score -= 0.4
+                    trust_factors.append('known_safe_process')
+                    break
+        
+        # ANÁLISIS 2: Procesos obviamente maliciosos
+        malware_names = suspicious_processes_config.get('obvious_malware', [])
+        for malware in malware_names:
+            if process_name == malware.lower():
+                category = 'malware'
+                confidence_score = 0.05
+                threat_score = 0.95
+                threat_indicators.append('obvious_malware')
+                break
+        
+        # ANÁLISIS 3: Patrones sospechosos en nombres
+        suspicious_patterns = suspicious_processes_config.get('suspicious_patterns', [])
+        for pattern in suspicious_patterns:
+            if re.match(pattern, process_name):
+                threat_indicators.append('suspicious_naming_pattern')
+                confidence_score -= 0.2
+                threat_score += 0.2
+                break
+        
+        # ANÁLISIS 4: Ubicación del proceso
+        is_in_trusted_location = any(process_path.startswith(loc) for loc in trusted_locations)
+        
+        if is_in_trusted_location:
+            trust_factors.append('trusted_location')
+            confidence_score += 0.2
+            threat_score -= 0.2
+        else:
+            # Proceso legítimo en ubicación sospechosa
+            if process_name in all_safe:
+                threat_indicators.append('suspicious_location')
+                threat_indicators.append('impersonation_attempt')
+                confidence_score -= 0.3
+                threat_score += 0.3
+        
+        # ANÁLISIS 5: Firma digital
+        trusted_publishers = [
+            'microsoft corporation', 'google llc', 'adobe systems incorporated',
+            'mozilla corporation', 'apple inc.', 'nvidia corporation'
+        ]
+        
+        if digital_signature and signature_valid:
+            trust_factors.append('trusted_signature')
+            signature_lower = digital_signature.lower()
+            
+            if any(publisher in signature_lower for publisher in trusted_publishers):
+                trust_factors.append('reputable_publisher')
+                confidence_score += 0.3
+                threat_score -= 0.3
+            else:
+                confidence_score += 0.1
+                threat_score -= 0.1
+        elif digital_signature is None or not signature_valid:
+            # Sin firma o firma inválida
+            confidence_score -= 0.1
+            threat_score += 0.1
+        
+        # Normalizar scores con redondeo para evitar problemas de float
+        confidence_score = round(max(0.0, min(1.0, confidence_score)), 10)
+        threat_score = round(max(0.0, min(1.0, threat_score)), 10)
+        
+        # DECISIÓN FINAL
+        result['confidence'] = confidence_score
+        result['threat_score'] = threat_score
+        result['category'] = category
+        result['trust_factors'] = trust_factors
+        result['threat_indicators'] = threat_indicators
+        
+        # Umbrales de decisión
+        threshold = self.config.get('reputation_threshold', 0.8)
+        
+        if 'obvious_malware' in threat_indicators:
+            # Malware obvio - bloquear inmediatamente
+            result['is_safe'] = False
+            result['requires_investigation'] = False
+            result['recommendation'] = 'block'
+        elif confidence_score >= 0.7 and threat_score <= 0.2:
+            # Proceso altamente confiable
+            result['is_safe'] = True
+            result['requires_investigation'] = False
+            result['recommendation'] = 'allow'
+        elif confidence_score <= 0.3 or threat_score >= 0.7:
+            # Proceso peligroso
+            result['is_safe'] = False
+            result['requires_investigation'] = True
+            result['recommendation'] = 'quarantine'
+        elif 'suspicious_location' in threat_indicators and 'impersonation_attempt' in threat_indicators:
+            # Posible suplantación
+            result['is_safe'] = False
+            result['requires_investigation'] = True
+            result['recommendation'] = 'quarantine'
+        else:
+            # Proceso desconocido - requiere análisis
+            result['is_safe'] = None
+            result['requires_investigation'] = True
+            result['recommendation'] = 'monitor'
+        
+        # Log del análisis si es sospechoso
+        if result['is_safe'] is False:
+            self.logger.warning(f"[PROCESS_VALIDATION] Proceso peligroso detectado: {process_name} "
+                               f"(Score: {result['threat_score']:.2f}, Indicadores: {result['threat_indicators']})")
+        elif result['is_safe'] is True:
+            self.logger.debug(f"[PROCESS_VALIDATION] Proceso seguro validado: {process_name} "
+                             f"(Confianza: {result['confidence']:.2f})")
+        
+        return result

@@ -581,3 +581,133 @@ class SecurityUtils:
             
         except Exception:
             return False
+    
+    @staticmethod
+    def validate_password_strength(password: str) -> Dict[str, Any]:
+        """
+        Valida la fortaleza de una contraseña según criterios de seguridad.
+        
+        IMPLEMENTACIÓN TDD - FASE REFACTOR: Código refactorizado y generalizado.
+        
+        Criterios de validación:
+        - Longitud mínima: 8 caracteres
+        - Debe contener mayúsculas
+        - Debe contener minúsculas
+        - Debe contener números
+        - Debe contener símbolos especiales
+        
+        Args:
+            password: Contraseña a validar
+            
+        Returns:
+            Diccionario con información de fortaleza:
+            {
+                'is_strong': bool,
+                'score': int (0-100),
+                'weaknesses': list[dict]
+            }
+        """
+        import re
+        
+        result = {
+            'is_strong': False,
+            'score': 0,
+            'weaknesses': []
+        }
+        
+        if not password:
+            result['weaknesses'].append({
+                'type': 'empty', 
+                'message': 'Password cannot be empty'
+            })
+            return result
+        
+        score = 0
+        weaknesses = []
+        
+        # 1. Longitud (25 puntos máximo)
+        length = len(password)
+        if length < 8:
+            weaknesses.append({
+                'type': 'too_short',
+                'message': 'Password is too short (minimum 8 characters)'
+            })
+            score += length * 2  # 2 puntos por carácter hasta 8
+        else:
+            score += 25  # Puntos completos por longitud adecuada
+            if length >= 12:
+                score += 5  # Bonus por longitud extra
+        
+        # 2. Letras minúsculas (15 puntos)
+        if re.search(r'[a-z]', password):
+            score += 15
+        else:
+            weaknesses.append({
+                'type': 'missing_lowercase',
+                'message': 'Password lacks lowercase letters'
+            })
+        
+        # 3. Letras mayúsculas (15 puntos)
+        if re.search(r'[A-Z]', password):
+            score += 15
+        else:
+            weaknesses.append({
+                'type': 'missing_uppercase',
+                'message': 'Password lacks uppercase letters'
+            })
+        
+        # 4. Números (20 puntos)
+        if re.search(r'[0-9]', password):
+            score += 20
+        else:
+            weaknesses.append({
+                'type': 'missing_numbers',
+                'message': 'Password lacks numbers'
+            })
+        
+        # 5. Símbolos especiales (20 puntos)
+        if re.search(r'[!@#$%^&*(),.?":{}|<>]', password):
+            score += 20
+        else:
+            weaknesses.append({
+                'type': 'missing_symbols',
+                'message': 'Password lacks special symbols'
+            })
+        
+        # 6. Diversidad de caracteres (10 puntos bonus)
+        unique_chars = len(set(password))
+        if unique_chars >= length * 0.7:  # 70% de caracteres únicos
+            score += 10
+        
+        # Penalizaciones por patrones comunes
+        common_patterns = [
+            r'123456', r'qwerty', r'abc123',
+            r'111111', r'000000', r'admin'
+        ]
+        
+        for pattern in common_patterns:
+            if re.search(pattern, password.lower()):
+                score -= 30
+                weaknesses.append({
+                    'type': 'common_pattern',
+                    'message': f'Contains common pattern: {pattern}'
+                })
+                break
+        
+        # Penalización especial para "password" pero menos severa
+        if 'password' in password.lower():
+            score -= 10
+            weaknesses.append({
+                'type': 'common_pattern',
+                'message': 'Contains common pattern: password'
+            })
+        
+        # Asegurar que el score esté en el rango [0, 100]
+        score = max(0, min(100, score))
+        
+        # Determinar si la contraseña es fuerte
+        result['score'] = score
+        result['weaknesses'] = weaknesses
+        result['is_strong'] = score >= 80 and len(weaknesses) == 0
+        
+        return result
