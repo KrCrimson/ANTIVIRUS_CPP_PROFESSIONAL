@@ -117,3 +117,64 @@
 5. **🔄 CICLO TDD CLARO**: Fácil aplicar Red-Green-Refactor
 
 ¿Empezamos con el **#1** (Detector de APIs de Hooking) que es el más relevante para tu antivirus? 🚀
+---
+
+## 🧠 Análisis Detallado y Flujo TDD de los TOP 8
+
+### 1. test_detect_hooking_apis_should_return_high_risk
+- **Funcionalidad ML:** `KeyloggerDetector.analyze_api_usage()` puede usar heurísticas y modelos ML para identificar patrones de hooking en llamadas API. El scoring se mejora con modelos supervisados entrenados en logs de procesos maliciosos vs. benignos.
+- **Flujo TDD:**
+	- **RED:** El test falla porque la función no existe o no detecta APIs sospechosas.
+	- **GREEN:** Implementa detección básica y lógica ML (ej. RandomForest para clasificación de secuencias de APIs).
+	- **REFACTOR:** Añade más features, ajusta el modelo y el scoring.
+
+### 2. test_suspicious_port_detection
+- **Funcionalidad ML:** `NetworkDetector.analyze_port_usage()` puede usar ML para clasificar tráfico por puertos y patrones de exfiltración. Modelos como DecisionTree pueden identificar correlaciones entre puertos y comportamientos maliciosos.
+- **Flujo TDD:**
+	- **RED:** El test falla para puertos maliciosos.
+	- **GREEN:** Implementa lista básica y lógica ML para clasificación de tráfico.
+	- **REFACTOR:** Entrena el modelo con más datos y ajusta thresholds.
+
+### 3. test_safe_process_not_detected_as_threat
+- **Funcionalidad ML:** `BehaviorDetector.is_process_safe()` puede usar ML para distinguir procesos benignos de maliciosos, usando features como nombre, reputación, y comportamiento. Un modelo de clasificación puede reducir falsos positivos.
+- **Flujo TDD:**
+	- **RED:** El test falla porque procesos seguros son detectados como amenaza.
+	- **GREEN:** Implementa whitelist y lógica ML básica.
+	- **REFACTOR:** Añade reputación dinámica y retrain del modelo.
+
+### 4. test_high_cpu_process_flagged_as_suspicious
+- **Funcionalidad ML:** `ResourceMonitor.analyze_cpu_usage()` puede usar ML para detectar patrones anómalos de uso de CPU, diferenciando entre procesos legítimos y keyloggers. Modelos de series temporales (ej. LSTM) pueden ser útiles.
+- **Flujo TDD:**
+	- **RED:** El test falla para procesos con CPU >80%.
+	- **GREEN:** Implementa umbral simple y lógica ML para anomalías.
+	- **REFACTOR:** Añade análisis temporal y mejora el modelo.
+
+### 5. test_detector_initialization
+- **Funcionalidad ML:** `DetectorEngine.__init__()` asegura que los modelos ML y configuraciones se cargan correctamente. El test valida la inicialización robusta de pipelines ML.
+- **Flujo TDD:**
+	- **RED:** El test falla porque la configuración/modelo ML no se carga.
+	- **GREEN:** Inicialización básica y carga de modelos ML.
+	- **REFACTOR:** Refuerza la gestión de errores y la flexibilidad de configuración.
+
+### 6. test_feature_extraction
+- **Funcionalidad ML:** El extractor de features puede usar técnicas de ML para seleccionar y transformar datos relevantes (ej. PCA, selección de variables). El test valida que los features extraídos sean útiles para el modelo.
+- **Flujo TDD:**
+	- **RED:** El test falla porque los features extraídos no son correctos o insuficientes.
+	- **GREEN:** Implementa extracción básica y lógica ML para validación de features.
+	- **REFACTOR:** Optimiza el extractor y añade nuevas técnicas de selección.
+
+### 7. test_multiple_detectors_consensus
+- **Funcionalidad ML:** El sistema puede combinar resultados de varios detectores usando técnicas de ensemble (ej. Voting, Stacking). El test valida que el consenso sea robusto y mejore la precisión.
+- **Flujo TDD:**
+	- **RED:** El test falla porque no hay consenso o el resultado es erróneo.
+	- **GREEN:** Implementa lógica básica de consenso y ML para combinar resultados.
+	- **REFACTOR:** Ajusta el método de ensemble y evalúa métricas de precisión.
+
+### 8. test_memory_threshold_detection
+- **Funcionalidad ML:** El monitor de memoria puede usar ML para detectar procesos que exceden umbrales sospechosos, diferenciando entre uso legítimo y malicioso. Modelos de clustering pueden ayudar a identificar outliers.
+- **Flujo TDD:**
+	- **RED:** El test falla para procesos que superan el umbral de memoria.
+	- **GREEN:** Implementa umbral básico y lógica ML para detección de anomalías.
+	- **REFACTOR:** Mejora el modelo y añade análisis de patrones de uso.
+
+---
