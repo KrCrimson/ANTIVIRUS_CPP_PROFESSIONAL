@@ -1,0 +1,4 @@
+[2025-11-07 16:29:41] performance_test - INFO - __init__:91 - 📝 Logger 'performance_test' inicializado
+[2025-11-07 16:29:41] performance_test - INFO - info:205 - [E2E] Test de flujo completo - 2025-11-07 16:29:41.807929
+[2025-11-07 16:29:41] performance_test - WARNING - warning:209 - [E2E] Advertencia de prueba - performance_test
+[2025-11-07 16:29:41] performance_test - ERROR - error:213 - [E2E] Error controlado para testing - performance_test

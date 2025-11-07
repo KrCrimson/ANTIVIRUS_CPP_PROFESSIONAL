@@ -1,0 +1,8 @@
+[2025-11-07 16:09:40] web_test - INFO - __init__:91 - 📝 Logger 'web_test' inicializado
+[2025-11-07 16:09:41] web_test - INFO - info:205 - [TEST] Sistema de logging web funcionando correctamente
+[2025-11-07 16:09:41] web_test - WARNING - warning:209 - [TEST] Advertencia de prueba del sistema web
+[2025-11-07 16:09:41] web_test - ERROR - error:213 - [TEST] Error simulado para testing del sistema
+[2025-11-07 16:26:58] web_test - INFO - __init__:91 - 📝 Logger 'web_test' inicializado
+[2025-11-07 16:26:58] web_test - INFO - info:205 - [TEST] Sistema de logging web funcionando correctamente
+[2025-11-07 16:26:58] web_test - WARNING - warning:209 - [TEST] Advertencia de prueba del sistema web
+[2025-11-07 16:26:58] web_test - ERROR - error:213 - [TEST] Error simulado para testing del sistema

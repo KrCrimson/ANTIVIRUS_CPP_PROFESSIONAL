@@ -1,0 +1,2 @@
+{"timestamp": "2025-11-07T16:27:01.945108", "level": "INFO", "logger": "ml_detector", "message": "📝 Logger 'ml_detector' inicializado", "module": "logger", "function": "__init__", "line": 91}
+{"timestamp": "2025-11-07T16:27:01.959292", "level": "INFO", "logger": "ml_detector", "message": "Test de ml_detector - Web logging integrado", "module": "logger", "function": "info", "line": 205}

@@ -26,6 +26,30 @@ except ImportError:
     get_log_sender = lambda: None
     init_log_sender = lambda *args, **kwargs: None
 
+# Importar nuevo sistema de web logging
+try:
+    import sys
+    from pathlib import Path
+    
+    # Agregar el directorio raíz del proyecto al path si no está
+    project_root = Path(__file__).parent.parent
+    if str(project_root) not in sys.path:
+        sys.path.insert(0, str(project_root))
+    
+    from web_system.integration import (
+        WebLogHandler, 
+        WebLogConfigManager,
+        setup_antivirus_web_logging,
+        get_web_logging_status
+    )
+    WEB_LOGGING_AVAILABLE = True
+except ImportError as e:
+    WEB_LOGGING_AVAILABLE = False
+    WebLogHandler = None
+    WebLogConfigManager = None
+    setup_antivirus_web_logging = lambda *args, **kwargs: {'success': False, 'errors': ['Web logging no disponible']}
+    get_web_logging_status = lambda: {'enabled': False, 'reason': 'not_available'}
+
 
 class Logger:
     """
@@ -65,6 +89,37 @@ class Logger:
             self._setup_handlers()
         
         self.logger.info(f"📝 Logger '{name}' inicializado")
+        
+        # Configurar web logging si está disponible y habilitado
+        self._setup_web_logging()
+    
+    def _setup_web_logging(self):
+        """Configura web logging automáticamente si está disponible"""
+        if not WEB_LOGGING_AVAILABLE:
+            return
+        
+        try:
+            # Verificar configuración
+            manager = WebLogConfigManager()
+            config = manager.get_config()
+            
+            if config.enabled and manager.validate_config():
+                # Verificar si ya tiene WebLogHandler
+                has_web_handler = any(
+                    isinstance(h, WebLogHandler) for h in self.logger.handlers
+                )
+                
+                if not has_web_handler:
+                    # Crear y agregar WebLogHandler
+                    from web_system.integration import setup_web_logging_from_config
+                    handler = setup_web_logging_from_config()
+                    
+                    if handler:
+                        self.logger.addHandler(handler)
+                        self.logger.debug(f"🌐 Web logging habilitado para '{self.name}'")
+                    
+        except Exception as e:
+            self.logger.debug(f"⚠️ No se pudo configurar web logging: {e}")
     
     @classmethod
     def get_logger(cls, name: str, log_dir: str = "logs", level: str = "INFO") -> 'Logger':
@@ -337,3 +392,243 @@ def log_plugin_activity(plugin_name: str, action: str, details: Dict[str, Any] =
         'action': action,
         'details': details or {}
     })
+
+
+# =================== NEW WEB LOGGING FUNCTIONS ===================
+def setup_web_logging(config_file: str = None, auto_configure: bool = True) -> Dict[str, Any]:
+    """
+    Configura el sistema de web logging para todo el antivirus
+    
+    Args:
+        config_file: Archivo de configuración (opcional)
+        auto_configure: Si configurar automáticamente todos los loggers
+        
+    Returns:
+        Dict con resultado de la configuración
+    """
+    if not WEB_LOGGING_AVAILABLE:
+        return {
+            'success': False, 
+            'errors': ['Web logging no disponible. Verificar instalación del módulo.'],
+            'configured_loggers': []
+        }
+    
+    try:
+        if auto_configure:
+            # Configurar todos los loggers del antivirus automáticamente
+            return setup_antivirus_web_logging(
+                config_file=config_file,
+                logger_names=[
+                    'antivirus_system',
+                    'core', 
+                    'plugins',
+                    'ml_detector',
+                    'behavior_detector', 
+                    'network_detector',
+                    'file_monitor',
+                    'process_monitor',
+                    'network_monitor'
+                ]
+            )
+        else:
+            # Solo verificar configuración
+            manager = WebLogConfigManager(config_file)
+            config = manager.get_config()
+            
+            return {
+                'success': config.enabled and manager.validate_config(),
+                'config': config.to_dict(),
+                'errors': config.validate() if not manager.validate_config() else [],
+                'configured_loggers': []
+            }
+            
+    except Exception as e:
+        return {
+            'success': False,
+            'errors': [f'Error configurando web logging: {e}'],
+            'configured_loggers': []
+        }
+
+
+def enable_web_logging(api_url: str = "http://localhost:8000/api", 
+                      api_key: str = "antivirus-system-key-2024",
+                      level: str = "INFO") -> bool:
+    """
+    Habilita web logging con configuración específica
+    
+    Args:
+        api_url: URL del API backend
+        api_key: API key para autenticación
+        level: Nivel mínimo de logging
+        
+    Returns:
+        True si se habilitó exitosamente
+    """
+    if not WEB_LOGGING_AVAILABLE:
+        print("❌ Web logging no disponible")
+        return False
+    
+    try:
+        # Actualizar configuración
+        manager = WebLogConfigManager()
+        manager.update_config(
+            api_url=api_url,
+            api_key=api_key,
+            level=level,
+            enabled=True
+        )
+        
+        if manager.validate_config():
+            manager.save_config()
+            
+            # Configurar loggers existentes
+            result = setup_web_logging(auto_configure=True)
+            
+            if result['success']:
+                print(f"✅ Web logging habilitado para {len(result['configured_loggers'])} loggers")
+                return True
+            else:
+                print(f"❌ Error habilitando web logging: {result['errors']}")
+                return False
+        else:
+            print("❌ Configuración inválida para web logging")
+            return False
+            
+    except Exception as e:
+        print(f"❌ Error habilitando web logging: {e}")
+        return False
+
+
+def disable_web_logging() -> bool:
+    """
+    Deshabilita web logging en todo el sistema
+    
+    Returns:
+        True si se deshabilitó exitosamente
+    """
+    try:
+        if WEB_LOGGING_AVAILABLE:
+            manager = WebLogConfigManager()
+            manager.disable_web_logging()
+        
+        # Remover WebLogHandlers de todos los loggers
+        root_logger = logging.getLogger()
+        
+        def remove_web_handlers(logger):
+            """Remueve WebLogHandlers recursivamente"""
+            if WEB_LOGGING_AVAILABLE and WebLogHandler:
+                # Remover handlers del logger actual
+                handlers_to_remove = [
+                    h for h in logger.handlers 
+                    if isinstance(h, WebLogHandler)
+                ]
+                
+                for handler in handlers_to_remove:
+                    logger.removeHandler(handler)
+                    handler.close()
+                
+                # Procesar loggers hijos
+                for child_name, child_logger in logger.manager.loggerDict.items():
+                    if isinstance(child_logger, logging.Logger):
+                        remove_web_handlers(child_logger)
+        
+        remove_web_handlers(root_logger)
+        print("🔒 Web logging deshabilitado")
+        return True
+        
+    except Exception as e:
+        print(f"❌ Error deshabilitando web logging: {e}")
+        return False
+
+
+def get_web_logging_info() -> Dict[str, Any]:
+    """
+    Obtiene información completa del estado del web logging
+    
+    Returns:
+        Dict con información detallada
+    """
+    if not WEB_LOGGING_AVAILABLE:
+        return {
+            'available': False,
+            'reason': 'Web logging module not available',
+            'enabled': False,
+            'handlers': 0,
+            'loggers': []
+        }
+    
+    try:
+        status = get_web_logging_status()
+        
+        return {
+            'available': True,
+            'enabled': status.get('config_status', {}).get('enabled', False),
+            'connectivity': status.get('connectivity', False),
+            'handlers_active': status.get('handlers_active', 0),
+            'loggers_configured': status.get('loggers_configured', []),
+            'statistics': status.get('statistics', {}),
+            'config_file': status.get('config_status', {}).get('config_file'),
+            'api_url': status.get('config_status', {}).get('api_url'),
+            'errors': status.get('errors', []),
+            'last_updated': status.get('timestamp')
+        }
+        
+    except Exception as e:
+        return {
+            'available': True,
+            'enabled': False,
+            'error': str(e),
+            'handlers': 0,
+            'loggers': []
+        }
+
+
+def test_web_logging_connection() -> bool:
+    """
+    Test de conectividad con el servidor web
+    
+    Returns:
+        True si la conexión es exitosa
+    """
+    if not WEB_LOGGING_AVAILABLE:
+        print("❌ Web logging no disponible")
+        return False
+    
+    try:
+        manager = WebLogConfigManager()
+        return manager.test_connection()
+    except Exception as e:
+        print(f"❌ Error probando conexión: {e}")
+        return False
+
+
+def log_test_message(message: str = "Test de web logging desde antivirus", 
+                    level: str = "INFO",
+                    logger_name: str = "test") -> bool:
+    """
+    Envía un mensaje de prueba al sistema de web logging
+    
+    Args:
+        message: Mensaje a enviar
+        level: Nivel del log
+        logger_name: Nombre del logger
+        
+    Returns:
+        True si se envió exitosamente
+    """
+    try:
+        logger = get_logger(logger_name)
+        log_method = getattr(logger, level.lower())
+        
+        log_method(message, extra={
+            'test': True,
+            'timestamp': datetime.now().isoformat(),
+            'system': 'antivirus_core'
+        })
+        
+        print(f"✅ Mensaje de prueba enviado: {message}")
+        return True
+        
+    except Exception as e:
+        print(f"❌ Error enviando mensaje de prueba: {e}")
+        return False

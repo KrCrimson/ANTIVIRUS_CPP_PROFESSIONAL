@@ -1,0 +1,2 @@
+{"timestamp": "2025-11-07T16:27:01.896583", "level": "INFO", "logger": "core", "message": "📝 Logger 'core' inicializado", "module": "logger", "function": "__init__", "line": 91}
+{"timestamp": "2025-11-07T16:27:01.925192", "level": "INFO", "logger": "core", "message": "Test de core - Web logging integrado", "module": "logger", "function": "info", "line": 205}

@@ -1,0 +1,4 @@
+{"timestamp": "2025-11-07T16:29:41.288478", "level": "INFO", "logger": "e2e_test", "message": "📝 Logger 'e2e_test' inicializado", "module": "logger", "function": "__init__", "line": 91}
+{"timestamp": "2025-11-07T16:29:41.297327", "level": "INFO", "logger": "e2e_test", "message": "[E2E] Test de flujo completo - 2025-11-07 16:29:41.297288", "module": "logger", "function": "info", "line": 205}
+{"timestamp": "2025-11-07T16:29:41.297710", "level": "WARNING", "logger": "e2e_test", "message": "[E2E] Advertencia de prueba - e2e_test", "module": "logger", "function": "warning", "line": 209}
+{"timestamp": "2025-11-07T16:29:41.298524", "level": "ERROR", "logger": "e2e_test", "message": "[E2E] Error controlado para testing - e2e_test", "module": "logger", "function": "error", "line": 213}

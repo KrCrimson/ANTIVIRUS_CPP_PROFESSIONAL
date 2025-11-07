@@ -1,0 +1,47 @@
+{
+  "_comment": "Configuración del sistema de logging web del antivirus",
+  "_version": "1.0.0",
+  "_last_updated": "2025-11-07",
+  "web_logging": {
+    "api_url": "http://localhost:8000/api",
+    "api_key": "antivirus-system-key-2024",
+    "buffer_size": 1000,
+    "batch_size": 10,
+    "flush_interval": 5.0,
+    "max_retries": 3,
+    "timeout": 10.0,
+    "connection_test_interval": 60.0,
+    "fallback_file": "logs/web_fallback.log",
+    "fallback_enabled": true,
+    "level": "INFO",
+    "enabled": true,
+    "compress_logs": false,
+    "include_system_info": true,
+    "rate_limit_per_minute": 1000,
+    "verify_ssl": true,
+    "ca_cert_path": null
+  },
+  "_examples": {
+    "development": {
+      "api_url": "http://localhost:8000/api",
+      "enabled": true,
+      "level": "DEBUG"
+    },
+    "production": {
+      "api_url": "https://logs.empresa.com/api",
+      "enabled": true,
+      "level": "WARNING",
+      "verify_ssl": true,
+      "compress_logs": true
+    },
+    "enterprise": {
+      "api_url": "https://siem.empresa.com/api/antivirus",
+      "api_key": "production-key-secure",
+      "enabled": true,
+      "level": "INFO",
+      "buffer_size": 5000,
+      "batch_size": 50,
+      "rate_limit_per_minute": 5000
+    }
+  }
+}

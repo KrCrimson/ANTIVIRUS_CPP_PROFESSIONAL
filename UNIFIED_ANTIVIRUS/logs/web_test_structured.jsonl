@@ -1,0 +1,8 @@
+{"timestamp": "2025-11-07T16:09:40.973946", "level": "INFO", "logger": "web_test", "message": "📝 Logger 'web_test' inicializado", "module": "logger", "function": "__init__", "line": 91}
+{"timestamp": "2025-11-07T16:09:41.004780", "level": "INFO", "logger": "web_test", "message": "[TEST] Sistema de logging web funcionando correctamente", "module": "logger", "function": "info", "line": 205}
+{"timestamp": "2025-11-07T16:09:41.005570", "level": "WARNING", "logger": "web_test", "message": "[TEST] Advertencia de prueba del sistema web", "module": "logger", "function": "warning", "line": 209}
+{"timestamp": "2025-11-07T16:09:41.006119", "level": "ERROR", "logger": "web_test", "message": "[TEST] Error simulado para testing del sistema", "module": "logger", "function": "error", "line": 213}
+{"timestamp": "2025-11-07T16:26:58.882714", "level": "INFO", "logger": "web_test", "message": "📝 Logger 'web_test' inicializado", "module": "logger", "function": "__init__", "line": 91}
+{"timestamp": "2025-11-07T16:26:58.892809", "level": "INFO", "logger": "web_test", "message": "[TEST] Sistema de logging web funcionando correctamente", "module": "logger", "function": "info", "line": 205}
+{"timestamp": "2025-11-07T16:26:58.893234", "level": "WARNING", "logger": "web_test", "message": "[TEST] Advertencia de prueba del sistema web", "module": "logger", "function": "warning", "line": 209}
+{"timestamp": "2025-11-07T16:26:58.893565", "level": "ERROR", "logger": "web_test", "message": "[TEST] Error simulado para testing del sistema", "module": "logger", "function": "error", "line": 213}

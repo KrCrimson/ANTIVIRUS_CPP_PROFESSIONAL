@@ -1,0 +1,2 @@
+{"timestamp": "2025-11-07T16:27:01.960910", "level": "INFO", "logger": "behavior_detector", "message": "📝 Logger 'behavior_detector' inicializado", "module": "logger", "function": "__init__", "line": 91}
+{"timestamp": "2025-11-07T16:27:01.975140", "level": "INFO", "logger": "behavior_detector", "message": "Test de behavior_detector - Web logging integrado", "module": "logger", "function": "info", "line": 205}
