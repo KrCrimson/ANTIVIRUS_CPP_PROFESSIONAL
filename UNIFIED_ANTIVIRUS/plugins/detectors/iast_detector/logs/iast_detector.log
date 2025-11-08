@@ -1,0 +1,26 @@
+[2025-11-08 17:14:21] iast_detector - INFO - __init__:91 - 📝 Logger 'iast_detector' inicializado
+[2025-11-08 17:14:21] iast_detector - INFO - info:205 - 🔒 Baseline hash calculado para core/engine.py
+[2025-11-08 17:14:21] iast_detector - INFO - info:205 - 🔒 Baseline hash calculado para utils/logger.py
+[2025-11-08 17:14:21] iast_detector - INFO - info:205 - 🔒 Baseline hash calculado para plugins/detectors/ml_detector/ml_engine.py
+[2025-11-08 17:14:21] iast_detector - INFO - info:205 - 🔒 Baseline hash calculado para config/security_config.json
+[2025-11-08 17:14:21] iast_detector - INFO - info:205 - 🔒 Baseline hash calculado para config/unified_config.toml
+[2025-11-08 17:14:21] iast_detector - INFO - info:205 - ✅ Baseline establecido para 5 archivos
+[2025-11-08 17:34:22] iast_detector - INFO - __init__:91 - 📝 Logger 'iast_detector' inicializado
+[2025-11-08 17:34:22] iast_detector - INFO - info:205 - 🔒 Baseline hash calculado para core/engine.py
+[2025-11-08 17:34:22] iast_detector - INFO - info:205 - 🔒 Baseline hash calculado para utils/logger.py
+[2025-11-08 17:34:22] iast_detector - INFO - info:205 - 🔒 Baseline hash calculado para plugins/detectors/ml_detector/ml_engine.py
+[2025-11-08 17:34:22] iast_detector - INFO - info:205 - 🔒 Baseline hash calculado para config/security_config.json
+[2025-11-08 17:34:22] iast_detector - INFO - info:205 - 🔒 Baseline hash calculado para config/unified_config.toml
+[2025-11-08 17:34:22] iast_detector - INFO - info:205 - ✅ Baseline establecido para 5 archivos
+[2025-11-08 17:34:35] iast_detector - ERROR - error:213 - 🎯 KEYLOGGER DETECTADO: steamwebhelper.exe (PID: 17196)
+[2025-11-08 17:34:35] iast_detector - ERROR - error:213 -    Score total: 0.96 (SAST: 0.90, DAST: 1.00, Advanced: 1.00)
+[2025-11-08 17:34:35] iast_detector - ERROR - error:213 -    Tipo de detección: Análisis comportamental inteligente
+[2025-11-08 17:34:41] iast_detector - ERROR - error:213 - 🚨 EVENTO DE SEGURIDAD: KEYLOGGER_DETECTION
+[2025-11-08 17:34:41] iast_detector - ERROR - error:213 - 📊 Detalles: {'detected_count': 1, 'keyloggers': [{'pid': 17196, 'name': 'steamwebhelper.exe', 'exe': 'C:\\Program Files (x86)\\Steam\\bin\\cef\\cef.win7x64\\steamwebhelper.exe', 'cmdline': ['C:\\Program Files (x86)\\Steam\\bin\\cef\\cef.win7x64\\steamwebhelper.exe', '--type=utility', '--utility-sub-type=network.mojom.NetworkService', '--lang=es-419', '--service-sandbox-type=none', '--user-agent-product=Valve Steam Client', '--lang=es-UY', '--user-data-dir=C:\\Users\\windows10\\AppData\\Local\\Steam\\htmlcache', '--buildid=1759461205', '--steamid=0', '--field-trial-handle=2320,i,5797577596436821493,13255782526691626918,262144', '--enable-features=PlatformHEVCDecoderSupport', '--disable-features=BackForwardCache,BlockPromptsIfIgnoredOften,DcheckIsFatal,DocumentPictureInPictureAPI,SpareRendererForSitePerProcess,ValveFFmpegAllowLowDelayHEVC', '--variations-seed-version', '--enable-logging=handle', '--log-file=2324', '--mojo-platform-channel-handle=2316', '/prefetch:11'], 'static_score': 0.8999999999999999, 'dynamic_score': 1.0, 'advanced_score': 1.0, 'total_score': 0.96, 'detection_type': 'intelligent_behavioral_analysis', 'detection_time': '2025-11-08T17:34:35.947039'}], 'severity': 'CRITICAL'}
+[2025-11-08 17:35:53] iast_detector - INFO - __init__:91 - 📝 Logger 'iast_detector' inicializado
+[2025-11-08 17:35:53] iast_detector - INFO - info:205 - 🔒 Baseline hash calculado para core/engine.py
+[2025-11-08 17:35:53] iast_detector - INFO - info:205 - 🔒 Baseline hash calculado para utils/logger.py
+[2025-11-08 17:35:53] iast_detector - INFO - info:205 - 🔒 Baseline hash calculado para plugins/detectors/ml_detector/ml_engine.py
+[2025-11-08 17:35:53] iast_detector - INFO - info:205 - 🔒 Baseline hash calculado para config/security_config.json
+[2025-11-08 17:35:53] iast_detector - INFO - info:205 - 🔒 Baseline hash calculado para config/unified_config.toml
+[2025-11-08 17:35:53] iast_detector - INFO - info:205 - ✅ Baseline establecido para 5 archivos

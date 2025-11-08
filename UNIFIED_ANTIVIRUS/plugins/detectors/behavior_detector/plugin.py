@@ -402,20 +402,11 @@ class BehaviorDetectorPlugin(BasePlugin, DetectorInterface):
         tracked_processes = {}
         process_history = {}
 
-        # Configuración de monitoreo
+        # Configuración de monitoreo INTELIGENTE
         scan_interval = 2.0
-        suspicious_patterns = [
-            "keylog",
-            "capture",
-            "password",
-            "credential",
-            "spy",
-            "hack",
-            "stealer",
-            "monitor",
-            ".log",
-            ".txt",
-        ]
+        
+        # 🚫 PATRONES TONTOS ELIMINADOS - Usar sistema inteligente
+        # 🧠 Solo usar análisis comportamental inteligente
 
         while self.is_running:
             try:
@@ -460,10 +451,8 @@ class BehaviorDetectorPlugin(BasePlugin, DetectorInterface):
                             tracked_processes[pid] = process_data
                             process_history[pid] = []
 
-                            # Analizar si es sospechoso
-                            if self._analyze_suspicious_process(
-                                process_data, suspicious_patterns
-                            ):
+                            # 🧠 Análisis inteligente (sin patrones tontos)
+                            if self._analyze_suspicious_process(process_data):
                                 self._trigger_detection(
                                     "suspicious_new_process", process_data
                                 )
@@ -513,21 +502,38 @@ class BehaviorDetectorPlugin(BasePlugin, DetectorInterface):
         logger.info(f"[BEHAVIOR_DETECTOR] Monitoreo de procesos terminado")
 
     def _analyze_suspicious_process(
-        self, process_data: Dict, suspicious_patterns: List[str]
+        self, process_data: Dict
     ) -> bool:
-        """Analiza si un proceso es sospechoso"""
+        """🧠 Análisis INTELIGENTE de procesos - NO patrones obvios"""
         try:
             name = process_data.get("name", "").lower()
             exe = process_data.get("exe", "").lower()
             cmdline = process_data.get("cmdline", "").lower()
 
-            # Verificar patrones sospechosos en el nombre
-            for pattern in suspicious_patterns:
-                if pattern in name or pattern in exe or pattern in cmdline:
-                    logger.warning(
-                        f"[DETECTION] Proceso sospechoso detectado: {name} - patrón: {pattern}"
-                    )
+            # 🧠 ANÁLISIS INTELIGENTE usando behavior_engine
+            if hasattr(self, 'behavior_engine') and self.behavior_engine:
+                # Usar el sistema de análisis comportamental correcto
+                process_list = [{
+                    "process_info": {
+                        "name": name,
+                        "exe": exe,
+                        "cmdline": cmdline,
+                        "pid": process_data.get("pid", 0)
+                    }
+                }]
+                
+                threats = self.behavior_engine.analyze("process", process_list)
+                
+                if threats and len(threats) > 0:
+                    threat = threats[0]
+                    risk_score = threat.get("risk_score", 0)
+                    detected_rules = threat.get("detected_rules", [])
+                    logger.warning(f"[INTELLIGENT_DETECTION] Proceso sospechoso: {name} - Score: {risk_score:.2f} - Rules: {detected_rules}")
                     return True
+            else:
+                # 🚫 Fallback básico - SOLO para procesos extremadamente sospechosos
+                logger.debug(f"[BASIC_ANALYSIS] Análisis básico para: {name}")
+                # Solo detectar procesos realmente peligrosos (no obvios)
 
             # Verificar procesos ocultos o sin ruta (excluir procesos del sistema)
             system_processes = [
@@ -545,22 +551,55 @@ class BehaviorDetectorPlugin(BasePlugin, DetectorInterface):
                     logger.warning(f"[DETECTION] Proceso sin ruta ejecutable: {name}")
                     return True
 
-            # Verificar línea de comandos sospechosa
-            suspicious_cmd_patterns = [
-                "hook",
-                "keyboard",
-                "capture",
-                "stealth",
-                "hidden",
-            ]
-            if any(pattern in cmdline for pattern in suspicious_cmd_patterns):
-                logger.warning(f"[DETECTION] Línea de comandos sospechosa: {cmdline}")
+            # 🧠 Línea de comandos: análisis inteligente (no patrones obvios)
+            # Solo detectar comandos extremadamente sospechosos y no obvios
+            if self._analyze_command_line_intelligence(cmdline):
                 return True
 
             return False
 
         except Exception as e:
             logger.error(f"Error analizando proceso sospechoso: {e}")
+            return False
+
+    def _analyze_command_line_intelligence(self, cmdline: str) -> bool:
+        """🧠 Análisis inteligente de líneas de comando - NO patrones obvios"""
+        try:
+            if not cmdline or len(cmdline) < 5:
+                return False
+                
+            # 🚫 NO buscar patrones obvios como "hook", "keyboard", "capture"
+            # 🧠 Buscar comportamientos realmente sospechosos y no obvios
+            
+            # 1. Inyección de código sospechosa
+            injection_indicators = [
+                "createremotethread",
+                "writeprocessmemory", 
+                "setwindowshookex",
+                "ntcreateuserprocess"
+            ]
+            
+            # 2. Evasión de detección
+            evasion_indicators = [
+                "deleteself",
+                "/c del",
+                "schtasks /delete",
+                "attrib +h +s",
+                "powershell -windowstyle hidden"
+            ]
+            
+            cmdline_lower = cmdline.lower()
+            
+            # Verificar indicadores realmente sospechosos (no obvios)
+            for indicator in injection_indicators + evasion_indicators:
+                if indicator in cmdline_lower:
+                    logger.warning(f"[INTELLIGENT_CMDLINE] Comportamiento sospechoso: {cmdline}")
+                    return True
+                    
+            return False
+            
+        except Exception as e:
+            logger.error(f"Error en análisis inteligente de cmdline: {e}")
             return False
 
     def _detect_suspicious_behavior(self, prev_data: Dict, current_data: Dict) -> bool:

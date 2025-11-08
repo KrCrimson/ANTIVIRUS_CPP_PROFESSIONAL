@@ -1,0 +1,14 @@
+[2025-11-08 17:17:39] iast_integration_test - INFO - __init__:91 - 📝 Logger 'iast_integration_test' inicializado
+[2025-11-08 17:17:39] iast_integration_test - INFO - info:205 - 🚀 Iniciando IAST Integration Tests...
+[2025-11-08 17:17:39] iast_integration_test - INFO - info:205 - ✅ PASS Engine Initialization: Baseline calculado para 5 archivos
+[2025-11-08 17:17:39] iast_integration_test - INFO - info:205 - ✅ PASS Plugin Activation: Plugin activo
+[2025-11-08 17:17:39] iast_integration_test - INFO - info:205 - ✅ PASS File Integrity Monitoring: Integridad inicial verificada
+[2025-11-08 17:18:03] iast_integration_test - INFO - info:205 - ✅ PASS Keylogger Detection: Escaneo completo - 0 keyloggers detectados
+[2025-11-08 17:18:15] iast_integration_test - INFO - info:205 - ✅ PASS Threat Detection Interface: Amenazas: 0, Confidence: 0.00
+[2025-11-08 17:18:28] iast_integration_test - ERROR - error:213 - 🧪 TEST LOG: IAST Integration Test ejecutándose
+[2025-11-08 17:18:28] iast_integration_test - WARNING - warning:209 - 🎯 Test detectó 0 amenazas
+[2025-11-08 17:18:28] iast_integration_test - INFO - info:205 - ✅ PASS Web Logging Integration: Logs generados exitosamente para sistema web
+[2025-11-08 17:18:28] iast_integration_test - INFO - info:205 - ✅ PASS Plugin Statistics: Stats: True, Info: True, Status: True
+[2025-11-08 17:18:28] iast_integration_test - INFO - info:205 - ✅ PASS Signature Updates: Firmas actualizadas (baseline recalculado)
+[2025-11-08 17:18:28] iast_integration_test - INFO - info:205 - 🧹 Cleanup completado
+[2025-11-08 17:18:28] iast_integration_test - INFO - info:205 - 🏆 IAST Integration tests completados exitosamente
