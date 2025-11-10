@@ -1,13 +1,22 @@
 #!/usr/bin/env python3
 """
-IAST Detector Plugin
-==================
+IAST Detector Plugin - Versión Avanzada
+=======================================
 
-Plugin wrapper para el motor IAST de auto-protección y detección de keyloggers.
-Se integra con el sistema de plugins del antivirus sin modificar código existente.
+Plugin especializado para Interactive Application Security Testing.
+Detecta vulnerabilidades web y de aplicaciones en tiempo real.
+
+Características avanzadas:
+- SQL Injection detection
+- XSS vulnerability scanning  
+- Command injection monitoring
+- Path traversal detection
+- Buffer overflow detection
+- Deserialization vulnerabilities
 """
 
 import os
+import re
 import sys
 from typing import Dict, Any, Optional, List
 from datetime import datetime
@@ -18,7 +27,7 @@ sys.path.append(os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(
 from core.base_plugin import BasePlugin
 from core.interfaces import DetectorInterface
 from utils.logger import get_logger
-from .iast_engine import IASTSelfProtectionEngine
+from .iast_detector import IASTDetector
 
 class IASTDetectorPlugin(BasePlugin, DetectorInterface):
     """Plugin IAST para auto-protección del antivirus y detección especializada de keyloggers"""
@@ -28,7 +37,7 @@ class IASTDetectorPlugin(BasePlugin, DetectorInterface):
         plugin_path = os.path.dirname(os.path.abspath(__file__))
         super().__init__("iast_detector", plugin_path)
         self.logger = get_logger(self.__class__.__name__)
-        self.iast_engine: Optional[IASTSelfProtectionEngine] = None
+        self.iast_engine: Optional[IASTDetector] = None
         self.is_active = False
         self.last_confidence_score = 0.0
         self.detection_results = []
@@ -43,13 +52,16 @@ class IASTDetectorPlugin(BasePlugin, DetectorInterface):
             scan_interval = self.config.get('settings', {}).get('scan_interval', 30)
             
             # Inicializar motor IAST
-            self.iast_engine = IASTSelfProtectionEngine()
+            self.iast_engine = IASTDetector()
             
             # Iniciar monitoreo si está habilitado
             if monitoring_enabled:
-                self.iast_engine.start_monitoring(interval=scan_interval)
-                self.is_active = True
-                self.logger.info("✅ IAST Engine iniciado y monitoreando")
+                success = self.iast_engine.start()
+                if success:
+                    self.is_active = True
+                    self.logger.info("✅ IAST Engine iniciado y monitoreando vulnerabilidades")
+                else:
+                    self.logger.error("❌ Error iniciando IAST Engine")
             else:
                 self.logger.info("⚠️ Monitoreo IAST deshabilitado en configuración")
             

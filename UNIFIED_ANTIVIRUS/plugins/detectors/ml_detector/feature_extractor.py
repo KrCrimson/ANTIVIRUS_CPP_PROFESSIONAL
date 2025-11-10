@@ -467,6 +467,185 @@ class NetworkFeatureExtractor:
         }
 
 
+class FeatureExtractor:
+    """
+    FeatureExtractor principal para TDD tests
+    Implementa extracción de características para procesos sospechosos
+    """
+    
+    def __init__(self):
+        """Inicializar extractor de características"""
+        self.api_hooks_list = [
+            'SetWindowsHookExW', 'SetWindowsHookExA', 'UnhookWindowsHookEx',
+            'CallNextHookEx', 'GetAsyncKeyState', 'GetKeyState'
+        ]
+        self.keylogging_apis = [
+            'GetAsyncKeyState', 'GetKeyState', 'GetKeyboardState',
+            'MapVirtualKeyW', 'ToUnicodeEx'
+        ]
+        
+    def extract_features(self, process_data: Dict[str, Any]) -> Dict[str, float]:
+        """
+        Extraer características principales de un proceso
+        
+        Args:
+            process_data: Datos del proceso incluyendo CPU, memoria, APIs, etc.
+            
+        Returns:
+            Dict con características normalizadas
+        """
+        features = {}
+        
+        # CPU usage normalizado
+        cpu_usage = process_data.get('cpu_usage', 0.0)
+        features['cpu_usage_raw_normalized'] = min(cpu_usage / 100.0, 1.0)
+        
+        # Memory usage normalizado (asumiendo max 2GB = 2048MB)
+        memory_usage = process_data.get('memory_usage', 0.0)
+        features['memory_usage_raw_normalized'] = min(memory_usage / 2048.0, 1.0)
+        
+        # API hooking count
+        api_calls = process_data.get('api_calls', [])
+        hooking_count = sum(1 for api in api_calls if api in self.api_hooks_list)
+        features['hooking_apis_count_normalized'] = min(hooking_count / 10.0, 1.0)
+        
+        # Network risk score
+        network_connections = process_data.get('network_connections', [])
+        network_risk = self._calculate_network_risk(network_connections)
+        features['network_risk_score_normalized'] = network_risk
+        
+        # File operations count
+        file_operations = process_data.get('file_operations', [])
+        file_ops_count = len(file_operations)
+        features['file_operations_count_normalized'] = min(file_ops_count / 20.0, 1.0)
+        
+        return features
+    
+    def extract_api_features(self, api_calls: List[str]) -> Dict[str, Any]:
+        """
+        Extraer características específicas de APIs
+        
+        Args:
+            api_calls: Lista de llamadas API
+            
+        Returns:
+            Dict con métricas de API
+        """
+        hooking_count = sum(1 for api in api_calls if api in self.api_hooks_list)
+        keylogging_count = sum(1 for api in api_calls if api in self.keylogging_apis)
+        
+        total_apis = len(api_calls)
+        keylogging_ratio = keylogging_count / max(total_apis, 1)
+        
+        return {
+            'hooking_apis_count': hooking_count,
+            'keylogging_apis_ratio': keylogging_ratio
+        }
+    
+    def extract_behavioral_features(self, behavior_data: Dict[str, Any]) -> Dict[str, float]:
+        """
+        Extraer características de comportamiento
+        
+        Args:
+            behavior_data: Datos de comportamiento del proceso
+            
+        Returns:
+            Dict con scores de comportamiento
+        """
+        # Process stability score (basado en lifetime)
+        lifetime = behavior_data.get('process_lifetime', 0)
+        stability_score = min(lifetime / 7200.0, 1.0)  # 2 horas = estable
+        
+        # Resource anomaly score (basado en spikes de CPU)
+        cpu_spikes = behavior_data.get('cpu_spikes', [])
+        if cpu_spikes:
+            avg_spike = sum(cpu_spikes) / len(cpu_spikes)
+            anomaly_score = min(avg_spike / 100.0, 1.0)
+        else:
+            anomaly_score = 0.0
+        
+        # Network activity score
+        network_activity = behavior_data.get('network_activity', {})
+        connections = network_activity.get('connections', 0)
+        data_sent = network_activity.get('data_sent', 0)
+        
+        network_score = min((connections * 0.1) + (data_sent / 10240.0), 1.0)
+        
+        return {
+            'process_stability_score': stability_score,
+            'resource_anomaly_score': anomaly_score,
+            'network_activity_score': network_score
+        }
+    
+    def normalize_features(self, raw_features: Dict[str, float]) -> Dict[str, float]:
+        """
+        Normalizar características al rango [0, 1]
+        
+        Args:
+            raw_features: Características sin normalizar
+            
+        Returns:
+            Dict con características normalizadas
+        """
+        normalized = {}
+        
+        # Normalizaciones específicas por tipo de feature
+        normalizers = {
+            'cpu_usage': 100.0,
+            'memory_usage': 2048.0,  # 2GB max
+            'api_count': 200.0  # 200 APIs max
+        }
+        
+        for key, value in raw_features.items():
+            if key in normalizers:
+                normalized[key] = min(value / normalizers[key], 1.0)
+            else:
+                # Normalización genérica para valores ya en rango apropiado
+                normalized[key] = min(max(value / 100.0, 0.0), 1.0)
+                
+        return normalized
+    
+    def select_top_features(self, all_features: Dict[str, float], top_k: int = 3) -> Dict[str, float]:
+        """
+        Seleccionar las k características más relevantes
+        
+        Args:
+            all_features: Todas las características disponibles
+            top_k: Número de características a seleccionar
+            
+        Returns:
+            Dict con las top k características
+        """
+        # Ordenar por valor (características más altas son más importantes)
+        sorted_features = sorted(all_features.items(), key=lambda x: x[1], reverse=True)
+        
+        # Seleccionar top k
+        top_features = dict(sorted_features[:top_k])
+        
+        return top_features
+    
+    def _calculate_network_risk(self, connections: List[Dict]) -> float:
+        """Calcular score de riesgo de red"""
+        if not connections:
+            return 0.0
+        
+        risk_score = 0.0
+        
+        for conn in connections:
+            port = conn.get('port', 0)
+            direction = conn.get('direction', 'inbound')
+            
+            # Puertos de alto riesgo
+            if port in [4444, 6666, 31337, 1337]:
+                risk_score += 0.8
+            elif direction == 'outbound' and port > 1024:
+                risk_score += 0.3
+            else:
+                risk_score += 0.1
+        
+        return min(risk_score / len(connections), 1.0)
+
+
 if __name__ == "__main__":
     # Test standalone del extractor
     print("🧪 Testing NetworkFeatureExtractor...")
@@ -501,3 +680,21 @@ if __name__ == "__main__":
     
     if features.size > 0:
         print(f"🎯 Primeras 10 características: {features[0][:10]}")
+    
+    # Test de FeatureExtractor para TDD
+    print("\n🧪 Testing FeatureExtractor...")
+    tdd_extractor = FeatureExtractor()
+    
+    test_process_data = {
+        "name": "suspicious.exe",
+        "cpu_usage": 85.2,
+        "memory_usage": 512.0,
+        "api_calls": ["SetWindowsHookExW", "GetAsyncKeyState"],
+        "network_connections": [{"port": 4444, "direction": "outbound"}],
+        "file_operations": ["create", "write", "delete"],
+    }
+    
+    tdd_features = tdd_extractor.extract_features(test_process_data)
+    print(f"✅ TDD Features extraídas: {tdd_features}")
+    print(f"🎯 CPU normalized: {tdd_features.get('cpu_usage_raw_normalized', 'N/A')}")
+    print(f"🎯 Memory normalized: {tdd_features.get('memory_usage_raw_normalized', 'N/A')}")

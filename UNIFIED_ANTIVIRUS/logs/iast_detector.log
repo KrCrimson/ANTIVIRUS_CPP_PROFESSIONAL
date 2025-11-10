@@ -107,3 +107,139 @@
 2025-11-08 17:50:44,115 - plugin.iast_detector - INFO - ✅ Plugin 'iast_detector' activado exitosamente
 [2025-11-08 17:51:52] iast_detector - INFO - info:205 - 🛑 Monitoreo IAST detenido
 2025-11-08 17:51:52,482 - plugin.iast_detector - INFO - 🛑 IAST Detector detenido
+[2025-11-08 18:12:45] iast_detector - INFO - __init__:91 - 📝 Logger 'iast_detector' inicializado
+[2025-11-08 18:12:45] iast_detector - INFO - info:205 - 🔒 Baseline hash calculado para core/engine.py
+[2025-11-08 18:12:45] iast_detector - INFO - info:205 - 🔒 Baseline hash calculado para utils/logger.py
+[2025-11-08 18:12:45] iast_detector - INFO - info:205 - 🔒 Baseline hash calculado para plugins/detectors/ml_detector/ml_engine.py
+[2025-11-08 18:12:45] iast_detector - INFO - info:205 - 🔒 Baseline hash calculado para config/security_config.json
+[2025-11-08 18:12:45] iast_detector - INFO - info:205 - 🔒 Baseline hash calculado para config/unified_config.toml
+[2025-11-08 18:12:45] iast_detector - INFO - info:205 - ✅ Baseline establecido para 5 archivos
+2025-11-08 18:12:45,327 - plugin.iast_detector - INFO - 📄 Configuración cargada desde C:\Users\windows10\Documents\GitHub\ANTIVIRUS_CPP_PROFESSIONAL\UNIFIED_ANTIVIRUS\plugins\detectors\iast_detector\config.json
+2025-11-08 18:12:45,327 - plugin.iast_detector - INFO - 🚀 Inicializando IAST Detector Plugin...
+[2025-11-08 18:12:45] iast_detector - INFO - info:205 - 🔒 Baseline hash calculado para core/engine.py
+[2025-11-08 18:12:45] iast_detector - INFO - info:205 - 🔒 Baseline hash calculado para utils/logger.py
+[2025-11-08 18:12:45] iast_detector - INFO - info:205 - 🔒 Baseline hash calculado para plugins/detectors/ml_detector/ml_engine.py
+[2025-11-08 18:12:45] iast_detector - INFO - info:205 - 🔒 Baseline hash calculado para config/security_config.json
+[2025-11-08 18:12:45] iast_detector - INFO - info:205 - 🔒 Baseline hash calculado para config/unified_config.toml
+[2025-11-08 18:12:45] iast_detector - INFO - info:205 - ✅ Baseline establecido para 5 archivos
+[2025-11-08 18:12:45] iast_detector - INFO - info:205 - 🚀 Iniciando monitoreo IAST...
+[2025-11-08 18:12:45] iast_detector - INFO - info:205 - ✅ Monitoreo IAST iniciado (intervalo: 30s)
+2025-11-08 18:12:45,332 - plugin.iast_detector - INFO - ✅ IAST Engine iniciado y monitoreando
+2025-11-08 18:12:45,332 - plugin.iast_detector - INFO - ✅ IAST Detector iniciado
+2025-11-08 18:12:45,332 - plugin.iast_detector - INFO - ✅ Plugin 'iast_detector' activado exitosamente
+[2025-11-08 18:14:11] iast_detector - INFO - info:205 - 🔒 Baseline hash calculado para core/engine.py
+[2025-11-08 18:14:11] iast_detector - INFO - info:205 - 🔒 Baseline hash calculado para utils/logger.py
+[2025-11-08 18:14:11] iast_detector - INFO - info:205 - 🔒 Baseline hash calculado para plugins/detectors/ml_detector/ml_engine.py
+[2025-11-08 18:14:11] iast_detector - INFO - info:205 - 🔒 Baseline hash calculado para config/security_config.json
+[2025-11-08 18:14:11] iast_detector - INFO - info:205 - 🔒 Baseline hash calculado para config/unified_config.toml
+[2025-11-08 18:14:11] iast_detector - INFO - info:205 - ✅ Baseline establecido para 5 archivos
+2025-11-08 18:14:11,479 - plugin.iast_detector - INFO - ✅ Firmas IAST actualizadas (baseline recalculado)
+[2025-11-08 18:14:11] iast_detector - INFO - info:205 - 🛑 Monitoreo IAST detenido
+2025-11-08 18:14:11,480 - plugin.iast_detector - INFO - 🛑 IAST Detector detenido
+2025-11-08 20:03:35,346 - plugin.iast_detector - INFO - 📄 Configuración cargada desde C:\Users\windows10\Documents\GitHub\ANTIVIRUS_CPP_PROFESSIONAL\UNIFIED_ANTIVIRUS\plugins\detectors\iast_detector\config.json
+2025-11-08 20:03:35,390 - plugin.iast_detector - INFO - 🚀 Inicializando IAST Detector Plugin...
+[2025-11-08 20:03:35] iast_detector - INFO - __init__:91 - 📝 Logger 'iast_detector' inicializado
+[2025-11-08 20:03:35] iast_detector - INFO - info:205 - 🔒 Baseline hash calculado para core/engine.py
+[2025-11-08 20:03:36] iast_detector - INFO - info:205 - 🔒 Baseline hash calculado para utils/logger.py
+[2025-11-08 20:03:36] iast_detector - INFO - info:205 - 🔒 Baseline hash calculado para plugins/detectors/ml_detector/ml_engine.py
+[2025-11-08 20:03:36] iast_detector - INFO - info:205 - 🔒 Baseline hash calculado para config/security_config.json
+[2025-11-08 20:03:36] iast_detector - INFO - info:205 - 🔒 Baseline hash calculado para config/unified_config.toml
+[2025-11-08 20:03:36] iast_detector - INFO - info:205 - ✅ Baseline establecido para 5 archivos
+[2025-11-08 20:03:36] iast_detector - INFO - info:205 - 🚀 Iniciando monitoreo IAST...
+[2025-11-08 20:03:36] iast_detector - INFO - info:205 - ✅ Monitoreo IAST iniciado (intervalo: 30s)
+2025-11-08 20:03:37,057 - plugin.iast_detector - INFO - ✅ IAST Engine iniciado y monitoreando
+2025-11-08 20:03:37,057 - plugin.iast_detector - INFO - ✅ IAST Detector iniciado
+2025-11-08 20:03:37,057 - plugin.iast_detector - INFO - ✅ Plugin 'iast_detector' activado exitosamente
+[2025-11-08 20:18:17] iast_detector - INFO - info:205 - 🛑 Monitoreo IAST detenido
+2025-11-08 20:18:17,507 - plugin.iast_detector - INFO - 🛑 IAST Detector detenido
+2025-11-08 20:24:48,696 - plugin.iast_detector - INFO - 📄 Configuración cargada desde C:\Users\windows10\Documents\GitHub\ANTIVIRUS_CPP_PROFESSIONAL\UNIFIED_ANTIVIRUS\plugins\detectors\iast_detector\config.json
+2025-11-08 20:24:48,711 - plugin.iast_detector - INFO - 🚀 Inicializando IAST Detector Plugin...
+[2025-11-08 20:24:48] iast_detector - INFO - __init__:91 - 📝 Logger 'iast_detector' inicializado
+[2025-11-08 20:24:49] iast_detector - INFO - info:205 - 🔒 Baseline hash calculado para core/engine.py
+[2025-11-08 20:24:49] iast_detector - INFO - info:205 - 🔒 Baseline hash calculado para utils/logger.py
+[2025-11-08 20:24:49] iast_detector - INFO - info:205 - 🔒 Baseline hash calculado para plugins/detectors/ml_detector/ml_engine.py
+[2025-11-08 20:24:49] iast_detector - INFO - info:205 - 🔒 Baseline hash calculado para config/security_config.json
+[2025-11-08 20:24:49] iast_detector - INFO - info:205 - 🔒 Baseline hash calculado para config/unified_config.toml
+[2025-11-08 20:24:50] iast_detector - INFO - info:205 - ✅ Baseline establecido para 5 archivos
+[2025-11-08 20:24:50] iast_detector - INFO - info:205 - 🚀 Iniciando monitoreo IAST...
+[2025-11-08 20:24:50] iast_detector - INFO - info:205 - ✅ Monitoreo IAST iniciado (intervalo: 30s)
+2025-11-08 20:24:50,297 - plugin.iast_detector - INFO - ✅ IAST Engine iniciado y monitoreando
+2025-11-08 20:24:50,328 - plugin.iast_detector - INFO - ✅ IAST Detector iniciado
+2025-11-08 20:24:50,371 - plugin.iast_detector - INFO - ✅ Plugin 'iast_detector' activado exitosamente
+[2025-11-08 20:35:41] iast_detector - INFO - info:205 - 🛑 Monitoreo IAST detenido
+2025-11-08 20:35:41,592 - plugin.iast_detector - INFO - 🛑 IAST Detector detenido
+2025-11-08 20:37:17,101 - plugin.iast_detector - INFO - 📄 Configuración cargada desde C:\Users\windows10\Documents\GitHub\ANTIVIRUS_CPP_PROFESSIONAL\UNIFIED_ANTIVIRUS\plugins\detectors\iast_detector\config.json
+2025-11-08 20:37:17,135 - plugin.iast_detector - INFO - 🚀 Inicializando IAST Detector Plugin...
+[2025-11-08 20:37:17] iast_detector - INFO - __init__:91 - 📝 Logger 'iast_detector' inicializado
+[2025-11-08 20:37:17] iast_detector - INFO - info:205 - 🔒 Baseline hash calculado para core/engine.py
+[2025-11-08 20:37:17] iast_detector - INFO - info:205 - 🔒 Baseline hash calculado para utils/logger.py
+[2025-11-08 20:37:17] iast_detector - INFO - info:205 - 🔒 Baseline hash calculado para plugins/detectors/ml_detector/ml_engine.py
+[2025-11-08 20:37:18] iast_detector - INFO - info:205 - 🔒 Baseline hash calculado para config/security_config.json
+[2025-11-08 20:37:18] iast_detector - INFO - info:205 - 🔒 Baseline hash calculado para config/unified_config.toml
+[2025-11-08 20:37:18] iast_detector - INFO - info:205 - ✅ Baseline establecido para 5 archivos
+[2025-11-08 20:37:18] iast_detector - INFO - info:205 - 🚀 Iniciando monitoreo IAST...
+[2025-11-08 20:37:18] iast_detector - INFO - info:205 - ✅ Monitoreo IAST iniciado (intervalo: 30s)
+2025-11-08 20:37:18,764 - plugin.iast_detector - INFO - ✅ IAST Engine iniciado y monitoreando
+2025-11-08 20:37:18,780 - plugin.iast_detector - INFO - ✅ IAST Detector iniciado
+2025-11-08 20:37:18,780 - plugin.iast_detector - INFO - ✅ Plugin 'iast_detector' activado exitosamente
+[2025-11-08 20:38:13] iast_detector - INFO - info:205 - 🛑 Monitoreo IAST detenido
+2025-11-08 20:38:13,749 - plugin.iast_detector - INFO - 🛑 IAST Detector detenido
+2025-11-08 20:38:40,015 - plugin.iast_detector - INFO - 📄 Configuración cargada desde C:\Users\windows10\Documents\GitHub\ANTIVIRUS_CPP_PROFESSIONAL\UNIFIED_ANTIVIRUS\plugins\detectors\iast_detector\config.json
+2025-11-08 20:38:40,061 - plugin.iast_detector - INFO - 🚀 Inicializando IAST Detector Plugin...
+[2025-11-08 20:38:40] iast_detector - INFO - __init__:91 - 📝 Logger 'iast_detector' inicializado
+[2025-11-08 20:38:40] iast_detector - INFO - info:205 - 🔒 Baseline hash calculado para core/engine.py
+[2025-11-08 20:38:40] iast_detector - INFO - info:205 - 🔒 Baseline hash calculado para utils/logger.py
+[2025-11-08 20:38:40] iast_detector - INFO - info:205 - 🔒 Baseline hash calculado para plugins/detectors/ml_detector/ml_engine.py
+[2025-11-08 20:38:41] iast_detector - INFO - info:205 - 🔒 Baseline hash calculado para config/security_config.json
+[2025-11-08 20:38:41] iast_detector - INFO - info:205 - 🔒 Baseline hash calculado para config/unified_config.toml
+[2025-11-08 20:38:41] iast_detector - INFO - info:205 - ✅ Baseline establecido para 5 archivos
+[2025-11-08 20:38:41] iast_detector - INFO - info:205 - 🚀 Iniciando monitoreo IAST...
+[2025-11-08 20:38:41] iast_detector - INFO - info:205 - ✅ Monitoreo IAST iniciado (intervalo: 30s)
+2025-11-08 20:38:41,379 - plugin.iast_detector - INFO - ✅ IAST Engine iniciado y monitoreando
+2025-11-08 20:38:41,379 - plugin.iast_detector - INFO - ✅ IAST Detector iniciado
+2025-11-08 20:38:41,379 - plugin.iast_detector - INFO - ✅ Plugin 'iast_detector' activado exitosamente
+2025-11-08 20:46:26,908 - plugin.iast_detector - INFO - 📄 Configuración cargada desde C:\Users\windows10\Documents\GitHub\ANTIVIRUS_CPP_PROFESSIONAL\UNIFIED_ANTIVIRUS\plugins\detectors\iast_detector\config.json
+2025-11-08 20:46:26,972 - plugin.iast_detector - INFO - 🚀 Inicializando IAST Detector Plugin...
+[2025-11-08 20:46:27] iast_detector - INFO - __init__:91 - 📝 Logger 'iast_detector' inicializado
+[2025-11-08 20:46:27] iast_detector - INFO - info:205 - 🔒 Baseline hash calculado para core/engine.py
+[2025-11-08 20:46:27] iast_detector - INFO - info:205 - 🔒 Baseline hash calculado para utils/logger.py
+[2025-11-08 20:46:27] iast_detector - INFO - info:205 - 🔒 Baseline hash calculado para plugins/detectors/ml_detector/ml_engine.py
+[2025-11-08 20:46:28] iast_detector - INFO - info:205 - 🔒 Baseline hash calculado para config/security_config.json
+[2025-11-08 20:46:28] iast_detector - INFO - info:205 - 🔒 Baseline hash calculado para config/unified_config.toml
+[2025-11-08 20:46:28] iast_detector - INFO - info:205 - ✅ Baseline establecido para 5 archivos
+[2025-11-08 20:46:28] iast_detector - INFO - info:205 - 🚀 Iniciando monitoreo IAST...
+[2025-11-08 20:46:28] iast_detector - INFO - info:205 - ✅ Monitoreo IAST iniciado (intervalo: 30s)
+2025-11-08 20:46:28,279 - plugin.iast_detector - INFO - ✅ IAST Engine iniciado y monitoreando
+2025-11-08 20:46:28,279 - plugin.iast_detector - INFO - ✅ IAST Detector iniciado
+2025-11-08 20:46:28,279 - plugin.iast_detector - INFO - ✅ Plugin 'iast_detector' activado exitosamente
+2025-11-08 21:02:03,259 - plugin.iast_detector - INFO - 📄 Configuración cargada desde C:\Users\windows10\Documents\GitHub\ANTIVIRUS_CPP_PROFESSIONAL\UNIFIED_ANTIVIRUS\plugins\detectors\iast_detector\config.json
+2025-11-08 21:02:03,288 - plugin.iast_detector - INFO - 🚀 Inicializando IAST Detector Plugin...
+[2025-11-08 21:02:03] iast_detector - INFO - __init__:91 - 📝 Logger 'iast_detector' inicializado
+[2025-11-08 21:02:03] iast_detector - INFO - info:205 - 🔒 Baseline hash calculado para core/engine.py
+[2025-11-08 21:02:04] iast_detector - INFO - info:205 - 🔒 Baseline hash calculado para utils/logger.py
+[2025-11-08 21:02:04] iast_detector - INFO - info:205 - 🔒 Baseline hash calculado para plugins/detectors/ml_detector/ml_engine.py
+[2025-11-08 21:02:04] iast_detector - INFO - info:205 - 🔒 Baseline hash calculado para config/security_config.json
+[2025-11-08 21:02:04] iast_detector - INFO - info:205 - 🔒 Baseline hash calculado para config/unified_config.toml
+[2025-11-08 21:02:04] iast_detector - INFO - info:205 - ✅ Baseline establecido para 5 archivos
+[2025-11-08 21:02:04] iast_detector - INFO - info:205 - 🚀 Iniciando monitoreo IAST...
+[2025-11-08 21:02:04] iast_detector - INFO - info:205 - ✅ Monitoreo IAST iniciado (intervalo: 30s)
+2025-11-08 21:02:04,949 - plugin.iast_detector - INFO - ✅ IAST Engine iniciado y monitoreando
+2025-11-08 21:02:04,949 - plugin.iast_detector - INFO - ✅ IAST Detector iniciado
+2025-11-08 21:02:04,949 - plugin.iast_detector - INFO - ✅ Plugin 'iast_detector' activado exitosamente
+[2025-11-08 23:08:55] iast_detector - INFO - __init__:91 - 📝 Logger 'iast_detector' inicializado
+[2025-11-08 23:08:55] iast_detector - INFO - info:205 - 🔒 Baseline hash calculado para core/engine.py
+[2025-11-08 23:08:55] iast_detector - INFO - info:205 - 🔒 Baseline hash calculado para utils/logger.py
+[2025-11-08 23:08:55] iast_detector - INFO - info:205 - 🔒 Baseline hash calculado para plugins/detectors/ml_detector/ml_engine.py
+[2025-11-08 23:08:55] iast_detector - INFO - info:205 - 🔒 Baseline hash calculado para config/security_config.json
+[2025-11-08 23:08:55] iast_detector - INFO - info:205 - 🔒 Baseline hash calculado para config/unified_config.toml
+[2025-11-08 23:08:55] iast_detector - INFO - info:205 - ✅ Baseline establecido para 5 archivos
+2025-11-08 23:08:55,241 - plugin.iast_detector - INFO - 📄 Configuración cargada desde C:\Users\windows10\Documents\GitHub\ANTIVIRUS_CPP_PROFESSIONAL\UNIFIED_ANTIVIRUS\plugins\detectors\iast_detector\config.json
+2025-11-08 23:08:55,241 - plugin.iast_detector - INFO - 🚀 Inicializando IAST Detector Plugin...
+2025-11-08 23:08:55,273 - plugin.iast_detector - INFO - ✅ IAST Engine iniciado y monitoreando vulnerabilidades
+2025-11-08 23:08:55,289 - plugin.iast_detector - INFO - ✅ IAST Detector iniciado
+2025-11-08 23:08:55,318 - plugin.iast_detector - INFO - ✅ Plugin 'iast_detector' activado exitosamente
+2025-11-08 23:09:20,718 - plugin.iast_detector - ERROR - ❌ Error detectando amenazas IAST: 'IASTDetector' object has no attribute 'check_file_integrity'
+2025-11-08 23:09:20,718 - plugin.iast_detector - ERROR - ❌ Error detectando amenazas IAST: 'IASTDetector' object has no attribute 'check_file_integrity'
+2025-11-08 23:09:20,719 - plugin.iast_detector - ERROR - ❌ Error obteniendo estadísticas: 'IASTDetector' object has no attribute 'get_detection_report'
+2025-11-08 23:09:20,719 - plugin.iast_detector - ERROR - ❌ Error actualizando firmas IAST: 'IASTDetector' object has no attribute 'calculate_baseline_hashes'
+2025-11-08 23:09:20,720 - plugin.iast_detector - ERROR - ❌ Error deteniendo IAST detector: 'IASTDetector' object has no attribute 'stop_monitoring'

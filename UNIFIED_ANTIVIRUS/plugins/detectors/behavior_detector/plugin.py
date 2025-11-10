@@ -506,9 +506,14 @@ class BehaviorDetectorPlugin(BasePlugin, DetectorInterface):
     ) -> bool:
         """🧠 Análisis INTELIGENTE de procesos - NO patrones obvios"""
         try:
-            name = process_data.get("name", "").lower()
-            exe = process_data.get("exe", "").lower()
-            cmdline = process_data.get("cmdline", "").lower()
+            name = process_data.get("name", "") or ""
+            exe = process_data.get("exe", "") or ""
+            cmdline = process_data.get("cmdline", "") or ""
+            
+            # Validar que los strings no sean None antes de lower()
+            name = name.lower() if name else ""
+            exe = exe.lower() if exe else ""
+            cmdline = cmdline.lower() if cmdline else ""
 
             # 🧠 ANÁLISIS INTELIGENTE usando behavior_engine
             if hasattr(self, 'behavior_engine') and self.behavior_engine:
@@ -547,8 +552,8 @@ class BehaviorDetectorPlugin(BasePlugin, DetectorInterface):
                 "winlogon.exe",
             ]
             if exe == "unknown" or not exe:
-                if name not in system_processes:
-                    logger.warning(f"[DETECTION] Proceso sin ruta ejecutable: {name}")
+                if name not in system_processes and name:
+                    logger.debug(f"[DETECTION] Proceso sin ruta: {name}")
                     return True
 
             # 🧠 Línea de comandos: análisis inteligente (no patrones obvios)
@@ -559,7 +564,7 @@ class BehaviorDetectorPlugin(BasePlugin, DetectorInterface):
             return False
 
         except Exception as e:
-            logger.error(f"Error analizando proceso sospechoso: {e}")
+            logger.debug(f"Omitiendo proceso con datos incompletos: {e}")
             return False
 
     def _analyze_command_line_intelligence(self, cmdline: str) -> bool:

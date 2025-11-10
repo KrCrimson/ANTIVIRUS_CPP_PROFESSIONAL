@@ -64,13 +64,18 @@ class UnifiedAntivirusEngine:
         self._stats_thread = None
         self._shutdown_event = threading.Event()
         
+        # Inicializar componentes TDD
+        self.memory_monitor = None
+        self.consensus_engine = None
+        
         # Configurar manejadores de señales para shutdown graceful (solo en main thread)
         try:
             if threading.current_thread() == threading.main_thread():
                 signal.signal(signal.SIGINT, self._signal_handler)
                 signal.signal(signal.SIGTERM, self._signal_handler)
+                logger.debug("✅ Manejadores de señales configurados correctamente")
             else:
-                logger.info("⚠️ Engine ejecutándose en hilo secundario, señales deshabilitadas")
+                logger.debug("📟 Engine ejecutándose en hilo secundario (normal en UI)")
         except ValueError as e:
             logger.warning(f"⚠️ No se pudieron configurar señales: {e}")
         
@@ -156,9 +161,13 @@ class UnifiedAntivirusEngine:
             if self._stats_thread and self._stats_thread.is_alive():
                 self._stats_thread.join(timeout=5)
             
-            # 4. Desactivar todos los plugins
-            if not self.plugin_manager.shutdown_all_plugins():
-                logger.warning("⚠️ Algunos plugins no se desactivaron correctamente")
+            # 4. Desactivar todos los plugins de forma agresiva
+            logger.info("🛑 Forzando shutdown de plugins...")
+            shutdown_success = self.plugin_manager.shutdown_all_plugins()
+            if not shutdown_success:
+                logger.warning("⚠️ Algunos plugins no se desactivaron correctamente, forzando terminación...")
+                # Forzar terminación de threads de plugins
+                self.plugin_manager.force_shutdown()
             
             # 5. Limpiar event bus
             event_bus.clear_history()
@@ -368,6 +377,208 @@ class UnifiedAntivirusEngine:
     def __exit__(self, exc_type, exc_val, exc_tb):
         """Shutdown automático al salir del context"""
         self.shutdown_system()
+
+    # =================== MEMORY MONITORING METHODS ===================
+    def analyze_memory_usage(self, process_name: str, memory_mb: float, threshold_mb: float = 1024) -> Dict[str, Any]:
+        """
+        Analizar uso de memoria de un proceso
+        
+        Args:
+            process_name: Nombre del proceso
+            memory_mb: Uso actual de memoria en MB
+            threshold_mb: Umbral de memoria sospechosa en MB
+            
+        Returns:
+            Análisis de memoria con risk_level y suspicion_score
+        """
+        if self.memory_monitor is None:
+            self.memory_monitor = MemoryMonitor()
+        
+        return self.memory_monitor.analyze_memory_usage(process_name, memory_mb, threshold_mb)
+    
+    def combine_threat_results(self, detector_results: Dict[str, Dict]) -> Dict[str, Any]:
+        """
+        Combinar resultados de múltiples detectores usando consenso
+        
+        Args:
+            detector_results: Resultados de cada detector
+            
+        Returns:
+            Resultado consensuado con final_risk_level y confidence
+        """
+        if self.consensus_engine is None:
+            self.consensus_engine = ConsensusEngine()
+        
+        return self.consensus_engine.combine_threat_results(detector_results)
+    
+    def get_memory_monitor(self):
+        """Obtener referencia al monitor de memoria"""
+        if self.memory_monitor is None:
+            self.memory_monitor = MemoryMonitor()
+        return self.memory_monitor
+    
+    def get_consensus_engine(self):
+        """Obtener referencia al motor de consenso"""
+        if self.consensus_engine is None:
+            self.consensus_engine = ConsensusEngine()
+        return self.consensus_engine
+
+
+class MemoryMonitor:
+    """Monitor de uso de memoria para procesos sospechosos"""
+    
+    def __init__(self):
+        self.memory_threshold = 1024  # MB
+        self.suspicious_processes = {}
+        
+    def analyze_memory_usage(self, process_name: str, memory_mb: float, threshold_mb: float = 1024) -> Dict[str, Any]:
+        """
+        Analizar uso de memoria de un proceso
+        
+        Args:
+            process_name: Nombre del proceso
+            memory_mb: Uso actual de memoria en MB
+            threshold_mb: Umbral de sospecha en MB
+            
+        Returns:
+            Diccionario con análisis de memoria
+        """
+        # Calcular ratio de uso respecto al umbral
+        memory_ratio = memory_mb / threshold_mb
+        
+        # Determinar nivel de riesgo
+        if memory_ratio >= 2.0:
+            risk_level = "HIGH"
+            suspicion_score = min(0.9, 0.8 + (memory_ratio - 2.0) * 0.1)
+        elif memory_ratio >= 1.5:
+            risk_level = "MEDIUM"
+            suspicion_score = min(0.7, 0.3 + (memory_ratio - 1.5) * 0.4)
+        elif memory_ratio >= 1.0:
+            risk_level = "LOW"  
+            suspicion_score = min(0.5, 0.1 + (memory_ratio - 1.0) * 0.4)
+        else:
+            risk_level = "NORMAL"
+            suspicion_score = min(0.3, memory_ratio * 0.3)
+        
+        # Registrar proceso sospechoso si es necesario
+        if risk_level in ["HIGH", "MEDIUM"]:
+            self.suspicious_processes[process_name] = {
+                'memory_mb': memory_mb,
+                'ratio': memory_ratio,
+                'risk_level': risk_level,
+                'timestamp': time.time()
+            }
+        
+        return {
+            'process_name': process_name,
+            'memory_usage_mb': memory_mb,
+            'threshold_mb': threshold_mb,
+            'memory_ratio': memory_ratio,
+            'risk_level': risk_level,
+            'suspicion_score': suspicion_score,
+            'recommendations': self._get_memory_recommendations(risk_level, memory_ratio)
+        }
+    
+    def _get_memory_recommendations(self, risk_level: str, memory_ratio: float) -> List[str]:
+        """Generar recomendaciones basadas en uso de memoria"""
+        recommendations = []
+        
+        if risk_level == "HIGH":
+            recommendations.extend([
+                "Proceso consumiendo memoria excesiva - investigar inmediatamente",
+                "Verificar si es un proceso legítimo o posible malware",
+                "Considerar terminación del proceso si es sospechoso"
+            ])
+        elif risk_level == "MEDIUM":
+            recommendations.extend([
+                "Proceso con uso elevado de memoria - monitorear",
+                "Verificar comportamiento del proceso"
+            ])
+        elif risk_level == "LOW":
+            recommendations.append("Uso de memoria ligeramente elevado - observar")
+        
+        return recommendations
+
+
+class ConsensusEngine:
+    """Motor de consenso para combinar resultados de múltiples detectores"""
+    
+    def __init__(self):
+        self.detector_weights = {
+            'ml_detector': 0.4,
+            'behavior_detector': 0.3,
+            'network_detector': 0.2,
+            'keylogger_detector': 0.1
+        }
+        self.risk_values = {
+            'HIGH': 1.0,
+            'MEDIUM': 0.6,
+            'LOW': 0.3,
+            'NORMAL': 0.1
+        }
+    
+    def combine_threat_results(self, detector_results: Dict[str, Dict]) -> Dict[str, Any]:
+        """
+        Combinar resultados de múltiples detectores
+        
+        Args:
+            detector_results: Resultados por detector con risk_level, confidence, score
+            
+        Returns:
+            Resultado consensuado
+        """
+        if not detector_results:
+            return {
+                'final_risk_level': 'NORMAL',
+                'confidence': 0.0,
+                'consensus_score': 0.0,
+                'detector_count': 0
+            }
+        
+        total_weighted_score = 0.0
+        total_weight = 0.0
+        total_confidence = 0.0
+        detector_count = len(detector_results)
+        
+        # Combinar resultados ponderados
+        for detector_name, result in detector_results.items():
+            weight = self.detector_weights.get(detector_name, 0.1)
+            risk_level = result.get('risk_level', 'NORMAL')
+            confidence = result.get('confidence', 0.5)
+            score = result.get('score', self.risk_values.get(risk_level, 0.1))
+            
+            # Calcular contribución ponderada
+            weighted_score = score * confidence * weight
+            total_weighted_score += weighted_score
+            total_weight += weight
+            total_confidence += confidence
+        
+        # Calcular consenso final
+        if total_weight > 0:
+            consensus_score = total_weighted_score / total_weight
+            avg_confidence = total_confidence / detector_count
+        else:
+            consensus_score = 0.0
+            avg_confidence = 0.0
+        
+        # Determinar nivel de riesgo final
+        if consensus_score >= 0.6:
+            final_risk_level = "HIGH"
+        elif consensus_score >= 0.4:
+            final_risk_level = "MEDIUM"  
+        elif consensus_score >= 0.2:
+            final_risk_level = "LOW"
+        else:
+            final_risk_level = "NORMAL"
+        
+        return {
+            'final_risk_level': final_risk_level,
+            'confidence': avg_confidence,
+            'consensus_score': consensus_score,
+            'detector_count': detector_count,
+            'individual_results': detector_results,
+            'weights_used': self.detector_weights
+        }
 
 
 # =================== LAUNCHER FUNCTION ===================

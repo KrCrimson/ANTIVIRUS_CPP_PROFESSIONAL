@@ -22,7 +22,7 @@ sys.path.append(os.path.join(os.path.dirname(__file__), "..", "shared"))
 try:
     from unified_intelligence import UnifiedIntelligence
 except ImportError:
-    logger.warning("unified_intelligence no disponible - usando análisis básico")
+    logger.info("📊 Usando análisis heurístico básico (modo estándar)")
     UnifiedIntelligence = None
 
 
@@ -511,10 +511,10 @@ class RuleEngine:
                     self.rules.append(intelligent_rule)
                     logger.info("[RULE_ENGINE] ✅ Motor de inteligencia unificada y regla inteligente cargados")
                 else:
-                    logger.warning("[RULE_ENGINE] ⚠️ Motor de inteligencia no disponible")
+                    logger.debug("[RULE_ENGINE] 📊 Usando modo heurístico estándar")
             else:
                 # 🚫 EVITAR patrones tontos legacy - Solo APIs peligrosas
-                logger.warning("[RULE_ENGINE] ⚠️ Modo legacy - Considerar habilitar intelligence_engine")
+                logger.debug("[RULE_ENGINE] 📊 Modo heurístico básico activo")
                 
                 # Patrones de línea de comando sospechosos (mantener solo no-obvios)
                 cmdline_patterns = process_rules.get("suspicious_command_lines", [])

@@ -632,3 +632,38 @@ def log_test_message(message: str = "Test de web logging desde antivirus",
     except Exception as e:
         print(f"❌ Error enviando mensaje de prueba: {e}")
         return False
+
+
+def setup_logger(name: str = "antivirus", level: str = "INFO") -> logging.Logger:
+    """
+    Función de compatibilidad para el frontend.
+    Configura y retorna un logger usando la infraestructura existente.
+    
+    Args:
+        name: Nombre del logger
+        level: Nivel de logging
+        
+    Returns:
+        Logger configurado
+    """
+    try:
+        # Usar la función existente get_logger que ya configura todo
+        logger = get_logger(name)
+        
+        # Establecer el nivel si se especifica
+        if level.upper() in ['DEBUG', 'INFO', 'WARNING', 'ERROR', 'CRITICAL']:
+            logger.setLevel(getattr(logging, level.upper()))
+            
+        return logger
+        
+    except Exception as e:
+        print(f"⚠️ Error configurando logger, usando fallback: {e}")
+        # Fallback básico si falla todo
+        logger = logging.getLogger(name)
+        logger.setLevel(logging.INFO)
+        if not logger.handlers:
+            handler = logging.StreamHandler()
+            formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+            handler.setFormatter(formatter)
+            logger.addHandler(handler)
+        return logger
