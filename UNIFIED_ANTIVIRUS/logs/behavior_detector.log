@@ -279,3 +279,6 @@
 2025-11-10 16:30:24,226 - plugin.behavior_detector - INFO - 📄 Configuración cargada desde C:\Users\windows10\Documents\GitHub\ANTIVIRUS_CPP_PROFESSIONAL\UNIFIED_ANTIVIRUS\plugins\detectors\behavior_detector\config.json
 2025-11-10 16:30:24,261 - plugin.behavior_detector - INFO - ✅ Plugin 'behavior_detector' activado exitosamente
 2025-11-10 16:31:22,986 - plugin.behavior_detector - INFO - 🔴 Plugin 'behavior_detector' desactivado
+2025-11-10 20:17:33,282 - plugin.behavior_detector - INFO - 📄 Configuración cargada desde C:\Users\HP\Documents\GitHub\ANTIVIRUS_CPP_PROFESSIONAL\UNIFIED_ANTIVIRUS\plugins\detectors\behavior_detector\config.json
+2025-11-10 20:17:33,343 - plugin.behavior_detector - INFO - ✅ Plugin 'behavior_detector' activado exitosamente
+2025-11-10 20:21:05,909 - plugin.behavior_detector - INFO - 🔴 Plugin 'behavior_detector' desactivado

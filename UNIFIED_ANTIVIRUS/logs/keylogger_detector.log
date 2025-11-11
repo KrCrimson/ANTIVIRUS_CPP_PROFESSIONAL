@@ -95,3 +95,5 @@
 2025-11-10 16:27:33,002 - plugin.keylogger_detector - INFO - ✅ Plugin 'keylogger_detector' activado exitosamente
 2025-11-10 16:30:24,671 - plugin.keylogger_detector - INFO - 📄 Configuración cargada desde C:\Users\windows10\Documents\GitHub\ANTIVIRUS_CPP_PROFESSIONAL\UNIFIED_ANTIVIRUS\plugins\detectors\keylogger_detector\config.json
 2025-11-10 16:30:25,107 - plugin.keylogger_detector - INFO - ✅ Plugin 'keylogger_detector' activado exitosamente
+2025-11-10 20:17:33,675 - plugin.keylogger_detector - INFO - 📄 Configuración cargada desde C:\Users\HP\Documents\GitHub\ANTIVIRUS_CPP_PROFESSIONAL\UNIFIED_ANTIVIRUS\plugins\detectors\keylogger_detector\config.json
+2025-11-10 20:17:34,075 - plugin.keylogger_detector - INFO - ✅ Plugin 'keylogger_detector' activado exitosamente

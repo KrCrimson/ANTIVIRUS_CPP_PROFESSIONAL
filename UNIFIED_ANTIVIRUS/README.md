@@ -1,10 +1,150 @@
-# 🛡️ Sistema Anti-Keylogger Unificado
+# 🛡️ Sistema Anti-Keylogger Unificado - ÍNDICE CENTRAL DE DOCUMENTACIÓN
 
-## Descripción General
+## 📚 Navegador de Documentación
+
+Bienvenido al índice central de documentación del Sistema Anti-Keylogger Unificado. Desde aquí puedes acceder a toda la documentación organizada por categorías.
+
+---
+
+## 🎯 Descripción General
 
 Sistema avanzado de detección y prevención de keyloggers desarrollado en Python. Implementa múltiples capas de detección utilizando análisis de comportamiento, machine learning, monitoreo de red y análisis heurístico para identificar y neutralizar amenazas de captura de teclado en tiempo real.
 
 Este sistema antivirus modular utiliza una arquitectura basada en plugins con patrones de diseño de software avanzados (Facade, Observer, Strategy, Template Method, Factory) para proporcionar protección integral contra keyloggers y spyware.
+
+---
+
+## 📖 DOCUMENTACIÓN PRINCIPAL
+
+### 🏠 **Documentación General**
+- 📋 **[README Principal](./README.md)** - Este archivo (descripción general del proyecto)
+- 🔧 **[Documentación Técnica](./doc/COMO_FUNCIONA_TECHNICAL_README.md)** - Funcionamiento interno y arquitectura detallada
+- 📊 **[Resumen de Mejoras TDD](./TDD_ENHANCEMENT_SUMMARY.md)** - Mejoras implementadas con desarrollo guiado por pruebas
+
+### 🛠️ **Configuración y Setup**
+- ⚙️ **[Configuración General](./config/README.md)** - Configuración del sistema
+- 📖 **[Guía de Usuario - Configuración](./config/GUIA_USUARIO_CONFIGURACION.md)** - Guía completa para configurar el sistema
+- 📝 **[Configuración Avanzada](./config/README_CONFIGURACION.md)** - Configuraciones avanzadas y personalizaciones
+
+### 🧪 **Testing y Calidad**
+- 🔬 **[Tests Generales](./tests/README.md)** - Documentación del sistema de pruebas
+- 📐 **[Guía de Implementación TDD](./tests/GUIA_IMPLEMENTACION_TDD.md)** - Metodología de desarrollo guiado por pruebas
+- 🎯 **[Test: API Hooking Detection](./tests/tdd_01_api_hooking_detection/README.md)** - Pruebas de detección de hooks de API
+- 🌐 **[Test: Port Detection](./tests/tdd_02_port_detection/README.md)** - Pruebas de detección de puertos
+- 🔐 **[Test: Safe Process Validation](./tests/tdd_03_safe_process_validation/README.md)** - Validación de procesos seguros
+
+---
+
+## 🏗️ ARQUITECTURA Y COMPONENTES
+
+### 🎯 **Core del Sistema**
+- 🚀 **[Core Engine](./core/README.md)** - Motor principal y arquitectura central
+
+### 🔌 **Sistema de Plugins**
+- 🔍 **[Plugins - Detectores](./plugins/detectors/README.md)** - Módulos de detección de amenazas
+- 📡 **[Plugins - Monitores](./plugins/monitors/README.md)** - Módulos de monitoreo del sistema
+- ⚡ **[Plugins - Manejadores](./plugins/handlers/README.md)** - Manejadores de eventos y respuestas
+
+### 🕵️ **Detectores Especializados**
+- 🎹 **[Keylogger Detector](./plugins/detectors/keylogger_detector/README.md)** - Detección especializada de keyloggers
+- 🧠 **[ML Detector](./plugins/detectors/ml_detector/README.md)** - Detección basada en Machine Learning
+- 🌐 **[Network Detector](./plugins/detectors/network_detector/README.md)** - Análisis de tráfico de red
+- 👁️ **[Behavior Detector](./plugins/detectors/behavior_detector/README.md)** - Análisis de comportamiento de procesos
+
+### 🛠️ **Utilidades y Herramientas**
+- 🔧 **[Utilities](./utils/README.md)** - Herramientas y utilidades del sistema
+- 🤖 **[Models](./models/README.md)** - Modelos de Machine Learning y datos
+
+---
+
+## 📂 DIRECTORIOS Y RECURSOS
+
+### 📚 **Recursos Adicionales**
+- 📑 **[Directorio XD](./xd/README.md)** - Recursos y documentación adicional
+- 📝 **[MDSD](./mdsd/README.md)** - Documentación de desarrollo dirigido por modelos
+
+---
+
+## 🚀 INICIO RÁPIDO
+
+### 📋 **Para Desarrolladores**
+1. **[Configuración Inicial](./config/GUIA_USUARIO_CONFIGURACION.md)** - Configurar el entorno
+2. **[Guía TDD](./tests/GUIA_IMPLEMENTACION_TDD.md)** - Metodología de desarrollo
+3. **[Documentación Técnica](./doc/COMO_FUNCIONA_TECHNICAL_README.md)** - Entender la arquitectura
+
+### 🏃 **Para Usuarios**
+1. **[README Principal](./README.md)** - Descripción general
+2. **[Guía de Configuración](./config/GUIA_USUARIO_CONFIGURACION.md)** - Configurar el antivirus
+3. **[Configuración del Sistema](./config/README.md)** - Ajustes básicos
+
+---
+
+## 📊 MAPA DE NAVEGACIÓN RÁPIDA
+
+| 🎯 **¿Qué buscas?** | 📖 **Ve a este documento** |
+|---------------------|----------------------------|
+| Entender cómo funciona | [Documentación Técnica](./doc/COMO_FUNCIONA_TECHNICAL_README.md) |
+| Configurar el sistema | [Guía de Usuario](./config/GUIA_USUARIO_CONFIGURACION.md) |
+| Ejecutar pruebas | [Tests README](./tests/README.md) |
+| Desarrollar plugins | [Core README](./core/README.md) |
+| Detectores disponibles | [Detectores README](./plugins/detectors/README.md) |
+| Machine Learning | [ML Detector](./plugins/detectors/ml_detector/README.md) |
+| Arquitectura técnica | [Core Engine](./core/README.md) |
+| Utilidades del sistema | [Utils README](./utils/README.md) |
+
+---
+
+## 🌐 SISTEMA DE MONITOREO WEB
+
+### 📊 **Monitoreo Centralizado**
+- 🖥️ **[Web Monitor Server](./web_monitor_server.py)** - Servidor web FastAPI para centralizar logs
+- 📊 **[Dashboard Web](./web_templates/dashboard.html)** - Interface web para visualizar métricas
+- 🔐 **[Sistema de Seguridad Web](./web_security.py)** - Autenticación y seguridad del dashboard
+- 📡 **[Cliente de Logs](./utils/log_sender.py)** - Cliente para envío automático de logs
+- ⚙️ **[Configuración Web](./client_monitor_config.json)** - Configuración del sistema web
+
+### 🛠️ **Documentación de Integración Web**
+- 📋 **Integración Completa** - Sistema totalmente integrado con el antivirus principal
+- 🚀 **Servidor HTTP Simple** - Versión simplificada para pruebas (`simple_http_server.py`)
+- 🧪 **Scripts de Prueba** - Herramientas de testing para el sistema web
+
+---
+
+## 📁 DOCUMENTACIÓN ADICIONAL
+
+### 🔧 **Desarrollo y Arquitectura**
+- 📐 **[Integración de Keyloggers](./doc/KEYLOGGER_INTEGRATION_SUMMARY.md)** - Resumen de integración de detectores
+- 🔄 **[Análisis de Refactoring](./refactor_report.py)** - Reportes de mejoras del código
+- 📊 **[Reportes TDD](./tdd_report.py)** - Reportes de desarrollo guiado por pruebas
+- 🎯 **[Integración de Producción](./test_production_integration.py)** - Tests de integración completa
+
+### 📋 **Scripts y Herramientas**
+- 🚀 **[Launcher Principal](./launcher.py)** - Lanzador del sistema backend
+- 🎨 **[UI Profesional](./professional_ui_robust.py)** - Interfaz gráfica principal
+- 🔧 **[Backend Simple](./simple_backend.py)** - Ejecutor directo del backend
+- 📦 **[Registro de Plugins](./register_plugins.py)** - Auto-registro del sistema de plugins
+- 🛠️ **[Instalador de Dependencias](./install_dependencies.py)** - Setup automático
+
+### 📊 **Análisis y Diagramas**
+- 📈 **[Análisis Backend](./backend_analysis.py)** - Análisis del rendimiento backend
+- 🔍 **[Verificador de Dependencias](./check_dependencies.py)** - Validación del entorno
+- 📋 **[Reporte TDD Completo](./full_tdd_report.py)** - Análisis completo de pruebas
+- 🔄 **[Ejecutor de Tests](./run_all_tdd_tests.py)** - Ejecutor automático de todas las pruebas
+
+---
+
+## 🗺️ DIAGRAMAS Y RECURSOS VISUALES
+
+### 📊 **Diagramas de Flujo**
+- 🔄 **[Flujo de Secuencia](./sequence_flow.puml)** - Diagrama PlantUML del flujo de datos
+- 🎯 **[Flujo Simple](./simple_flow.puml)** - Diagrama simplificado del sistema
+
+### 📁 **Recursos y Assets**
+- 🌐 **[Web Static](./web_static/)** - Recursos estáticos para el dashboard web
+- 🗃️ **[Threat Intel](./threat_intel/)** - Base de datos de inteligencia de amenazas
+- 📊 **[Logs del Sistema](./logs/)** - Directorio de logs y registros
+
+---
 
 ## 🎯 Características Principales
 
@@ -299,9 +439,106 @@ Este es un proyecto académico del curso de Sistemas Comportamentales.
 
 Proyecto académico - Universidad Privada de Tacna
 
-## 👥 Autores
+---
+
+## ⚙️ ARCHIVOS DE CONFIGURACIÓN IMPORTANTES
+
+### 📋 **Configuración del Sistema**
+- 📝 **[requirements.txt](./requirements.txt)** - Dependencias de Python requeridas
+- 🔧 **[pytest.ini](./pytest.ini)** - Configuración de pruebas con pytest
+- 📊 **[.flake8](./.flake8)** - Configuración de linting y estilo de código
+
+### 🏗️ **Archivos de Build y Deploy**
+- 🚀 **[Make.ps1](./Make.ps1)** - Script de construcción para PowerShell
+- 📦 **[professional_ui_robust.spec](./professional_ui_robust.spec)** - Configuración de PyInstaller
+- 🛠️ **[installer_script.iss](./installer_script.iss)** - Script de instalador con Inno Setup
+
+---
+
+## 🔗 ENLACES RÁPIDOS DE CONFIGURACIÓN
+
+| 📋 **Tipo de Configuración** | 📄 **Archivo** | 📝 **Descripción** |
+|------------------------------|---------------|-------------------|
+| **Sistema Principal** | [unified_config.toml](./config/unified_config.toml) | Configuración central |
+| **Alertas** | [alerts_config.json](./config/alerts_config.json) | Configuración de alertas |
+| **Machine Learning** | [ml_config.json](./config/ml_config.json) | Configuración ML |
+| **Plugins** | [plugins_config.json](./config/plugins_config.json) | Configuración de plugins |
+| **Seguridad** | [security_config.json](./config/security_config.json) | Configuración de seguridad |
+| **Logging** | [logging_config.json](./config/logging_config.json) | Configuración de logs |
+| **UI** | [ui_config.json](./config/ui_config.json) | Configuración de interfaz |
+| **Lista Blanca** | [whitelist.json](./config/whitelist.json) | Procesos permitidos |
+| **Monitoreo Web** | [client_monitor_config.json](./client_monitor_config.json) | Config web monitoring |
+
+---
+
+## 🛠️ HERRAMIENTAS Y UTILIDADES ADICIONALES
+
+### 🧪 **Testing y Validación**
+- 🔬 **[Validador de Configuración](./config/config_validator.py)** - Validar archivos de configuración
+- 📊 **[Test de Integración](./test_production_integration.py)** - Pruebas de integración completa
+- 🎯 **[Ejecutor de Tests TDD](./run_all_tdd_tests.py)** - Ejecutar todas las pruebas
+
+### 📊 **Análisis y Reportes**
+- 📈 **[Reporte TDD Completo](./full_tdd_report.py)** - Análisis completo de cobertura de pruebas
+- � **[Análisis de Refactoring](./refactor_report.py)** - Reportes de mejoras de código
+- 📋 **[Análisis de Backend](./backend_analysis.py)** - Performance y análisis del backend
+
+### 🌐 **Sistema de Monitoreo Web**
+- 🖥️ **[Servidor Web FastAPI](./web_monitor_server.py)** - Servidor de monitoreo centralizado
+- 🏠 **[Servidor HTTP Simple](./simple_http_server.py)** - Versión simplificada para testing
+- 📊 **[Dashboard Templates](./web_templates/)** - Templates del dashboard web
+- 🔐 **[Sistema de Seguridad Web](./web_security.py)** - Autenticación y seguridad
+- 📡 **[Cliente de Logs](./utils/log_sender.py)** - Envío automático de logs al servidor
+
+---
+
+## 🎯 GUÍAS DE INICIO RÁPIDO POR PERFIL
+
+### 👨‍💻 **Para Desarrolladores**
+1. **[Guía TDD](./tests/GUIA_IMPLEMENTACION_TDD.md)** - Metodología de desarrollo
+2. **[Documentación del Core](./core/README.md)** - Entender la arquitectura
+3. **[Desarrollo de Plugins](./plugins/README.md)** - Crear nuevos plugins
+4. **[API del Sistema](./doc/COMO_FUNCIONA_TECHNICAL_README.md)** - Documentación técnica
+
+### 🔧 **Para Administradores**
+1. **[Guía de Configuración](./config/GUIA_USUARIO_CONFIGURACION.md)** - Configuración completa
+2. **[Configuración de Seguridad](./config/README_CONFIGURACION.md)** - Configuraciones avanzadas
+3. **[Monitoreo Web](./web_monitor_server.py)** - Setup del dashboard centralizado
+4. **[Logs del Sistema](./utils/README.md)** - Gestión de logs y monitoreo
+
+### 🧪 **Para Testing/QA**
+1. **[Tests Generales](./tests/README.md)** - Ejecutar pruebas
+2. **[Metodología TDD](./tests/GUIA_IMPLEMENTACION_TDD.md)** - Entender las pruebas
+3. **[Tests Específicos](./tests/)** - Casos de prueba por componente
+4. **[Validación de Producción](./test_production_integration.py)** - Tests de integración
+
+### 📊 **Para Análisis y Monitoreo**
+1. **[Dashboard Web](./web_templates/dashboard.html)** - Interface de monitoreo
+2. **[Análisis ML](./models/README.md)** - Modelos y detección avanzada
+3. **[Threat Intelligence](./threat_intel/)** - Base de datos de amenazas
+4. **[Logs Estructurados](./logs/)** - Análisis de logs del sistema
+
+---
+
+## �👥 Autores
 
 Estudiantes del curso de Sistemas Comportamentales - UPT
+
+---
+
+## 📞 SOPORTE Y AYUDA
+
+### 🆘 **¿Problemas?**
+- 🔧 **Configuración**: Ver [Guía de Usuario](./config/GUIA_USUARIO_CONFIGURACION.md)
+- 🐛 **Bugs**: Revisar [Tests](./tests/README.md) y ejecutar diagnósticos
+- 🔍 **Detección**: Consultar [Detectores README](./plugins/detectors/README.md)
+- 🌐 **Web Monitoring**: Verificar [configuración web](./client_monitor_config.json)
+
+### 📚 **Documentación Clave**
+- 📖 **Funcionamiento**: [Documentación Técnica](./doc/COMO_FUNCIONA_TECHNICAL_README.md)
+- ⚙️ **Configuración**: [README de Config](./config/README.md)
+- 🧪 **Testing**: [Guía TDD](./tests/GUIA_IMPLEMENTACION_TDD.md)
+- 🏗️ **Arquitectura**: [Core README](./core/README.md)
 
 ---
 

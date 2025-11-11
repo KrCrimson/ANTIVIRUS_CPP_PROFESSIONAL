@@ -147,6 +147,19 @@ python iast_engine.py
 }
 ```
 
+## 🔗 **Enlaces Relacionados**
+
+- **[📋 README Principal](../../../README.md)** - Navegación general del proyecto
+- **[🔌 Sistema de Plugins](../../README.md)** - Arquitectura de plugins
+- **[🧠 Recursos Compartidos](../../shared/README.md)** - Motor de inteligencia unificado
+- **[🎯 Behavior Detector](../behavior_detector/README.md)** - Detector de comportamiento
+- **[⌨️ Keylogger Detector](../keylogger_detector/README.md)** - Detector especializado de keyloggers
+- **[🤖 ML Detector](../ml_detector/README.md)** - Detector con machine learning
+- **[🌐 Network Detector](../network_detector/README.md)** - Detector de red
+- **[⚙️ Configuración](../../../config/README.md)** - Sistema de configuración
+- **[📊 Core Engine](../../../core/README.md)** - Motor principal protegido
+- **[📝 Logs](../../../logs/README.md)** - Sistema de logging
+
 ---
 
-**✨ ¡El IAST Detector protege tu antivirus mientras caza keyloggers especializadamente! ✨**
+**Desarrollado como parte del [UNIFIED_ANTIVIRUS](../../../README.md) - Auto-Protección y Detección IAST Avanzada**
