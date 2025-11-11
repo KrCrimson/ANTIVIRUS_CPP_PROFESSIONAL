@@ -24,3 +24,10 @@
 [2025-11-08 17:35:53] iast_detector - INFO - info:205 - 🔒 Baseline hash calculado para config/security_config.json
 [2025-11-08 17:35:53] iast_detector - INFO - info:205 - 🔒 Baseline hash calculado para config/unified_config.toml
 [2025-11-08 17:35:53] iast_detector - INFO - info:205 - ✅ Baseline establecido para 5 archivos
+[2025-11-10 20:28:49] iast_detector - INFO - __init__:91 - 📝 Logger 'iast_detector' inicializado
+[2025-11-10 20:28:49] iast_detector - INFO - info:205 - 🔒 Baseline hash calculado para core/engine.py
+[2025-11-10 20:28:49] iast_detector - INFO - info:205 - 🔒 Baseline hash calculado para utils/logger.py
+[2025-11-10 20:28:49] iast_detector - INFO - info:205 - 🔒 Baseline hash calculado para plugins/detectors/ml_detector/ml_engine.py
+[2025-11-10 20:28:49] iast_detector - INFO - info:205 - 🔒 Baseline hash calculado para config/security_config.json
+[2025-11-10 20:28:49] iast_detector - INFO - info:205 - 🔒 Baseline hash calculado para config/unified_config.toml
+[2025-11-10 20:28:49] iast_detector - INFO - info:205 - ✅ Baseline establecido para 5 archivos

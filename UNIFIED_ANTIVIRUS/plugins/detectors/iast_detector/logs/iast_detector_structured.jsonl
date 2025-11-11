@@ -24,3 +24,10 @@
 {"timestamp": "2025-11-08T17:35:53.693027", "level": "INFO", "logger": "iast_detector", "message": "🔒 Baseline hash calculado para config/security_config.json", "module": "logger", "function": "info", "line": 205}
 {"timestamp": "2025-11-08T17:35:53.693263", "level": "INFO", "logger": "iast_detector", "message": "🔒 Baseline hash calculado para config/unified_config.toml", "module": "logger", "function": "info", "line": 205}
 {"timestamp": "2025-11-08T17:35:53.693481", "level": "INFO", "logger": "iast_detector", "message": "✅ Baseline establecido para 5 archivos", "module": "logger", "function": "info", "line": 205}
+{"timestamp": "2025-11-10T20:28:49.438679", "level": "INFO", "logger": "iast_detector", "message": "📝 Logger 'iast_detector' inicializado", "module": "logger", "function": "__init__", "line": 91}
+{"timestamp": "2025-11-10T20:28:49.439809", "level": "INFO", "logger": "iast_detector", "message": "🔒 Baseline hash calculado para core/engine.py", "module": "logger", "function": "info", "line": 205}
+{"timestamp": "2025-11-10T20:28:49.440589", "level": "INFO", "logger": "iast_detector", "message": "🔒 Baseline hash calculado para utils/logger.py", "module": "logger", "function": "info", "line": 205}
+{"timestamp": "2025-11-10T20:28:49.441345", "level": "INFO", "logger": "iast_detector", "message": "🔒 Baseline hash calculado para plugins/detectors/ml_detector/ml_engine.py", "module": "logger", "function": "info", "line": 205}
+{"timestamp": "2025-11-10T20:28:49.442551", "level": "INFO", "logger": "iast_detector", "message": "🔒 Baseline hash calculado para config/security_config.json", "module": "logger", "function": "info", "line": 205}
+{"timestamp": "2025-11-10T20:28:49.444242", "level": "INFO", "logger": "iast_detector", "message": "🔒 Baseline hash calculado para config/unified_config.toml", "module": "logger", "function": "info", "line": 205}
+{"timestamp": "2025-11-10T20:28:49.444778", "level": "INFO", "logger": "iast_detector", "message": "✅ Baseline establecido para 5 archivos", "module": "logger", "function": "info", "line": 205}
