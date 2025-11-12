@@ -1,4 +1,5 @@
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 2025-10-15 13:00:28,359 - plugin.behavior_detector - INFO - 📄 Configuración cargada desde C:\Users\windows10\Documents\GitHub\proyecto-Anti-keylogger\UNIFIED_ANTIVIRUS\plugins\detectors\behavior_detector\config.json
 2025-10-15 13:00:28,362 - plugin.behavior_detector - INFO - ✅ Plugin 'behavior_detector' activado exitosamente
 2025-10-15 13:01:37,911 - plugin.behavior_detector - INFO - 🔴 Plugin 'behavior_detector' desactivado
@@ -287,6 +288,8 @@
 2025-11-10 20:46:51,285 - plugin.behavior_detector - INFO - ✅ Plugin 'behavior_detector' activado exitosamente
 2025-11-10 21:18:10,740 - plugin.behavior_detector - INFO - 🔴 Plugin 'behavior_detector' desactivado
 =======
+=======
+>>>>>>> Stashed changes
 2025-11-12 14:23:59,967 - plugin.behavior_detector - INFO - 📄 Configuración cargada desde C:\Users\windows10\Documents\GitHub\ANTIVIRUS_CPP_PROFESSIONAL\UNIFIED_ANTIVIRUS\plugins\detectors\behavior_detector\config.json
 2025-11-12 14:23:59,997 - plugin.behavior_detector - INFO - ✅ Plugin 'behavior_detector' activado exitosamente
 2025-11-12 14:42:07,776 - plugin.behavior_detector - INFO - 🔴 Plugin 'behavior_detector' desactivado
@@ -295,4 +298,7 @@
 2025-11-12 15:17:01,876 - plugin.behavior_detector - INFO - 📄 Configuración cargada desde C:\Users\windows10\Documents\GitHub\ANTIVIRUS_CPP_PROFESSIONAL\UNIFIED_ANTIVIRUS\plugins\detectors\behavior_detector\config.json
 2025-11-12 15:17:01,914 - plugin.behavior_detector - INFO - ✅ Plugin 'behavior_detector' activado exitosamente
 2025-11-12 15:17:40,218 - plugin.behavior_detector - INFO - 🔴 Plugin 'behavior_detector' desactivado
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes

@@ -770,6 +770,7 @@ Estudiantes del curso de Sistemas Comportamentales - UPT
 🎨 Interfaz Moderna: Dear PyGui 2.1.0
 ```
 
+<<<<<<< Updated upstream
 ---
 
 <<<<<<< Updated upstream
@@ -791,5 +792,10 @@ Estudiantes del curso de Sistemas Comportamentales - UPT
 
 **Nota**: Este sistema está diseñado para propósitos educativos y de investigación. Para uso en producción, se recomienda realizar auditorías de seguridad adicionales y pruebas exhaustivas.
 =======
+**Nota**: Este sistema está diseñado para propósitos educativos y de investigación en el curso de Sistemas Comportamentales. Implementa metodologías avanzadas de desarrollo (TDD, IAST, MDSD) integradas con detección de amenazas en tiempo real. Para uso en producción, se recomienda realizar auditorías de seguridad adicionales y pruebas exhaustivas.
+>>>>>>> Stashed changes
+=======
+---
+
 **Nota**: Este sistema está diseñado para propósitos educativos y de investigación en el curso de Sistemas Comportamentales. Implementa metodologías avanzadas de desarrollo (TDD, IAST, MDSD) integradas con detección de amenazas en tiempo real. Para uso en producción, se recomienda realizar auditorías de seguridad adicionales y pruebas exhaustivas.
 >>>>>>> Stashed changes

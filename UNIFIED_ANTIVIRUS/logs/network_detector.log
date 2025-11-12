@@ -1,4 +1,5 @@
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 2025-10-06 12:15:18,971 - network_detector - INFO - 🌐 Inicializando Network Detector Plugin...
 2025-10-06 12:15:18,982 - network_detector - INFO - 📋 Configuración cargada: 13 secciones
 2025-10-06 12:15:18,982 - network_detector - INFO - 🔧 Componentes básicos inicializados
@@ -556,6 +557,8 @@
 2025-11-10 20:47:32,261 - network_detector - INFO - ✅ Componentes verificados (modo básico)
 2025-11-10 20:47:32,293 - network_detector - INFO - ✅ Network Detector Plugin activado
 =======
+=======
+>>>>>>> Stashed changes
 2025-11-12 14:24:35,648 - network_detector - INFO - 🌐 Inicializando Network Detector Plugin...
 2025-11-12 14:24:35,801 - network_detector - INFO - 📋 Configuración cargada: 13 secciones
 2025-11-12 14:24:35,846 - network_detector - INFO - 🔧 Componentes básicos inicializados
@@ -583,4 +586,7 @@
 2025-11-12 15:17:38,190 - network_detector - INFO - 🚀 Activando Network Detector Plugin...
 2025-11-12 15:17:38,191 - network_detector - INFO - ✅ Componentes verificados (modo básico)
 2025-11-12 15:17:38,216 - network_detector - INFO - ✅ Network Detector Plugin activado
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
