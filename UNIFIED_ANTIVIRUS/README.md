@@ -152,10 +152,15 @@ Este sistema antivirus modular utiliza una arquitectura basada en plugins con pa
 - **Arquitectura Modular**: Sistema de plugins extensible y escalable
 - **Machine Learning**: Modelos ONNX entrenados para detección de keyloggers
 - **Monitoreo en Tiempo Real**: Vigilancia continua de procesos, archivos y red
-- **Interfaz Gráfica Avanzada**: UI profesional con tkinter para gestión visual
+- **Interfaz Gráfica Avanzada**: UI profesional con Dear PyGui para gestión visual moderna
 - **Sistema de Cuarentena**: Aislamiento seguro de archivos maliciosos
 - **Gestión de Alertas**: Sistema completo de notificaciones y logging
 - **Event Bus**: Comunicación desacoplada entre componentes
+- **Integration Engine**: Plugin avanzado que integra TDD, IAST y MDSD
+- **Logs Individuales**: Cada plugin genera su propio archivo de log independiente
+- **TDD Integration**: Test-Driven Development integrado con ejecución automática de tests
+- **IAST Security**: Interactive Application Security Testing en tiempo real
+- **MDSD Generation**: Model-Driven Software Development con generación automática de código
 
 ## 📁 Estructura del Proyecto
 
@@ -163,10 +168,13 @@ Este sistema antivirus modular utiliza una arquitectura basada en plugins con pa
 UNIFIED_ANTIVIRUS/
 │
 ├── launcher.py                      # Punto de entrada principal (backend only)
-├── professional_ui_robust.py        # Interfaz gráfica profesional con tkinter
+├── production_launcher.py           # Launcher de producción con Dear PyGui
+├── professional_ui_robust.py        # Interfaz gráfica profesional con tkinter (legacy)
 ├── simple_backend.py                # Ejecutor directo del backend original
 ├── register_plugins.py              # Sistema de auto-registro de plugins
 ├── install_dependencies.py          # Instalador de dependencias Python
+├── monitor_all_logs.py              # Monitor en tiempo real de todos los logs
+├── trigger_detection.py             # Disparador manual de detecciones para pruebas
 │
 ├── core/                            # Núcleo del sistema
 │   ├── __init__.py
@@ -180,6 +188,7 @@ UNIFIED_ANTIVIRUS/
 ├── plugins/                         # Sistema de plugins modular
 │   ├── detectors/                   # Plugins de detección
 │   │   ├── behavior_detector/       # Detección por comportamiento
+│   │   ├── integration_engine/      # Plugin de integración TDD/IAST/MDSD
 │   │   ├── keylogger_detector/      # Detector especializado de keyloggers
 │   │   ├── ml_detector/             # Detección con Machine Learning
 │   │   └── network_detector/        # Análisis de tráfico de red
@@ -215,10 +224,23 @@ UNIFIED_ANTIVIRUS/
 │   ├── system_utils.py              # Utilidades del sistema
 │   └── file_utils.py                # Utilidades de archivos
 │
-├── logs/                            # Directorio de logs
+├── logs/                            # Directorio de logs individuales
+│   ├── antivirus.log                # Log principal del sistema
+│   ├── frontend.log                 # Log de la interfaz Dear PyGui
+│   ├── behavior_detector.log        # Log del detector de comportamiento
+│   ├── keylogger_detector.log       # Log del detector de keyloggers
+│   ├── ml_detector.log              # Log del detector ML
+│   ├── network_detector.log         # Log del detector de red
+│   ├── integration_engine.log       # Log del motor de integración
+│   ├── tdd_integration.log          # Log de TDD (Test-Driven Development)
+│   ├── iast_security.log            # Log de IAST (Interactive Security Testing)
+│   └── mdsd_generator.log           # Log de MDSD (Model-Driven Development)
 ├── threat_intel/                    # Inteligencia de amenazas
 │   ├── malicious_ips.txt            # IPs maliciosas conocidas
 │   └── domains.txt                  # Dominios sospechosos
+├── tests/                           # Suite de tests TDD
+│   ├── tdd_01_api_hooking_detection/# Tests de detección de API hooking
+│   └── tdd_02_port_detection/       # Tests de detección de puertos
 │
 └── doc/                             # Documentación
     └── articulo_keylogger_antivirus.tex
@@ -276,11 +298,25 @@ python launcher.py --categories detectors monitors
 python launcher.py --debug
 ```
 
-#### Modo UI (Interfaz Gráfica)
+#### Modo Producción (Dear PyGui - Recomendado)
 
 ```bash
-# Interfaz gráfica profesional
+# Interfaz gráfica moderna con Dear PyGui
+python production_launcher.py
+```
+
+#### Modo UI Legacy (Interfaz Tkinter)
+
+```bash
+# Interfaz gráfica profesional con tkinter (versión legacy)
 python professional_ui_robust.py
+```
+
+#### Monitoreo de Logs en Tiempo Real
+
+```bash
+# Monitor de todos los logs del sistema simultáneamente
+python monitor_all_logs.py
 ```
 
 ### Configuración
@@ -307,8 +343,22 @@ Editar `config/unified_config.toml` para ajustar:
 **Descripción Técnica**:
 Implementa el patrón de entrada única para el sistema. Utiliza `argparse` para configuración flexible por línea de comandos. Inicia el motor principal y mantiene el programa en ejecución hasta recibir señal de terminación.
 
+### `production_launcher.py`
+**Propósito**: Launcher de producción con interfaz Dear PyGui moderna
+
+**Funcionalidad**:
+- Interfaz gráfica moderna con Dear PyGui 2.1.0
+- Dashboard con métricas en tiempo real
+- Visualización de amenazas detectadas
+- Sistema de logs estructurado con colores
+- Control de protección (iniciar/detener)
+- Integración completa con todos los plugins
+
+**Descripción Técnica**:
+Aplicación Dear PyGui con arquitectura robusta. Utiliza threading para comunicación asíncrona con el motor antivirus. Implementa sistema de actualización en tiempo real sin bloqueos. Interfaz moderna y responsiva optimizada para producción.
+
 ### `professional_ui_robust.py`
-**Propósito**: Interfaz gráfica profesional para el antivirus
+**Propósito**: Interfaz gráfica profesional legacy con tkinter
 
 **Funcionalidad**:
 - Dashboard con métricas en tiempo real
@@ -327,6 +377,19 @@ Aplicación tkinter robusta con arquitectura MVC. Utiliza threading para actuali
 - Actualización incremental de UI (cada 5 segundos)
 - Caché de amenazas para rendimiento
 - Manejo robusto de errores y excepciones
+
+### `monitor_all_logs.py`
+**Propósito**: Monitor en tiempo real de todos los logs del sistema
+
+**Funcionalidad**:
+- Monitoreo simultáneo de 10 archivos de log
+- Códigos de color para diferentes tipos de eventos
+- Detección automática de nuevos archivos de log
+- Visualización en tiempo real de actividad del sistema
+- Filtrado por tipo de plugin y severidad
+
+**Descripción Técnica**:
+Sistema de monitoreo multi-archivo que utiliza threading para seguimiento simultáneo de logs. Implementa códigos de color específicos para cada tipo de plugin (TDD, IAST, MDSD, detectores). Optimizado para manejar grandes volúmenes de logs sin degradación de rendimiento.
 
 ### `register_plugins.py`
 **Propósito**: Sistema de auto-registro de plugins
@@ -363,25 +426,113 @@ Script de compatibilidad que ejecuta `antivirus_launcher.py` del sistema ANTIVIR
 **Descripción Técnica**:
 Script de bootstrapping que utiliza subprocess para ejecutar pip. Maneja diferentes sistemas operativos y configuraciones de Python. Proporciona feedback detallado del proceso de instalación.
 
+## 🚀 Integration Engine Plugin
+
+### Características del Integration Engine
+
+El **Integration Engine** es un plugin avanzado que integra metodologías modernas de desarrollo:
+
+#### 🧪 **TDD Integration (Test-Driven Development)**
+- **Ejecución automática**: Tests cada 60 segundos
+- **Suite de tests**: Incluye `tdd_01_api_hooking_detection` y `tdd_02_port_detection`
+- **Logging individual**: `logs/tdd_integration.log`
+- **Framework**: Utiliza pytest para ejecución de tests
+- **Validación**: Verifica la integridad de los detectores en tiempo real
+
+#### 🛡️ **IAST Integration (Interactive Application Security Testing)**
+- **Análisis continuo**: Escaneos de seguridad cada 45 segundos
+- **Detección de vulnerabilidades**: SQL Injection, XSS, y otros patrones
+- **Logging individual**: `logs/iast_security.log`
+- **Resultados reales**: Sin datos ficticios, análisis auténtico
+- **Integración**: Se ejecuta junto con el sistema antivirus principal
+
+#### 🏗️ **MDSD Integration (Model-Driven Software Development)**
+- **Generación automática**: Templates cada 120 segundos
+- **Templates incluidos**: Ransomware Detector, Trojan Detector, Rootkit Detector, Spyware Detector
+- **Logging individual**: `logs/mdsd_generator.log`
+- **Workflow Engine**: Sistema de generación de código automático
+- **Validación**: Verificación de templates generados
+
+### Arquitectura del Integration Engine
+
+```python
+IntegrationEnginePlugin
+├── TDD Worker (Thread)     # Ejecuta tests automáticamente
+├── IAST Worker (Thread)    # Análisis de seguridad continuo  
+├── MDSD Worker (Thread)    # Generación de código automática
+└── Main Controller         # Coordina todos los workers
+```
+
+### Logs Individuales Generados
+
+El sistema genera **10 archivos de log independientes**:
+
+1. **`antivirus.log`** - Log principal del sistema
+2. **`frontend.log`** - Interfaz Dear PyGui
+3. **`behavior_detector.log`** - Detector de comportamiento
+4. **`keylogger_detector.log`** - Detector de keyloggers
+5. **`ml_detector.log`** - Detector de Machine Learning
+6. **`network_detector.log`** - Detector de red
+7. **`integration_engine.log`** - Motor de integración principal
+8. **`tdd_integration.log`** - Test-Driven Development
+9. **`iast_security.log`** - Interactive Security Testing
+10. **`mdsd_generator.log`** - Model-Driven Development
+
+### Ejemplo de Salida de Logs
+
+```bash
+# TDD Integration Log
+2025-11-12 15:17:04,162 - tdd_integration - INFO - ✅ Tests en tests/tdd_01_api_hooking_detection: PASSED
+2025-11-12 15:17:37,116 - tdd_integration - INFO - ✅ Ciclo TDD completado
+
+# IAST Security Log  
+2025-11-12 15:17:36,911 - iast_security - INFO - ✅ Análisis IAST: Sin vulnerabilidades críticas
+2025-11-12 15:17:37,039 - iast_security - INFO - 📊 ===== 16 passed in 10.98s =====
+
+# MDSD Generator Log
+2025-11-12 15:17:04,299 - mdsd_generator - INFO - 📝 Generando template: Ransomware Detector
+2025-11-12 15:17:40,004 - mdsd_generator - INFO - ✅ Ciclo MDSD completado
+```
+
 ## 🔧 Dependencias Principales
 
+- **dearpygui**: Interfaz gráfica moderna (v2.1.0)
 - **psutil**: Monitoreo de procesos y sistema
 - **onnxruntime**: Ejecución de modelos ML
 - **watchdog**: Monitoreo de archivos
 - **pywin32**: APIs de Windows
-- **tkinter**: Interfaz gráfica (incluido en Python)
+- **pytest**: Framework de testing para TDD
+- **tkinter**: Interfaz gráfica legacy (incluido en Python)
 - **toml**: Parseo de configuración
 - **numpy**: Operaciones numéricas para ML
+- **threading**: Concurrencia para Integration Engine
 
 ## 📊 Métricas y Monitoreo
 
 El sistema recopila métricas en tiempo real:
-- Amenazas detectadas totales
-- Amenazas únicas identificadas
-- Plugins activos
-- Uso de recursos (CPU, RAM)
-- Tiempo de actividad del sistema
-- Escaneos completados
+- **Amenazas detectadas**: Totales y únicas identificadas
+- **Plugins activos**: Estado de los 8 plugins del sistema
+- **Uso de recursos**: CPU, RAM y rendimiento del sistema
+- **Tiempo de actividad**: Uptime del sistema antivirus
+- **Escaneos completados**: Contadores de análisis realizados
+- **TDD Metrics**: Tests ejecutados, passed/failed, cobertura
+- **IAST Metrics**: Vulnerabilidades encontradas, tipos de ataques detectados
+- **MDSD Metrics**: Templates generados, líneas de código creadas
+- **Logs en tiempo real**: Monitoreo de 10 streams de log simultáneos
+
+### Sistema de Monitoreo Avanzado
+
+```bash
+# Monitoreo en tiempo real de todos los logs
+python monitor_all_logs.py
+
+# Vista de logs específicos por color:
+# 🟢 Verde: TDD Integration
+# 🔵 Azul: IAST Security  
+# 🟡 Amarillo: MDSD Generator
+# 🔴 Rojo: Detectores de amenazas
+# ⚪ Blanco: Sistema general
+```
 
 ## 🔐 Seguridad
 
@@ -404,32 +555,90 @@ El sistema detecta:
 - Comportamiento stealth
 - APIs sospechosas de Windows
 
-## 🧪 Testing
+## 🧪 Sistema de Testing Integrado
 
-El sistema incluye tests para:
-- Plugins individuales
-- Detectores de amenazas
-- Monitores del sistema
-- Motor principal
+### TDD Integration (Test-Driven Development)
 
-Ejecutar tests:
+El sistema incluye **TDD automático** que se ejecuta cada 60 segundos:
+
+**Tests Incluidos:**
+- `tests/tdd_01_api_hooking_detection/`: Detección de API hooking
+- `tests/tdd_02_port_detection/`: Detección de puertos sospechosos
+
+**Ejecución Automática:**
 ```bash
-python -m pytest plugins/*/test_*.py
+# TDD se ejecuta automáticamente con el Integration Engine
+python production_launcher.py
+
+# Ver logs de TDD en tiempo real
+tail -f logs/tdd_integration.log
 ```
 
-## 📝 Logging
+**Ejecución Manual:**
+```bash
+# Tests individuales de plugins
+python -m pytest plugins/*/test_*.py
 
-Sistema de logging multinivel:
+# Tests específicos de TDD
+python -m pytest tests/tdd_01_api_hooking_detection/
+python -m pytest tests/tdd_02_port_detection/
+
+# Ejecutar trigger manual de detecciones
+python trigger_detection.py
+```
+
+### IAST Integration (Interactive Application Security Testing)
+
+**Tests de Seguridad Automáticos:**
+- Análisis de vulnerabilidades SQL Injection
+- Detección de XSS (Cross-Site Scripting)
+- Evaluación de seguridad de APIs
+- Tests de penetración básicos
+
+**Resultados en Tiempo Real:**
+```bash
+# Ver análisis IAST en vivo
+tail -f logs/iast_security.log
+
+# Ejemplo de salida:
+# ✅ Análisis IAST: Sin vulnerabilidades críticas
+# 📊 ===== 16 passed in 10.98s =====
+```
+
+## 📝 Sistema de Logging Avanzado
+
+### Niveles de Logging
 - **DEBUG**: Información detallada de desarrollo
-- **INFO**: Eventos normales del sistema
+- **INFO**: Eventos normales del sistema  
 - **WARNING**: Eventos sospechosos
 - **ERROR**: Errores recuperables
 - **CRITICAL**: Errores críticos
 
-Logs guardados en `logs/`:
-- `antivirus.log`: Log principal
-- `launcher.log`: Log del launcher
-- `[plugin_name].log`: Logs por plugin
+### Archivos de Log Individuales
+
+**Logs del Sistema Principal:**
+- `antivirus.log`: Log principal del motor antivirus
+- `frontend.log`: Interfaz Dear PyGui y eventos de UI
+
+**Logs de Detectores:**
+- `behavior_detector.log`: Análisis de comportamiento de procesos
+- `keylogger_detector.log`: Detección específica de keyloggers
+- `ml_detector.log`: Machine Learning y modelos ONNX
+- `network_detector.log`: Análisis de tráfico de red
+
+**Logs de Integration Engine:**
+- `integration_engine.log`: Controlador principal de integraciones
+- `tdd_integration.log`: Test-Driven Development (tests automáticos)
+- `iast_security.log`: Interactive Application Security Testing
+- `mdsd_generator.log`: Model-Driven Software Development
+
+### Características del Sistema de Logs
+
+- **UTF-8 Encoding**: Soporte completo para caracteres especiales y emojis
+- **Rotación automática**: Prevención de archivos de log excesivamente grandes
+- **Threading seguro**: Logging concurrente sin bloqueos
+- **Filtrado por severidad**: Configuración independiente por plugin
+- **Monitoreo en tiempo real**: `monitor_all_logs.py` para visualización simultánea
 
 ## 🤝 Contribución
 
@@ -524,8 +733,46 @@ Proyecto académico - Universidad Privada de Tacna
 
 Estudiantes del curso de Sistemas Comportamentales - UPT
 
+## 🎉 Características Avanzadas Recientes
+
+### ✅ **Sistema Completo de Logs Individuales**
+- **10 archivos de log** independientes por plugin
+- **Monitoreo en tiempo real** de todos los streams
+- **Códigos de color** para identificación rápida
+- **UTF-8 encoding** para caracteres especiales
+
+### ✅ **Integration Engine Plugin**
+- **TDD automático** cada 60 segundos
+- **IAST security testing** cada 45 segundos  
+- **MDSD code generation** cada 120 segundos
+- **Threading concurrente** para máximo rendimiento
+
+### ✅ **Interfaz Moderna Dear PyGui**
+- **UI responsiva** y moderna
+- **Métricas en tiempo real** actualizadas
+- **Gestión completa** de plugins
+- **Control total** del sistema
+
+### ✅ **Detección Real de Amenazas**
+- **Sin datos ficticios** - solo detecciones reales
+- **Análisis de procesos** en tiempo real
+- **Machine Learning** con modelos ONNX
+- **Inteligencia de amenazas** actualizada
+
+## 📈 Estadísticas del Sistema
+
+```
+📊 Plugins Totales: 8
+📝 Archivos de Log: 10  
+🧪 Tests Automáticos: TDD + IAST
+🏗️ Generación de Código: MDSD
+🛡️ Detección en Tiempo Real: ✅
+🎨 Interfaz Moderna: Dear PyGui 2.1.0
+```
+
 ---
 
+<<<<<<< Updated upstream
 ## 📞 SOPORTE Y AYUDA
 
 ### 🆘 **¿Problemas?**
@@ -543,3 +790,6 @@ Estudiantes del curso de Sistemas Comportamentales - UPT
 ---
 
 **Nota**: Este sistema está diseñado para propósitos educativos y de investigación. Para uso en producción, se recomienda realizar auditorías de seguridad adicionales y pruebas exhaustivas.
+=======
+**Nota**: Este sistema está diseñado para propósitos educativos y de investigación en el curso de Sistemas Comportamentales. Implementa metodologías avanzadas de desarrollo (TDD, IAST, MDSD) integradas con detección de amenazas en tiempo real. Para uso en producción, se recomienda realizar auditorías de seguridad adicionales y pruebas exhaustivas.
+>>>>>>> Stashed changes

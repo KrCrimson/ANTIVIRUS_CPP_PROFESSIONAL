@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 2025-10-24 17:41:16,288 - plugin.keylogger_detector - INFO - 📄 Configuración cargada desde C:\Users\windows10\Documents\GitHub\ANTIVIRUS_CPP_PROFESSIONAL\UNIFIED_ANTIVIRUS\plugins\detectors\keylogger_detector\config.json
 2025-10-24 17:41:16,492 - plugin.keylogger_detector - INFO - ✅ Plugin 'keylogger_detector' activado exitosamente
 2025-10-26 17:13:02,329 - plugin.keylogger_detector - INFO - 📄 Configuración cargada desde C:\Users\windows10\Documents\GitHub\ANTIVIRUS_CPP_PROFESSIONAL\UNIFIED_ANTIVIRUS\plugins\detectors\keylogger_detector\config.json
@@ -99,3 +100,11 @@
 2025-11-10 20:17:34,075 - plugin.keylogger_detector - INFO - ✅ Plugin 'keylogger_detector' activado exitosamente
 2025-11-10 20:46:51,780 - plugin.keylogger_detector - INFO - 📄 Configuración cargada desde C:\Users\HP\Documents\GitHub\ANTIVIRUS_CPP_PROFESSIONAL\UNIFIED_ANTIVIRUS\plugins\detectors\keylogger_detector\config.json
 2025-11-10 20:46:52,134 - plugin.keylogger_detector - INFO - ✅ Plugin 'keylogger_detector' activado exitosamente
+=======
+2025-11-12 14:24:00,460 - plugin.keylogger_detector - INFO - 📄 Configuración cargada desde C:\Users\windows10\Documents\GitHub\ANTIVIRUS_CPP_PROFESSIONAL\UNIFIED_ANTIVIRUS\plugins\detectors\keylogger_detector\config.json
+2025-11-12 14:24:00,756 - plugin.keylogger_detector - INFO - ✅ Plugin 'keylogger_detector' activado exitosamente
+2025-11-12 14:50:00,250 - plugin.keylogger_detector - INFO - 📄 Configuración cargada desde C:\Users\windows10\Documents\GitHub\ANTIVIRUS_CPP_PROFESSIONAL\UNIFIED_ANTIVIRUS\plugins\detectors\keylogger_detector\config.json
+2025-11-12 14:50:00,532 - plugin.keylogger_detector - INFO - ✅ Plugin 'keylogger_detector' activado exitosamente
+2025-11-12 15:17:03,614 - plugin.keylogger_detector - INFO - 📄 Configuración cargada desde C:\Users\windows10\Documents\GitHub\ANTIVIRUS_CPP_PROFESSIONAL\UNIFIED_ANTIVIRUS\plugins\detectors\keylogger_detector\config.json
+2025-11-12 15:17:03,993 - plugin.keylogger_detector - INFO - ✅ Plugin 'keylogger_detector' activado exitosamente
+>>>>>>> Stashed changes
