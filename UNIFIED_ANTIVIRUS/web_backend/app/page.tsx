@@ -1,7 +1,6 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { useRouter } from 'next/navigation';
 import { 
   Chart as ChartJS, 
   CategoryScale, 
@@ -49,6 +48,146 @@ interface ChartData {
   datasets: any[];
 }
 
+// Componente de Login Integrado
+function LoginComponent() {
+  const [apiKey, setApiKey] = useState('');
+  const [error, setError] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
+
+  const validApiKeys = [
+    'antivirus-key-2024-prod-12345',
+    'antivirus-dev-key-local-67890'
+  ];
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsLoading(true);
+    setError('');
+
+    try {
+      if (!validApiKeys.includes(apiKey)) {
+        throw new Error('API key inválida');
+      }
+
+      // Probar conexión con el backend
+      const response = await fetch('/api/dashboard', {
+        headers: { 'x-api-key': apiKey }
+      });
+
+      if (!response.ok) {
+        throw new Error('Error de conexión con el backend');
+      }
+
+      localStorage.setItem('antivirusApiKey', apiKey);
+      window.location.reload(); // Recargar para aplicar la autenticación
+      
+    } catch (err) {
+      setError(err instanceof Error ? err.message : 'Error de autenticación');
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  const copyApiKey = (key: string) => {
+    navigator.clipboard.writeText(key);
+    alert('API key copiada al portapapeles');
+  };
+
+  return (
+    <div style={{ minHeight: '100vh', backgroundColor: '#f3f4f6', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '20px' }}>
+      <div style={{ maxWidth: '400px', width: '100%', backgroundColor: 'white', borderRadius: '8px', boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)', padding: '32px' }}>
+        <div style={{ textAlign: 'center', marginBottom: '24px' }}>
+          <h1 style={{ fontSize: '24px', fontWeight: 'bold', color: '#1f2937', margin: '0 0 8px 0' }}>
+            🛡️ Unified Antivirus
+          </h1>
+          <p style={{ color: '#6b7280', margin: '0' }}>Acceso al Dashboard de Monitoreo</p>
+        </div>
+
+        <form onSubmit={handleSubmit} style={{ marginBottom: '24px' }}>
+          <div style={{ marginBottom: '16px' }}>
+            <label style={{ display: 'block', fontSize: '14px', fontWeight: '500', color: '#374151', marginBottom: '4px' }}>
+              API Key
+            </label>
+            <input
+              type="password"
+              value={apiKey}
+              onChange={(e) => setApiKey(e.target.value)}
+              style={{ 
+                width: '100%', 
+                padding: '8px 12px', 
+                border: '1px solid #d1d5db', 
+                borderRadius: '6px', 
+                fontSize: '14px',
+                boxSizing: 'border-box'
+              }}
+              placeholder="Ingresa tu API key"
+              required
+            />
+          </div>
+
+          {error && (
+            <div style={{ color: '#dc2626', fontSize: '14px', backgroundColor: '#fef2f2', padding: '8px', borderRadius: '4px', marginBottom: '16px' }}>
+              {error}
+            </div>
+          )}
+
+          <button
+            type="submit"
+            disabled={isLoading}
+            style={{ 
+              width: '100%', 
+              backgroundColor: '#2563eb', 
+              color: 'white', 
+              padding: '10px', 
+              borderRadius: '6px', 
+              border: 'none', 
+              fontSize: '14px', 
+              fontWeight: '500',
+              cursor: isLoading ? 'not-allowed' : 'pointer',
+              opacity: isLoading ? 0.5 : 1
+            }}
+          >
+            {isLoading ? 'Verificando...' : 'Acceder al Dashboard'}
+          </button>
+        </form>
+
+        <div style={{ padding: '16px', backgroundColor: '#f9fafb', borderRadius: '6px' }}>
+          <h3 style={{ fontSize: '14px', fontWeight: '500', color: '#374151', margin: '0 0 8px 0' }}>
+            📋 API Keys disponibles:
+          </h3>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+            {validApiKeys.map((key, index) => (
+              <div key={index} style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', backgroundColor: 'white', padding: '8px', borderRadius: '4px', border: '1px solid #e5e7eb' }}>
+                <span style={{ fontFamily: 'monospace', fontSize: '12px', color: '#6b7280' }}>
+                  {key.substring(0, 20)}...
+                </span>
+                <button
+                  type="button"
+                  onClick={() => copyApiKey(key)}
+                  style={{ color: '#2563eb', fontSize: '12px', background: 'none', border: 'none', cursor: 'pointer' }}
+                >
+                  Copiar
+                </button>
+              </div>
+            ))}
+          </div>
+          <p style={{ fontSize: '12px', color: '#6b7280', margin: '8px 0 0 0' }}>
+            💡 En producción, las API keys se gestionarían de forma segura
+          </p>
+        </div>
+
+        <div style={{ textAlign: 'center', marginTop: '16px' }}>
+          <div style={{ fontSize: '12px', color: '#6b7280' }}>
+            <div>✅ Dashboard con gráficos en tiempo real</div>
+            <div>✅ Autenticación por API key</div>
+            <div>✅ Logs automáticos desde launcher</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 export default function Dashboard() {
   const [stats, setStats] = useState<DashboardStats>({
     totalClients: 0,
@@ -68,23 +207,23 @@ export default function Dashboard() {
   });
   const [loading, setLoading] = useState(true);
   const [isAuthenticated, setIsAuthenticated] = useState(false);
-  const router = useRouter();
 
   // Check authentication
   useEffect(() => {
     const apiKey = localStorage.getItem('antivirusApiKey');
     if (!apiKey) {
-      router.push('/login');
+      setIsAuthenticated(false);
+      setLoading(false);
       return;
     }
     setIsAuthenticated(true);
-  }, [router]);
+  }, []);
 
   // Fetch dashboard data
   const fetchDashboardData = async () => {
     const apiKey = localStorage.getItem('antivirusApiKey');
     if (!apiKey) {
-      router.push('/login');
+      setIsAuthenticated(false);
       return;
     }
 
@@ -172,16 +311,18 @@ export default function Dashboard() {
     return () => clearInterval(interval);
   }, []);
 
-  if (!isAuthenticated || loading) {
+  // Mostrar login si no está autenticado
+  if (!isAuthenticated && !loading) {
+    return <LoginComponent />;
+  }
+
+  // Mostrar loading mientras carga
+  if (loading) {
     return (
       <div style={{ minHeight: '100vh', backgroundColor: '#f3f4f6', padding: '20px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
         <div style={{ textAlign: 'center' }}>
-          <div style={{ fontSize: '48px', marginBottom: '16px' }}>
-            {!isAuthenticated ? '🔐' : '🔄'}
-          </div>
-          <div style={{ fontSize: '18px', color: '#6b7280' }}>
-            {!isAuthenticated ? 'Verificando autenticación...' : 'Cargando dashboard...'}
-          </div>
+          <div style={{ fontSize: '48px', marginBottom: '16px' }}>🔄</div>
+          <div style={{ fontSize: '18px', color: '#6b7280' }}>Cargando dashboard...</div>
         </div>
       </div>
     );
