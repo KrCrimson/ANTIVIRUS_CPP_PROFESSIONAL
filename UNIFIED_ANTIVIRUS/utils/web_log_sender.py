@@ -11,6 +11,8 @@ import aiohttp
 import json
 import time
 import uuid
+import hashlib
+import os
 from typing import List, Dict, Any, Optional
 from datetime import datetime, timedelta
 from pathlib import Path
@@ -80,9 +82,50 @@ class WebLogSender:
         self.logger = logging.getLogger(f"web_log_sender_{self.client_id}")
         
     def _generate_client_id(self) -> str:
-        """Genera un ID único para el cliente"""
+        """Genera un ID único y persistente para el cliente"""
+        # Archivo para almacenar el client_id
+        client_id_file = Path.cwd() / "config" / "client_id.txt"
+        
+        # Intentar leer client_id existente
+        if client_id_file.exists():
+            try:
+                with open(client_id_file, 'r', encoding='utf-8') as f:
+                    existing_id = f.read().strip()
+                    if existing_id:
+                        return existing_id
+            except Exception as e:
+                self.logger.warning(f"No se pudo leer client_id existente: {e}")
+        
+        # Generar nuevo client_id único basado en características del sistema
         hostname = platform.node()
-        return f"{hostname}_{uuid.uuid4().hex[:8]}"
+        mac_address = self._get_mac_address()
+        install_path = str(Path.cwd().absolute())
+        
+        # Crear hash único basado en características del sistema
+        unique_string = f"{hostname}_{mac_address}_{install_path}"
+        client_hash = hashlib.md5(unique_string.encode()).hexdigest()[:12]
+        
+        # Formato: HOSTNAME-HASH-TIMESTAMP
+        timestamp = datetime.now().strftime("%Y%m%d")
+        client_id = f"{hostname[:8].upper()}-{client_hash}-{timestamp}"
+        
+        # Guardar para uso futuro
+        try:
+            client_id_file.parent.mkdir(exist_ok=True)
+            with open(client_id_file, 'w', encoding='utf-8') as f:
+                f.write(client_id)
+        except Exception as e:
+            self.logger.warning(f"No se pudo guardar client_id: {e}")
+        
+        return client_id
+    
+    def _get_mac_address(self) -> str:
+        """Obtiene una dirección MAC del sistema"""
+        try:
+            mac = uuid.getnode()
+            return f"{mac:012x}"
+        except:
+            return "unknown"
     
     async def start(self):
         """Inicia el cliente de envío de logs"""

@@ -6,6 +6,31 @@ import { rateLimit, logRequest } from '../../../lib/middleware'
 
 const prisma = new PrismaClient()
 
+// Función helper para convertir BigInt a string recursivamente
+function serializeBigInt(obj: any): any {
+  if (obj === null || obj === undefined) {
+    return obj
+  }
+  
+  if (typeof obj === 'bigint') {
+    return obj.toString()
+  }
+  
+  if (Array.isArray(obj)) {
+    return obj.map(serializeBigInt)
+  }
+  
+  if (typeof obj === 'object') {
+    const serialized: any = {}
+    for (const [key, value] of Object.entries(obj)) {
+      serialized[key] = serializeBigInt(value)
+    }
+    return serialized
+  }
+  
+  return obj
+}
+
 // Esquema de validación para logs
 const logSchema = Joi.object({
   clientId: Joi.string().required(),
@@ -178,24 +203,58 @@ export const GET = requireAuth(async (request: NextRequest) => {
     
     const totalPages = Math.ceil(totalCount / limit)
     
-    return NextResponse.json({
-      logs,
+    // Preparar respuesta con serialización de BigInt
+    const responseData = {
+      logs: logs.map((log: any) => ({
+        ...log,
+        id: log.id.toString(), // Convertir BigInt a string
+        clientId: log.clientId?.toString() // Convertir BigInt a string si existe
+      })),
       pagination: {
         currentPage: page,
         totalPages,
-        totalCount,
+        totalCount: Number(totalCount), // Convertir BigInt a number
         limit,
         hasNextPage: page < totalPages,
         hasPrevPage: page > 1
       }
-    }, { headers: CORS_HEADERS })
+    }
+    
+    // Serializar para evitar problemas con BigInt
+    const serializedData = serializeBigInt(responseData)
+    
+    // Usar serialización manual para asegurar que no hay BigInt
+    const jsonString = JSON.stringify(serializedData, (key, value) => {
+      if (typeof value === 'bigint') {
+        return value.toString()
+      }
+      return value
+    })
+    
+    return new NextResponse(jsonString, {
+      status: 200,
+      headers: {
+        ...CORS_HEADERS,
+        'Content-Type': 'application/json'
+      }
+    })
     
   } catch (error) {
     console.error('Error fetching logs:', error)
-    return NextResponse.json(
-      { error: 'Internal Server Error' },
-      { status: 500, headers: CORS_HEADERS }
-    )
+    const errorMessage = error instanceof Error ? error.message : 'Unknown error'
+    
+    const errorResponse = JSON.stringify({
+      error: 'Internal Server Error',
+      message: errorMessage
+    })
+    
+    return new NextResponse(errorResponse, {
+      status: 500,
+      headers: {
+        ...CORS_HEADERS,
+        'Content-Type': 'application/json'
+      }
+    })
   }
 })
 
