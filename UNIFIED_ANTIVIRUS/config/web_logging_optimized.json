@@ -1,8 +1,8 @@
 {
   "web_logging": {
     "enabled": true,
-    "api_url": "https://unified-antivirus-i1hdjk8ok-sebastians-projects-487d2baa.vercel.app/api",
-    "api_key": "unified-antivirus-api-key-2024",
+    "api_url": "https://unified-antivirus-duzz48bmm-sebastians-projects-487d2baa.vercel.app/api",
+    "api_key": "antivirus-key-2024-prod-12345",
     "buffer_size": 1000,
     "batch_size": 50,
     "flush_interval": 10.0,

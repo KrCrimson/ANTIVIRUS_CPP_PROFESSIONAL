@@ -5,6 +5,14 @@ const prisma = new PrismaClient()
 
 // GET /api/clients - Obtener lista de clientes de antivirus
 export async function GET(request: NextRequest) {
+  // Headers CORS
+  const headers = {
+    'Access-Control-Allow-Origin': '*',
+    'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS',
+    'Access-Control-Allow-Headers': 'Content-Type, Authorization',
+    'Content-Type': 'application/json'
+  }
+
   try {
     const { searchParams } = new URL(request.url)
     const includeInactive = searchParams.get('includeInactive') === 'true'
@@ -65,14 +73,26 @@ export async function GET(request: NextRequest) {
     return NextResponse.json({
       clients: clientsWithStats,
       total: clients.length
-    })
+    }, { headers })
 
   } catch (error) {
     console.error('Error fetching clients:', error)
     return NextResponse.json(
       { error: 'Internal Server Error' },
-      { status: 500 }
+      { status: 500, headers }
     )
   }
+}
+
+// OPTIONS handler para CORS preflight
+export async function OPTIONS(request: NextRequest) {
+  return new NextResponse(null, {
+    status: 200,
+    headers: {
+      'Access-Control-Allow-Origin': '*',
+      'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS',
+      'Access-Control-Allow-Headers': 'Content-Type, Authorization',
+    },
+  })
 }
 

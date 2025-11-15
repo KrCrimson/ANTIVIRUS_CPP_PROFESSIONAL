@@ -1,10 +1,12 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { PrismaClient } from '@prisma/client'
+import { requireAuth, CORS_HEADERS } from '../../../lib/auth'
 
 const prisma = new PrismaClient()
 
 // GET /api/dashboard - Obtener estadísticas del dashboard
-export async function GET(request: NextRequest) {
+export const GET = requireAuth(async (request: NextRequest) => {
+
   try {
     const { searchParams } = new URL(request.url)
     const timeRange = searchParams.get('timeRange') || '24h'
@@ -201,13 +203,25 @@ export async function GET(request: NextRequest) {
       recentAlerts,
       timeRange,
       generatedAt: new Date().toISOString()
-    })
+    }, { headers: CORS_HEADERS })
 
   } catch (error) {
     console.error('Error generating dashboard data:', error)
     return NextResponse.json(
       { error: 'Internal Server Error' },
-      { status: 500 }
+      { status: 500, headers: CORS_HEADERS }
     )
   }
+})
+
+// OPTIONS handler para CORS preflight
+export async function OPTIONS(request: NextRequest) {
+  return new NextResponse(null, {
+    status: 200,
+    headers: {
+      'Access-Control-Allow-Origin': '*',
+      'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS',
+      'Access-Control-Allow-Headers': 'Content-Type, Authorization',
+    },
+  })
 }

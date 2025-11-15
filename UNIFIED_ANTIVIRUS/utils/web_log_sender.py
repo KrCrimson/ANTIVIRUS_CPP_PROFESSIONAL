@@ -21,8 +21,8 @@ from dataclasses import dataclass, asdict
 import logging
 
 # Configuración
-DEFAULT_API_ENDPOINT = "https://your-vercel-app.vercel.app/api/logs"
-DEFAULT_API_KEY = "unified-antivirus-api-key-2024"
+DEFAULT_API_ENDPOINT = "https://unified-antivirus-duzz48bmm-sebastians-projects-487d2baa.vercel.app/api/logs"
+DEFAULT_API_KEY = "antivirus-key-2024-prod-12345"
 BATCH_SIZE = 50
 SEND_INTERVAL = 30  # segundos
 MAX_RETRIES = 3

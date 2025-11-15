@@ -131,10 +131,23 @@ def setup_web_logging():
                 continue
         
         if web_config and web_config.get('enabled', False):
-            initialize_web_log_sender(web_config)
-            logger.info("🌐 Web logging inicializado exitosamente")
-            logger.info(f"📡 Backend URL: {web_config.get('api_url', 'N/A')}")
-            return True
+            try:
+                # Importar e inicializar el WebLogSender de forma síncrona
+                from utils.web_log_sender import WebLogSender
+                from utils.web_log_handler import setup_web_log_handler
+                
+                web_sender = WebLogSender(web_config)
+                logger.info("🌐 Web logging inicializado exitosamente")
+                logger.info(f"📡 Backend URL: {web_config.get('api_url', 'N/A')}")
+                
+                # Configurar handler automático para capturar todos los logs
+                web_handler = setup_web_log_handler(web_sender)
+                logger.info("📤 Handler automático configurado - logs serán enviados al backend")
+                
+                return True
+            except Exception as e:
+                logger.error(f"❌ Error inicializando WebLogSender: {e}")
+                return False
         else:
             logger.info("ℹ️ Web logging deshabilitado en configuración")
             return False

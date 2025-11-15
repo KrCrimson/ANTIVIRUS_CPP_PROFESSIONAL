@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import { useRouter } from 'next/navigation';
 import { 
   Chart as ChartJS, 
   CategoryScale, 
@@ -66,13 +67,32 @@ export default function Dashboard() {
     datasets: []
   });
   const [loading, setLoading] = useState(true);
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const router = useRouter();
+
+  // Check authentication
+  useEffect(() => {
+    const apiKey = localStorage.getItem('antivirusApiKey');
+    if (!apiKey) {
+      router.push('/login');
+      return;
+    }
+    setIsAuthenticated(true);
+  }, [router]);
 
   // Fetch dashboard data
   const fetchDashboardData = async () => {
+    const apiKey = localStorage.getItem('antivirusApiKey');
+    if (!apiKey) {
+      router.push('/login');
+      return;
+    }
+
     try {
+      const headers = { 'x-api-key': apiKey };
       const [statsRes, logsRes] = await Promise.all([
-        fetch('/api/dashboard'),
-        fetch('/api/logs?limit=50')
+        fetch('/api/dashboard', { headers }),
+        fetch('/api/logs?limit=50', { headers })
       ]);
       
       if (statsRes.ok) {
@@ -152,12 +172,16 @@ export default function Dashboard() {
     return () => clearInterval(interval);
   }, []);
 
-  if (loading) {
+  if (!isAuthenticated || loading) {
     return (
       <div style={{ minHeight: '100vh', backgroundColor: '#f3f4f6', padding: '20px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
         <div style={{ textAlign: 'center' }}>
-          <div style={{ fontSize: '48px', marginBottom: '16px' }}>🔄</div>
-          <div style={{ fontSize: '18px', color: '#6b7280' }}>Cargando dashboard...</div>
+          <div style={{ fontSize: '48px', marginBottom: '16px' }}>
+            {!isAuthenticated ? '🔐' : '🔄'}
+          </div>
+          <div style={{ fontSize: '18px', color: '#6b7280' }}>
+            {!isAuthenticated ? 'Verificando autenticación...' : 'Cargando dashboard...'}
+          </div>
         </div>
       </div>
     );
