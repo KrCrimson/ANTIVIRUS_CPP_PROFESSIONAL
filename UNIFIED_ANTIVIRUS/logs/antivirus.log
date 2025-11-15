@@ -22012,3 +22012,35 @@ document.getElementById('auto-redirect-backup').style.visibility='hidden';});})(
 2025-11-15 03:06:22,617 - web_log_sender_R3DCR0WN_cc586063 - WARNING - Error HTTP 400: {"error":"Validation Error","details":[{"message":"\"logs[0].metadata\" is not allowed","path":["logs",0,"metadata"],"type":"object.unknown","context":{"child":"metadata","label":"logs[0].metadata","value":{"thread":14564,"process":26680,"filename":"plugin.py"},"key":"metadata"}}]}
 2025-11-15 03:06:25,225 - web_log_sender_R3DCR0WN_cc586063 - WARNING - Error HTTP 400: {"error":"Validation Error","details":[{"message":"\"logs[0].metadata\" is not allowed","path":["logs",0,"metadata"],"type":"object.unknown","context":{"child":"metadata","label":"logs[0].metadata","value":{"thread":14564,"process":26680,"filename":"plugin.py"},"key":"metadata"}}]}
 2025-11-15 03:06:25,236 - web_log_sender_R3DCR0WN_cc586063 - ERROR - Falló el envío de 50 logs después de 3 intentos
+2025-11-15 03:06:46,727 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Uso elevado de CPU: mpdwsvc.exe - 81.8%
+2025-11-15 03:06:46,727 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_behavior_change: mpdwsvc.exe - Detección de suspicious_behavior_change en proceso mpdwsvc.exe
+2025-11-15 03:06:52,113 - core.engine - INFO - 🛑 Señal recibida (2), iniciando shutdown...
+2025-11-15 03:06:52,113 - core.engine - INFO - 🛑 Iniciando shutdown del sistema...
+2025-11-15 03:06:52,113 - core.event_bus - INFO - 📢 Publicando evento 'system_shutdown_started' de 'UnifiedEngine' a 0 suscriptores
+2025-11-15 03:06:56,122 - web_log_sender_R3DCR0WN_cc586063 - WARNING - Error HTTP 400: {"error":"Validation Error","details":[{"message":"\"logs[0].metadata\" is not allowed","path":["logs",0,"metadata"],"type":"object.unknown","context":{"child":"metadata","label":"logs[0].metadata","value":{"thread":14564,"process":26680,"filename":"plugin.py"},"key":"metadata"}}]}
+2025-11-15 03:06:57,155 - plugins.detectors.behavior_detector.plugin - INFO - Deteniendo behavior_detector...
+2025-11-15 03:06:57,686 - web_log_sender_R3DCR0WN_cc586063 - WARNING - Error HTTP 400: {"error":"Validation Error","details":[{"message":"\"logs[0].metadata\" is not allowed","path":["logs",0,"metadata"],"type":"object.unknown","context":{"child":"metadata","label":"logs[0].metadata","value":{"thread":14564,"process":26680,"filename":"plugin.py"},"key":"metadata"}}]}
+2025-11-15 03:07:00,002 - plugins.detectors.behavior_detector.plugin - INFO - [BEHAVIOR_DETECTOR] Monitoreo de procesos terminado
+2025-11-15 03:07:00,003 - plugins.detectors.behavior_detector.plugin - INFO - ✅ behavior_detector detenido correctamente
+2025-11-15 03:07:00,003 - plugins.detectors.behavior_detector.plugin - INFO - Limpiando recursos de behavior_detector...
+2025-11-15 03:07:00,003 - plugins.detectors.behavior_detector.plugin - INFO - ✅ Recursos de behavior_detector limpiados
+2025-11-15 03:07:00,003 - plugin.behavior_detector - INFO - 🔴 Plugin 'behavior_detector' desactivado
+2025-11-15 03:07:00,004 - core.event_bus - INFO - 📢 Publicando evento 'plugin_deactivated' de 'PluginManager' a 0 suscriptores
+2025-11-15 03:07:00,004 - PluginManager - INFO - 🔴 Plugin 'behavior_detector' desactivado
+2025-11-15 03:07:00,004 - plugins.detectors.ml_detector.ml_engine - INFO - [ML_ENGINE] Motor ML cerrado correctamente
+2025-11-15 03:07:00,004 - plugins.detectors.ml_detector.plugin - INFO - [ML_DETECTOR] ✅ Plugin detenido correctamente
+2025-11-15 03:07:00,005 - plugin.ml_detector - INFO - 🔴 Plugin 'ml_detector' desactivado
+2025-11-15 03:07:00,005 - core.event_bus - INFO - 📢 Publicando evento 'plugin_deactivated' de 'PluginManager' a 0 suscriptores
+2025-11-15 03:07:00,005 - PluginManager - INFO - 🔴 Plugin 'ml_detector' desactivado
+2025-11-15 03:07:00,045 - core.event_bus - INFO - 📢 Publicando evento 'plugin_deactivated' de 'PluginManager' a 0 suscriptores
+2025-11-15 03:07:00,045 - PluginManager - INFO - 🔴 Plugin 'network_detector' desactivado
+2025-11-15 03:07:00,045 - PluginManager - INFO - 🛑 Shutdown: 3/3 plugins
+2025-11-15 03:07:00,045 - core.event_bus - INFO - 🧹 Historial de eventos limpiado
+2025-11-15 03:07:00,045 - core.engine - INFO - ✅ Sistema detenido exitosamente
+2025-11-15 03:07:00,046 - core.engine - INFO - 🛑 Iniciando shutdown del sistema...
+2025-11-15 03:07:00,046 - core.event_bus - INFO - 📢 Publicando evento 'system_shutdown_started' de 'UnifiedEngine' a 0 suscriptores
+2025-11-15 03:07:00,075 - web_log_sender_R3DCR0WN_cc586063 - WARNING - Error HTTP 400: {"error":"Validation Error","details":[{"message":"\"logs[0].metadata\" is not allowed","path":["logs",0,"metadata"],"type":"object.unknown","context":{"child":"metadata","label":"logs[0].metadata","value":{"thread":14564,"process":26680,"filename":"plugin.py"},"key":"metadata"}}]}
+2025-11-15 03:07:00,075 - web_log_sender_R3DCR0WN_cc586063 - ERROR - Falló el envío de 50 logs después de 3 intentos
+2025-11-15 03:07:05,051 - PluginManager - INFO - 🛑 Shutdown: 0/0 plugins
+2025-11-15 03:07:05,052 - core.event_bus - INFO - 🧹 Historial de eventos limpiado
+2025-11-15 03:07:05,053 - core.engine - INFO - ✅ Sistema detenido exitosamente

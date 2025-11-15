@@ -22,7 +22,8 @@ const logSchema = Joi.object({
       function: Joi.string().optional(),
       line: Joi.number().optional(),
       component: Joi.string().optional(),
-      data: Joi.object().optional()
+      metadata: Joi.object().optional(),  // Cambiado de 'data' a 'metadata' para consistencia
+      data: Joi.object().optional()  // Mantener compatibilidad con versiones anteriores
     })
   ).min(1).required()
 })
@@ -85,7 +86,7 @@ export const POST = requireAuth(async (request: NextRequest) => {
         function: log.function,
         line: log.line,
         component: log.component,
-        metadata: log.data
+        metadata: log.metadata || log.data  // Usar 'metadata' si existe, sino 'data' (compatibilidad)
       }))
     })
 
