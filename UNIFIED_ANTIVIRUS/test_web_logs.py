@@ -37,24 +37,21 @@ async def main():
             level="INFO",
             logger="test_logger",
             message="Test message 1 - Prueba de conexión",
-            component="test_component",
-            metadata={"test": True, "source": "test_script"}
+            component="test_component"
         )
         
         send_web_log(
             level="WARNING", 
             logger="behavior_detector",
             message="Test warning - Proceso sospechoso detectado: chrome.exe",
-            component="behavior_detector",
-            metadata={"process": "chrome.exe", "pattern": "capture"}
+            component="behavior_detector"
         )
         
         send_web_log(
             level="ERROR",
             logger="ml_detector", 
             message="Test error - Error cargando modelo ONNX",
-            component="ml_detector",
-            metadata={"model": "keylogger_model.onnx", "error_code": 404}
+            component="ml_detector"
         )
         
         print("📤 Logs enviados al buffer")

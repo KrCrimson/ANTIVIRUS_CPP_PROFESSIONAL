@@ -218,7 +218,15 @@ class WebLogSender:
         while not self.log_buffer.empty() and len(logs_to_send) < BATCH_SIZE:
             try:
                 log_entry = self.log_buffer.get_nowait()
-                logs_to_send.append(asdict(log_entry))
+                log_dict = asdict(log_entry)
+                
+                # Filtrar campos vacíos o None para evitar errores de validación
+                filtered_log = {}
+                for key, value in log_dict.items():
+                    if value is not None and value != "":
+                        filtered_log[key] = value
+                
+                logs_to_send.append(filtered_log)
             except queue.Empty:
                 break
         
