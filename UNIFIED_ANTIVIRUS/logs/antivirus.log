@@ -18439,3 +18439,1152 @@
 2025-11-15 00:57:34,531 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_behavior_change: mpdwsvc.exe - Detección de suspicious_behavior_change en proceso mpdwsvc.exe
 2025-11-15 00:57:42,857 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Uso elevado de CPU: RobloxPlayerBeta.exe - 82.6%
 2025-11-15 00:57:42,857 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_behavior_change: RobloxPlayerBeta.exe - Detección de suspicious_behavior_change en proceso RobloxPlayerBeta.exe
+2025-11-15 00:57:57,793 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Uso elevado de CPU: mpdwsvc.exe - 106.2%
+2025-11-15 00:57:57,793 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_behavior_change: mpdwsvc.exe - Detección de suspicious_behavior_change en proceso mpdwsvc.exe
+2025-11-15 00:58:06,358 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Incremento súbito de memoria en Code.exe: 473509888 -> 1028104192
+2025-11-15 00:58:06,358 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_behavior_change: Code.exe - Detección de suspicious_behavior_change en proceso Code.exe
+2025-11-15 00:58:06,370 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Uso elevado de CPU: RobloxPlayerBeta.exe - 82.2%
+2025-11-15 00:58:06,370 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_behavior_change: RobloxPlayerBeta.exe - Detección de suspicious_behavior_change en proceso RobloxPlayerBeta.exe
+2025-11-15 00:58:10,155 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_behavior_change: mpdwsvc.exe - Detección de suspicious_behavior_change en proceso mpdwsvc.exe
+2025-11-15 00:58:10,601 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Incremento súbito de memoria en opera.exe: 41517056 -> 85803008
+2025-11-15 00:58:10,602 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_behavior_change: opera.exe - Detección de suspicious_behavior_change en proceso opera.exe
+2025-11-15 00:58:10,656 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: opera.exe - patrón: capture
+2025-11-15 00:58:10,656 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: opera.exe - Detección de suspicious_new_process en proceso opera.exe
+2025-11-15 00:58:10,672 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Uso elevado de CPU: RobloxPlayerBeta.exe - 94.8%
+2025-11-15 00:58:10,672 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_behavior_change: RobloxPlayerBeta.exe - Detección de suspicious_behavior_change en proceso RobloxPlayerBeta.exe
+2025-11-15 00:58:10,673 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: opera.exe - patrón: capture
+2025-11-15 00:58:10,673 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: opera.exe - Detección de suspicious_new_process en proceso opera.exe
+2025-11-15 00:58:14,442 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: opera.exe - patrón: capture
+2025-11-15 00:58:14,442 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: opera.exe - Detección de suspicious_new_process en proceso opera.exe
+2025-11-15 00:58:22,481 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Uso elevado de CPU: mpdwsvc.exe - 110.9%
+2025-11-15 00:58:22,481 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_behavior_change: mpdwsvc.exe - Detección de suspicious_behavior_change en proceso mpdwsvc.exe
+2025-11-15 00:58:23,144 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Uso elevado de CPU: RobloxPlayerBeta.exe - 88.3%
+2025-11-15 00:58:23,144 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_behavior_change: RobloxPlayerBeta.exe - Detección de suspicious_behavior_change en proceso RobloxPlayerBeta.exe
+2025-11-15 00:58:30,684 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Uso elevado de CPU: mpdwsvc.exe - 111.7%
+2025-11-15 00:58:30,684 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_behavior_change: mpdwsvc.exe - Detección de suspicious_behavior_change en proceso mpdwsvc.exe
+2025-11-15 00:58:31,297 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Uso elevado de CPU: RobloxPlayerBeta.exe - 80.4%
+2025-11-15 00:58:31,298 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_behavior_change: RobloxPlayerBeta.exe - Detección de suspicious_behavior_change en proceso RobloxPlayerBeta.exe
+2025-11-15 00:58:34,679 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Uso elevado de CPU: mpdwsvc.exe - 99.7%
+2025-11-15 00:58:34,679 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_behavior_change: mpdwsvc.exe - Detección de suspicious_behavior_change en proceso mpdwsvc.exe
+2025-11-15 00:58:35,387 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Uso elevado de CPU: RobloxPlayerBeta.exe - 82.9%
+2025-11-15 00:58:35,387 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_behavior_change: RobloxPlayerBeta.exe - Detección de suspicious_behavior_change en proceso RobloxPlayerBeta.exe
+2025-11-15 00:58:41,718 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Incremento súbito de memoria en MemCompression: 284827648 -> 615550976
+2025-11-15 00:58:41,719 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_behavior_change: MemCompression - Detección de suspicious_behavior_change en proceso MemCompression
+2025-11-15 00:58:46,363 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Uso elevado de CPU: mpdwsvc.exe - 90.2%
+2025-11-15 00:58:46,364 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_behavior_change: mpdwsvc.exe - Detección de suspicious_behavior_change en proceso mpdwsvc.exe
+2025-11-15 00:58:50,515 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Uso elevado de CPU: RobloxPlayerBeta.exe - 83.1%
+2025-11-15 00:58:50,515 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_behavior_change: RobloxPlayerBeta.exe - Detección de suspicious_behavior_change en proceso RobloxPlayerBeta.exe
+2025-11-15 00:58:54,153 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Incremento súbito de memoria en Code.exe: 135168 -> 58109952
+2025-11-15 00:58:54,154 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_behavior_change: Code.exe - Detección de suspicious_behavior_change en proceso Code.exe
+2025-11-15 00:58:57,041 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: opera.exe - patrón: capture
+2025-11-15 00:58:57,041 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: opera.exe - Detección de suspicious_new_process en proceso opera.exe
+2025-11-15 00:58:58,061 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: opera.exe - patrón: capture
+2025-11-15 00:58:58,061 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: opera.exe - Detección de suspicious_new_process en proceso opera.exe
+2025-11-15 00:59:05,100 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Uso elevado de CPU: mpdwsvc.exe - 97.2%
+2025-11-15 00:59:05,100 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_behavior_change: mpdwsvc.exe - Detección de suspicious_behavior_change en proceso mpdwsvc.exe
+2025-11-15 00:59:24,959 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Incremento súbito de memoria en Code.exe: 25661440 -> 55123968
+2025-11-15 00:59:24,959 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_behavior_change: Code.exe - Detección de suspicious_behavior_change en proceso Code.exe
+2025-11-15 00:59:24,972 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Uso elevado de CPU: RobloxPlayerBeta.exe - 80.7%
+2025-11-15 00:59:24,972 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_behavior_change: RobloxPlayerBeta.exe - Detección de suspicious_behavior_change en proceso RobloxPlayerBeta.exe
+2025-11-15 00:59:28,824 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Uso elevado de CPU: RobloxPlayerBeta.exe - 88.0%
+2025-11-15 00:59:28,824 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_behavior_change: RobloxPlayerBeta.exe - Detección de suspicious_behavior_change en proceso RobloxPlayerBeta.exe
+2025-11-15 00:59:32,101 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Uso elevado de CPU: mpdwsvc.exe - 126.7%
+2025-11-15 00:59:32,101 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_behavior_change: mpdwsvc.exe - Detección de suspicious_behavior_change en proceso mpdwsvc.exe
+2025-11-15 00:59:43,842 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Uso elevado de CPU: RobloxPlayerBeta.exe - 94.9%
+2025-11-15 00:59:43,842 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_behavior_change: RobloxPlayerBeta.exe - Detección de suspicious_behavior_change en proceso RobloxPlayerBeta.exe
+2025-11-15 01:00:13,328 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Uso elevado de CPU: mpdwsvc.exe - 83.2%
+2025-11-15 01:00:13,328 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_behavior_change: mpdwsvc.exe - Detección de suspicious_behavior_change en proceso mpdwsvc.exe
+2025-11-15 01:00:25,279 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Incremento súbito de memoria en Code.exe: 413716480 -> 992419840
+2025-11-15 01:00:25,279 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_behavior_change: Code.exe - Detección de suspicious_behavior_change en proceso Code.exe
+2025-11-15 01:00:39,504 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Uso elevado de CPU: mpdwsvc.exe - 95.6%
+2025-11-15 01:00:39,504 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_behavior_change: mpdwsvc.exe - Detección de suspicious_behavior_change en proceso mpdwsvc.exe
+2025-11-15 01:01:02,047 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: opera.exe - patrón: capture
+2025-11-15 01:01:02,047 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: opera.exe - Detección de suspicious_new_process en proceso opera.exe
+2025-11-15 01:01:12,936 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Uso elevado de CPU: RobloxPlayerBeta.exe - 83.3%
+2025-11-15 01:01:12,936 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_behavior_change: RobloxPlayerBeta.exe - Detección de suspicious_behavior_change en proceso RobloxPlayerBeta.exe
+2025-11-15 01:01:19,992 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Uso elevado de CPU: mpdwsvc.exe - 138.9%
+2025-11-15 01:01:19,992 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_behavior_change: mpdwsvc.exe - Detección de suspicious_behavior_change en proceso mpdwsvc.exe
+2025-11-15 01:01:20,508 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Uso elevado de CPU: RobloxPlayerBeta.exe - 87.8%
+2025-11-15 01:01:20,508 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_behavior_change: RobloxPlayerBeta.exe - Detección de suspicious_behavior_change en proceso RobloxPlayerBeta.exe
+2025-11-15 01:01:24,246 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Uso elevado de CPU: RobloxPlayerBeta.exe - 84.0%
+2025-11-15 01:01:24,246 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_behavior_change: RobloxPlayerBeta.exe - Detección de suspicious_behavior_change en proceso RobloxPlayerBeta.exe
+2025-11-15 01:01:38,619 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Incremento súbito de memoria en opera.exe: 38694912 -> 82046976
+2025-11-15 01:01:38,620 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_behavior_change: opera.exe - Detección de suspicious_behavior_change en proceso opera.exe
+2025-11-15 01:01:42,630 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: opera.exe - patrón: capture
+2025-11-15 01:01:42,630 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: opera.exe - Detección de suspicious_new_process en proceso opera.exe
+2025-11-15 01:01:42,664 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Uso elevado de CPU: RobloxPlayerBeta.exe - 96.7%
+2025-11-15 01:01:42,664 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_behavior_change: RobloxPlayerBeta.exe - Detección de suspicious_behavior_change en proceso RobloxPlayerBeta.exe
+2025-11-15 01:01:45,971 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Uso elevado de CPU: mpdwsvc.exe - 125.3%
+2025-11-15 01:01:45,971 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_behavior_change: mpdwsvc.exe - Detección de suspicious_behavior_change en proceso mpdwsvc.exe
+2025-11-15 01:01:46,481 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Uso elevado de CPU: RobloxPlayerBeta.exe - 90.9%
+2025-11-15 01:01:46,481 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_behavior_change: RobloxPlayerBeta.exe - Detección de suspicious_behavior_change en proceso RobloxPlayerBeta.exe
+2025-11-15 01:01:53,783 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Uso elevado de CPU: RobloxPlayerBeta.exe - 88.9%
+2025-11-15 01:01:53,784 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_behavior_change: RobloxPlayerBeta.exe - Detección de suspicious_behavior_change en proceso RobloxPlayerBeta.exe
+2025-11-15 01:01:57,464 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: opera.exe - patrón: capture
+2025-11-15 01:01:57,464 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: opera.exe - Detección de suspicious_new_process en proceso opera.exe
+2025-11-15 01:01:57,507 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: opera.exe - patrón: capture
+2025-11-15 01:01:57,507 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: opera.exe - Detección de suspicious_new_process en proceso opera.exe
+2025-11-15 01:01:57,806 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Uso elevado de CPU: RobloxPlayerBeta.exe - 105.3%
+2025-11-15 01:01:57,807 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_behavior_change: RobloxPlayerBeta.exe - Detección de suspicious_behavior_change en proceso RobloxPlayerBeta.exe
+2025-11-15 01:02:01,549 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Uso elevado de CPU: RobloxPlayerBeta.exe - 82.7%
+2025-11-15 01:02:01,549 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_behavior_change: RobloxPlayerBeta.exe - Detección de suspicious_behavior_change en proceso RobloxPlayerBeta.exe
+2025-11-15 01:02:05,392 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Uso elevado de CPU: RobloxPlayerBeta.exe - 87.8%
+2025-11-15 01:02:05,392 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_behavior_change: RobloxPlayerBeta.exe - Detección de suspicious_behavior_change en proceso RobloxPlayerBeta.exe
+2025-11-15 01:02:09,158 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Uso elevado de CPU: RobloxPlayerBeta.exe - 89.2%
+2025-11-15 01:02:09,158 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_behavior_change: RobloxPlayerBeta.exe - Detección de suspicious_behavior_change en proceso RobloxPlayerBeta.exe
+2025-11-15 01:02:12,861 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Uso elevado de CPU: RobloxPlayerBeta.exe - 90.7%
+2025-11-15 01:02:12,861 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_behavior_change: RobloxPlayerBeta.exe - Detección de suspicious_behavior_change en proceso RobloxPlayerBeta.exe
+2025-11-15 01:02:16,544 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Uso elevado de CPU: RobloxPlayerBeta.exe - 83.6%
+2025-11-15 01:02:16,545 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_behavior_change: RobloxPlayerBeta.exe - Detección de suspicious_behavior_change en proceso RobloxPlayerBeta.exe
+2025-11-15 01:02:20,279 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Uso elevado de CPU: RobloxPlayerBeta.exe - 98.3%
+2025-11-15 01:02:20,279 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_behavior_change: RobloxPlayerBeta.exe - Detección de suspicious_behavior_change en proceso RobloxPlayerBeta.exe
+2025-11-15 01:02:24,134 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Uso elevado de CPU: RobloxPlayerBeta.exe - 102.5%
+2025-11-15 01:02:24,134 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_behavior_change: RobloxPlayerBeta.exe - Detección de suspicious_behavior_change en proceso RobloxPlayerBeta.exe
+2025-11-15 01:02:28,004 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Uso elevado de CPU: RobloxPlayerBeta.exe - 101.7%
+2025-11-15 01:02:28,004 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_behavior_change: RobloxPlayerBeta.exe - Detección de suspicious_behavior_change en proceso RobloxPlayerBeta.exe
+2025-11-15 01:02:31,704 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Uso elevado de CPU: RobloxPlayerBeta.exe - 84.0%
+2025-11-15 01:02:31,704 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_behavior_change: RobloxPlayerBeta.exe - Detección de suspicious_behavior_change en proceso RobloxPlayerBeta.exe
+2025-11-15 01:02:35,478 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Uso elevado de CPU: RobloxPlayerBeta.exe - 88.2%
+2025-11-15 01:02:35,479 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_behavior_change: RobloxPlayerBeta.exe - Detección de suspicious_behavior_change en proceso RobloxPlayerBeta.exe
+2025-11-15 01:02:39,103 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Uso elevado de CPU: RobloxPlayerBeta.exe - 83.6%
+2025-11-15 01:02:39,103 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_behavior_change: RobloxPlayerBeta.exe - Detección de suspicious_behavior_change en proceso RobloxPlayerBeta.exe
+2025-11-15 01:02:42,724 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Uso elevado de CPU: RobloxPlayerBeta.exe - 86.7%
+2025-11-15 01:02:42,725 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_behavior_change: RobloxPlayerBeta.exe - Detección de suspicious_behavior_change en proceso RobloxPlayerBeta.exe
+2025-11-15 01:02:53,297 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Uso elevado de CPU: mpdwsvc.exe - 113.5%
+2025-11-15 01:02:53,297 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_behavior_change: mpdwsvc.exe - Detección de suspicious_behavior_change en proceso mpdwsvc.exe
+2025-11-15 01:02:53,796 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Uso elevado de CPU: RobloxPlayerBeta.exe - 81.8%
+2025-11-15 01:02:53,797 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_behavior_change: RobloxPlayerBeta.exe - Detección de suspicious_behavior_change en proceso RobloxPlayerBeta.exe
+2025-11-15 01:03:01,047 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Uso elevado de CPU: RobloxPlayerBeta.exe - 80.4%
+2025-11-15 01:03:01,047 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_behavior_change: RobloxPlayerBeta.exe - Detección de suspicious_behavior_change en proceso RobloxPlayerBeta.exe
+2025-11-15 01:03:19,290 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Uso elevado de CPU: RobloxPlayerBeta.exe - 90.6%
+2025-11-15 01:03:19,291 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_behavior_change: RobloxPlayerBeta.exe - Detección de suspicious_behavior_change en proceso RobloxPlayerBeta.exe
+2025-11-15 01:03:22,921 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Uso elevado de CPU: RobloxPlayerBeta.exe - 90.4%
+2025-11-15 01:03:22,921 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_behavior_change: RobloxPlayerBeta.exe - Detección de suspicious_behavior_change en proceso RobloxPlayerBeta.exe
+2025-11-15 01:03:26,769 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Incremento súbito de memoria en Code.exe: 416845824 -> 978169856
+2025-11-15 01:03:26,769 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_behavior_change: Code.exe - Detección de suspicious_behavior_change en proceso Code.exe
+2025-11-15 01:03:26,781 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Uso elevado de CPU: RobloxPlayerBeta.exe - 90.7%
+2025-11-15 01:03:26,782 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_behavior_change: RobloxPlayerBeta.exe - Detección de suspicious_behavior_change en proceso RobloxPlayerBeta.exe
+2025-11-15 01:03:30,581 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Uso elevado de CPU: RobloxPlayerBeta.exe - 85.9%
+2025-11-15 01:03:30,582 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_behavior_change: RobloxPlayerBeta.exe - Detección de suspicious_behavior_change en proceso RobloxPlayerBeta.exe
+2025-11-15 01:03:33,850 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Uso elevado de CPU: mpdwsvc.exe - 137.3%
+2025-11-15 01:03:33,850 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_behavior_change: mpdwsvc.exe - Detección de suspicious_behavior_change en proceso mpdwsvc.exe
+2025-11-15 01:03:41,779 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Uso elevado de CPU: RobloxPlayerBeta.exe - 83.7%
+2025-11-15 01:03:41,779 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_behavior_change: RobloxPlayerBeta.exe - Detección de suspicious_behavior_change en proceso RobloxPlayerBeta.exe
+2025-11-15 01:03:45,385 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Uso elevado de CPU: RobloxPlayerBeta.exe - 80.6%
+2025-11-15 01:03:45,385 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_behavior_change: RobloxPlayerBeta.exe - Detección de suspicious_behavior_change en proceso RobloxPlayerBeta.exe
+2025-11-15 01:03:48,988 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Uso elevado de CPU: RobloxPlayerBeta.exe - 85.0%
+2025-11-15 01:03:48,988 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_behavior_change: RobloxPlayerBeta.exe - Detección de suspicious_behavior_change en proceso RobloxPlayerBeta.exe
+2025-11-15 01:03:52,611 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Uso elevado de CPU: RobloxPlayerBeta.exe - 82.0%
+2025-11-15 01:03:52,611 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_behavior_change: RobloxPlayerBeta.exe - Detección de suspicious_behavior_change en proceso RobloxPlayerBeta.exe
+2025-11-15 01:03:59,550 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Uso elevado de CPU: mpdwsvc.exe - 111.3%
+2025-11-15 01:03:59,550 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_behavior_change: mpdwsvc.exe - Detección de suspicious_behavior_change en proceso mpdwsvc.exe
+2025-11-15 01:04:03,937 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: opera.exe - patrón: capture
+2025-11-15 01:04:03,938 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: opera.exe - Detección de suspicious_new_process en proceso opera.exe
+2025-11-15 01:04:07,884 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: code.exe - patrón: capture
+2025-11-15 01:04:07,884 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: Code.exe - Detección de suspicious_new_process en proceso Code.exe
+2025-11-15 01:04:16,073 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Incremento súbito de memoria en opera.exe: 40079360 -> 202887168
+2025-11-15 01:04:16,073 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_behavior_change: opera.exe - Detección de suspicious_behavior_change en proceso opera.exe
+2025-11-15 01:04:16,086 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: opera.exe - patrón: capture
+2025-11-15 01:04:16,086 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: opera.exe - Detección de suspicious_new_process en proceso opera.exe
+2025-11-15 01:04:23,544 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: opera.exe - patrón: capture
+2025-11-15 01:04:23,544 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: opera.exe - Detección de suspicious_new_process en proceso opera.exe
+2025-11-15 01:04:27,340 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Incremento súbito de memoria en Code.exe: 481357824 -> 995614720
+2025-11-15 01:04:27,341 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_behavior_change: Code.exe - Detección de suspicious_behavior_change en proceso Code.exe
+2025-11-15 01:04:35,203 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Uso elevado de CPU: RobloxPlayerBeta.exe - 94.7%
+2025-11-15 01:04:35,203 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_behavior_change: RobloxPlayerBeta.exe - Detección de suspicious_behavior_change en proceso RobloxPlayerBeta.exe
+2025-11-15 01:04:39,029 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Uso elevado de CPU: RobloxPlayerBeta.exe - 103.7%
+2025-11-15 01:04:39,030 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_behavior_change: RobloxPlayerBeta.exe - Detección de suspicious_behavior_change en proceso RobloxPlayerBeta.exe
+2025-11-15 01:04:42,924 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Uso elevado de CPU: RobloxPlayerBeta.exe - 95.1%
+2025-11-15 01:04:42,924 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_behavior_change: RobloxPlayerBeta.exe - Detección de suspicious_behavior_change en proceso RobloxPlayerBeta.exe
+2025-11-15 01:04:46,248 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Uso elevado de CPU: mpdwsvc.exe - 93.6%
+2025-11-15 01:04:46,248 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_behavior_change: mpdwsvc.exe - Detección de suspicious_behavior_change en proceso mpdwsvc.exe
+2025-11-15 01:04:46,853 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Uso elevado de CPU: RobloxPlayerBeta.exe - 101.8%
+2025-11-15 01:04:46,853 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_behavior_change: RobloxPlayerBeta.exe - Detección de suspicious_behavior_change en proceso RobloxPlayerBeta.exe
+2025-11-15 01:04:50,704 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Uso elevado de CPU: RobloxPlayerBeta.exe - 106.7%
+2025-11-15 01:04:50,704 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_behavior_change: RobloxPlayerBeta.exe - Detección de suspicious_behavior_change en proceso RobloxPlayerBeta.exe
+2025-11-15 01:04:54,487 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Uso elevado de CPU: RobloxPlayerBeta.exe - 106.2%
+2025-11-15 01:04:54,487 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_behavior_change: RobloxPlayerBeta.exe - Detección de suspicious_behavior_change en proceso RobloxPlayerBeta.exe
+2025-11-15 01:04:58,301 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Uso elevado de CPU: RobloxPlayerBeta.exe - 93.0%
+2025-11-15 01:04:58,301 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_behavior_change: RobloxPlayerBeta.exe - Detección de suspicious_behavior_change en proceso RobloxPlayerBeta.exe
+2025-11-15 01:05:02,174 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Uso elevado de CPU: RobloxPlayerBeta.exe - 93.2%
+2025-11-15 01:05:02,174 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_behavior_change: RobloxPlayerBeta.exe - Detección de suspicious_behavior_change en proceso RobloxPlayerBeta.exe
+2025-11-15 01:05:05,526 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Uso elevado de CPU: mpdwsvc.exe - 87.4%
+2025-11-15 01:05:05,526 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_behavior_change: mpdwsvc.exe - Detección de suspicious_behavior_change en proceso mpdwsvc.exe
+2025-11-15 01:05:06,126 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Uso elevado de CPU: RobloxPlayerBeta.exe - 100.0%
+2025-11-15 01:05:06,126 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_behavior_change: RobloxPlayerBeta.exe - Detección de suspicious_behavior_change en proceso RobloxPlayerBeta.exe
+2025-11-15 01:05:09,807 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Uso elevado de CPU: RobloxPlayerBeta.exe - 103.6%
+2025-11-15 01:05:09,807 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_behavior_change: RobloxPlayerBeta.exe - Detección de suspicious_behavior_change en proceso RobloxPlayerBeta.exe
+2025-11-15 01:05:13,560 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Uso elevado de CPU: RobloxPlayerBeta.exe - 101.6%
+2025-11-15 01:05:13,560 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_behavior_change: RobloxPlayerBeta.exe - Detección de suspicious_behavior_change en proceso RobloxPlayerBeta.exe
+2025-11-15 01:05:17,282 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Uso elevado de CPU: RobloxPlayerBeta.exe - 97.0%
+2025-11-15 01:05:17,282 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_behavior_change: RobloxPlayerBeta.exe - Detección de suspicious_behavior_change en proceso RobloxPlayerBeta.exe
+2025-11-15 01:05:21,047 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Uso elevado de CPU: RobloxPlayerBeta.exe - 95.9%
+2025-11-15 01:05:21,047 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_behavior_change: RobloxPlayerBeta.exe - Detección de suspicious_behavior_change en proceso RobloxPlayerBeta.exe
+2025-11-15 01:05:24,857 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Uso elevado de CPU: RobloxPlayerBeta.exe - 86.1%
+2025-11-15 01:05:24,857 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_behavior_change: RobloxPlayerBeta.exe - Detección de suspicious_behavior_change en proceso RobloxPlayerBeta.exe
+2025-11-15 01:05:28,612 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Uso elevado de CPU: RobloxPlayerBeta.exe - 87.8%
+2025-11-15 01:05:28,613 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_behavior_change: RobloxPlayerBeta.exe - Detección de suspicious_behavior_change en proceso RobloxPlayerBeta.exe
+2025-11-15 01:05:49,683 - core.engine - INFO - 🛑 Señal recibida (2), iniciando shutdown...
+2025-11-15 01:05:49,714 - core.engine - INFO - 🛑 Iniciando shutdown del sistema...
+2025-11-15 01:05:49,745 - core.event_bus - INFO - 📢 Publicando evento 'system_shutdown_started' de 'UnifiedEngine' a 0 suscriptores
+2025-11-15 01:05:50,724 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Uso elevado de CPU: mpdwsvc.exe - 118.4%
+2025-11-15 01:05:50,724 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_behavior_change: mpdwsvc.exe - Detección de suspicious_behavior_change en proceso mpdwsvc.exe
+2025-11-15 01:05:51,246 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Uso elevado de CPU: RobloxPlayerBeta.exe - 87.7%
+2025-11-15 01:05:51,246 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_behavior_change: RobloxPlayerBeta.exe - Detección de suspicious_behavior_change en proceso RobloxPlayerBeta.exe
+2025-11-15 01:05:54,877 - plugins.detectors.behavior_detector.plugin - INFO - Deteniendo behavior_detector...
+2025-11-15 01:05:57,078 - plugins.detectors.behavior_detector.plugin - INFO - [BEHAVIOR_DETECTOR] Monitoreo de procesos terminado
+2025-11-15 01:05:57,078 - plugins.detectors.behavior_detector.plugin - INFO - ✅ behavior_detector detenido correctamente
+2025-11-15 01:05:57,079 - plugins.detectors.behavior_detector.plugin - INFO - Limpiando recursos de behavior_detector...
+2025-11-15 01:05:57,079 - plugins.detectors.behavior_detector.plugin - INFO - ✅ Recursos de behavior_detector limpiados
+2025-11-15 01:05:57,079 - plugin.behavior_detector - INFO - 🔴 Plugin 'behavior_detector' desactivado
+2025-11-15 01:05:57,079 - core.event_bus - INFO - 📢 Publicando evento 'plugin_deactivated' de 'PluginManager' a 0 suscriptores
+2025-11-15 01:05:57,080 - PluginManager - INFO - 🔴 Plugin 'behavior_detector' desactivado
+2025-11-15 01:05:57,089 - plugins.detectors.ml_detector.ml_engine - INFO - [ML_ENGINE] Motor ML cerrado correctamente
+2025-11-15 01:05:57,089 - plugins.detectors.ml_detector.plugin - INFO - [ML_DETECTOR] ✅ Plugin detenido correctamente
+2025-11-15 01:05:57,090 - plugin.ml_detector - INFO - 🔴 Plugin 'ml_detector' desactivado
+2025-11-15 01:05:57,090 - core.event_bus - INFO - 📢 Publicando evento 'plugin_deactivated' de 'PluginManager' a 0 suscriptores
+2025-11-15 01:05:57,090 - PluginManager - INFO - 🔴 Plugin 'ml_detector' desactivado
+2025-11-15 01:05:57,420 - core.event_bus - INFO - 📢 Publicando evento 'plugin_deactivated' de 'PluginManager' a 0 suscriptores
+2025-11-15 01:05:57,420 - PluginManager - INFO - 🔴 Plugin 'network_detector' desactivado
+2025-11-15 01:05:57,420 - PluginManager - INFO - 🛑 Shutdown: 3/3 plugins
+2025-11-15 01:05:57,420 - core.event_bus - INFO - 🧹 Historial de eventos limpiado
+2025-11-15 01:05:57,421 - core.engine - INFO - ✅ Sistema detenido exitosamente
+2025-11-15 01:05:57,421 - core.engine - INFO - 🛑 Iniciando shutdown del sistema...
+2025-11-15 01:05:57,421 - core.event_bus - INFO - 📢 Publicando evento 'system_shutdown_started' de 'UnifiedEngine' a 0 suscriptores
+2025-11-15 01:06:02,433 - PluginManager - INFO - 🛑 Shutdown: 0/0 plugins
+2025-11-15 01:06:02,433 - core.event_bus - INFO - 🧹 Historial de eventos limpiado
+2025-11-15 01:06:02,433 - core.engine - INFO - ✅ Sistema detenido exitosamente
+2025-11-15 01:58:11,475 - launcher - INFO - 📝 Logger 'launcher' inicializado
+2025-11-15 01:58:11,477 - launcher - INFO - ✅ Configuración web cargada desde config/web_logging_optimized.json
+2025-11-15 01:58:11,478 - launcher - INFO - 🌐 Web logging inicializado exitosamente
+2025-11-15 01:58:11,478 - launcher - INFO - 📡 Backend URL: http://localhost:3001/api
+2025-11-15 01:58:11,479 - launcher - INFO - 📤 Handler automático configurado - logs serán enviados al backend
+2025-11-15 01:58:11,480 - core.plugin_registry - INFO - 🏪 PluginRegistry inicializado (Singleton)
+2025-11-15 01:58:11,480 - core.plugin_manager - INFO - 🎛️ PluginManager inicializado
+2025-11-15 01:58:11,480 - core.engine - INFO - 🛡️ UnifiedAntivirusEngine inicializado
+2025-11-15 01:58:11,480 - core.engine - INFO - 🚀 Iniciando Sistema Anti-Keylogger Unificado...
+2025-11-15 01:58:11,480 - PluginManager - INFO - 🔍 Iniciando descubrimiento de plugins...
+2025-11-15 01:58:11,480 - core.plugin_registry - INFO - 🔍 Descubriendo plugins en: plugins
+2025-11-15 01:58:11,486 - core.plugin_registry - INFO - ✅ Plugin 'behavior_detector' registrado en categoría 'detectors'
+2025-11-15 01:58:11,486 - core.plugin_registry - WARNING - ⚠️ Plugin 'behavior_detector' ya registrado, sobrescribiendo
+2025-11-15 01:58:11,486 - core.plugin_registry - INFO - ✅ Plugin 'behavior_detector' registrado en categoría 'detectors'
+2025-11-15 01:58:14,694 - core.plugin_registry - INFO - ✅ Plugin 'ml_detector' registrado en categoría 'detectors'
+2025-11-15 01:58:14,694 - core.plugin_registry - WARNING - ⚠️ Plugin 'ml_detector' ya registrado, sobrescribiendo
+2025-11-15 01:58:14,695 - core.plugin_registry - INFO - ✅ Plugin 'ml_detector' registrado en categoría 'detectors'
+2025-11-15 01:58:14,705 - core.plugin_registry - INFO - ✅ Plugin 'network_detector' registrado en categoría 'detectors'
+2025-11-15 01:58:14,736 - core.plugin_registry - INFO - ✅ Plugin 'alert_manager' registrado en categoría 'handlers'
+2025-11-15 01:58:14,739 - core.plugin_registry - INFO - ✅ Plugin 'logger_handler' registrado en categoría 'handlers'
+2025-11-15 01:58:14,740 - core.plugin_registry - INFO - ✅ Plugin 'quarantine_handler' registrado en categoría 'handlers'
+2025-11-15 01:58:14,741 - core.plugin_registry - INFO - ✅ Descubiertos 6 plugins
+2025-11-15 01:58:14,741 - PluginManager - INFO - ✅ Descubrimiento completado: 6 plugins encontrados
+2025-11-15 01:58:14,741 - core.event_bus - INFO - 📋 'UnifiedEngine' suscrito a eventos 'threat_detected'
+2025-11-15 01:58:14,741 - core.event_bus - INFO - 📋 'UnifiedEngine' suscrito a eventos 'plugin_error'
+2025-11-15 01:58:14,766 - plugins.detectors.behavior_detector.plugin - INFO - Configuración cargada desde C:\Users\windows10\Documents\GitHub\ANTIVIRUS_CPP_PROFESSIONAL\UNIFIED_ANTIVIRUS\plugins\detectors\behavior_detector\config.json
+2025-11-15 01:58:14,766 - plugins.detectors.behavior_detector.plugin - INFO - [PLUGIN] behavior_detector inicializado
+2025-11-15 01:58:14,766 - core.plugin_registry - INFO - 🏭 Plugin 'behavior_detector' creado exitosamente
+2025-11-15 01:58:14,767 - plugin.behavior_detector - INFO - 📄 Configuración cargada desde C:\Users\windows10\Documents\GitHub\ANTIVIRUS_CPP_PROFESSIONAL\UNIFIED_ANTIVIRUS\plugins\detectors\behavior_detector\config.json
+2025-11-15 01:58:14,767 - plugins.detectors.behavior_detector.plugin - INFO - Inicializando behavior_detector...
+2025-11-15 01:58:14,768 - plugins.detectors.behavior_detector.rule_engine - INFO - [RULE_ENGINE] Cargadas 6 reglas de detección
+2025-11-15 01:58:14,768 - plugins.detectors.behavior_detector.rule_engine - INFO - [RULE_ENGINE] Inicializado con 6 reglas
+2025-11-15 01:58:14,768 - plugins.detectors.behavior_detector.whitelist_manager - INFO - [WHITELIST] Cargados 18 procesos y 7 directorios
+2025-11-15 01:58:14,768 - plugins.detectors.behavior_detector.whitelist_manager - INFO - [WHITELIST] Inicializado: 18 procesos, 7 directorios
+2025-11-15 01:58:14,768 - plugins.detectors.behavior_detector.behavior_engine - INFO - [BEHAVIOR_ENGINE] Inicializado (threshold: 0.7, advanced: True)
+2025-11-15 01:58:14,768 - plugins.detectors.behavior_detector.plugin - INFO - ✅ behavior_detector inicializado correctamente
+2025-11-15 01:58:14,768 - plugins.detectors.behavior_detector.plugin - INFO - Iniciando behavior_detector...
+2025-11-15 01:58:14,769 - plugins.detectors.behavior_detector.plugin - INFO - [BEHAVIOR_DETECTOR] Iniciando monitoreo real de procesos
+2025-11-15 01:58:14,769 - plugins.detectors.behavior_detector.plugin - INFO - ✅ behavior_detector iniciado correctamente
+2025-11-15 01:58:14,776 - plugins.detectors.behavior_detector.plugin - ERROR - Error analizando proceso sospechoso: 'NoneType' object has no attribute 'lower'
+2025-11-15 01:58:14,776 - plugin.behavior_detector - INFO - ✅ Plugin 'behavior_detector' activado exitosamente
+2025-11-15 01:58:14,803 - core.event_bus - INFO - 📢 Publicando evento 'plugin_activated' de 'PluginManager' a 0 suscriptores
+2025-11-15 01:58:14,810 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sin ruta ejecutable: 
+2025-11-15 01:58:14,811 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process:  - Detección de suspicious_new_process en proceso 
+2025-11-15 01:58:14,811 - PluginManager - INFO - ✅ Plugin 'behavior_detector' activado
+2025-11-15 01:58:14,838 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: opera.exe - patrón: capture
+2025-11-15 01:58:14,838 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: opera.exe - Detección de suspicious_new_process en proceso opera.exe
+2025-11-15 01:58:14,915 - plugins.detectors.ml_detector.plugin - INFO - [ML_DETECTOR] Configuración cargada: 8 secciones
+2025-11-15 01:58:14,960 - plugins.detectors.ml_detector.plugin - INFO - [ML_DETECTOR] Plugin inicializado con configuración desde C:\Users\windows10\Documents\GitHub\ANTIVIRUS_CPP_PROFESSIONAL\UNIFIED_ANTIVIRUS\plugins\detectors\ml_detector\config.json
+2025-11-15 01:58:14,973 - core.plugin_registry - INFO - 🏭 Plugin 'ml_detector' creado exitosamente
+2025-11-15 01:58:15,146 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: opera.exe - patrón: capture
+2025-11-15 01:58:15,146 - plugin.ml_detector - INFO - 📄 Configuración cargada desde C:\Users\windows10\Documents\GitHub\ANTIVIRUS_CPP_PROFESSIONAL\UNIFIED_ANTIVIRUS\plugins\detectors\ml_detector\config.json
+2025-11-15 01:58:15,146 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: opera.exe - Detección de suspicious_new_process en proceso opera.exe
+2025-11-15 01:58:15,146 - plugins.detectors.ml_detector.plugin - INFO - [ML_DETECTOR] Inicializando componentes ML...
+2025-11-15 01:58:15,290 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: opera.exe - patrón: capture
+2025-11-15 01:58:15,290 - plugins.detectors.ml_detector.ml_engine - INFO - [ML_ENGINE] Clases cargadas: ['Benign', 'Keylogger']
+2025-11-15 01:58:15,291 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: opera.exe - Detección de suspicious_new_process en proceso opera.exe
+2025-11-15 01:58:15,304 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: discord.exe - patrón: capture
+2025-11-15 01:58:15,305 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: Discord.exe - Detección de suspicious_new_process en proceso Discord.exe
+2025-11-15 01:58:15,319 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: opera.exe - patrón: capture
+2025-11-15 01:58:15,319 - plugins.detectors.ml_detector.ml_engine - INFO - [ML_ENGINE] Metadatos cargados: 81 características
+2025-11-15 01:58:15,319 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: opera.exe - Detección de suspicious_new_process en proceso opera.exe
+2025-11-15 01:58:15,360 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: opera.exe - patrón: capture
+2025-11-15 01:58:15,360 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: opera.exe - Detección de suspicious_new_process en proceso opera.exe
+2025-11-15 01:58:15,580 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: opera.exe - patrón: capture
+2025-11-15 01:58:15,580 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: opera.exe - Detección de suspicious_new_process en proceso opera.exe
+2025-11-15 01:58:15,606 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: opera.exe - patrón: capture
+2025-11-15 01:58:15,607 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: opera.exe - Detección de suspicious_new_process en proceso opera.exe
+2025-11-15 01:58:15,634 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: discord.exe - patrón: monitor
+2025-11-15 01:58:15,635 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: Discord.exe - Detección de suspicious_new_process en proceso Discord.exe
+2025-11-15 01:58:15,675 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: opera.exe - patrón: capture
+2025-11-15 01:58:15,675 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: opera.exe - Detección de suspicious_new_process en proceso opera.exe
+2025-11-15 01:58:15,830 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: opera.exe - patrón: capture
+2025-11-15 01:58:15,831 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: opera.exe - Detección de suspicious_new_process en proceso opera.exe
+2025-11-15 01:58:16,576 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: opera.exe - patrón: capture
+2025-11-15 01:58:16,577 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: opera.exe - Detección de suspicious_new_process en proceso opera.exe
+2025-11-15 01:58:16,577 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: opera.exe - patrón: capture
+2025-11-15 01:58:16,577 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: opera.exe - Detección de suspicious_new_process en proceso opera.exe
+2025-11-15 01:58:16,716 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: opera.exe - patrón: capture
+2025-11-15 01:58:16,716 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: opera.exe - Detección de suspicious_new_process en proceso opera.exe
+2025-11-15 01:58:16,717 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: opera.exe - patrón: capture
+2025-11-15 01:58:54,547 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: opera.exe - Detección de suspicious_new_process en proceso opera.exe
+2025-11-15 01:58:54,591 - plugins.detectors.ml_detector.ml_engine - INFO - [ML_ENGINE] ✅ Modelo ONNX validado: modelo_keylogger_from_datos.onnx
+2025-11-15 01:58:54,618 - plugins.detectors.ml_detector.ml_engine - INFO - [ML_ENGINE] ✅ Modelo ONNX cargado en 39.36s
+2025-11-15 01:58:54,659 - plugins.detectors.ml_detector.ml_engine - INFO - [ML_ENGINE] Inicializado (ONNX: True, Modelo: ONNX)
+2025-11-15 01:58:54,659 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: epicwebhelper.exe - patrón: .log
+2025-11-15 01:58:54,659 - plugins.detectors.ml_detector.feature_extractor - INFO - [FEATURES] NetworkFeatureExtractor inicializado con 81 características
+2025-11-15 01:58:54,659 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: EpicWebHelper.exe - Detección de suspicious_new_process en proceso EpicWebHelper.exe
+2025-11-15 01:58:54,660 - plugins.detectors.ml_detector.plugin - INFO - [ML_DETECTOR] ✅ Plugin inicializado (Modelo: ONNX)
+2025-11-15 01:58:54,688 - plugins.detectors.ml_detector.plugin - INFO - [ML_DETECTOR] ✅ Plugin iniciado y listo para detecciones
+2025-11-15 01:58:54,701 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: opera.exe - patrón: capture
+2025-11-15 01:58:54,701 - plugin.ml_detector - INFO - ✅ Plugin 'ml_detector' activado exitosamente
+2025-11-15 01:58:54,701 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: opera.exe - Detección de suspicious_new_process en proceso opera.exe
+2025-11-15 01:58:54,701 - core.event_bus - INFO - 📢 Publicando evento 'plugin_activated' de 'PluginManager' a 0 suscriptores
+2025-11-15 01:58:54,702 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: opera_crashreporter.exe - patrón: monitor
+2025-11-15 01:58:54,702 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: opera_crashreporter.exe - Detección de suspicious_new_process en proceso opera_crashreporter.exe
+2025-11-15 01:58:54,702 - PluginManager - INFO - ✅ Plugin 'ml_detector' activado
+2025-11-15 01:58:54,769 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: opera.exe - patrón: capture
+2025-11-15 01:58:54,769 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: opera.exe - Detección de suspicious_new_process en proceso opera.exe
+2025-11-15 01:58:54,769 - network_detector - INFO - 🌐 Inicializando Network Detector Plugin...
+2025-11-15 01:58:54,866 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: opera.exe - patrón: capture
+2025-11-15 01:58:54,866 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: opera.exe - Detección de suspicious_new_process en proceso opera.exe
+2025-11-15 01:58:54,893 - network_detector - INFO - 📋 Configuración cargada: 13 secciones
+2025-11-15 01:58:54,921 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: nvcontainer.exe - patrón: .log
+2025-11-15 01:58:54,921 - network_detector - INFO - 🔧 Componentes básicos inicializados
+2025-11-15 01:58:54,921 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: nvcontainer.exe - Detección de suspicious_new_process en proceso nvcontainer.exe
+2025-11-15 01:58:54,921 - network_detector - INFO - 🛡️ Datos de seguridad básicos configurados
+2025-11-15 01:58:54,942 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: opera.exe - patrón: capture
+2025-11-15 01:58:54,943 - network_detector - INFO - 📡 Preparado para suscribirse a 4 tipos de eventos
+2025-11-15 01:58:54,943 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: opera.exe - Detección de suspicious_new_process en proceso opera.exe
+2025-11-15 01:58:54,943 - network_detector - INFO - ✅ Network Detector Plugin inicializado correctamente
+2025-11-15 01:58:54,960 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: steamwebhelper.exe - patrón: .txt
+2025-11-15 01:58:54,960 - core.plugin_registry - INFO - 🏭 Plugin 'network_detector' creado exitosamente
+2025-11-15 01:58:54,960 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: steamwebhelper.exe - Detección de suspicious_new_process en proceso steamwebhelper.exe
+2025-11-15 01:58:54,960 - network_detector - INFO - 🚀 Activando Network Detector Plugin...
+2025-11-15 01:58:54,961 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: steamwebhelper.exe - patrón: monitor
+2025-11-15 01:58:54,961 - network_detector - INFO - ✅ Componentes verificados (modo básico)
+2025-11-15 01:58:54,961 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: steamwebhelper.exe - Detección de suspicious_new_process en proceso steamwebhelper.exe
+2025-11-15 01:58:54,961 - network_detector - INFO - ✅ Network Detector Plugin activado
+2025-11-15 01:58:54,987 - core.event_bus - INFO - 📢 Publicando evento 'plugin_activated' de 'PluginManager' a 0 suscriptores
+2025-11-15 01:58:54,995 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: epicwebhelper.exe - patrón: .log
+2025-11-15 01:58:54,995 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: EpicWebHelper.exe - Detección de suspicious_new_process en proceso EpicWebHelper.exe
+2025-11-15 01:58:54,995 - PluginManager - INFO - ✅ Plugin 'network_detector' activado
+2025-11-15 01:58:55,020 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: opera.exe - patrón: capture
+2025-11-15 01:58:55,021 - PluginManager - INFO - 📂 Categoría 'detectors': 3/3 activados
+2025-11-15 01:58:55,021 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: opera.exe - Detección de suspicious_new_process en proceso opera.exe
+2025-11-15 01:58:55,021 - core.engine - INFO - ✅ Categoría 'detectors' activada
+2025-11-15 01:58:55,047 - PluginManager - INFO - 📂 Categoría 'monitors': 0/0 activados
+2025-11-15 01:58:55,071 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: opera.exe - patrón: capture
+2025-11-15 01:58:55,072 - core.engine - WARNING - ⚠️ Problemas activando categoría 'monitors'
+2025-11-15 01:58:55,075 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: opera.exe - Detección de suspicious_new_process en proceso opera.exe
+2025-11-15 01:58:55,075 - core.plugin_registry - ERROR - ❌ Error creando plugin 'alert_manager': Can't instantiate abstract class AlertManagerPlugin without an implementation for abstract methods 'get_plugin_info', 'initialize', 'start', 'stop'
+2025-11-15 01:58:55,099 - core.plugin_registry - ERROR - ❌ Error creando plugin 'logger_handler': Can't instantiate abstract class LoggerHandlerPlugin without an implementation for abstract methods 'get_plugin_info', 'initialize', 'start', 'stop'
+2025-11-15 01:58:55,121 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: opera.exe - patrón: capture
+2025-11-15 01:58:55,121 - core.plugin_registry - ERROR - ❌ Error creando plugin 'quarantine_handler': Can't instantiate abstract class QuarantineHandlerPlugin without an implementation for abstract methods 'get_plugin_info', 'initialize', 'start', 'stop'
+2025-11-15 01:58:55,121 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: opera.exe - Detección de suspicious_new_process en proceso opera.exe
+2025-11-15 01:58:55,122 - PluginManager - INFO - 📂 Categoría 'handlers': 0/3 activados
+2025-11-15 01:58:55,157 - core.engine - WARNING - ⚠️ Problemas activando categoría 'handlers'
+2025-11-15 01:58:55,184 - PluginManager - INFO - 📂 Categoría 'interfaces': 0/0 activados
+2025-11-15 01:58:55,185 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: discord.exe - patrón: capture
+2025-11-15 01:58:55,185 - core.engine - WARNING - ⚠️ Problemas activando categoría 'interfaces'
+2025-11-15 01:58:55,185 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: Discord.exe - Detección de suspicious_new_process en proceso Discord.exe
+2025-11-15 01:58:55,234 - core.event_bus - INFO - 📢 Publicando evento 'system_started' de 'UnifiedEngine' a 0 suscriptores
+2025-11-15 01:58:55,253 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: opera.exe - patrón: capture
+2025-11-15 01:58:55,253 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: opera.exe - Detección de suspicious_new_process en proceso opera.exe
+2025-11-15 01:58:55,254 - core.engine - INFO - ✅ Sistema iniciado exitosamente
+2025-11-15 01:58:55,254 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: opera.exe - patrón: capture
+2025-11-15 01:58:55,254 - core.engine - INFO - 📊 Plugins activos: 3
+2025-11-15 01:58:55,254 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: opera.exe - Detección de suspicious_new_process en proceso opera.exe
+2025-11-15 01:58:55,254 - core.engine - INFO - 🚀 Iniciando Sistema Anti-Keylogger Unificado...
+2025-11-15 01:58:55,255 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: opera.exe - patrón: capture
+2025-11-15 01:58:55,255 - PluginManager - INFO - 🔍 Iniciando descubrimiento de plugins...
+2025-11-15 01:58:55,255 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: opera.exe - Detección de suspicious_new_process en proceso opera.exe
+2025-11-15 01:58:55,255 - core.plugin_registry - INFO - 🔍 Descubriendo plugins en: plugins
+2025-11-15 01:58:55,255 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: code.exe - patrón: capture
+2025-11-15 01:58:55,255 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: Code.exe - Detección de suspicious_new_process en proceso Code.exe
+2025-11-15 01:58:55,255 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: opera.exe - patrón: capture
+2025-11-15 01:58:55,256 - core.plugin_registry - WARNING - ⚠️ Plugin 'behavior_detector' ya registrado, sobrescribiendo
+2025-11-15 01:58:55,256 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: opera.exe - Detección de suspicious_new_process en proceso opera.exe
+2025-11-15 01:58:55,256 - core.plugin_registry - INFO - ✅ Plugin 'behavior_detector' registrado en categoría 'detectors'
+2025-11-15 01:58:55,257 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: opera.exe - patrón: capture
+2025-11-15 01:58:55,257 - core.plugin_registry - WARNING - ⚠️ Plugin 'ml_detector' ya registrado, sobrescribiendo
+2025-11-15 01:58:55,257 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: opera.exe - Detección de suspicious_new_process en proceso opera.exe
+2025-11-15 01:58:55,257 - core.plugin_registry - INFO - ✅ Plugin 'ml_detector' registrado en categoría 'detectors'
+2025-11-15 01:58:55,276 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: opera.exe - patrón: capture
+2025-11-15 01:58:55,276 - core.plugin_registry - WARNING - ⚠️ Plugin 'network_detector' ya registrado, sobrescribiendo
+2025-11-15 01:58:55,277 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: opera.exe - Detección de suspicious_new_process en proceso opera.exe
+2025-11-15 01:58:55,277 - core.plugin_registry - INFO - ✅ Plugin 'network_detector' registrado en categoría 'detectors'
+2025-11-15 01:58:55,277 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: opera.exe - patrón: capture
+2025-11-15 01:58:55,277 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: opera.exe - Detección de suspicious_new_process en proceso opera.exe
+2025-11-15 01:58:55,278 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: opera.exe - patrón: capture
+2025-11-15 01:58:55,279 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: opera.exe - Detección de suspicious_new_process en proceso opera.exe
+2025-11-15 01:58:55,279 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: opera.exe - patrón: capture
+2025-11-15 01:58:55,279 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: opera.exe - Detección de suspicious_new_process en proceso opera.exe
+2025-11-15 01:58:55,280 - core.plugin_registry - WARNING - ⚠️ Plugin 'alert_manager' ya registrado, sobrescribiendo
+2025-11-15 01:58:55,296 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: opera.exe - patrón: capture
+2025-11-15 01:58:55,296 - core.plugin_registry - INFO - ✅ Plugin 'alert_manager' registrado en categoría 'handlers'
+2025-11-15 01:58:55,297 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: opera.exe - Detección de suspicious_new_process en proceso opera.exe
+2025-11-15 01:58:55,297 - core.plugin_registry - WARNING - ⚠️ Plugin 'logger_handler' ya registrado, sobrescribiendo
+2025-11-15 01:58:55,297 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: opera.exe - patrón: capture
+2025-11-15 01:58:55,297 - core.plugin_registry - INFO - ✅ Plugin 'logger_handler' registrado en categoría 'handlers'
+2025-11-15 01:58:55,298 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: opera.exe - Detección de suspicious_new_process en proceso opera.exe
+2025-11-15 01:58:55,316 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: opera.exe - patrón: capture
+2025-11-15 01:58:55,317 - core.plugin_registry - WARNING - ⚠️ Plugin 'quarantine_handler' ya registrado, sobrescribiendo
+2025-11-15 01:58:55,317 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: opera.exe - Detección de suspicious_new_process en proceso opera.exe
+2025-11-15 01:58:55,317 - core.plugin_registry - INFO - ✅ Plugin 'quarantine_handler' registrado en categoría 'handlers'
+2025-11-15 01:58:55,334 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: opera.exe - patrón: capture
+2025-11-15 01:58:55,334 - core.plugin_registry - INFO - ✅ Descubiertos 6 plugins
+2025-11-15 01:58:55,334 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: opera.exe - Detección de suspicious_new_process en proceso opera.exe
+2025-11-15 01:58:55,334 - PluginManager - INFO - ✅ Descubrimiento completado: 6 plugins encontrados
+2025-11-15 01:58:55,335 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: code.exe - patrón: monitor
+2025-11-15 01:58:55,335 - core.event_bus - INFO - 📋 'UnifiedEngine' suscrito a eventos 'threat_detected'
+2025-11-15 01:58:55,335 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: Code.exe - Detección de suspicious_new_process en proceso Code.exe
+2025-11-15 01:58:55,335 - core.event_bus - INFO - 📋 'UnifiedEngine' suscrito a eventos 'plugin_error'
+2025-11-15 01:58:55,335 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: opera.exe - patrón: capture
+2025-11-15 01:58:55,336 - PluginManager - WARNING - ⚠️ Plugin 'behavior_detector' ya está activo
+2025-11-15 01:58:55,336 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: opera.exe - Detección de suspicious_new_process en proceso opera.exe
+2025-11-15 01:58:55,336 - PluginManager - WARNING - ⚠️ Plugin 'ml_detector' ya está activo
+2025-11-15 01:58:55,336 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: code.exe - patrón: capture
+2025-11-15 01:58:55,336 - PluginManager - WARNING - ⚠️ Plugin 'network_detector' ya está activo
+2025-11-15 01:58:55,337 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: Code.exe - Detección de suspicious_new_process en proceso Code.exe
+2025-11-15 01:58:55,337 - PluginManager - INFO - 📂 Categoría 'detectors': 3/3 activados
+2025-11-15 01:58:55,337 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: opera.exe - patrón: capture
+2025-11-15 01:58:55,338 - PluginManager - INFO - 📂 Categoría 'monitors': 0/0 activados
+2025-11-15 01:58:55,338 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: opera.exe - Detección de suspicious_new_process en proceso opera.exe
+2025-11-15 01:58:55,338 - core.plugin_registry - ERROR - ❌ Error creando plugin 'alert_manager': Can't instantiate abstract class AlertManagerPlugin without an implementation for abstract methods 'get_plugin_info', 'initialize', 'start', 'stop'
+2025-11-15 01:58:55,338 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: opera.exe - patrón: capture
+2025-11-15 01:58:55,339 - core.plugin_registry - ERROR - ❌ Error creando plugin 'logger_handler': Can't instantiate abstract class LoggerHandlerPlugin without an implementation for abstract methods 'get_plugin_info', 'initialize', 'start', 'stop'
+2025-11-15 01:58:55,339 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: opera.exe - Detección de suspicious_new_process en proceso opera.exe
+2025-11-15 01:58:55,339 - core.plugin_registry - ERROR - ❌ Error creando plugin 'quarantine_handler': Can't instantiate abstract class QuarantineHandlerPlugin without an implementation for abstract methods 'get_plugin_info', 'initialize', 'start', 'stop'
+2025-11-15 01:58:55,339 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: code.exe - patrón: capture
+2025-11-15 01:58:55,339 - PluginManager - INFO - 📂 Categoría 'handlers': 0/3 activados
+2025-11-15 01:58:55,340 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: Code.exe - Detección de suspicious_new_process en proceso Code.exe
+2025-11-15 01:58:55,340 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: opera.exe - patrón: capture
+2025-11-15 01:58:55,340 - core.event_bus - INFO - 📢 Publicando evento 'system_started' de 'UnifiedEngine' a 0 suscriptores
+2025-11-15 01:58:55,340 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: opera.exe - Detección de suspicious_new_process en proceso opera.exe
+2025-11-15 01:58:55,341 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: opera.exe - patrón: capture
+2025-11-15 01:58:55,341 - core.engine - INFO - ✅ Sistema iniciado exitosamente
+2025-11-15 01:58:55,341 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: opera.exe - Detección de suspicious_new_process en proceso opera.exe
+2025-11-15 01:58:55,341 - core.engine - INFO - 📊 Plugins activos: 3
+2025-11-15 01:58:55,342 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: opera.exe - patrón: capture
+2025-11-15 01:58:55,342 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: opera.exe - Detección de suspicious_new_process en proceso opera.exe
+2025-11-15 01:58:55,342 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: opera.exe - patrón: capture
+2025-11-15 01:58:55,342 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: opera.exe - Detección de suspicious_new_process en proceso opera.exe
+2025-11-15 01:58:55,343 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: opera.exe - patrón: capture
+2025-11-15 01:58:55,343 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: opera.exe - Detección de suspicious_new_process en proceso opera.exe
+2025-11-15 01:58:55,343 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: opera.exe - patrón: capture
+2025-11-15 01:58:55,344 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: opera.exe - Detección de suspicious_new_process en proceso opera.exe
+2025-11-15 01:58:55,344 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: code.exe - patrón: capture
+2025-11-15 01:58:55,344 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: Code.exe - Detección de suspicious_new_process en proceso Code.exe
+2025-11-15 01:58:55,344 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: code.exe - patrón: capture
+2025-11-15 01:58:55,344 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: Code.exe - Detección de suspicious_new_process en proceso Code.exe
+2025-11-15 01:58:55,345 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: code.exe - patrón: capture
+2025-11-15 01:58:55,345 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: Code.exe - Detección de suspicious_new_process en proceso Code.exe
+2025-11-15 01:58:55,345 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: githubdesktop.exe - patrón: capture
+2025-11-15 01:58:55,345 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: GitHubDesktop.exe - Detección de suspicious_new_process en proceso GitHubDesktop.exe
+2025-11-15 01:58:55,346 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: opera.exe - patrón: capture
+2025-11-15 01:58:55,346 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: opera.exe - Detección de suspicious_new_process en proceso opera.exe
+2025-11-15 01:58:55,363 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: opera.exe - patrón: capture
+2025-11-15 01:58:55,363 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: opera.exe - Detección de suspicious_new_process en proceso opera.exe
+2025-11-15 01:58:55,379 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: code.exe - patrón: capture
+2025-11-15 01:58:55,380 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: Code.exe - Detección de suspicious_new_process en proceso Code.exe
+2025-11-15 01:58:55,394 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: code.exe - patrón: capture
+2025-11-15 01:58:55,395 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: Code.exe - Detección de suspicious_new_process en proceso Code.exe
+2025-11-15 01:58:55,395 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: discord.exe - patrón: capture
+2025-11-15 01:58:55,395 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: Discord.exe - Detección de suspicious_new_process en proceso Discord.exe
+2025-11-15 01:58:57,678 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: opera.exe - patrón: capture
+2025-11-15 01:58:57,678 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: opera.exe - Detección de suspicious_new_process en proceso opera.exe
+2025-11-15 01:58:59,168 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: opera.exe - patrón: capture
+2025-11-15 01:58:59,169 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: opera.exe - Detección de suspicious_new_process en proceso opera.exe
+2025-11-15 01:58:59,518 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: opera.exe - patrón: capture
+2025-11-15 01:58:59,519 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: opera.exe - Detección de suspicious_new_process en proceso opera.exe
+2025-11-15 01:58:59,520 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: opera.exe - patrón: capture
+2025-11-15 01:58:59,520 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: opera.exe - Detección de suspicious_new_process en proceso opera.exe
+2025-11-15 01:58:59,556 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: opera.exe - patrón: capture
+2025-11-15 01:58:59,556 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: opera.exe - Detección de suspicious_new_process en proceso opera.exe
+2025-11-15 01:59:05,843 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Incremento súbito de memoria en MemCompression: 25878528 -> 177786880
+2025-11-15 01:59:05,843 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_behavior_change: MemCompression - Detección de suspicious_behavior_change en proceso MemCompression
+2025-11-15 01:59:25,539 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: opera.exe - patrón: capture
+2025-11-15 01:59:25,539 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: opera.exe - Detección de suspicious_new_process en proceso opera.exe
+2025-11-15 01:59:29,709 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: opera.exe - patrón: capture
+2025-11-15 01:59:29,709 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: opera.exe - Detección de suspicious_new_process en proceso opera.exe
+2025-11-15 01:59:33,490 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Incremento súbito de memoria en Code.exe: 462090240 -> 1057882112
+2025-11-15 01:59:33,490 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_behavior_change: Code.exe - Detección de suspicious_behavior_change en proceso Code.exe
+2025-11-15 01:59:40,729 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Uso elevado de CPU: mpdwsvc.exe - 110.4%
+2025-11-15 01:59:40,730 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_behavior_change: mpdwsvc.exe - Detección de suspicious_behavior_change en proceso mpdwsvc.exe
+2025-11-15 01:59:56,011 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: opera.exe - patrón: capture
+2025-11-15 01:59:56,011 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: opera.exe - Detección de suspicious_new_process en proceso opera.exe
+2025-11-15 01:59:59,396 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Uso elevado de CPU: mpdwsvc.exe - 101.1%
+2025-11-15 01:59:59,396 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_behavior_change: mpdwsvc.exe - Detección de suspicious_behavior_change en proceso mpdwsvc.exe
+2025-11-15 02:00:17,710 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: opera.exe - patrón: capture
+2025-11-15 02:00:17,710 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: opera.exe - Detección de suspicious_new_process en proceso opera.exe
+2025-11-15 02:00:17,966 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: opera.exe - patrón: capture
+2025-11-15 02:00:17,966 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: opera.exe - Detección de suspicious_new_process en proceso opera.exe
+2025-11-15 02:00:29,040 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: opera.exe - patrón: capture
+2025-11-15 02:00:29,040 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: opera.exe - Detección de suspicious_new_process en proceso opera.exe
+2025-11-15 02:00:32,962 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Incremento súbito de memoria en Code.exe: 457535488 -> 1014403072
+2025-11-15 02:00:32,962 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_behavior_change: Code.exe - Detección de suspicious_behavior_change en proceso Code.exe
+2025-11-15 02:00:44,424 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Incremento súbito de memoria en Code.exe: 462684160 -> 1047572480
+2025-11-15 02:00:44,424 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_behavior_change: Code.exe - Detección de suspicious_behavior_change en proceso Code.exe
+2025-11-15 02:00:47,664 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Uso elevado de CPU: mpdwsvc.exe - 99.8%
+2025-11-15 02:00:47,664 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_behavior_change: mpdwsvc.exe - Detección de suspicious_behavior_change en proceso mpdwsvc.exe
+2025-11-15 02:00:57,896 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Uso elevado de CPU: opera.exe - 97.1%
+2025-11-15 02:00:57,896 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_behavior_change: opera.exe - Detección de suspicious_behavior_change en proceso opera.exe
+2025-11-15 02:00:59,662 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Incremento súbito de memoria en Code.exe: 456556544 -> 947527680
+2025-11-15 02:00:59,663 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_behavior_change: Code.exe - Detección de suspicious_behavior_change en proceso Code.exe
+2025-11-15 02:00:59,692 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Incremento súbito de memoria en opera.exe: 38920192 -> 158085120
+2025-11-15 02:00:59,692 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_behavior_change: opera.exe - Detección de suspicious_behavior_change en proceso opera.exe
+2025-11-15 02:01:03,472 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: opera.exe - patrón: capture
+2025-11-15 02:01:03,472 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: opera.exe - Detección de suspicious_new_process en proceso opera.exe
+2025-11-15 02:01:03,595 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Incremento súbito de memoria en opera.exe: 158085120 -> 448405504
+2025-11-15 02:01:03,595 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_behavior_change: opera.exe - Detección de suspicious_behavior_change en proceso opera.exe
+2025-11-15 02:01:06,936 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Uso elevado de CPU: mpdwsvc.exe - 90.5%
+2025-11-15 02:01:06,936 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_behavior_change: mpdwsvc.exe - Detección de suspicious_behavior_change en proceso mpdwsvc.exe
+2025-11-15 02:01:14,519 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: opera.exe - patrón: capture
+2025-11-15 02:01:14,519 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: opera.exe - Detección de suspicious_new_process en proceso opera.exe
+2025-11-15 02:01:33,033 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Incremento súbito de memoria en Code.exe: 461213696 -> 1021014016
+2025-11-15 02:01:33,033 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_behavior_change: Code.exe - Detección de suspicious_behavior_change en proceso Code.exe
+2025-11-15 02:01:54,796 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Uso elevado de CPU: mpdwsvc.exe - 121.8%
+2025-11-15 02:01:54,796 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_behavior_change: mpdwsvc.exe - Detección de suspicious_behavior_change en proceso mpdwsvc.exe
+2025-11-15 02:02:13,136 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Uso elevado de CPU: mpdwsvc.exe - 101.1%
+2025-11-15 02:02:13,136 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_behavior_change: mpdwsvc.exe - Detección de suspicious_behavior_change en proceso mpdwsvc.exe
+2025-11-15 02:02:32,051 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Incremento súbito de memoria en Code.exe: 487579648 -> 1274650624
+2025-11-15 02:02:32,051 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_behavior_change: Code.exe - Detección de suspicious_behavior_change en proceso Code.exe
+2025-11-15 02:02:39,415 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Incremento súbito de memoria en Code.exe: 602710016 -> 1272303616
+2025-11-15 02:02:39,415 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_behavior_change: Code.exe - Detección de suspicious_behavior_change en proceso Code.exe
+2025-11-15 02:10:13,400 - launcher - INFO - 📝 Logger 'launcher' inicializado
+2025-11-15 02:10:13,401 - launcher - INFO - ✅ Configuración web cargada desde config/web_logging_production.json
+2025-11-15 02:10:13,402 - launcher - INFO - 🌐 Web logging inicializado exitosamente
+2025-11-15 02:10:13,402 - launcher - INFO - 📡 Backend URL: N/A
+2025-11-15 02:10:13,402 - launcher - INFO - 📤 Handler automático configurado - logs serán enviados al backend
+2025-11-15 02:10:13,403 - core.plugin_registry - INFO - 🏪 PluginRegistry inicializado (Singleton)
+2025-11-15 02:10:13,403 - core.plugin_manager - INFO - 🎛️ PluginManager inicializado
+2025-11-15 02:10:13,403 - core.engine - INFO - 🛡️ UnifiedAntivirusEngine inicializado
+2025-11-15 02:10:13,403 - core.engine - INFO - 🚀 Iniciando Sistema Anti-Keylogger Unificado...
+2025-11-15 02:10:13,403 - PluginManager - INFO - 🔍 Iniciando descubrimiento de plugins...
+2025-11-15 02:10:13,403 - core.plugin_registry - INFO - 🔍 Descubriendo plugins en: plugins
+2025-11-15 02:10:13,410 - core.plugin_registry - INFO - ✅ Plugin 'behavior_detector' registrado en categoría 'detectors'
+2025-11-15 02:10:13,410 - core.plugin_registry - WARNING - ⚠️ Plugin 'behavior_detector' ya registrado, sobrescribiendo
+2025-11-15 02:10:13,410 - core.plugin_registry - INFO - ✅ Plugin 'behavior_detector' registrado en categoría 'detectors'
+2025-11-15 02:10:15,649 - core.plugin_registry - INFO - ✅ Plugin 'ml_detector' registrado en categoría 'detectors'
+2025-11-15 02:10:15,649 - core.plugin_registry - WARNING - ⚠️ Plugin 'ml_detector' ya registrado, sobrescribiendo
+2025-11-15 02:10:15,649 - core.plugin_registry - INFO - ✅ Plugin 'ml_detector' registrado en categoría 'detectors'
+2025-11-15 02:10:15,660 - core.plugin_registry - INFO - ✅ Plugin 'network_detector' registrado en categoría 'detectors'
+2025-11-15 02:10:15,681 - core.plugin_registry - INFO - ✅ Plugin 'alert_manager' registrado en categoría 'handlers'
+2025-11-15 02:10:15,683 - core.plugin_registry - INFO - ✅ Plugin 'logger_handler' registrado en categoría 'handlers'
+2025-11-15 02:10:15,685 - core.plugin_registry - INFO - ✅ Plugin 'quarantine_handler' registrado en categoría 'handlers'
+2025-11-15 02:10:15,685 - core.plugin_registry - INFO - ✅ Descubiertos 6 plugins
+2025-11-15 02:10:15,685 - PluginManager - INFO - ✅ Descubrimiento completado: 6 plugins encontrados
+2025-11-15 02:10:15,685 - core.event_bus - INFO - 📋 'UnifiedEngine' suscrito a eventos 'threat_detected'
+2025-11-15 02:10:15,685 - core.event_bus - INFO - 📋 'UnifiedEngine' suscrito a eventos 'plugin_error'
+2025-11-15 02:10:15,686 - plugins.detectors.behavior_detector.plugin - INFO - Configuración cargada desde C:\Users\windows10\Documents\GitHub\ANTIVIRUS_CPP_PROFESSIONAL\UNIFIED_ANTIVIRUS\plugins\detectors\behavior_detector\config.json
+2025-11-15 02:10:15,686 - plugins.detectors.behavior_detector.plugin - INFO - [PLUGIN] behavior_detector inicializado
+2025-11-15 02:10:15,686 - core.plugin_registry - INFO - 🏭 Plugin 'behavior_detector' creado exitosamente
+2025-11-15 02:10:15,687 - plugin.behavior_detector - INFO - 📄 Configuración cargada desde C:\Users\windows10\Documents\GitHub\ANTIVIRUS_CPP_PROFESSIONAL\UNIFIED_ANTIVIRUS\plugins\detectors\behavior_detector\config.json
+2025-11-15 02:10:15,687 - plugins.detectors.behavior_detector.plugin - INFO - Inicializando behavior_detector...
+2025-11-15 02:10:15,688 - plugins.detectors.behavior_detector.rule_engine - INFO - [RULE_ENGINE] Cargadas 6 reglas de detección
+2025-11-15 02:10:15,688 - plugins.detectors.behavior_detector.rule_engine - INFO - [RULE_ENGINE] Inicializado con 6 reglas
+2025-11-15 02:10:15,688 - plugins.detectors.behavior_detector.whitelist_manager - INFO - [WHITELIST] Cargados 18 procesos y 7 directorios
+2025-11-15 02:10:15,688 - plugins.detectors.behavior_detector.whitelist_manager - INFO - [WHITELIST] Inicializado: 18 procesos, 7 directorios
+2025-11-15 02:10:15,688 - plugins.detectors.behavior_detector.behavior_engine - INFO - [BEHAVIOR_ENGINE] Inicializado (threshold: 0.7, advanced: True)
+2025-11-15 02:10:15,688 - plugins.detectors.behavior_detector.plugin - INFO - ✅ behavior_detector inicializado correctamente
+2025-11-15 02:10:15,689 - plugins.detectors.behavior_detector.plugin - INFO - Iniciando behavior_detector...
+2025-11-15 02:10:15,689 - plugins.detectors.behavior_detector.plugin - INFO - [BEHAVIOR_DETECTOR] Iniciando monitoreo real de procesos
+2025-11-15 02:10:15,689 - plugins.detectors.behavior_detector.plugin - INFO - ✅ behavior_detector iniciado correctamente
+2025-11-15 02:10:15,696 - plugins.detectors.behavior_detector.plugin - ERROR - Error analizando proceso sospechoso: 'NoneType' object has no attribute 'lower'
+2025-11-15 02:10:15,696 - plugin.behavior_detector - INFO - ✅ Plugin 'behavior_detector' activado exitosamente
+2025-11-15 02:10:15,722 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sin ruta ejecutable: 
+2025-11-15 02:10:15,722 - core.event_bus - INFO - 📢 Publicando evento 'plugin_activated' de 'PluginManager' a 0 suscriptores
+2025-11-15 02:10:15,722 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process:  - Detección de suspicious_new_process en proceso 
+2025-11-15 02:10:15,736 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: opera.exe - patrón: capture
+2025-11-15 02:10:15,737 - PluginManager - INFO - ✅ Plugin 'behavior_detector' activado
+2025-11-15 02:10:15,737 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: opera.exe - Detección de suspicious_new_process en proceso opera.exe
+2025-11-15 02:10:15,751 - plugins.detectors.ml_detector.plugin - INFO - [ML_DETECTOR] Configuración cargada: 8 secciones
+2025-11-15 02:10:15,779 - plugins.detectors.ml_detector.plugin - INFO - [ML_DETECTOR] Plugin inicializado con configuración desde C:\Users\windows10\Documents\GitHub\ANTIVIRUS_CPP_PROFESSIONAL\UNIFIED_ANTIVIRUS\plugins\detectors\ml_detector\config.json
+2025-11-15 02:10:15,795 - core.plugin_registry - INFO - 🏭 Plugin 'ml_detector' creado exitosamente
+2025-11-15 02:10:16,018 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: opera.exe - patrón: capture
+2025-11-15 02:10:16,018 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: opera.exe - Detección de suspicious_new_process en proceso opera.exe
+2025-11-15 02:10:16,018 - plugin.ml_detector - INFO - 📄 Configuración cargada desde C:\Users\windows10\Documents\GitHub\ANTIVIRUS_CPP_PROFESSIONAL\UNIFIED_ANTIVIRUS\plugins\detectors\ml_detector\config.json
+2025-11-15 02:10:16,031 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: opera.exe - patrón: capture
+2025-11-15 02:10:16,032 - plugins.detectors.ml_detector.plugin - INFO - [ML_DETECTOR] Inicializando componentes ML...
+2025-11-15 02:10:16,032 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: opera.exe - Detección de suspicious_new_process en proceso opera.exe
+2025-11-15 02:10:16,148 - plugins.detectors.ml_detector.ml_engine - INFO - [ML_ENGINE] Clases cargadas: ['Benign', 'Keylogger']
+2025-11-15 02:10:16,158 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: opera.exe - patrón: capture
+2025-11-15 02:10:16,159 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: opera.exe - Detección de suspicious_new_process en proceso opera.exe
+2025-11-15 02:10:16,172 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: discord.exe - patrón: capture
+2025-11-15 02:10:16,172 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: Discord.exe - Detección de suspicious_new_process en proceso Discord.exe
+2025-11-15 02:10:16,185 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: opera.exe - patrón: capture
+2025-11-15 02:10:16,185 - plugins.detectors.ml_detector.ml_engine - INFO - [ML_ENGINE] Metadatos cargados: 81 características
+2025-11-15 02:10:16,186 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: opera.exe - Detección de suspicious_new_process en proceso opera.exe
+2025-11-15 02:10:16,224 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: opera.exe - patrón: capture
+2025-11-15 02:10:16,225 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: opera.exe - Detección de suspicious_new_process en proceso opera.exe
+2025-11-15 02:10:16,445 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: opera.exe - patrón: capture
+2025-11-15 02:10:16,446 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: opera.exe - Detección de suspicious_new_process en proceso opera.exe
+2025-11-15 02:10:16,472 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: opera.exe - patrón: capture
+2025-11-15 02:10:16,472 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: opera.exe - Detección de suspicious_new_process en proceso opera.exe
+2025-11-15 02:10:16,500 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: discord.exe - patrón: monitor
+2025-11-15 02:10:16,500 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: Discord.exe - Detección de suspicious_new_process en proceso Discord.exe
+2025-11-15 02:10:16,710 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: opera.exe - patrón: capture
+2025-11-15 02:10:16,710 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: opera.exe - Detección de suspicious_new_process en proceso opera.exe
+2025-11-15 02:10:17,420 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: cursor.exe - patrón: capture
+2025-11-15 02:10:17,421 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: Cursor.exe - Detección de suspicious_new_process en proceso Cursor.exe
+2025-11-15 02:10:17,538 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: opera.exe - patrón: capture
+2025-11-15 02:10:17,539 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: opera.exe - Detección de suspicious_new_process en proceso opera.exe
+2025-11-15 02:10:52,364 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: opera.exe - patrón: capture
+2025-11-15 02:10:52,364 - core.engine - INFO - 🛑 Señal recibida (2), iniciando shutdown...
+2025-11-15 02:10:52,365 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: opera.exe - Detección de suspicious_new_process en proceso opera.exe
+2025-11-15 02:10:52,365 - core.engine - INFO - 🛑 Iniciando shutdown del sistema...
+2025-11-15 02:10:52,393 - core.event_bus - INFO - 📢 Publicando evento 'system_shutdown_started' de 'UnifiedEngine' a 0 suscriptores
+2025-11-15 02:10:52,473 - plugins.detectors.behavior_detector.plugin - INFO - Deteniendo behavior_detector...
+2025-11-15 02:10:52,505 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: opera.exe - patrón: capture
+2025-11-15 02:10:52,505 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: opera.exe - Detección de suspicious_new_process en proceso opera.exe
+2025-11-15 02:10:52,505 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: opera.exe - patrón: capture
+2025-11-15 02:10:52,505 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: opera.exe - Detección de suspicious_new_process en proceso opera.exe
+2025-11-15 02:10:52,523 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: epicwebhelper.exe - patrón: .log
+2025-11-15 02:10:52,524 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: EpicWebHelper.exe - Detección de suspicious_new_process en proceso EpicWebHelper.exe
+2025-11-15 02:10:52,555 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: opera.exe - patrón: capture
+2025-11-15 02:10:52,555 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: opera.exe - Detección de suspicious_new_process en proceso opera.exe
+2025-11-15 02:10:52,556 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: opera_crashreporter.exe - patrón: monitor
+2025-11-15 02:10:52,556 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: opera_crashreporter.exe - Detección de suspicious_new_process en proceso opera_crashreporter.exe
+2025-11-15 02:10:52,617 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: opera.exe - patrón: capture
+2025-11-15 02:10:52,617 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: opera.exe - Detección de suspicious_new_process en proceso opera.exe
+2025-11-15 02:10:52,692 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: opera.exe - patrón: capture
+2025-11-15 02:10:52,693 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: opera.exe - Detección de suspicious_new_process en proceso opera.exe
+2025-11-15 02:10:52,735 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: nvcontainer.exe - patrón: .log
+2025-11-15 02:10:52,735 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: nvcontainer.exe - Detección de suspicious_new_process en proceso nvcontainer.exe
+2025-11-15 02:10:52,752 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: opera.exe - patrón: capture
+2025-11-15 02:10:52,752 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: opera.exe - Detección de suspicious_new_process en proceso opera.exe
+2025-11-15 02:10:52,767 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: steamwebhelper.exe - patrón: .txt
+2025-11-15 02:10:52,767 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: steamwebhelper.exe - Detección de suspicious_new_process en proceso steamwebhelper.exe
+2025-11-15 02:10:52,767 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: steamwebhelper.exe - patrón: monitor
+2025-11-15 02:10:52,767 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: steamwebhelper.exe - Detección de suspicious_new_process en proceso steamwebhelper.exe
+2025-11-15 02:10:52,796 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: epicwebhelper.exe - patrón: .log
+2025-11-15 02:10:52,797 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: EpicWebHelper.exe - Detección de suspicious_new_process en proceso EpicWebHelper.exe
+2025-11-15 02:10:52,797 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: opera.exe - patrón: capture
+2025-11-15 02:10:52,797 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: opera.exe - Detección de suspicious_new_process en proceso opera.exe
+2025-11-15 02:10:52,858 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: opera.exe - patrón: capture
+2025-11-15 02:10:52,858 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: opera.exe - Detección de suspicious_new_process en proceso opera.exe
+2025-11-15 02:10:52,888 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: opera.exe - patrón: capture
+2025-11-15 02:10:52,888 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: opera.exe - Detección de suspicious_new_process en proceso opera.exe
+2025-11-15 02:10:52,933 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: discord.exe - patrón: capture
+2025-11-15 02:10:52,933 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: Discord.exe - Detección de suspicious_new_process en proceso Discord.exe
+2025-11-15 02:10:52,989 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: opera.exe - patrón: capture
+2025-11-15 02:10:52,989 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: opera.exe - Detección de suspicious_new_process en proceso opera.exe
+2025-11-15 02:10:52,990 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: opera.exe - patrón: capture
+2025-11-15 02:10:52,990 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: opera.exe - Detección de suspicious_new_process en proceso opera.exe
+2025-11-15 02:10:52,990 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: opera.exe - patrón: capture
+2025-11-15 02:10:52,990 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: opera.exe - Detección de suspicious_new_process en proceso opera.exe
+2025-11-15 02:10:52,991 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: code.exe - patrón: capture
+2025-11-15 02:10:52,991 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: Code.exe - Detección de suspicious_new_process en proceso Code.exe
+2025-11-15 02:10:52,991 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: opera.exe - patrón: capture
+2025-11-15 02:10:52,991 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: opera.exe - Detección de suspicious_new_process en proceso opera.exe
+2025-11-15 02:10:52,992 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: opera.exe - patrón: capture
+2025-11-15 02:10:52,992 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: opera.exe - Detección de suspicious_new_process en proceso opera.exe
+2025-11-15 02:10:53,007 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: opera.exe - patrón: capture
+2025-11-15 02:10:53,007 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: opera.exe - Detección de suspicious_new_process en proceso opera.exe
+2025-11-15 02:10:53,008 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: opera.exe - patrón: capture
+2025-11-15 02:10:53,008 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: opera.exe - Detección de suspicious_new_process en proceso opera.exe
+2025-11-15 02:10:53,008 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: opera.exe - patrón: capture
+2025-11-15 02:10:53,008 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: opera.exe - Detección de suspicious_new_process en proceso opera.exe
+2025-11-15 02:10:53,024 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: opera.exe - patrón: capture
+2025-11-15 02:10:53,024 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: opera.exe - Detección de suspicious_new_process en proceso opera.exe
+2025-11-15 02:10:53,025 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: opera.exe - patrón: capture
+2025-11-15 02:10:53,025 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: opera.exe - Detección de suspicious_new_process en proceso opera.exe
+2025-11-15 02:10:53,041 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: opera.exe - patrón: capture
+2025-11-15 02:10:53,042 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: opera.exe - Detección de suspicious_new_process en proceso opera.exe
+2025-11-15 02:10:53,056 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: opera.exe - patrón: capture
+2025-11-15 02:10:53,056 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: opera.exe - Detección de suspicious_new_process en proceso opera.exe
+2025-11-15 02:10:53,057 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: code.exe - patrón: monitor
+2025-11-15 02:10:53,057 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: Code.exe - Detección de suspicious_new_process en proceso Code.exe
+2025-11-15 02:10:53,057 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: opera.exe - patrón: capture
+2025-11-15 02:10:53,057 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: opera.exe - Detección de suspicious_new_process en proceso opera.exe
+2025-11-15 02:10:53,057 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: code.exe - patrón: capture
+2025-11-15 02:10:53,058 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: Code.exe - Detección de suspicious_new_process en proceso Code.exe
+2025-11-15 02:10:53,058 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: opera.exe - patrón: capture
+2025-11-15 02:10:53,058 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: opera.exe - Detección de suspicious_new_process en proceso opera.exe
+2025-11-15 02:10:53,059 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: opera.exe - patrón: capture
+2025-11-15 02:10:53,059 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: opera.exe - Detección de suspicious_new_process en proceso opera.exe
+2025-11-15 02:10:53,059 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: code.exe - patrón: capture
+2025-11-15 02:10:53,059 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: Code.exe - Detección de suspicious_new_process en proceso Code.exe
+2025-11-15 02:10:53,059 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: opera.exe - patrón: capture
+2025-11-15 02:10:53,059 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: opera.exe - Detección de suspicious_new_process en proceso opera.exe
+2025-11-15 02:10:53,060 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: opera.exe - patrón: capture
+2025-11-15 02:10:53,060 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: opera.exe - Detección de suspicious_new_process en proceso opera.exe
+2025-11-15 02:10:53,060 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: opera.exe - patrón: capture
+2025-11-15 02:10:53,060 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: opera.exe - Detección de suspicious_new_process en proceso opera.exe
+2025-11-15 02:10:53,060 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: opera.exe - patrón: capture
+2025-11-15 02:10:53,060 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: opera.exe - Detección de suspicious_new_process en proceso opera.exe
+2025-11-15 02:10:53,061 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: opera.exe - patrón: capture
+2025-11-15 02:10:53,061 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: opera.exe - Detección de suspicious_new_process en proceso opera.exe
+2025-11-15 02:10:53,061 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: opera.exe - patrón: capture
+2025-11-15 02:10:53,061 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: opera.exe - Detección de suspicious_new_process en proceso opera.exe
+2025-11-15 02:10:53,061 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: code.exe - patrón: capture
+2025-11-15 02:10:53,061 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: Code.exe - Detección de suspicious_new_process en proceso Code.exe
+2025-11-15 02:10:53,062 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: code.exe - patrón: capture
+2025-11-15 02:10:53,062 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: Code.exe - Detección de suspicious_new_process en proceso Code.exe
+2025-11-15 02:10:53,062 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: code.exe - patrón: capture
+2025-11-15 02:10:53,062 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: Code.exe - Detección de suspicious_new_process en proceso Code.exe
+2025-11-15 02:10:53,063 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: githubdesktop.exe - patrón: capture
+2025-11-15 02:10:53,063 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: GitHubDesktop.exe - Detección de suspicious_new_process en proceso GitHubDesktop.exe
+2025-11-15 02:10:53,077 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: opera.exe - patrón: capture
+2025-11-15 02:10:53,078 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: opera.exe - Detección de suspicious_new_process en proceso opera.exe
+2025-11-15 02:10:53,198 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: discord.exe - patrón: capture
+2025-11-15 02:10:53,198 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: Discord.exe - Detección de suspicious_new_process en proceso Discord.exe
+2025-11-15 02:10:53,199 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: opera.exe - patrón: capture
+2025-11-15 02:10:53,199 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: opera.exe - Detección de suspicious_new_process en proceso opera.exe
+2025-11-15 02:10:55,199 - plugins.detectors.behavior_detector.plugin - INFO - [BEHAVIOR_DETECTOR] Monitoreo de procesos terminado
+2025-11-15 02:10:55,200 - plugins.detectors.behavior_detector.plugin - INFO - ✅ behavior_detector detenido correctamente
+2025-11-15 02:10:55,200 - plugins.detectors.behavior_detector.plugin - INFO - Limpiando recursos de behavior_detector...
+2025-11-15 02:10:55,200 - plugins.detectors.behavior_detector.plugin - INFO - ✅ Recursos de behavior_detector limpiados
+2025-11-15 02:10:55,200 - plugin.behavior_detector - INFO - 🔴 Plugin 'behavior_detector' desactivado
+2025-11-15 02:10:55,200 - core.event_bus - INFO - 📢 Publicando evento 'plugin_deactivated' de 'PluginManager' a 0 suscriptores
+2025-11-15 02:10:55,201 - PluginManager - INFO - 🔴 Plugin 'behavior_detector' desactivado
+2025-11-15 02:10:55,201 - PluginManager - INFO - 🛑 Shutdown: 1/1 plugins
+2025-11-15 02:10:55,201 - core.event_bus - INFO - 🧹 Historial de eventos limpiado
+2025-11-15 02:10:55,201 - core.engine - INFO - ✅ Sistema detenido exitosamente
+2025-11-15 02:17:03,086 - launcher - INFO - 📝 Logger 'launcher' inicializado
+2025-11-15 02:17:03,086 - launcher - INFO - ✅ Configuración web cargada desde config/web_logging_production.json
+2025-11-15 02:17:03,090 - web_log_sender_R3DCR0WN_902c6a00 - INFO - WebLogSender iniciado - ClientID: R3DCR0WN_902c6a00
+2025-11-15 02:17:03,090 - launcher - INFO - 🌐 Web logging inicializado exitosamente
+2025-11-15 02:17:03,090 - launcher - INFO - 📡 Backend URL: https://unified-antivirus-duzz48bmm-sebastians-projects-487d2baa.vercel.app/api/logs
+2025-11-15 02:17:03,091 - launcher - INFO - 📤 Handler automático configurado - logs serán enviados al backend
+2025-11-15 02:17:03,091 - core.plugin_registry - INFO - 🏪 PluginRegistry inicializado (Singleton)
+2025-11-15 02:17:03,092 - core.plugin_manager - INFO - 🎛️ PluginManager inicializado
+2025-11-15 02:17:03,092 - core.engine - INFO - 🛡️ UnifiedAntivirusEngine inicializado
+2025-11-15 02:17:03,092 - core.engine - INFO - 🚀 Iniciando Sistema Anti-Keylogger Unificado...
+2025-11-15 02:17:03,092 - PluginManager - INFO - 🔍 Iniciando descubrimiento de plugins...
+2025-11-15 02:17:03,092 - core.plugin_registry - INFO - 🔍 Descubriendo plugins en: plugins
+2025-11-15 02:17:03,098 - core.plugin_registry - INFO - ✅ Plugin 'behavior_detector' registrado en categoría 'detectors'
+2025-11-15 02:17:03,098 - core.plugin_registry - WARNING - ⚠️ Plugin 'behavior_detector' ya registrado, sobrescribiendo
+2025-11-15 02:17:03,098 - core.plugin_registry - INFO - ✅ Plugin 'behavior_detector' registrado en categoría 'detectors'
+2025-11-15 02:17:03,537 - core.plugin_registry - INFO - ✅ Plugin 'ml_detector' registrado en categoría 'detectors'
+2025-11-15 02:17:03,537 - core.plugin_registry - WARNING - ⚠️ Plugin 'ml_detector' ya registrado, sobrescribiendo
+2025-11-15 02:17:03,537 - core.plugin_registry - INFO - ✅ Plugin 'ml_detector' registrado en categoría 'detectors'
+2025-11-15 02:17:03,548 - core.plugin_registry - INFO - ✅ Plugin 'network_detector' registrado en categoría 'detectors'
+2025-11-15 02:17:03,569 - core.plugin_registry - INFO - ✅ Plugin 'alert_manager' registrado en categoría 'handlers'
+2025-11-15 02:17:03,571 - core.plugin_registry - INFO - ✅ Plugin 'logger_handler' registrado en categoría 'handlers'
+2025-11-15 02:17:03,573 - core.plugin_registry - INFO - ✅ Plugin 'quarantine_handler' registrado en categoría 'handlers'
+2025-11-15 02:17:03,573 - core.plugin_registry - INFO - ✅ Descubiertos 6 plugins
+2025-11-15 02:17:03,573 - PluginManager - INFO - ✅ Descubrimiento completado: 6 plugins encontrados
+2025-11-15 02:17:03,573 - core.event_bus - INFO - 📋 'UnifiedEngine' suscrito a eventos 'threat_detected'
+2025-11-15 02:17:03,573 - core.event_bus - INFO - 📋 'UnifiedEngine' suscrito a eventos 'plugin_error'
+2025-11-15 02:17:03,574 - plugins.detectors.behavior_detector.plugin - INFO - Configuración cargada desde C:\Users\windows10\Documents\GitHub\ANTIVIRUS_CPP_PROFESSIONAL\UNIFIED_ANTIVIRUS\plugins\detectors\behavior_detector\config.json
+2025-11-15 02:17:03,574 - plugins.detectors.behavior_detector.plugin - INFO - [PLUGIN] behavior_detector inicializado
+2025-11-15 02:17:03,574 - core.plugin_registry - INFO - 🏭 Plugin 'behavior_detector' creado exitosamente
+2025-11-15 02:17:03,575 - plugin.behavior_detector - INFO - 📄 Configuración cargada desde C:\Users\windows10\Documents\GitHub\ANTIVIRUS_CPP_PROFESSIONAL\UNIFIED_ANTIVIRUS\plugins\detectors\behavior_detector\config.json
+2025-11-15 02:17:03,575 - plugins.detectors.behavior_detector.plugin - INFO - Inicializando behavior_detector...
+2025-11-15 02:17:03,576 - plugins.detectors.behavior_detector.rule_engine - INFO - [RULE_ENGINE] Cargadas 6 reglas de detección
+2025-11-15 02:17:03,576 - plugins.detectors.behavior_detector.rule_engine - INFO - [RULE_ENGINE] Inicializado con 6 reglas
+2025-11-15 02:17:03,576 - plugins.detectors.behavior_detector.whitelist_manager - INFO - [WHITELIST] Cargados 18 procesos y 7 directorios
+2025-11-15 02:17:03,576 - plugins.detectors.behavior_detector.whitelist_manager - INFO - [WHITELIST] Inicializado: 18 procesos, 7 directorios
+2025-11-15 02:17:03,577 - plugins.detectors.behavior_detector.behavior_engine - INFO - [BEHAVIOR_ENGINE] Inicializado (threshold: 0.7, advanced: True)
+2025-11-15 02:17:03,577 - plugins.detectors.behavior_detector.plugin - INFO - ✅ behavior_detector inicializado correctamente
+2025-11-15 02:17:03,577 - plugins.detectors.behavior_detector.plugin - INFO - Iniciando behavior_detector...
+2025-11-15 02:17:03,577 - plugins.detectors.behavior_detector.plugin - INFO - [BEHAVIOR_DETECTOR] Iniciando monitoreo real de procesos
+2025-11-15 02:17:03,577 - plugins.detectors.behavior_detector.plugin - INFO - ✅ behavior_detector iniciado correctamente
+2025-11-15 02:17:03,583 - plugins.detectors.behavior_detector.plugin - ERROR - Error analizando proceso sospechoso: 'NoneType' object has no attribute 'lower'
+2025-11-15 02:17:03,584 - plugin.behavior_detector - INFO - ✅ Plugin 'behavior_detector' activado exitosamente
+2025-11-15 02:17:03,611 - core.event_bus - INFO - 📢 Publicando evento 'plugin_activated' de 'PluginManager' a 0 suscriptores
+2025-11-15 02:17:03,611 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sin ruta ejecutable: 
+2025-11-15 02:17:03,612 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process:  - Detección de suspicious_new_process en proceso 
+2025-11-15 02:17:03,612 - PluginManager - INFO - ✅ Plugin 'behavior_detector' activado
+2025-11-15 02:17:03,626 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: opera.exe - patrón: capture
+2025-11-15 02:17:03,626 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: opera.exe - Detección de suspicious_new_process en proceso opera.exe
+2025-11-15 02:17:03,654 - plugins.detectors.ml_detector.plugin - INFO - [ML_DETECTOR] Configuración cargada: 8 secciones
+2025-11-15 02:17:03,716 - plugins.detectors.ml_detector.plugin - INFO - [ML_DETECTOR] Plugin inicializado con configuración desde C:\Users\windows10\Documents\GitHub\ANTIVIRUS_CPP_PROFESSIONAL\UNIFIED_ANTIVIRUS\plugins\detectors\ml_detector\config.json
+2025-11-15 02:17:03,749 - core.plugin_registry - INFO - 🏭 Plugin 'ml_detector' creado exitosamente
+2025-11-15 02:17:03,876 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: opera.exe - patrón: capture
+2025-11-15 02:17:03,876 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: opera.exe - Detección de suspicious_new_process en proceso opera.exe
+2025-11-15 02:17:03,887 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: opera.exe - patrón: capture
+2025-11-15 02:17:03,888 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: opera.exe - Detección de suspicious_new_process en proceso opera.exe
+2025-11-15 02:17:03,888 - plugin.ml_detector - INFO - 📄 Configuración cargada desde C:\Users\windows10\Documents\GitHub\ANTIVIRUS_CPP_PROFESSIONAL\UNIFIED_ANTIVIRUS\plugins\detectors\ml_detector\config.json
+2025-11-15 02:17:03,906 - plugins.detectors.ml_detector.plugin - INFO - [ML_DETECTOR] Inicializando componentes ML...
+2025-11-15 02:17:04,010 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: opera.exe - patrón: capture
+2025-11-15 02:17:04,010 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: opera.exe - Detección de suspicious_new_process en proceso opera.exe
+2025-11-15 02:17:04,022 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: discord.exe - patrón: capture
+2025-11-15 02:17:04,022 - plugins.detectors.ml_detector.ml_engine - INFO - [ML_ENGINE] Clases cargadas: ['Benign', 'Keylogger']
+2025-11-15 02:17:04,023 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: Discord.exe - Detección de suspicious_new_process en proceso Discord.exe
+2025-11-15 02:17:04,034 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: opera.exe - patrón: capture
+2025-11-15 02:17:04,035 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: opera.exe - Detección de suspicious_new_process en proceso opera.exe
+2025-11-15 02:17:04,062 - plugins.detectors.ml_detector.ml_engine - INFO - [ML_ENGINE] Metadatos cargados: 81 características
+2025-11-15 02:17:04,070 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: opera.exe - patrón: capture
+2025-11-15 02:17:04,070 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: opera.exe - Detección de suspicious_new_process en proceso opera.exe
+2025-11-15 02:17:04,262 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: opera.exe - patrón: capture
+2025-11-15 02:17:04,263 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: opera.exe - Detección de suspicious_new_process en proceso opera.exe
+2025-11-15 02:17:04,285 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: opera.exe - patrón: capture
+2025-11-15 02:17:04,285 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: opera.exe - Detección de suspicious_new_process en proceso opera.exe
+2025-11-15 02:17:04,310 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: discord.exe - patrón: monitor
+2025-11-15 02:17:04,310 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: Discord.exe - Detección de suspicious_new_process en proceso Discord.exe
+2025-11-15 02:17:04,482 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: opera.exe - patrón: capture
+2025-11-15 02:17:04,482 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: opera.exe - Detección de suspicious_new_process en proceso opera.exe
+2025-11-15 02:17:05,175 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: opera.exe - patrón: capture
+2025-11-15 02:17:05,175 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: opera.exe - Detección de suspicious_new_process en proceso opera.exe
+2025-11-15 02:17:05,176 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: opera.exe - patrón: capture
+2025-11-15 02:17:05,176 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: opera.exe - Detección de suspicious_new_process en proceso opera.exe
+2025-11-15 02:17:05,289 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: opera.exe - patrón: capture
+2025-11-15 02:17:05,664 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: opera.exe - Detección de suspicious_new_process en proceso opera.exe
+2025-11-15 02:17:39,059 - core.engine - INFO - 🛑 Señal recibida (2), iniciando shutdown...
+2025-11-15 02:17:39,059 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: opera.exe - patrón: capture
+2025-11-15 02:17:39,059 - core.engine - INFO - 🛑 Iniciando shutdown del sistema...
+2025-11-15 02:17:39,060 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: opera.exe - Detección de suspicious_new_process en proceso opera.exe
+2025-11-15 02:17:39,060 - core.event_bus - INFO - 📢 Publicando evento 'system_shutdown_started' de 'UnifiedEngine' a 0 suscriptores
+2025-11-15 02:17:39,072 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: epicwebhelper.exe - patrón: .log
+2025-11-15 02:17:39,072 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: EpicWebHelper.exe - Detección de suspicious_new_process en proceso EpicWebHelper.exe
+2025-11-15 02:17:39,072 - plugins.detectors.behavior_detector.plugin - INFO - Deteniendo behavior_detector...
+2025-11-15 02:17:39,098 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: opera.exe - patrón: capture
+2025-11-15 02:17:39,098 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: opera.exe - Detección de suspicious_new_process en proceso opera.exe
+2025-11-15 02:17:39,099 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: opera_crashreporter.exe - patrón: monitor
+2025-11-15 02:17:39,099 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: opera_crashreporter.exe - Detección de suspicious_new_process en proceso opera_crashreporter.exe
+2025-11-15 02:17:39,144 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: opera.exe - patrón: capture
+2025-11-15 02:17:39,145 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: opera.exe - Detección de suspicious_new_process en proceso opera.exe
+2025-11-15 02:17:39,201 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: opera.exe - patrón: capture
+2025-11-15 02:17:39,201 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: opera.exe - Detección de suspicious_new_process en proceso opera.exe
+2025-11-15 02:17:39,235 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: nvcontainer.exe - patrón: .log
+2025-11-15 02:17:39,235 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: nvcontainer.exe - Detección de suspicious_new_process en proceso nvcontainer.exe
+2025-11-15 02:17:39,247 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: opera.exe - patrón: capture
+2025-11-15 02:17:39,248 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: opera.exe - Detección de suspicious_new_process en proceso opera.exe
+2025-11-15 02:17:39,259 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: steamwebhelper.exe - patrón: .txt
+2025-11-15 02:17:39,259 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: steamwebhelper.exe - Detección de suspicious_new_process en proceso steamwebhelper.exe
+2025-11-15 02:17:39,259 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: steamwebhelper.exe - patrón: monitor
+2025-11-15 02:17:39,260 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: steamwebhelper.exe - Detección de suspicious_new_process en proceso steamwebhelper.exe
+2025-11-15 02:17:39,283 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: epicwebhelper.exe - patrón: .log
+2025-11-15 02:17:39,284 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: EpicWebHelper.exe - Detección de suspicious_new_process en proceso EpicWebHelper.exe
+2025-11-15 02:17:39,284 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: opera.exe - patrón: capture
+2025-11-15 02:17:39,284 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: opera.exe - Detección de suspicious_new_process en proceso opera.exe
+2025-11-15 02:17:39,327 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: opera.exe - patrón: capture
+2025-11-15 02:17:39,327 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: opera.exe - Detección de suspicious_new_process en proceso opera.exe
+2025-11-15 02:17:39,351 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: opera.exe - patrón: capture
+2025-11-15 02:17:39,351 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: opera.exe - Detección de suspicious_new_process en proceso opera.exe
+2025-11-15 02:17:39,385 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: discord.exe - patrón: capture
+2025-11-15 02:17:39,385 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: Discord.exe - Detección de suspicious_new_process en proceso Discord.exe
+2025-11-15 02:17:39,429 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: opera.exe - patrón: capture
+2025-11-15 02:17:39,429 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: opera.exe - Detección de suspicious_new_process en proceso opera.exe
+2025-11-15 02:17:39,430 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: opera.exe - patrón: capture
+2025-11-15 02:17:39,430 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: opera.exe - Detección de suspicious_new_process en proceso opera.exe
+2025-11-15 02:17:39,430 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: opera.exe - patrón: capture
+2025-11-15 02:17:39,431 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: opera.exe - Detección de suspicious_new_process en proceso opera.exe
+2025-11-15 02:17:39,431 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: opera.exe - patrón: capture
+2025-11-15 02:17:39,431 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: opera.exe - Detección de suspicious_new_process en proceso opera.exe
+2025-11-15 02:17:39,432 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: cursor.exe - patrón: monitor
+2025-11-15 02:17:39,432 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: Cursor.exe - Detección de suspicious_new_process en proceso Cursor.exe
+2025-11-15 02:17:39,432 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: opera.exe - patrón: capture
+2025-11-15 02:17:39,432 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: opera.exe - Detección de suspicious_new_process en proceso opera.exe
+2025-11-15 02:17:39,446 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: opera.exe - patrón: capture
+2025-11-15 02:17:39,446 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: opera.exe - Detección de suspicious_new_process en proceso opera.exe
+2025-11-15 02:17:39,447 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: opera.exe - patrón: capture
+2025-11-15 02:17:39,447 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: opera.exe - Detección de suspicious_new_process en proceso opera.exe
+2025-11-15 02:17:39,448 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: opera.exe - patrón: capture
+2025-11-15 02:17:39,448 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: opera.exe - Detección de suspicious_new_process en proceso opera.exe
+2025-11-15 02:17:39,449 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: opera.exe - patrón: capture
+2025-11-15 02:17:39,449 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: opera.exe - Detección de suspicious_new_process en proceso opera.exe
+2025-11-15 02:17:39,449 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: opera.exe - patrón: capture
+2025-11-15 02:17:39,449 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: opera.exe - Detección de suspicious_new_process en proceso opera.exe
+2025-11-15 02:17:39,450 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: opera.exe - patrón: capture
+2025-11-15 02:17:39,450 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: opera.exe - Detección de suspicious_new_process en proceso opera.exe
+2025-11-15 02:17:39,464 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: opera.exe - patrón: capture
+2025-11-15 02:17:39,464 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: opera.exe - Detección de suspicious_new_process en proceso opera.exe
+2025-11-15 02:17:39,477 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: opera.exe - patrón: capture
+2025-11-15 02:17:39,477 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: opera.exe - Detección de suspicious_new_process en proceso opera.exe
+2025-11-15 02:17:39,477 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: opera.exe - patrón: capture
+2025-11-15 02:17:39,478 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: opera.exe - Detección de suspicious_new_process en proceso opera.exe
+2025-11-15 02:17:39,478 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: opera.exe - patrón: capture
+2025-11-15 02:17:39,478 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: opera.exe - Detección de suspicious_new_process en proceso opera.exe
+2025-11-15 02:17:39,479 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: opera.exe - patrón: capture
+2025-11-15 02:17:39,479 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: opera.exe - Detección de suspicious_new_process en proceso opera.exe
+2025-11-15 02:17:39,479 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: opera.exe - patrón: capture
+2025-11-15 02:17:39,479 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: opera.exe - Detección de suspicious_new_process en proceso opera.exe
+2025-11-15 02:17:39,480 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: opera.exe - patrón: capture
+2025-11-15 02:17:39,480 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: opera.exe - Detección de suspicious_new_process en proceso opera.exe
+2025-11-15 02:17:39,480 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: opera.exe - patrón: capture
+2025-11-15 02:17:39,480 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: opera.exe - Detección de suspicious_new_process en proceso opera.exe
+2025-11-15 02:17:39,480 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: opera.exe - patrón: capture
+2025-11-15 02:17:39,481 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: opera.exe - Detección de suspicious_new_process en proceso opera.exe
+2025-11-15 02:17:39,481 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: opera.exe - patrón: capture
+2025-11-15 02:17:39,481 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: opera.exe - Detección de suspicious_new_process en proceso opera.exe
+2025-11-15 02:17:39,493 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: opera.exe - patrón: capture
+2025-11-15 02:17:39,494 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: opera.exe - Detección de suspicious_new_process en proceso opera.exe
+2025-11-15 02:17:39,494 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: githubdesktop.exe - patrón: capture
+2025-11-15 02:17:39,495 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: GitHubDesktop.exe - Detección de suspicious_new_process en proceso GitHubDesktop.exe
+2025-11-15 02:17:39,495 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: opera.exe - patrón: capture
+2025-11-15 02:17:39,495 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: opera.exe - Detección de suspicious_new_process en proceso opera.exe
+2025-11-15 02:17:39,495 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: cursor.exe - patrón: capture
+2025-11-15 02:17:39,496 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: Cursor.exe - Detección de suspicious_new_process en proceso Cursor.exe
+2025-11-15 02:17:39,496 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: cursor.exe - patrón: capture
+2025-11-15 02:17:39,496 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: Cursor.exe - Detección de suspicious_new_process en proceso Cursor.exe
+2025-11-15 02:17:39,497 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: cursor.exe - patrón: capture
+2025-11-15 02:17:39,497 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: Cursor.exe - Detección de suspicious_new_process en proceso Cursor.exe
+2025-11-15 02:17:39,522 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: discord.exe - patrón: capture
+2025-11-15 02:17:39,522 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: Discord.exe - Detección de suspicious_new_process en proceso Discord.exe
+2025-11-15 02:17:39,523 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: cursor.exe - patrón: capture
+2025-11-15 02:17:39,523 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: Cursor.exe - Detección de suspicious_new_process en proceso Cursor.exe
+2025-11-15 02:17:39,523 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: cursor.exe - patrón: capture
+2025-11-15 02:17:39,524 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: Cursor.exe - Detección de suspicious_new_process en proceso Cursor.exe
+2025-11-15 02:17:41,538 - plugins.detectors.behavior_detector.plugin - INFO - [BEHAVIOR_DETECTOR] Monitoreo de procesos terminado
+2025-11-15 02:17:41,538 - plugins.detectors.behavior_detector.plugin - INFO - ✅ behavior_detector detenido correctamente
+2025-11-15 02:17:41,538 - plugins.detectors.behavior_detector.plugin - INFO - Limpiando recursos de behavior_detector...
+2025-11-15 02:17:41,539 - plugins.detectors.behavior_detector.plugin - INFO - ✅ Recursos de behavior_detector limpiados
+2025-11-15 02:17:41,539 - plugin.behavior_detector - INFO - 🔴 Plugin 'behavior_detector' desactivado
+2025-11-15 02:17:41,540 - core.event_bus - INFO - 📢 Publicando evento 'plugin_deactivated' de 'PluginManager' a 0 suscriptores
+2025-11-15 02:17:41,540 - PluginManager - INFO - 🔴 Plugin 'behavior_detector' desactivado
+2025-11-15 02:17:41,540 - PluginManager - INFO - 🛑 Shutdown: 1/1 plugins
+2025-11-15 02:17:41,540 - core.event_bus - INFO - 🧹 Historial de eventos limpiado
+2025-11-15 02:17:41,541 - core.engine - INFO - ✅ Sistema detenido exitosamente
+2025-11-15 02:29:26,009 - launcher - INFO - 📝 Logger 'launcher' inicializado
+2025-11-15 02:29:26,010 - launcher - INFO - ✅ Configuración web cargada desde config/web_logging_production.json
+2025-11-15 02:29:26,012 - web_log_sender_R3DCR0WN_ba716964 - INFO - WebLogSender iniciado - ClientID: R3DCR0WN_ba716964
+2025-11-15 02:29:26,012 - launcher - INFO - 🌐 Web logging inicializado exitosamente
+2025-11-15 02:29:26,012 - launcher - INFO - 📡 Backend URL: https://unified-antivirus-duzz48bmm-sebastians-projects-487d2baa.vercel.app/api/logs
+2025-11-15 02:29:26,013 - launcher - INFO - 📤 Handler automático configurado - logs serán enviados al backend
+2025-11-15 02:29:26,013 - core.plugin_registry - INFO - 🏪 PluginRegistry inicializado (Singleton)
+2025-11-15 02:29:26,013 - core.plugin_manager - INFO - 🎛️ PluginManager inicializado
+2025-11-15 02:29:26,014 - core.engine - INFO - 🛡️ UnifiedAntivirusEngine inicializado
+2025-11-15 02:29:26,014 - core.engine - INFO - 🚀 Iniciando Sistema Anti-Keylogger Unificado...
+2025-11-15 02:29:26,014 - PluginManager - INFO - 🔍 Iniciando descubrimiento de plugins...
+2025-11-15 02:29:26,014 - core.plugin_registry - INFO - 🔍 Descubriendo plugins en: plugins
+2025-11-15 02:29:26,020 - core.plugin_registry - INFO - ✅ Plugin 'behavior_detector' registrado en categoría 'detectors'
+2025-11-15 02:29:26,020 - core.plugin_registry - WARNING - ⚠️ Plugin 'behavior_detector' ya registrado, sobrescribiendo
+2025-11-15 02:29:26,020 - core.plugin_registry - INFO - ✅ Plugin 'behavior_detector' registrado en categoría 'detectors'
+2025-11-15 02:29:26,343 - core.plugin_registry - INFO - ✅ Plugin 'ml_detector' registrado en categoría 'detectors'
+2025-11-15 02:29:26,344 - core.plugin_registry - WARNING - ⚠️ Plugin 'ml_detector' ya registrado, sobrescribiendo
+2025-11-15 02:29:26,344 - core.plugin_registry - INFO - ✅ Plugin 'ml_detector' registrado en categoría 'detectors'
+2025-11-15 02:29:26,352 - core.plugin_registry - INFO - ✅ Plugin 'network_detector' registrado en categoría 'detectors'
+2025-11-15 02:29:26,367 - core.plugin_registry - INFO - ✅ Plugin 'alert_manager' registrado en categoría 'handlers'
+2025-11-15 02:29:26,369 - core.plugin_registry - INFO - ✅ Plugin 'logger_handler' registrado en categoría 'handlers'
+2025-11-15 02:29:26,371 - core.plugin_registry - INFO - ✅ Plugin 'quarantine_handler' registrado en categoría 'handlers'
+2025-11-15 02:29:26,371 - core.plugin_registry - INFO - ✅ Descubiertos 6 plugins
+2025-11-15 02:29:26,371 - PluginManager - INFO - ✅ Descubrimiento completado: 6 plugins encontrados
+2025-11-15 02:29:26,371 - core.event_bus - INFO - 📋 'UnifiedEngine' suscrito a eventos 'threat_detected'
+2025-11-15 02:29:26,371 - core.event_bus - INFO - 📋 'UnifiedEngine' suscrito a eventos 'plugin_error'
+2025-11-15 02:29:26,372 - plugins.detectors.behavior_detector.plugin - INFO - Configuración cargada desde C:\Users\windows10\Documents\GitHub\ANTIVIRUS_CPP_PROFESSIONAL\UNIFIED_ANTIVIRUS\plugins\detectors\behavior_detector\config.json
+2025-11-15 02:29:26,372 - plugins.detectors.behavior_detector.plugin - INFO - [PLUGIN] behavior_detector inicializado
+2025-11-15 02:29:26,372 - core.plugin_registry - INFO - 🏭 Plugin 'behavior_detector' creado exitosamente
+2025-11-15 02:29:26,372 - plugin.behavior_detector - INFO - 📄 Configuración cargada desde C:\Users\windows10\Documents\GitHub\ANTIVIRUS_CPP_PROFESSIONAL\UNIFIED_ANTIVIRUS\plugins\detectors\behavior_detector\config.json
+2025-11-15 02:29:26,372 - plugins.detectors.behavior_detector.plugin - INFO - Inicializando behavior_detector...
+2025-11-15 02:29:26,373 - plugins.detectors.behavior_detector.rule_engine - INFO - [RULE_ENGINE] Cargadas 6 reglas de detección
+2025-11-15 02:29:26,373 - plugins.detectors.behavior_detector.rule_engine - INFO - [RULE_ENGINE] Inicializado con 6 reglas
+2025-11-15 02:29:26,373 - plugins.detectors.behavior_detector.whitelist_manager - INFO - [WHITELIST] Cargados 18 procesos y 7 directorios
+2025-11-15 02:29:26,374 - plugins.detectors.behavior_detector.whitelist_manager - INFO - [WHITELIST] Inicializado: 18 procesos, 7 directorios
+2025-11-15 02:29:26,374 - plugins.detectors.behavior_detector.behavior_engine - INFO - [BEHAVIOR_ENGINE] Inicializado (threshold: 0.7, advanced: True)
+2025-11-15 02:29:26,374 - plugins.detectors.behavior_detector.plugin - INFO - ✅ behavior_detector inicializado correctamente
+2025-11-15 02:29:26,374 - plugins.detectors.behavior_detector.plugin - INFO - Iniciando behavior_detector...
+2025-11-15 02:29:26,374 - plugins.detectors.behavior_detector.plugin - INFO - [BEHAVIOR_DETECTOR] Iniciando monitoreo real de procesos
+2025-11-15 02:29:26,374 - plugins.detectors.behavior_detector.plugin - INFO - ✅ behavior_detector iniciado correctamente
+2025-11-15 02:29:26,381 - plugins.detectors.behavior_detector.plugin - ERROR - Error analizando proceso sospechoso: 'NoneType' object has no attribute 'lower'
+2025-11-15 02:29:26,382 - plugin.behavior_detector - INFO - ✅ Plugin 'behavior_detector' activado exitosamente
+2025-11-15 02:29:26,409 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sin ruta ejecutable: 
+2025-11-15 02:29:26,409 - core.event_bus - INFO - 📢 Publicando evento 'plugin_activated' de 'PluginManager' a 0 suscriptores
+2025-11-15 02:29:26,409 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process:  - Detección de suspicious_new_process en proceso 
+2025-11-15 02:29:26,423 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: opera.exe - patrón: capture
+2025-11-15 02:29:26,423 - PluginManager - INFO - ✅ Plugin 'behavior_detector' activado
+2025-11-15 02:29:26,423 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: opera.exe - Detección de suspicious_new_process en proceso opera.exe
+2025-11-15 02:29:26,434 - plugins.detectors.ml_detector.plugin - INFO - [ML_DETECTOR] Configuración cargada: 8 secciones
+2025-11-15 02:29:26,498 - plugins.detectors.ml_detector.plugin - INFO - [ML_DETECTOR] Plugin inicializado con configuración desde C:\Users\windows10\Documents\GitHub\ANTIVIRUS_CPP_PROFESSIONAL\UNIFIED_ANTIVIRUS\plugins\detectors\ml_detector\config.json
+2025-11-15 02:29:26,529 - core.plugin_registry - INFO - 🏭 Plugin 'ml_detector' creado exitosamente
+2025-11-15 02:29:26,530 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: opera.exe - patrón: capture
+2025-11-15 02:29:26,530 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: opera.exe - Detección de suspicious_new_process en proceso opera.exe
+2025-11-15 02:29:26,653 - plugin.ml_detector - INFO - 📄 Configuración cargada desde C:\Users\windows10\Documents\GitHub\ANTIVIRUS_CPP_PROFESSIONAL\UNIFIED_ANTIVIRUS\plugins\detectors\ml_detector\config.json
+2025-11-15 02:29:26,685 - plugins.detectors.ml_detector.plugin - INFO - [ML_DETECTOR] Inicializando componentes ML...
+2025-11-15 02:29:26,702 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: opera.exe - patrón: capture
+2025-11-15 02:29:26,702 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: opera.exe - Detección de suspicious_new_process en proceso opera.exe
+2025-11-15 02:29:26,715 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: opera.exe - patrón: capture
+2025-11-15 02:29:26,716 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: opera.exe - Detección de suspicious_new_process en proceso opera.exe
+2025-11-15 02:29:26,795 - plugins.detectors.ml_detector.ml_engine - INFO - [ML_ENGINE] Clases cargadas: ['Benign', 'Keylogger']
+2025-11-15 02:29:26,844 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: opera.exe - patrón: capture
+2025-11-15 02:29:26,845 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: opera.exe - Detección de suspicious_new_process en proceso opera.exe
+2025-11-15 02:29:26,845 - plugins.detectors.ml_detector.ml_engine - INFO - [ML_ENGINE] Metadatos cargados: 81 características
+2025-11-15 02:29:26,858 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: discord.exe - patrón: capture
+2025-11-15 02:29:26,858 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: Discord.exe - Detección de suspicious_new_process en proceso Discord.exe
+2025-11-15 02:29:26,870 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: opera.exe - patrón: capture
+2025-11-15 02:29:26,870 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: opera.exe - Detección de suspicious_new_process en proceso opera.exe
+2025-11-15 02:29:26,910 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: opera.exe - patrón: capture
+2025-11-15 02:29:26,910 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: opera.exe - Detección de suspicious_new_process en proceso opera.exe
+2025-11-15 02:29:27,127 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: opera.exe - patrón: capture
+2025-11-15 02:29:27,127 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: opera.exe - Detección de suspicious_new_process en proceso opera.exe
+2025-11-15 02:29:27,152 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: opera.exe - patrón: capture
+2025-11-15 02:29:27,153 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: opera.exe - Detección de suspicious_new_process en proceso opera.exe
+2025-11-15 02:29:27,179 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: discord.exe - patrón: monitor
+2025-11-15 02:29:27,179 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: Discord.exe - Detección de suspicious_new_process en proceso Discord.exe
+2025-11-15 02:29:27,366 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: opera.exe - patrón: capture
+2025-11-15 02:29:27,367 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: opera.exe - Detección de suspicious_new_process en proceso opera.exe
+2025-11-15 02:30:02,058 - plugins.detectors.ml_detector.ml_engine - INFO - [ML_ENGINE] ✅ Modelo ONNX validado: modelo_keylogger_from_datos.onnx
+2025-11-15 02:30:02,089 - plugins.detectors.ml_detector.ml_engine - INFO - [ML_ENGINE] ✅ Modelo ONNX cargado en 35.37s
+2025-11-15 02:30:02,107 - plugins.detectors.ml_detector.ml_engine - INFO - [ML_ENGINE] Inicializado (ONNX: True, Modelo: ONNX)
+2025-11-15 02:30:02,138 - plugins.detectors.ml_detector.feature_extractor - INFO - [FEATURES] NetworkFeatureExtractor inicializado con 81 características
+2025-11-15 02:30:02,160 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: opera.exe - patrón: capture
+2025-11-15 02:30:02,160 - plugins.detectors.ml_detector.plugin - INFO - [ML_DETECTOR] ✅ Plugin inicializado (Modelo: ONNX)
+2025-11-15 02:30:02,160 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: opera.exe - Detección de suspicious_new_process en proceso opera.exe
+2025-11-15 02:30:02,160 - plugins.detectors.ml_detector.plugin - INFO - [ML_DETECTOR] ✅ Plugin iniciado y listo para detecciones
+2025-11-15 02:30:02,161 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: opera.exe - patrón: capture
+2025-11-15 02:30:02,161 - plugin.ml_detector - INFO - ✅ Plugin 'ml_detector' activado exitosamente
+2025-11-15 02:30:02,161 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: opera.exe - Detección de suspicious_new_process en proceso opera.exe
+2025-11-15 02:30:02,161 - core.event_bus - INFO - 📢 Publicando evento 'plugin_activated' de 'PluginManager' a 0 suscriptores
+2025-11-15 02:30:02,244 - PluginManager - INFO - ✅ Plugin 'ml_detector' activado
+2025-11-15 02:30:02,278 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: opera.exe - patrón: capture
+2025-11-15 02:30:02,279 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: opera.exe - Detección de suspicious_new_process en proceso opera.exe
+2025-11-15 02:30:02,279 - network_detector - INFO - 🌐 Inicializando Network Detector Plugin...
+2025-11-15 02:30:02,279 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: opera.exe - patrón: capture
+2025-11-15 02:30:02,280 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: opera.exe - Detección de suspicious_new_process en proceso opera.exe
+2025-11-15 02:30:02,292 - network_detector - INFO - 📋 Configuración cargada: 13 secciones
+2025-11-15 02:30:02,292 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: epicwebhelper.exe - patrón: .log
+2025-11-15 02:30:02,292 - network_detector - INFO - 🔧 Componentes básicos inicializados
+2025-11-15 02:30:02,292 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: EpicWebHelper.exe - Detección de suspicious_new_process en proceso EpicWebHelper.exe
+2025-11-15 02:30:02,293 - network_detector - INFO - 🛡️ Datos de seguridad básicos configurados
+2025-11-15 02:30:02,318 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: opera.exe - patrón: capture
+2025-11-15 02:30:02,318 - network_detector - INFO - 📡 Preparado para suscribirse a 4 tipos de eventos
+2025-11-15 02:30:02,318 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: opera.exe - Detección de suspicious_new_process en proceso opera.exe
+2025-11-15 02:30:02,318 - network_detector - INFO - ✅ Network Detector Plugin inicializado correctamente
+2025-11-15 02:30:02,318 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: opera_crashreporter.exe - patrón: monitor
+2025-11-15 02:30:02,319 - core.plugin_registry - INFO - 🏭 Plugin 'network_detector' creado exitosamente
+2025-11-15 02:30:02,319 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: opera_crashreporter.exe - Detección de suspicious_new_process en proceso opera_crashreporter.exe
+2025-11-15 02:30:02,319 - network_detector - INFO - 🚀 Activando Network Detector Plugin...
+2025-11-15 02:30:02,366 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: opera.exe - patrón: capture
+2025-11-15 02:30:02,354 - network_detector - INFO - ✅ Componentes verificados (modo básico)
+2025-11-15 02:30:02,367 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: opera.exe - Detección de suspicious_new_process en proceso opera.exe
+2025-11-15 02:30:02,367 - network_detector - INFO - ✅ Network Detector Plugin activado
+2025-11-15 02:30:02,399 - core.event_bus - INFO - 📢 Publicando evento 'plugin_activated' de 'PluginManager' a 0 suscriptores
+2025-11-15 02:30:02,425 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: opera.exe - patrón: capture
+2025-11-15 02:30:02,425 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: opera.exe - Detección de suspicious_new_process en proceso opera.exe
+2025-11-15 02:30:02,425 - PluginManager - INFO - ✅ Plugin 'network_detector' activado
+2025-11-15 02:30:02,462 - PluginManager - INFO - 📂 Categoría 'detectors': 3/3 activados
+2025-11-15 02:30:02,462 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: nvcontainer.exe - patrón: .log
+2025-11-15 02:30:02,463 - core.engine - INFO - ✅ Categoría 'detectors' activada
+2025-11-15 02:30:02,463 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: nvcontainer.exe - Detección de suspicious_new_process en proceso nvcontainer.exe
+2025-11-15 02:30:02,463 - PluginManager - INFO - 📂 Categoría 'monitors': 0/0 activados
+2025-11-15 02:30:02,475 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: opera.exe - patrón: capture
+2025-11-15 02:30:02,475 - core.engine - WARNING - ⚠️ Problemas activando categoría 'monitors'
+2025-11-15 02:30:02,475 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: opera.exe - Detección de suspicious_new_process en proceso opera.exe
+2025-11-15 02:30:02,475 - core.plugin_registry - ERROR - ❌ Error creando plugin 'alert_manager': Can't instantiate abstract class AlertManagerPlugin without an implementation for abstract methods 'get_plugin_info', 'initialize', 'start', 'stop'
+2025-11-15 02:30:02,488 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: steamwebhelper.exe - patrón: .txt
+2025-11-15 02:30:02,488 - core.plugin_registry - ERROR - ❌ Error creando plugin 'logger_handler': Can't instantiate abstract class LoggerHandlerPlugin without an implementation for abstract methods 'get_plugin_info', 'initialize', 'start', 'stop'
+2025-11-15 02:30:02,489 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: steamwebhelper.exe - Detección de suspicious_new_process en proceso steamwebhelper.exe
+2025-11-15 02:30:02,489 - core.plugin_registry - ERROR - ❌ Error creando plugin 'quarantine_handler': Can't instantiate abstract class QuarantineHandlerPlugin without an implementation for abstract methods 'get_plugin_info', 'initialize', 'start', 'stop'
+2025-11-15 02:30:02,489 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: steamwebhelper.exe - patrón: monitor
+2025-11-15 02:30:02,489 - PluginManager - INFO - 📂 Categoría 'handlers': 0/3 activados
+2025-11-15 02:30:02,490 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: steamwebhelper.exe - Detección de suspicious_new_process en proceso steamwebhelper.exe
+2025-11-15 02:30:02,490 - core.engine - WARNING - ⚠️ Problemas activando categoría 'handlers'
+2025-11-15 02:30:02,515 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: epicwebhelper.exe - patrón: .log
+2025-11-15 02:30:02,515 - PluginManager - INFO - 📂 Categoría 'interfaces': 0/0 activados
+2025-11-15 02:30:02,515 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: EpicWebHelper.exe - Detección de suspicious_new_process en proceso EpicWebHelper.exe
+2025-11-15 02:30:02,516 - core.engine - WARNING - ⚠️ Problemas activando categoría 'interfaces'
+2025-11-15 02:30:02,517 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: opera.exe - patrón: capture
+2025-11-15 02:30:02,517 - core.event_bus - INFO - 📢 Publicando evento 'system_started' de 'UnifiedEngine' a 0 suscriptores
+2025-11-15 02:30:02,517 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: opera.exe - Detección de suspicious_new_process en proceso opera.exe
+2025-11-15 02:30:02,554 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: opera.exe - patrón: capture
+2025-11-15 02:30:02,554 - core.engine - INFO - ✅ Sistema iniciado exitosamente
+2025-11-15 02:30:02,554 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: opera.exe - Detección de suspicious_new_process en proceso opera.exe
+2025-11-15 02:30:02,554 - core.engine - INFO - 📊 Plugins activos: 3
+2025-11-15 02:30:02,578 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: opera.exe - patrón: capture
+2025-11-15 02:30:02,578 - core.engine - INFO - 🚀 Iniciando Sistema Anti-Keylogger Unificado...
+2025-11-15 02:30:02,578 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: opera.exe - Detección de suspicious_new_process en proceso opera.exe
+2025-11-15 02:30:02,578 - PluginManager - INFO - 🔍 Iniciando descubrimiento de plugins...
+2025-11-15 02:30:02,604 - core.plugin_registry - INFO - 🔍 Descubriendo plugins en: plugins
+2025-11-15 02:30:02,616 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: discord.exe - patrón: capture
+2025-11-15 02:30:02,616 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: Discord.exe - Detección de suspicious_new_process en proceso Discord.exe
+2025-11-15 02:30:02,617 - core.plugin_registry - WARNING - ⚠️ Plugin 'behavior_detector' ya registrado, sobrescribiendo
+2025-11-15 02:30:02,649 - core.plugin_registry - INFO - ✅ Plugin 'behavior_detector' registrado en categoría 'detectors'
+2025-11-15 02:30:02,665 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: opera.exe - patrón: capture
+2025-11-15 02:30:02,666 - core.plugin_registry - WARNING - ⚠️ Plugin 'ml_detector' ya registrado, sobrescribiendo
+2025-11-15 02:30:02,666 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: opera.exe - Detección de suspicious_new_process en proceso opera.exe
+2025-11-15 02:30:02,666 - core.plugin_registry - INFO - ✅ Plugin 'ml_detector' registrado en categoría 'detectors'
+2025-11-15 02:30:02,666 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: opera.exe - patrón: capture
+2025-11-15 02:30:02,666 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: opera.exe - Detección de suspicious_new_process en proceso opera.exe
+2025-11-15 02:30:02,666 - core.plugin_registry - WARNING - ⚠️ Plugin 'network_detector' ya registrado, sobrescribiendo
+2025-11-15 02:30:02,667 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: opera.exe - patrón: capture
+2025-11-15 02:30:02,667 - core.plugin_registry - INFO - ✅ Plugin 'network_detector' registrado en categoría 'detectors'
+2025-11-15 02:30:02,667 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: opera.exe - Detección de suspicious_new_process en proceso opera.exe
+2025-11-15 02:30:02,667 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: opera.exe - patrón: capture
+2025-11-15 02:30:02,667 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: opera.exe - Detección de suspicious_new_process en proceso opera.exe
+2025-11-15 02:30:02,668 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: cursor.exe - patrón: monitor
+2025-11-15 02:30:02,668 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: Cursor.exe - Detección de suspicious_new_process en proceso Cursor.exe
+2025-11-15 02:30:02,668 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: opera.exe - patrón: capture
+2025-11-15 02:30:02,668 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: opera.exe - Detección de suspicious_new_process en proceso opera.exe
+2025-11-15 02:30:02,669 - core.plugin_registry - WARNING - ⚠️ Plugin 'alert_manager' ya registrado, sobrescribiendo
+2025-11-15 02:30:02,682 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: opera.exe - patrón: capture
+2025-11-15 02:30:02,682 - core.plugin_registry - INFO - ✅ Plugin 'alert_manager' registrado en categoría 'handlers'
+2025-11-15 02:30:02,682 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: opera.exe - Detección de suspicious_new_process en proceso opera.exe
+2025-11-15 02:30:02,682 - core.plugin_registry - WARNING - ⚠️ Plugin 'logger_handler' ya registrado, sobrescribiendo
+2025-11-15 02:30:02,682 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: opera.exe - patrón: capture
+2025-11-15 02:30:02,682 - core.plugin_registry - INFO - ✅ Plugin 'logger_handler' registrado en categoría 'handlers'
+2025-11-15 02:30:02,682 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: opera.exe - Detección de suspicious_new_process en proceso opera.exe
+2025-11-15 02:30:02,683 - core.plugin_registry - WARNING - ⚠️ Plugin 'quarantine_handler' ya registrado, sobrescribiendo
+2025-11-15 02:30:02,684 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: opera.exe - patrón: capture
+2025-11-15 02:30:02,684 - core.plugin_registry - INFO - ✅ Plugin 'quarantine_handler' registrado en categoría 'handlers'
+2025-11-15 02:30:02,684 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: opera.exe - Detección de suspicious_new_process en proceso opera.exe
+2025-11-15 02:30:02,684 - core.plugin_registry - INFO - ✅ Descubiertos 6 plugins
+2025-11-15 02:30:02,684 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: opera.exe - patrón: capture
+2025-11-15 02:30:02,684 - PluginManager - INFO - ✅ Descubrimiento completado: 6 plugins encontrados
+2025-11-15 02:30:02,685 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: opera.exe - Detección de suspicious_new_process en proceso opera.exe
+2025-11-15 02:30:02,685 - core.event_bus - INFO - 📋 'UnifiedEngine' suscrito a eventos 'threat_detected'
+2025-11-15 02:30:02,685 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: opera.exe - patrón: capture
+2025-11-15 02:30:02,685 - core.event_bus - INFO - 📋 'UnifiedEngine' suscrito a eventos 'plugin_error'
+2025-11-15 02:30:02,685 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: opera.exe - Detección de suspicious_new_process en proceso opera.exe
+2025-11-15 02:30:02,685 - PluginManager - WARNING - ⚠️ Plugin 'behavior_detector' ya está activo
+2025-11-15 02:30:02,686 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: opera.exe - patrón: capture
+2025-11-15 02:30:02,686 - PluginManager - WARNING - ⚠️ Plugin 'ml_detector' ya está activo
+2025-11-15 02:30:02,686 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: opera.exe - Detección de suspicious_new_process en proceso opera.exe
+2025-11-15 02:30:02,686 - PluginManager - WARNING - ⚠️ Plugin 'network_detector' ya está activo
+2025-11-15 02:30:02,686 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: opera.exe - patrón: capture
+2025-11-15 02:30:02,686 - PluginManager - INFO - 📂 Categoría 'detectors': 3/3 activados
+2025-11-15 02:30:02,687 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: opera.exe - Detección de suspicious_new_process en proceso opera.exe
+2025-11-15 02:30:02,687 - PluginManager - INFO - 📂 Categoría 'monitors': 0/0 activados
+2025-11-15 02:30:02,711 - core.plugin_registry - ERROR - ❌ Error creando plugin 'alert_manager': Can't instantiate abstract class AlertManagerPlugin without an implementation for abstract methods 'get_plugin_info', 'initialize', 'start', 'stop'
+2025-11-15 02:30:02,711 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: opera.exe - patrón: capture
+2025-11-15 02:30:02,711 - core.plugin_registry - ERROR - ❌ Error creando plugin 'logger_handler': Can't instantiate abstract class LoggerHandlerPlugin without an implementation for abstract methods 'get_plugin_info', 'initialize', 'start', 'stop'
+2025-11-15 02:30:02,711 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: opera.exe - Detección de suspicious_new_process en proceso opera.exe
+2025-11-15 02:30:02,711 - core.plugin_registry - ERROR - ❌ Error creando plugin 'quarantine_handler': Can't instantiate abstract class QuarantineHandlerPlugin without an implementation for abstract methods 'get_plugin_info', 'initialize', 'start', 'stop'
+2025-11-15 02:30:02,724 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: opera.exe - patrón: capture
+2025-11-15 02:30:02,724 - PluginManager - INFO - 📂 Categoría 'handlers': 0/3 activados
+2025-11-15 02:30:02,724 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: opera.exe - Detección de suspicious_new_process en proceso opera.exe
+2025-11-15 02:30:02,725 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: opera.exe - patrón: capture
+2025-11-15 02:30:02,725 - core.event_bus - INFO - 📢 Publicando evento 'system_started' de 'UnifiedEngine' a 0 suscriptores
+2025-11-15 02:30:02,725 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: opera.exe - Detección de suspicious_new_process en proceso opera.exe
+2025-11-15 02:30:02,725 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: opera.exe - patrón: capture
+2025-11-15 02:30:02,725 - core.engine - INFO - ✅ Sistema iniciado exitosamente
+2025-11-15 02:30:02,726 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: opera.exe - Detección de suspicious_new_process en proceso opera.exe
+2025-11-15 02:30:02,726 - core.engine - INFO - 📊 Plugins activos: 3
+2025-11-15 02:30:02,726 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: opera.exe - patrón: capture
+2025-11-15 02:30:02,726 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: opera.exe - Detección de suspicious_new_process en proceso opera.exe
+2025-11-15 02:30:02,726 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: opera.exe - patrón: capture
+2025-11-15 02:30:02,727 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: opera.exe - Detección de suspicious_new_process en proceso opera.exe
+2025-11-15 02:30:02,727 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: opera.exe - patrón: capture
+2025-11-15 02:30:02,727 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: opera.exe - Detección de suspicious_new_process en proceso opera.exe
+2025-11-15 02:30:02,728 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: opera.exe - patrón: capture
+2025-11-15 02:30:02,728 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: opera.exe - Detección de suspicious_new_process en proceso opera.exe
+2025-11-15 02:30:02,728 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: opera.exe - patrón: capture
+2025-11-15 02:30:02,728 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: opera.exe - Detección de suspicious_new_process en proceso opera.exe
+2025-11-15 02:30:02,729 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: opera.exe - patrón: capture
+2025-11-15 02:30:02,729 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: opera.exe - Detección de suspicious_new_process en proceso opera.exe
+2025-11-15 02:30:02,729 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: opera.exe - patrón: capture
+2025-11-15 02:30:02,729 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: opera.exe - Detección de suspicious_new_process en proceso opera.exe
+2025-11-15 02:30:02,730 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: githubdesktop.exe - patrón: capture
+2025-11-15 02:30:02,730 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: GitHubDesktop.exe - Detección de suspicious_new_process en proceso GitHubDesktop.exe
+2025-11-15 02:30:02,730 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: opera.exe - patrón: capture
+2025-11-15 02:30:02,731 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: opera.exe - Detección de suspicious_new_process en proceso opera.exe
+2025-11-15 02:30:02,731 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: opera.exe - patrón: capture
+2025-11-15 02:30:02,731 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: opera.exe - Detección de suspicious_new_process en proceso opera.exe
+2025-11-15 02:30:02,731 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: cursor.exe - patrón: capture
+2025-11-15 02:30:02,731 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: Cursor.exe - Detección de suspicious_new_process en proceso Cursor.exe
+2025-11-15 02:30:02,732 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: cursor.exe - patrón: capture
+2025-11-15 02:30:02,732 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: Cursor.exe - Detección de suspicious_new_process en proceso Cursor.exe
+2025-11-15 02:30:02,732 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: cursor.exe - patrón: capture
+2025-11-15 02:30:02,732 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: Cursor.exe - Detección de suspicious_new_process en proceso Cursor.exe
+2025-11-15 02:30:02,744 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: discord.exe - patrón: capture
+2025-11-15 02:30:02,744 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: Discord.exe - Detección de suspicious_new_process en proceso Discord.exe
+2025-11-15 02:30:02,756 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: cursor.exe - patrón: capture
+2025-11-15 02:30:02,757 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: Cursor.exe - Detección de suspicious_new_process en proceso Cursor.exe
+2025-11-15 02:30:02,757 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: cursor.exe - patrón: capture
+2025-11-15 02:30:02,757 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: Cursor.exe - Detección de suspicious_new_process en proceso Cursor.exe
+2025-11-15 02:30:09,348 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Uso elevado de CPU: mpdwsvc.exe - 127.7%
+2025-11-15 02:30:09,348 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_behavior_change: mpdwsvc.exe - Detección de suspicious_behavior_change en proceso mpdwsvc.exe
+2025-11-15 02:30:29,177 - web_log_sender_R3DCR0WN_ba716964 - ERROR - Error inesperado (intento 1): Timeout context manager should be used inside a task
+2025-11-15 02:30:30,199 - web_log_sender_R3DCR0WN_ba716964 - ERROR - Error inesperado (intento 2): Timeout context manager should be used inside a task
+2025-11-15 02:30:32,218 - web_log_sender_R3DCR0WN_ba716964 - ERROR - Error inesperado (intento 3): Timeout context manager should be used inside a task
+2025-11-15 02:30:32,219 - web_log_sender_R3DCR0WN_ba716964 - ERROR - Falló el envío de 50 logs después de 3 intentos

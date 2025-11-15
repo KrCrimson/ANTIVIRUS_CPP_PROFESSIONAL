@@ -8,17 +8,21 @@
     "build": "prisma generate && next build",
     "start": "next start",
     "lint": "next lint",
-    "vercel-build": "prisma generate && next build",
+    "vercel-build": "prisma generate && prisma migrate deploy && next build",
+    "postinstall": "prisma generate",
     "db:generate": "prisma generate",
     "db:push": "prisma db push",
     "db:migrate": "prisma migrate dev",
+    "db:migrate:deploy": "prisma migrate deploy",
     "db:studio": "prisma studio",
     "db:seed": "node prisma/seed.js",
     "setup": "node setup.js",
-    "test:logs": "node ../test_web_logging.js"
+    "test:logs": "node ../test_web_logging.js",
+    "config:generate": "node scripts/generate-config.js",
+    "deploy:vercel": "bash scripts/deploy.sh"
   },
   "dependencies": {
-    "@prisma/client": "^5.0.0",
+    "@prisma/client": "^6.19.0",
     "@types/node": "^20.0.0",
     "@types/react": "^18.0.0",
     "@types/react-dom": "^18.0.0",
@@ -31,7 +35,6 @@
     "jsonwebtoken": "^9.0.0",
     "lodash": "^4.17.21",
     "next": "^14.0.0",
-    "prisma": "^5.0.0",
     "react": "^18.0.0",
     "react-chartjs-2": "^5.3.1",
     "react-dom": "^18.0.0",
@@ -41,7 +44,8 @@
   "devDependencies": {
     "eslint": "^8.0.0",
     "eslint-config-next": "^14.0.0",
-    "postcss": "^8.5.6"
+    "postcss": "^8.5.6",
+    "prisma": "^6.19.0"
   },
   "engines": {
     "node": ">=18.0.0"

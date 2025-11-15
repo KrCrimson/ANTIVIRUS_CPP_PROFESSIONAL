@@ -236,7 +236,18 @@ export default function Dashboard() {
       
       if (statsRes.ok) {
         const statsData = await statsRes.json();
-        setStats(statsData);
+        // El backend devuelve { overview: {...}, charts: {...}, ... }
+        if (statsData.overview) {
+          setStats({
+            totalClients: statsData.overview.totalClients || 0,
+            activeClients: statsData.overview.activeClients || 0,
+            totalLogs24h: statsData.overview.totalLogs || 0,
+            criticalAlerts: statsData.overview.criticalAlerts || 0
+          });
+        } else {
+          // Compatibilidad con formato anterior
+          setStats(statsData);
+        }
       }
       
       if (logsRes.ok) {

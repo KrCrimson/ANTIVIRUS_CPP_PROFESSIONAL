@@ -98,13 +98,13 @@ export const GET = requireAuth(async (request: NextRequest) => {
     // Actividad por hora (últimas 24 horas)
     const hourlyActivity = await prisma.$queryRaw`
       SELECT 
-        DATE_TRUNC('hour', timestamp) as hour,
+        strftime('%Y-%m-%d %H:00:00', timestamp) as hour,
         COUNT(*) as count,
         COUNT(CASE WHEN level = 'ERROR' THEN 1 END) as errors,
         COUNT(CASE WHEN level = 'CRITICAL' THEN 1 END) as critical
       FROM log_entries 
       WHERE timestamp >= ${startDate}
-      GROUP BY DATE_TRUNC('hour', timestamp)
+      GROUP BY strftime('%Y-%m-%d %H:00:00', timestamp)
       ORDER BY hour DESC
       LIMIT 24
     `

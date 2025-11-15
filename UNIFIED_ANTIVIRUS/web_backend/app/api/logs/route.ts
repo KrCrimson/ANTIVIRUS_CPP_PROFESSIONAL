@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from 'next/server'
 import { PrismaClient } from '@prisma/client'
 import Joi from 'joi'
 import { requireAuth, CORS_HEADERS } from '../../../lib/auth'
+import { rateLimit, logRequest } from '../../../lib/middleware'
 
 const prisma = new PrismaClient()
 
@@ -28,7 +29,17 @@ const logSchema = Joi.object({
 
 // POST /api/logs - Recibir logs de antivirus
 export const POST = requireAuth(async (request: NextRequest) => {
+  const startTime = Date.now()
+  
+  // Rate limiting
+  const rateLimitResponse = rateLimit({ requests: 500, windowMs: 3600000 })(request)
+  if (rateLimitResponse) {
+    return rateLimitResponse
+  }
+  
   try {
+    // Log request for monitoring
+    logRequest(request, startTime)
     const body = await request.json()
     
     // Validar estructura de datos
@@ -74,9 +85,8 @@ export const POST = requireAuth(async (request: NextRequest) => {
         function: log.function,
         line: log.line,
         component: log.component,
-        data: log.data
-      })),
-      skipDuplicates: true
+        metadata: log.data
+      }))
     })
 
     // Generar alertas para logs críticos

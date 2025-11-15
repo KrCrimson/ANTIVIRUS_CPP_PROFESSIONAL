@@ -18,9 +18,9 @@ model AntivirusClient {
   version     String   // Versión del antivirus
   os          String   // Sistema operativo
   ipAddress   String?  // IP del cliente
-  lastSeen    DateTime @default(now())
+  lastSeen    DateTime @default(now()) @db.Timestamp
   isActive    Boolean  @default(true)
-  createdAt   DateTime @default(now())
+  createdAt   DateTime  @default(now()) @db.Timestamp
   updatedAt   DateTime @updatedAt
   
   // Relación con logs
@@ -33,7 +33,7 @@ model AntivirusClient {
 model LogEntry {
   id          String   @id @default(uuid())
   clientId    String   // Referencia al cliente
-  timestamp   DateTime
+  timestamp   DateTime @default(now()) @db.Timestamp
   level       String   // DEBUG, INFO, WARNING, ERROR, CRITICAL
   logger      String   // Nombre del logger
   message     String   // Mensaje del log
@@ -85,7 +85,7 @@ model Alert {
 // Modelo para estadísticas agregadas
 model LogStatistics {
   id              String   @id @default(uuid())
-  date            DateTime @db.Date
+  date            DateTime
   clientId        String?  // null = estadísticas globales
   
   // Contadores por nivel

@@ -22,7 +22,7 @@
         },
         {
           "key": "Access-Control-Allow-Headers",
-          "value": "Content-Type, Authorization"
+          "value": "Content-Type, Authorization, x-api-key"
         }
       ]
     }
@@ -31,20 +31,6 @@
     {
       "source": "/api/(.*)",
       "destination": "/api/$1"
-    }
-  ],
-  "deploymentProtection": {
-    "passwordProtection": false,
-    "vercelAuthentication": false
-  },
-  "routes": [
-    {
-      "src": "/api/(.*)",
-      "dest": "/api/$1",
-      "headers": {
-        "X-Frame-Options": "DENY",
-        "X-Content-Type-Options": "nosniff"
-      }
     }
   ]
 }

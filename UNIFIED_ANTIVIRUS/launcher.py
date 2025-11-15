@@ -51,6 +51,13 @@ Ejemplos de uso:
     )
     
     parser.add_argument(
+        '--env',
+        choices=['development', 'production'],
+        default='development',
+        help='Entorno de ejecución (development/production)'
+    )
+    
+    parser.add_argument(
         '--monitors-only',
         action='store_true',
         help='Activar solo monitores de sistema'
@@ -95,15 +102,32 @@ def setup_web_logging():
     try:
         from utils.web_log_sender import initialize_web_log_sender
         from utils.logger import get_logger
+        import os
         
         logger = get_logger('launcher')
         
-        # Cargar configuración de web logging
+        # Detectar entorno automáticamente
+        # Si existe web_logging_production.json, usar producción
+        # Si no, usar optimized o development
         import json
+        from pathlib import Path
+        
+        env = os.getenv('ANTIVIRUS_ENV', None)
+        if not env:
+            # Detectar automáticamente: si existe production.json, usar producción
+            if Path('config/web_logging_production.json').exists():
+                env = 'production'
+            else:
+                env = 'development'
+        
+        # Cargar configuración de web logging según entorno
+        # Prioridad: específico del entorno > production > optimized > default
         config_files = [
-            'config/web_logging_optimized.json',
-            'config/web_logging_config.json',
-            'config/unified_config.toml'
+            f'config/web_logging_{env}.json',  # Específico del entorno
+            'config/web_logging_production.json',  # Producción
+            'config/web_logging_optimized.json',   # Optimizado
+            'config/web_logging_config.json',      # Por defecto
+            'config/unified_config.toml'           # TOML
         ]
         
         web_config = None
@@ -132,13 +156,36 @@ def setup_web_logging():
         
         if web_config and web_config.get('enabled', False):
             try:
-                # Importar e inicializar el WebLogSender de forma síncrona
-                from utils.web_log_sender import WebLogSender
+                # Importar e inicializar el WebLogSender
+                from utils.web_log_sender import WebLogSender, initialize_web_log_sender
                 from utils.web_log_handler import setup_web_log_handler
+                import asyncio
                 
-                web_sender = WebLogSender(web_config)
+                # Extraer configuración
+                api_url = web_config.get('api_url', 'http://localhost:3001/api')
+                api_key = web_config.get('api_key', 'antivirus-key-2024-prod-12345')
+                
+                # Construir endpoint completo si no incluye /api/logs
+                if not api_url.endswith('/logs'):
+                    api_endpoint = f"{api_url.rstrip('/')}/logs"
+                else:
+                    api_endpoint = api_url
+                
+                # Inicializar WebLogSender de forma asíncrona
+                loop = asyncio.new_event_loop()
+                asyncio.set_event_loop(loop)
+                
+                web_sender = loop.run_until_complete(
+                    initialize_web_log_sender(
+                        api_endpoint=api_endpoint,
+                        api_key=api_key,
+                        client_id=None,  # Se generará automáticamente
+                        antivirus_version="1.0.0"
+                    )
+                )
+                
                 logger.info("🌐 Web logging inicializado exitosamente")
-                logger.info(f"📡 Backend URL: {web_config.get('api_url', 'N/A')}")
+                logger.info(f"📡 Backend URL: {api_endpoint}")
                 
                 # Configurar handler automático para capturar todos los logs
                 web_handler = setup_web_log_handler(web_sender)
@@ -146,7 +193,7 @@ def setup_web_logging():
                 
                 return True
             except Exception as e:
-                logger.error(f"❌ Error inicializando WebLogSender: {e}")
+                logger.error(f"❌ Error inicializando WebLogSender: {e}", exc_info=True)
                 return False
         else:
             logger.info("ℹ️ Web logging deshabilitado en configuración")
@@ -249,6 +296,10 @@ def main():
     
     # Parsear argumentos
     args = parse_arguments()
+    
+    # Configurar variables de entorno
+    import os
+    os.environ['ANTIVIRUS_ENV'] = args.env
     
     # Configurar logging
     setup_logging(args.debug)
