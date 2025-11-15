@@ -95,16 +95,16 @@ export const GET = requireAuth(async (request: NextRequest) => {
       take: 10
     })
 
-    // Actividad por hora (últimas 24 horas)
+    // Actividad por hora (últimas 24 horas) - PostgreSQL compatible
     const hourlyActivity = await prisma.$queryRaw`
       SELECT 
-        strftime('%Y-%m-%d %H:00:00', timestamp) as hour,
+        DATE_TRUNC('hour', timestamp) as hour,
         COUNT(*) as count,
         COUNT(CASE WHEN level = 'ERROR' THEN 1 END) as errors,
         COUNT(CASE WHEN level = 'CRITICAL' THEN 1 END) as critical
       FROM log_entries 
       WHERE timestamp >= ${startDate}
-      GROUP BY strftime('%Y-%m-%d %H:00:00', timestamp)
+      GROUP BY DATE_TRUNC('hour', timestamp)
       ORDER BY hour DESC
       LIMIT 24
     `
@@ -207,8 +207,17 @@ export const GET = requireAuth(async (request: NextRequest) => {
 
   } catch (error) {
     console.error('Error generating dashboard data:', error)
+    
+    // Proporcionar más información del error para debugging
+    const errorMessage = error instanceof Error ? error.message : 'Unknown error'
+    const errorStack = error instanceof Error ? error.stack : undefined
+    
     return NextResponse.json(
-      { error: 'Internal Server Error' },
+      { 
+        error: 'Internal Server Error',
+        message: errorMessage,
+        details: process.env.NODE_ENV === 'development' ? errorStack : undefined
+      },
       { status: 500, headers: CORS_HEADERS }
     )
   }

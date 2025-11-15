@@ -75,7 +75,9 @@ function LoginComponent() {
       });
 
       if (!response.ok) {
-        throw new Error('Error de conexión con el backend');
+        const errorData = await response.json().catch(() => ({}));
+        const errorMsg = errorData.message || errorData.error || `Error ${response.status}: ${response.statusText}`;
+        throw new Error(`Error de conexión con el backend: ${errorMsg}`);
       }
 
       localStorage.setItem('antivirusApiKey', apiKey);
