@@ -1,0 +1,131 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// Modelo para dispositivos/clientes de antivirus
+model AntivirusClient {
+  id          String   @id @default(uuid())
+  clientId    String   @unique // ID único del cliente
+  hostname    String   // Nombre del equipo
+  version     String   // Versión del antivirus
+  os          String   // Sistema operativo
+  ipAddress   String?  // IP del cliente
+  lastSeen    DateTime @default(now())
+  isActive    Boolean  @default(true)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  
+  // Relación con logs
+  logs        LogEntry[]
+  
+  @@map("antivirus_clients")
+}
+
+// Modelo principal para logs
+model LogEntry {
+  id          String   @id @default(uuid())
+  clientId    String   // Referencia al cliente
+  timestamp   DateTime
+  level       String   // DEBUG, INFO, WARNING, ERROR, CRITICAL
+  logger      String   // Nombre del logger
+  message     String   // Mensaje del log
+  module      String?  // Módulo que generó el log
+  function    String?  // Función que generó el log
+  line        Int?     // Línea de código
+  component   String?  // Componente del antivirus
+  
+  // Metadatos adicionales
+  metadata    Json?    // Datos adicionales en JSON
+  processed   Boolean  @default(false)
+  createdAt   DateTime @default(now())
+  
+  // Relación con cliente
+  client      AntivirusClient @relation(fields: [clientId], references: [clientId])
+  
+  // Relación con alertas
+  alerts      Alert[]
+  
+  @@map("log_entries")
+  @@index([clientId, timestamp])
+  @@index([level])
+  @@index([component])
+}
+
+// Modelo para alertas generadas por análisis de logs
+model Alert {
+  id          String   @id @default(uuid())
+  logId       String   // Log que generó la alerta
+  type        String   // Tipo de alerta: THREAT, PERFORMANCE, ERROR, etc.
+  severity    String   // LOW, MEDIUM, HIGH, CRITICAL
+  title       String   // Título de la alerta
+  description String   // Descripción detallada
+  resolved    Boolean  @default(false)
+  resolvedAt  DateTime?
+  resolvedBy  String?  // Usuario que resolvió
+  
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  
+  // Relación con log
+  log         LogEntry @relation(fields: [logId], references: [id])
+  
+  @@map("alerts")
+  @@index([type, severity])
+  @@index([resolved])
+}
+
+// Modelo para estadísticas agregadas
+model LogStatistics {
+  id              String   @id @default(uuid())
+  date            DateTime @db.Date
+  clientId        String?  // null = estadísticas globales
+  
+  // Contadores por nivel
+  debugCount      Int      @default(0)
+  infoCount       Int      @default(0)
+  warningCount    Int      @default(0)
+  errorCount      Int      @default(0)
+  criticalCount   Int      @default(0)
+  
+  // Contadores por componente
+  coreEngineCount     Int @default(0)
+  pluginManagerCount  Int @default(0)
+  detectorsCount      Int @default(0)
+  monitorsCount       Int @default(0)
+  handlersCount       Int @default(0)
+  
+  // Métricas de rendimiento
+  avgResponseTime Float?
+  memoryUsage     Float?
+  cpuUsage        Float?
+  
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+  
+  @@map("log_statistics")
+  @@unique([date, clientId])
+  @@index([date])
+}
+
+// Modelo para usuarios del dashboard web
+model User {
+  id        String   @id @default(uuid())
+  email     String   @unique
+  username  String   @unique
+  password  String   // Hash bcrypt
+  role      String   @default("viewer") // admin, analyst, viewer
+  isActive  Boolean  @default(true)
+  
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  
+  @@map("users")
+}

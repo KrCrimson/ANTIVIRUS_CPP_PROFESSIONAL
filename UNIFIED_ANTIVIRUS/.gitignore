@@ -1,0 +1,182 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# PyInstaller
+*.manifest
+*.spec
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+
+# Virtual environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*.sublime-project
+*.sublime-workspace
+
+# OS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+
+# ONNX Models (pueden ser grandes)
+*.onnx
+models/*.onnx
+
+# Configuración local
+config/local_*
+*_local.json
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Archivos temporales
+tmp/
+temp/
+*.tmp
+*.temp
+*~
+
+# Backup files
+*.backup
+*.bak
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# pyenv
+.python-version
+
+# pipenv
+Pipfile.lock
+
+# PEP 582
+__pypackages__/
+
+# Celery stuff
+celerybeat-schedule
+celerybeat.pid
+
+# SageMath parsed files
+*.sage.py
+
+# Spyder project settings
+.spyderproject
+.spyproject
+
+# Rope project settings
+.ropeproject
+
+# mkdocs documentation
+/site
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Archivos específicos del antivirus
+quarantine/
+*.quarantine
+
+# Configuraciones sensibles
+api_keys.txt
+secrets.json
+*.key
+*.pem
+*.crt
+
+# Web backend (Node.js)
+web_backend/node_modules/
+web_backend/.next/
+web_backup/out/
+web_backend/build/
+web_backend/.env
+web_backend/dev.db*
+web_backend/prisma/dev.db*
+
+# Archivos de instalación/deployment
+install_*.exe
+*.msi
+deployment_packages/
+
+# Threat intelligence data (puede ser sensible)
+threat_intel/custom_*
+threat_intel/private_*
+
+# Test outputs
+test_outputs/
+test_results/
+*.test.log
+
+# Machine learning training data
+training_data/
+datasets/
+*.dataset
+
+# Documentación generada
+docs/_build/
+docs/build/
+
+# Archivos comprimidos
+*.zip
+*.tar.gz
+*.rar
+*.7z

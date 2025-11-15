@@ -52,12 +52,20 @@ class LoggerHandlerPlugin(BasePlugin, HandlerPluginInterface):
         self.buffer_lock = threading.Lock()
         self.flush_thread = None
         
+        # Web log sender para envío centralizado
+        self.web_sender = None
+        self.web_sender_enabled = False
+        
         # Configurar logging principal
         self.logger = logging.getLogger(f"plugins.handlers.{self.name.lower()}")
         self.logger.setLevel(logging.INFO)
         
         # Inicializar loggers especializados
         self._initialize_loggers()
+        
+        # Inicializar web sender si está configurado
+        if self.config.get("web_logging", {}).get("enabled", False):
+            self._initialize_web_sender()
         
         # Iniciar thread de flush si está configurado
         if self.config.get("buffer_enabled", False):
@@ -103,7 +111,16 @@ class LoggerHandlerPlugin(BasePlugin, HandlerPluginInterface):
             "flush_interval": 5,
             "compress_old_logs": True,
             "json_logging": True,
-            "log_retention_days": 30
+            "log_retention_days": 30,
+            "web_logging": {
+                "enabled": False,
+                "api_endpoint": "https://your-vercel-app.vercel.app/api/logs",
+                "api_key": "unified-antivirus-api-key-2024",
+                "client_id": None,
+                "batch_size": 50,
+                "send_interval": 30,
+                "levels": ["WARNING", "ERROR", "CRITICAL"]
+            }
         }
         
         try:
@@ -219,6 +236,16 @@ class LoggerHandlerPlugin(BasePlugin, HandlerPluginInterface):
             # Agregar al buffer si está habilitado
             if self.config.get("buffer_enabled", False):
                 self._add_to_buffer(logger_name, level, message, extra_data)
+            
+            # Enviar al backend web si está habilitado
+            if self.web_sender_enabled:
+                self._send_to_web(
+                    level=level,
+                    logger_name=logger_name,
+                    message=message,
+                    component=extra_data.get("component") if extra_data else None,
+                    metadata=extra_data
+                )
             
             return True
             
@@ -402,6 +429,70 @@ class LoggerHandlerPlugin(BasePlugin, HandlerPluginInterface):
             self.logger.error(f"Error limpiando logs antiguos: {e}")
         
         return cleaned
+    
+    def _initialize_web_sender(self):
+        """Inicializar el web log sender"""
+        try:
+            # Importar aquí para evitar dependencias circulares
+            from utils.web_log_sender import initialize_web_log_sender
+            import asyncio
+            
+            web_config = self.config["web_logging"]
+            
+            # Configurar el sender
+            loop = asyncio.new_event_loop()
+            asyncio.set_event_loop(loop)
+            
+            self.web_sender = loop.run_until_complete(
+                initialize_web_log_sender(
+                    api_endpoint=web_config["api_endpoint"],
+                    api_key=web_config["api_key"],
+                    client_id=web_config.get("client_id"),
+                    antivirus_version="1.0.0"
+                )
+            )
+            
+            self.web_sender_enabled = True
+            self.logger.info("[WEB_LOGGING] Web log sender inicializado exitosamente")
+            
+        except Exception as e:
+            self.logger.error(f"[WEB_LOGGING] Error inicializando web sender: {e}")
+            self.web_sender_enabled = False
+    
+    def _send_to_web(self, level: str, logger_name: str, message: str, 
+                     module: str = None, function: str = None, line: int = None, 
+                     component: str = None, metadata: dict = None):
+        """Enviar log al backend web si está habilitado"""
+        if not self.web_sender_enabled or not self.web_sender:
+            return
+            
+        # Verificar si el nivel debe ser enviado
+        web_config = self.config.get("web_logging", {})
+        allowed_levels = web_config.get("levels", ["WARNING", "ERROR", "CRITICAL"])
+        
+        if level not in allowed_levels:
+            return
+            
+        try:
+            # Enviar al web sender
+            success = self.web_sender.add_log(
+                level=level,
+                logger=logger_name,
+                message=message,
+                module=module,
+                function=function,
+                line=line,
+                component=component,
+                metadata=metadata
+            )
+            
+            if success:
+                self.log_stats["web_logs_sent"] = self.log_stats.get("web_logs_sent", 0) + 1
+            else:
+                self.log_stats["web_logs_failed"] = self.log_stats.get("web_logs_failed", 0) + 1
+                
+        except Exception as e:
+            self.logger.error(f"[WEB_LOGGING] Error enviando log: {e}")
 
 
 def create_plugin(config_path: str = None) -> LoggerHandlerPlugin:

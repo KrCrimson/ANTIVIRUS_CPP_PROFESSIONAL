@@ -1,0 +1,178 @@
+import { NextRequest, NextResponse } from 'next/server'
+import { PrismaClient } from '@prisma/client'
+
+const prisma = new PrismaClient()
+
+// GET /api/clients - Obtener lista de clientes de antivirus
+export async function GET(request: NextRequest) {
+  try {
+    const { searchParams } = new URL(request.url)
+    const includeInactive = searchParams.get('includeInactive') === 'true'
+
+    const clients = await prisma.antivirusClient.findMany({
+      where: includeInactive ? {} : { isActive: true },
+      include: {
+        _count: {
+          select: {
+            logs: true
+          }
+        }
+      },
+      orderBy: { lastSeen: 'desc' }
+    })
+
+    // Calcular estadísticas de cada cliente
+    const clientsWithStats = await Promise.all(
+      clients.map(async (client: any) => {
+        const last24h = new Date(Date.now() - 24 * 60 * 60 * 1000)
+        
+        const recentLogs = await prisma.logEntry.count({
+          where: {
+            clientId: client.clientId,
+            timestamp: { gte: last24h }
+          }
+        })
+
+        const criticalLogs = await prisma.logEntry.count({
+          where: {
+            clientId: client.clientId,
+            level: 'CRITICAL',
+            timestamp: { gte: last24h }
+          }
+        })
+
+        const errorLogs = await prisma.logEntry.count({
+          where: {
+            clientId: client.clientId,
+            level: 'ERROR',
+            timestamp: { gte: last24h }
+          }
+        })
+
+        return {
+          ...client,
+          stats: {
+            totalLogs: client._count.logs,
+            recentLogs,
+            criticalLogs,
+            errorLogs,
+            status: Date.now() - client.lastSeen.getTime() < 5 * 60 * 1000 ? 'online' : 'offline'
+          }
+        }
+      })
+    )
+
+    return NextResponse.json({
+      clients: clientsWithStats,
+      total: clients.length
+    })
+
+  } catch (error) {
+    console.error('Error fetching clients:', error)
+    return NextResponse.json(
+      { error: 'Internal Server Error' },
+      { status: 500 }
+    )
+  }
+}
+
+// GET /api/clients/[clientId] - Obtener detalles de un cliente específico
+export async function GET_CLIENT(request: NextRequest, { params }: { params: { clientId: string } }) {
+  try {
+    const { clientId } = params
+
+    const client = await prisma.antivirusClient.findUnique({
+      where: { clientId },
+      include: {
+        logs: {
+          take: 50,
+          orderBy: { timestamp: 'desc' },
+          select: {
+            id: true,
+            timestamp: true,
+            level: true,
+            logger: true,
+            message: true,
+            component: true
+          }
+        },
+        _count: {
+          select: {
+            logs: true
+          }
+        }
+      }
+    })
+
+    if (!client) {
+      return NextResponse.json(
+        { error: 'Client not found' },
+        { status: 404 }
+      )
+    }
+
+    // Estadísticas detalladas del cliente
+    const last24h = new Date(Date.now() - 24 * 60 * 60 * 1000)
+    const last7d = new Date(Date.now() - 7 * 24 * 60 * 60 * 1000)
+
+    const stats = await prisma.logEntry.groupBy({
+      by: ['level'],
+      where: {
+        clientId,
+        timestamp: { gte: last24h }
+      },
+      _count: {
+        level: true
+      }
+    })
+
+    const componentStats = await prisma.logEntry.groupBy({
+      by: ['component'],
+      where: {
+        clientId,
+        timestamp: { gte: last7d }
+      },
+      _count: {
+        component: true
+      }
+    })
+
+    const alerts = await prisma.alert.findMany({
+      where: {
+        log: {
+          clientId
+        },
+        resolved: false
+      },
+      include: {
+        log: {
+          select: {
+            timestamp: true,
+            level: true,
+            message: true
+          }
+        }
+      },
+      orderBy: { createdAt: 'desc' },
+      take: 10
+    })
+
+    return NextResponse.json({
+      client,
+      stats: {
+        levels: stats,
+        components: componentStats,
+        totalLogs: client._count.logs,
+        status: Date.now() - client.lastSeen.getTime() < 5 * 60 * 1000 ? 'online' : 'offline'
+      },
+      alerts
+    })
+
+  } catch (error) {
+    console.error('Error fetching client details:', error)
+    return NextResponse.json(
+      { error: 'Internal Server Error' },
+      { status: 500 }
+    )
+  }
+}
