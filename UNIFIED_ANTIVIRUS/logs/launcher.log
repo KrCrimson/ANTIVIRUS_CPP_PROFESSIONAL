@@ -53,3 +53,13 @@
 [2025-11-15 02:40:25] launcher - INFO - info:205 - 🌐 Web logging inicializado exitosamente
 [2025-11-15 02:40:25] launcher - INFO - info:205 - 📡 Backend URL: https://unified-antivirus-duzz48bmm-sebastians-projects-487d2baa.vercel.app/api/logs
 [2025-11-15 02:40:25] launcher - INFO - info:205 - 📤 Handler automático configurado - logs serán enviados al backend
+[2025-11-15 02:43:52] launcher - INFO - __init__:91 - 📝 Logger 'launcher' inicializado
+[2025-11-15 02:43:52] launcher - INFO - info:205 - ✅ Configuración web cargada desde config/web_logging_production.json
+[2025-11-15 02:43:52] launcher - INFO - info:205 - 🌐 Web logging inicializado exitosamente
+[2025-11-15 02:43:52] launcher - INFO - info:205 - 📡 Backend URL: https://unified-antivirus-duzz48bmm-sebastians-projects-487d2baa.vercel.app/api/logs
+[2025-11-15 02:43:52] launcher - INFO - info:205 - 📤 Handler automático configurado - logs serán enviados al backend
+[2025-11-15 02:47:14] launcher - INFO - __init__:91 - 📝 Logger 'launcher' inicializado
+[2025-11-15 02:47:14] launcher - INFO - info:205 - ✅ Configuración web cargada desde config/web_logging_production.json
+[2025-11-15 02:47:14] launcher - INFO - info:205 - 🌐 Web logging inicializado exitosamente
+[2025-11-15 02:47:14] launcher - INFO - info:205 - 📡 Backend URL: https://unified-antivirus-duzz48bmm-sebastians-projects-487d2baa.vercel.app/api/logs
+[2025-11-15 02:47:14] launcher - INFO - info:205 - 📤 Handler automático configurado - logs serán enviados al backend

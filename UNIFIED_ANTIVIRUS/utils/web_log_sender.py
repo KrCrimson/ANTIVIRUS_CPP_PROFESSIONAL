@@ -115,16 +115,16 @@ class WebLogSender:
             
         self.running = False
         
-        # Enviar logs pendientes
-        await self._send_buffered_logs()
-        
-        # Cerrar sesión HTTP
-        if self.session:
-            await self.session.close()
-            
-        # Esperar a que termine el hilo
+        # Esperar a que termine el hilo (que cerrará su propia sesión)
         if self.sender_thread and self.sender_thread.is_alive():
-            self.sender_thread.join(timeout=5)
+            self.sender_thread.join(timeout=10)
+        
+        # Cerrar sesión principal si existe (por si acaso)
+        if self.session:
+            try:
+                await self.session.close()
+            except:
+                pass
             
         self.logger.info("WebLogSender detenido")
     
@@ -173,29 +173,43 @@ class WebLogSender:
         loop = asyncio.new_event_loop()
         asyncio.set_event_loop(loop)
         
-        while self.running:
-            try:
-                # Esperar intervalo de envío
-                for _ in range(SEND_INTERVAL):
+        # Crear una nueva sesión HTTP en este loop
+        timeout = aiohttp.ClientTimeout(total=30)
+        session = aiohttp.ClientSession(
+            timeout=timeout,
+            headers={
+                "Content-Type": "application/json",
+                "X-API-Key": self.api_key,
+                "User-Agent": f"UnifiedAntivirus/{self.antivirus_version}"
+            },
+            loop=loop
+        )
+        
+        try:
+            while self.running:
+                try:
+                    # Esperar intervalo de envío
+                    for _ in range(SEND_INTERVAL):
+                        if not self.running:
+                            break
+                        time.sleep(1)
+                    
                     if not self.running:
                         break
-                    time.sleep(1)
-                
-                if not self.running:
-                    break
+                        
+                    # Enviar logs en batch usando el loop de este hilo
+                    loop.run_until_complete(self._send_buffered_logs_with_session(session))
                     
-                # Enviar logs en batch usando el loop de este hilo
-                loop.run_until_complete(self._send_buffered_logs())
-                
-            except Exception as e:
-                self.logger.error(f"Error in sender loop: {e}")
-                time.sleep(5)  # Esperar antes de reintentar
-        
-        # Cerrar el loop cuando termine el hilo
-        loop.close()
+                except Exception as e:
+                    self.logger.error(f"Error in sender loop: {e}")
+                    time.sleep(5)  # Esperar antes de reintentar
+        finally:
+            # Cerrar la sesión y el loop cuando termine el hilo
+            loop.run_until_complete(session.close())
+            loop.close()
     
-    async def _send_buffered_logs(self):
-        """Envía logs del buffer al servidor"""
+    async def _send_buffered_logs_with_session(self, session):
+        """Envía logs del buffer al servidor usando una sesión específica"""
         if self.log_buffer.empty():
             return
             
@@ -224,9 +238,8 @@ class WebLogSender:
         success = False
         for attempt in range(MAX_RETRIES):
             try:
-                # Usar timeout explícito en lugar de ClientTimeout en el session
-                timeout = aiohttp.ClientTimeout(total=30)
-                async with self.session.post(self.api_endpoint, json=payload, timeout=timeout) as response:
+                # Usar la sesión pasada como parámetro
+                async with session.post(self.api_endpoint, json=payload) as response:
                     if response.status == 200:
                         result = await response.json()
                         self.stats["total_sent"] += len(logs_to_send)
