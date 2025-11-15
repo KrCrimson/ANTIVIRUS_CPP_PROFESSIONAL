@@ -1,0 +1,10 @@
+{"timestamp": "2025-11-15T09:20:36.041331", "level": "INFO", "logger": "launcher", "message": "📝 Logger 'launcher' inicializado", "module": "logger", "function": "__init__", "line": 91}
+{"timestamp": "2025-11-15T09:20:36.042668", "level": "INFO", "logger": "launcher", "message": "✅ Configuración web cargada desde config/web_logging_production.json", "module": "logger", "function": "info", "line": 205}
+{"timestamp": "2025-11-15T09:20:36.049677", "level": "INFO", "logger": "launcher", "message": "🌐 Web logging inicializado exitosamente", "module": "logger", "function": "info", "line": 205}
+{"timestamp": "2025-11-15T09:20:36.050772", "level": "INFO", "logger": "launcher", "message": "📡 Backend URL: https://unified-antivirus-api.vercel.app/api/logs", "module": "logger", "function": "info", "line": 205}
+{"timestamp": "2025-11-15T09:20:36.051499", "level": "INFO", "logger": "launcher", "message": "📤 Handler automático configurado - logs serán enviados al backend", "module": "logger", "function": "info", "line": 205}
+{"timestamp": "2025-11-15T09:23:30.019910", "level": "INFO", "logger": "launcher", "message": "📝 Logger 'launcher' inicializado", "module": "logger", "function": "__init__", "line": 91}
+{"timestamp": "2025-11-15T09:23:30.021040", "level": "INFO", "logger": "launcher", "message": "✅ Configuración web cargada desde config/web_logging_production.json", "module": "logger", "function": "info", "line": 205}
+{"timestamp": "2025-11-15T09:23:30.023797", "level": "INFO", "logger": "launcher", "message": "🌐 Web logging inicializado exitosamente", "module": "logger", "function": "info", "line": 205}
+{"timestamp": "2025-11-15T09:23:30.024467", "level": "INFO", "logger": "launcher", "message": "📡 Backend URL: https://unified-antivirus-api.vercel.app/api/logs", "module": "logger", "function": "info", "line": 205}
+{"timestamp": "2025-11-15T09:23:30.025454", "level": "INFO", "logger": "launcher", "message": "📤 Handler automático configurado - logs serán enviados al backend", "module": "logger", "function": "info", "line": 205}

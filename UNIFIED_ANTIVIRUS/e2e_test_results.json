@@ -1,0 +1,93 @@
+{
+  "timestamp": "2025-11-07T16:29:46.624335",
+  "test_configuration": {
+    "api_base": "http://localhost:8000",
+    "frontend_base": "http://localhost:8080",
+    "api_key": "dashboard-client-key-2024"
+  },
+  "results": {
+    "api_connectivity": {
+      "logs_endpoint": true,
+      "stats_endpoint": true,
+      "documentation": true,
+      "success": true
+    },
+    "frontend_accessibility": {
+      "index_html": true,
+      "css_files": true,
+      "js_files": {
+        "config.js": true,
+        "api.js": true,
+        "charts.js": true,
+        "dashboard.js": true,
+        "app.js": true
+      },
+      "success": true
+    },
+    "data_flow": {
+      "initial_logs": 18,
+      "generated_logs": 9,
+      "final_logs": 18,
+      "logs_received": 0,
+      "success_rate": 0.0,
+      "success": false
+    },
+    "api_performance": {
+      "endpoints": {
+        "/api/logs": {
+          "success_rate": 100.0,
+          "avg_response_time": 0.061901283264160153,
+          "max_response_time": 0.113433837890625,
+          "min_response_time": 0.016268014907836914,
+          "total_requests": 10
+        },
+        "/api/stats": {
+          "success_rate": 100.0,
+          "avg_response_time": 0.119771409034729,
+          "max_response_time": 0.14670944213867188,
+          "min_response_time": 0.09656834602355957,
+          "total_requests": 10
+        },
+        "/api/logs?limit=5": {
+          "success_rate": 100.0,
+          "avg_response_time": 0.03143963813781738,
+          "max_response_time": 0.03823065757751465,
+          "min_response_time": 0.025994539260864258,
+          "total_requests": 10
+        },
+        "/api/logs?component=core": {
+          "success_rate": 100.0,
+          "avg_response_time": 0.03861324787139893,
+          "max_response_time": 0.05702543258666992,
+          "min_response_time": 0.023010969161987305,
+          "total_requests": 10
+        }
+      },
+      "overall_success": true,
+      "performance_acceptable": true,
+      "success": true
+    },
+    "filtering_pagination": {
+      "error_filter": true,
+      "component_filter": true,
+      "pagination": false,
+      "date_filter": true,
+      "success": false
+    },
+    "statistics_accuracy": {
+      "total_logs_match": true,
+      "level_stats_match": true,
+      "component_stats_match": true,
+      "timeline_data": true,
+      "top_components_data": true,
+      "success": true
+    },
+    "summary": {
+      "total_tests": 6,
+      "passed_tests": 4,
+      "success_rate": 66.66666666666666,
+      "execution_time": 5.419466733932495,
+      "overall_success": false
+    }
+  }
+}

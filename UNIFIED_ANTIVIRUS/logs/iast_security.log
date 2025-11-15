@@ -1,0 +1,29 @@
+2025-11-13 20:25:41,981 - iast_security - INFO - 🛡️ IAST Security Worker iniciado
+2025-11-13 20:25:42,024 - iast_security - INFO - 🛡️ Ejecutando análisis IAST...
+2025-11-13 20:25:42,137 - iast_security - INFO - 🔍 Ejecutando tests de seguridad IAST...
+2025-11-13 20:26:24,962 - iast_security - INFO - ✅ Análisis IAST: Sin vulnerabilidades críticas
+2025-11-13 20:26:25,100 - iast_security - INFO - 📊 ============================= 16 passed in 10.97s =============================
+2025-11-13 20:26:25,410 - iast_security - INFO - 🔍 Analizando: SQL Injection
+2025-11-13 20:26:27,477 - iast_security - INFO - 🔍 Analizando: XSS
+2025-11-13 20:26:29,481 - iast_security - INFO - 🔍 Analizando: Command Injection
+2025-11-13 20:26:31,494 - iast_security - INFO - 🔍 Analizando: Path Traversal
+2025-11-13 20:26:33,578 - iast_security - INFO - 🔍 Analizando: Buffer Overflow
+2025-11-13 20:26:35,584 - iast_security - INFO - ✅ Ciclo IAST completado
+2025-11-13 20:27:20,590 - iast_security - INFO - 🛡️ Ejecutando análisis IAST...
+2025-11-13 20:27:20,745 - iast_security - INFO - 🔍 Ejecutando tests de seguridad IAST...
+2025-11-13 20:27:33,874 - iast_security - INFO - ✅ Análisis IAST: Sin vulnerabilidades críticas
+2025-11-13 20:27:33,874 - iast_security - INFO - 📊 ============================= 16 passed in 11.70s =============================
+2025-11-13 20:27:33,875 - iast_security - INFO - ✅ Ciclo IAST completado
+2025-11-13 20:27:33,876 - iast_security - INFO - 🛑 IAST Security Worker detenido
+2025-11-13 20:27:45,215 - iast_security - INFO - 🛡️ IAST Security Worker iniciado
+2025-11-13 20:27:45,297 - iast_security - INFO - 🛡️ Ejecutando análisis IAST...
+2025-11-13 20:27:45,362 - iast_security - INFO - 🔍 Ejecutando tests de seguridad IAST...
+2025-11-13 20:28:26,180 - iast_security - INFO - ✅ Análisis IAST: Sin vulnerabilidades críticas
+2025-11-13 20:28:26,234 - iast_security - INFO - 📊 ============================= 16 passed in 10.82s =============================
+2025-11-13 20:28:26,377 - iast_security - INFO - 🔍 Analizando: SQL Injection
+2025-11-13 20:28:28,492 - iast_security - INFO - 🔍 Analizando: XSS
+2025-11-13 20:28:30,551 - iast_security - INFO - 🔍 Analizando: Command Injection
+2025-11-13 20:28:32,592 - iast_security - INFO - 🔍 Analizando: Path Traversal
+2025-11-13 20:28:34,593 - iast_security - INFO - 🔍 Analizando: Buffer Overflow
+2025-11-13 20:28:36,595 - iast_security - INFO - ✅ Ciclo IAST completado
+2025-11-13 20:28:36,595 - iast_security - INFO - 🛑 IAST Security Worker detenido

@@ -1,0 +1,24 @@
+2025-11-13 20:25:41,407 - integration_engine - INFO - 🔄 Integration Engine Plugin inicializado
+2025-11-13 20:25:41,570 - plugin.integration_engine - INFO - 📄 Configuración cargada desde C:\Users\HP\Documents\GitHub\ANTIVIRUS_CPP_PROFESSIONAL\UNIFIED_ANTIVIRUS\plugins\detectors\integration_engine\config.json
+2025-11-13 20:25:41,585 - plugin.integration_engine - INFO - 🚀 Inicializando Integration Engine...
+2025-11-13 20:25:41,687 - plugin.integration_engine - INFO - ✅ Integration Engine inicializado correctamente
+2025-11-13 20:25:41,703 - plugin.integration_engine - INFO - 🚀 Iniciando Integration Engine...
+2025-11-13 20:25:41,791 - plugin.integration_engine - INFO - 🧪 TDD Worker iniciado
+2025-11-13 20:25:41,951 - plugin.integration_engine - INFO - 🛡️ IAST Worker iniciado
+2025-11-13 20:25:42,024 - plugin.integration_engine - INFO - 🏗️ MDSD Worker iniciado
+2025-11-13 20:25:42,068 - plugin.integration_engine - INFO - ✅ Integration Engine iniciado - Todas las integraciones activas
+2025-11-13 20:25:42,148 - plugin.integration_engine - INFO - ✅ Plugin 'integration_engine' activado exitosamente
+2025-11-13 20:27:33,815 - plugin.integration_engine - INFO - 🛑 Deteniendo Integration Engine...
+2025-11-13 20:27:33,878 - plugin.integration_engine - INFO - ✅ Integration Engine detenido correctamente
+2025-11-13 20:27:44,592 - integration_engine - INFO - 🔄 Integration Engine Plugin inicializado
+2025-11-13 20:27:44,875 - plugin.integration_engine - INFO - 📄 Configuración cargada desde C:\Users\HP\Documents\GitHub\ANTIVIRUS_CPP_PROFESSIONAL\UNIFIED_ANTIVIRUS\plugins\detectors\integration_engine\config.json
+2025-11-13 20:27:44,934 - plugin.integration_engine - INFO - 🚀 Inicializando Integration Engine...
+2025-11-13 20:27:45,028 - plugin.integration_engine - INFO - ✅ Integration Engine inicializado correctamente
+2025-11-13 20:27:45,044 - plugin.integration_engine - INFO - 🚀 Iniciando Integration Engine...
+2025-11-13 20:27:45,129 - plugin.integration_engine - INFO - 🧪 TDD Worker iniciado
+2025-11-13 20:27:45,177 - plugin.integration_engine - INFO - 🛡️ IAST Worker iniciado
+2025-11-13 20:27:45,311 - plugin.integration_engine - INFO - 🏗️ MDSD Worker iniciado
+2025-11-13 20:27:45,395 - plugin.integration_engine - INFO - ✅ Integration Engine iniciado - Todas las integraciones activas
+2025-11-13 20:27:45,496 - plugin.integration_engine - INFO - ✅ Plugin 'integration_engine' activado exitosamente
+2025-11-13 20:28:35,801 - plugin.integration_engine - INFO - 🛑 Deteniendo Integration Engine...
+2025-11-13 20:28:36,596 - plugin.integration_engine - INFO - ✅ Integration Engine detenido correctamente

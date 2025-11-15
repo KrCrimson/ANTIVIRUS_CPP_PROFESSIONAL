@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Dashboard Connection</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .status { padding: 10px; margin: 10px 0; border-radius: 4px; }
+        .success { background-color: #d4edda; color: #155724; }
+        .error { background-color: #f8d7da; color: #721c24; }
+        .info { background-color: #d1ecf1; color: #0c5460; }
+        button { padding: 10px 20px; margin: 5px; cursor: pointer; }
+        #results { white-space: pre-wrap; background-color: #f8f9fa; padding: 15px; border-radius: 4px; }
+    </style>
+</head>
+<body>
+    <h1>🔧 Dashboard Connection Test</h1>
+    
+    <div class="status info">
+        Testing connection to API: <code>http://localhost:8000/api</code>
+    </div>
+    
+    <button onclick="testBasicConnection()">Test Basic Connection</button>
+    <button onclick="testWithApiKey()">Test With API Key</button>
+    <button onclick="testStats()">Test Stats Endpoint</button>
+    <button onclick="clearResults()">Clear Results</button>
+    
+    <h2>Results:</h2>
+    <div id="results">Click a test button to start...</div>
+
+    <script>
+        const API_BASE = 'http://localhost:8000/api';
+        const API_KEY = 'dashboard-client-key-2024';
+        
+        function log(message, type = 'info') {
+            const results = document.getElementById('results');
+            const timestamp = new Date().toLocaleTimeString();
+            results.textContent += `[${timestamp}] ${type.toUpperCase()}: ${message}\n`;
+        }
+        
+        function clearResults() {
+            document.getElementById('results').textContent = 'Results cleared...\n';
+        }
+        
+        async function testBasicConnection() {
+            log('Testing basic connection without API key...', 'info');
+            
+            try {
+                const response = await fetch(`${API_BASE}/logs?limit=1`);
+                log(`Response status: ${response.status}`, 'info');
+                
+                if (response.ok) {
+                    const data = await response.json();
+                    log(`Success! Received ${JSON.stringify(data).length} characters of data`, 'success');
+                } else {
+                    const text = await response.text();
+                    log(`Error response: ${text}`, 'error');
+                }
+            } catch (error) {
+                log(`Network error: ${error.message}`, 'error');
+                log(`This could be a CORS issue or the server is not running`, 'error');
+            }
+        }
+        
+        async function testWithApiKey() {
+            log('Testing with API key...', 'info');
+            
+            try {
+                const response = await fetch(`${API_BASE}/logs?limit=1`, {
+                    headers: {
+                        'X-API-Key': API_KEY
+                    }
+                });
+                
+                log(`Response status: ${response.status}`, 'info');
+                
+                if (response.ok) {
+                    const data = await response.json();
+                    log(`Success! Received ${data.logs?.length || 0} logs`, 'success');
+                    log(`Total logs in database: ${data.total}`, 'success');
+                } else {
+                    const text = await response.text();
+                    log(`Error response: ${text}`, 'error');
+                }
+            } catch (error) {
+                log(`Network error: ${error.message}`, 'error');
+            }
+        }
+        
+        async function testStats() {
+            log('Testing stats endpoint...', 'info');
+            
+            try {
+                const response = await fetch(`${API_BASE}/stats`, {
+                    headers: {
+                        'X-API-Key': API_KEY
+                    }
+                });
+                
+                log(`Response status: ${response.status}`, 'info');
+                
+                if (response.ok) {
+                    const data = await response.json();
+                    log(`Success! Stats received:`, 'success');
+                    log(`  - Total logs: ${data.total_logs}`, 'success');
+                    log(`  - Components: ${Object.keys(data.logs_by_component || {}).length}`, 'success');
+                    log(`  - Levels: ${Object.keys(data.logs_by_level || {}).join(', ')}`, 'success');
+                } else {
+                    const text = await response.text();
+                    log(`Error response: ${text}`, 'error');
+                }
+            } catch (error) {
+                log(`Network error: ${error.message}`, 'error');
+            }
+        }
+        
+        // Auto-test on load
+        window.addEventListener('load', () => {
+            log('Page loaded. Ready to test API connection.', 'info');
+            log('If you see CORS errors, check that the backend allows localhost:8080', 'info');
+        });
+    </script>
+</body>
+</html>

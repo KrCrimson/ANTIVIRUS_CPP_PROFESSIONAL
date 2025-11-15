@@ -71,21 +71,3 @@ max_memory_usage_mb = 512
 max_cpu_usage_percent = 25
 cleanup_interval_minutes = 60
 cache_size_mb = 100
-
-[web_logging]
-enabled = true
-api_url = "https://unified-antivirus-csitvest3-sebastians-projects-487d2baa.vercel.app/api"
-api_key = "unified-antivirus-api-key-2024"
-buffer_size = 1000
-batch_size = 10
-flush_interval = 5.0
-max_retries = 3
-timeout = 10.0
-connection_test_interval = 60.0
-fallback_file = "logs/web_fallback.log"
-fallback_enabled = true
-level = "INFO"
-compress_logs = false
-include_system_info = true
-rate_limit_per_minute = 1000
-verify_ssl = true

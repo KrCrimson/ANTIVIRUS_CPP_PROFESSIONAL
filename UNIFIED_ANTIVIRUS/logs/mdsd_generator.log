@@ -1,0 +1,24 @@
+2025-11-13 20:25:42,047 - mdsd_generator - INFO - 🏗️ MDSD Generator Worker iniciado
+2025-11-13 20:25:42,174 - mdsd_generator - INFO - 🏗️ Ejecutando generación MDSD...
+2025-11-13 20:25:42,230 - mdsd_generator - INFO - ⚙️ Ejecutando Workflow Engine...
+2025-11-13 20:25:42,878 - mdsd_generator - WARNING - ⚠️ Workflow Engine terminó con advertencias
+2025-11-13 20:25:42,911 - mdsd_generator - INFO - 🔧 Verificando Simple Generator...
+2025-11-13 20:25:43,386 - mdsd_generator - INFO - 📋 Simple Generator verificado
+2025-11-13 20:25:43,435 - mdsd_generator - INFO - 📝 Generando template: Ransomware Detector
+2025-11-13 20:25:44,755 - mdsd_generator - INFO - 📝 Generando template: Trojan Detector
+2025-11-13 20:26:25,927 - mdsd_generator - INFO - 📝 Generando template: Rootkit Detector
+2025-11-13 20:26:26,993 - mdsd_generator - INFO - 📝 Generando template: Spyware Detector
+2025-11-13 20:26:27,994 - mdsd_generator - INFO - ✅ Ciclo MDSD completado
+2025-11-13 20:27:33,816 - mdsd_generator - INFO - 🛑 MDSD Generator Worker detenido
+2025-11-13 20:27:45,327 - mdsd_generator - INFO - 🏗️ MDSD Generator Worker iniciado
+2025-11-13 20:27:45,426 - mdsd_generator - INFO - 🏗️ Ejecutando generación MDSD...
+2025-11-13 20:27:45,526 - mdsd_generator - INFO - ⚙️ Ejecutando Workflow Engine...
+2025-11-13 20:27:46,076 - mdsd_generator - WARNING - ⚠️ Workflow Engine terminó con advertencias
+2025-11-13 20:27:46,163 - mdsd_generator - INFO - 🔧 Verificando Simple Generator...
+2025-11-13 20:27:46,560 - mdsd_generator - INFO - 📋 Simple Generator verificado
+2025-11-13 20:27:46,577 - mdsd_generator - INFO - 📝 Generando template: Ransomware Detector
+2025-11-13 20:28:26,050 - mdsd_generator - INFO - 📝 Generando template: Trojan Detector
+2025-11-13 20:28:27,133 - mdsd_generator - INFO - 📝 Generando template: Rootkit Detector
+2025-11-13 20:28:28,157 - mdsd_generator - INFO - 📝 Generando template: Spyware Detector
+2025-11-13 20:28:29,158 - mdsd_generator - INFO - ✅ Ciclo MDSD completado
+2025-11-13 20:28:35,801 - mdsd_generator - INFO - 🛑 MDSD Generator Worker detenido

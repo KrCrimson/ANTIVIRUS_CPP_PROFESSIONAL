@@ -1,0 +1,22 @@
+2025-11-13 20:25:41,861 - tdd_integration - INFO - 🧪 TDD Integration Worker iniciado
+2025-11-13 20:25:41,927 - tdd_integration - INFO - 🧪 Ejecutando tests TDD...
+2025-11-13 20:25:41,997 - tdd_integration - INFO - 🔍 Ejecutando tests en: tests/tdd_01_api_hooking_detection
+2025-11-13 20:26:24,927 - tdd_integration - ERROR - ⏰ Timeout ejecutando tests en tests/tdd_01_api_hooking_detection
+2025-11-13 20:26:24,998 - tdd_integration - INFO - 🔍 Ejecutando tests en: tests/tdd_02_port_detection
+2025-11-13 20:26:27,182 - tdd_integration - INFO - ✅ Tests en tests/tdd_02_port_detection: PASSED
+2025-11-13 20:26:27,182 - tdd_integration - INFO - ✅ Ciclo TDD completado
+2025-11-13 20:27:27,194 - tdd_integration - INFO - 🧪 Ejecutando tests TDD...
+2025-11-13 20:27:27,263 - tdd_integration - INFO - 🔍 Ejecutando tests en: tests/tdd_01_api_hooking_detection
+2025-11-13 20:27:29,207 - tdd_integration - INFO - ✅ Tests en tests/tdd_01_api_hooking_detection: PASSED
+2025-11-13 20:27:29,208 - tdd_integration - INFO - 🔍 Ejecutando tests en: tests/tdd_02_port_detection
+2025-11-13 20:27:30,619 - tdd_integration - INFO - ✅ Tests en tests/tdd_02_port_detection: PASSED
+2025-11-13 20:27:30,620 - tdd_integration - INFO - ✅ Ciclo TDD completado
+2025-11-13 20:27:33,815 - tdd_integration - INFO - 🛑 TDD Integration Worker detenido
+2025-11-13 20:27:45,129 - tdd_integration - INFO - 🧪 TDD Integration Worker iniciado
+2025-11-13 20:27:45,178 - tdd_integration - INFO - 🧪 Ejecutando tests TDD...
+2025-11-13 20:27:45,247 - tdd_integration - INFO - 🔍 Ejecutando tests en: tests/tdd_01_api_hooking_detection
+2025-11-13 20:28:26,181 - tdd_integration - ERROR - ⏰ Timeout ejecutando tests en tests/tdd_01_api_hooking_detection
+2025-11-13 20:28:26,330 - tdd_integration - INFO - 🔍 Ejecutando tests en: tests/tdd_02_port_detection
+2025-11-13 20:28:28,534 - tdd_integration - INFO - ✅ Tests en tests/tdd_02_port_detection: PASSED
+2025-11-13 20:28:28,534 - tdd_integration - INFO - ✅ Ciclo TDD completado
+2025-11-13 20:28:35,801 - tdd_integration - INFO - 🛑 TDD Integration Worker detenido
