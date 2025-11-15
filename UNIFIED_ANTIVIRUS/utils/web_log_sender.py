@@ -90,8 +90,11 @@ class WebLogSender:
             return
             
         self.running = True
+        
+        # Crear sesión HTTP con timeout
+        timeout = aiohttp.ClientTimeout(total=30)
         self.session = aiohttp.ClientSession(
-            timeout=aiohttp.ClientTimeout(total=30),
+            timeout=timeout,
             headers={
                 "Content-Type": "application/json",
                 "X-API-Key": self.api_key,
@@ -166,6 +169,10 @@ class WebLogSender:
     
     def _sender_loop(self):
         """Loop principal de envío de logs"""
+        # Crear un nuevo event loop para este hilo
+        loop = asyncio.new_event_loop()
+        asyncio.set_event_loop(loop)
+        
         while self.running:
             try:
                 # Esperar intervalo de envío
@@ -177,12 +184,15 @@ class WebLogSender:
                 if not self.running:
                     break
                     
-                # Enviar logs en batch
-                asyncio.run(self._send_buffered_logs())
+                # Enviar logs en batch usando el loop de este hilo
+                loop.run_until_complete(self._send_buffered_logs())
                 
             except Exception as e:
                 self.logger.error(f"Error in sender loop: {e}")
                 time.sleep(5)  # Esperar antes de reintentar
+        
+        # Cerrar el loop cuando termine el hilo
+        loop.close()
     
     async def _send_buffered_logs(self):
         """Envía logs del buffer al servidor"""
@@ -214,7 +224,9 @@ class WebLogSender:
         success = False
         for attempt in range(MAX_RETRIES):
             try:
-                async with self.session.post(self.api_endpoint, json=payload) as response:
+                # Usar timeout explícito en lugar de ClientTimeout en el session
+                timeout = aiohttp.ClientTimeout(total=30)
+                async with self.session.post(self.api_endpoint, json=payload, timeout=timeout) as response:
                     if response.status == 200:
                         result = await response.json()
                         self.stats["total_sent"] += len(logs_to_send)

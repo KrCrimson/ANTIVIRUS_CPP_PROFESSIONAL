@@ -69,14 +69,29 @@ function LoginComponent() {
         throw new Error('API key inválida');
       }
 
-      // Probar conexión con el backend
+      // Primero probar health check (sin autenticación)
+      const healthResponse = await fetch('/api/health').catch(() => null);
+      if (!healthResponse || !healthResponse.ok) {
+        throw new Error('El backend no está respondiendo. Verifica que el deploy se haya completado.');
+      }
+
+      // Luego probar conexión con el backend
       const response = await fetch('/api/dashboard', {
         headers: { 'x-api-key': apiKey }
       });
 
       if (!response.ok) {
-        const errorData = await response.json().catch(() => ({}));
-        const errorMsg = errorData.message || errorData.error || `Error ${response.status}: ${response.statusText}`;
+        let errorMsg = `Error ${response.status}`;
+        try {
+          const errorData = await response.json();
+          errorMsg = errorData.message || errorData.error || errorMsg;
+          // Si hay detalles, agregarlos
+          if (errorData.details && process.env.NODE_ENV === 'development') {
+            errorMsg += ` - ${errorData.details}`;
+          }
+        } catch (e) {
+          errorMsg += `: ${response.statusText}`;
+        }
         throw new Error(`Error de conexión con el backend: ${errorMsg}`);
       }
 
