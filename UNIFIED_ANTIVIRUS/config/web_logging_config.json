@@ -3,8 +3,8 @@
   "_version": "1.0.0",
   "_last_updated": "2025-11-07",
   "web_logging": {
-    "api_url": "http://localhost:8000/api",
-    "api_key": "antivirus-system-key-2024",
+    "api_url": "https://unified-antivirus-csitvest3-sebastians-projects-487d2baa.vercel.app/api",
+    "api_key": "unified-antivirus-api-key-2024",
     "buffer_size": 1000,
     "batch_size": 10,
     "flush_interval": 5.0,

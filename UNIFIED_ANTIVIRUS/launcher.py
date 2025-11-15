@@ -90,6 +90,65 @@ def setup_logging(debug_mode=False):
     )
 
 
+def setup_web_logging():
+    """Configura e inicializa el sistema de web logging"""
+    try:
+        from utils.web_log_sender import initialize_web_log_sender
+        from utils.logger import get_logger
+        
+        logger = get_logger('launcher')
+        
+        # Cargar configuración de web logging
+        import json
+        config_files = [
+            'config/web_logging_optimized.json',
+            'config/web_logging_config.json',
+            'config/unified_config.toml'
+        ]
+        
+        web_config = None
+        for config_file in config_files:
+            try:
+                if config_file.endswith('.json'):
+                    with open(config_file, 'r', encoding='utf-8') as f:
+                        config_data = json.load(f)
+                        if 'web_logging' in config_data:
+                            web_config = config_data['web_logging']
+                            logger.info(f"✅ Configuración web cargada desde {config_file}")
+                            break
+                elif config_file.endswith('.toml'):
+                    try:
+                        import tomllib
+                        with open(config_file, 'rb') as f:
+                            config_data = tomllib.load(f)
+                            if 'web_logging' in config_data:
+                                web_config = config_data['web_logging']
+                                logger.info(f"✅ Configuración web cargada desde {config_file}")
+                                break
+                    except ImportError:
+                        continue
+            except (FileNotFoundError, json.JSONDecodeError):
+                continue
+        
+        if web_config and web_config.get('enabled', False):
+            initialize_web_log_sender(web_config)
+            logger.info("🌐 Web logging inicializado exitosamente")
+            logger.info(f"📡 Backend URL: {web_config.get('api_url', 'N/A')}")
+            return True
+        else:
+            logger.info("ℹ️ Web logging deshabilitado en configuración")
+            return False
+            
+    except ImportError as e:
+        import logging
+        logging.warning(f"⚠️ Web logging no disponible: {e}")
+        return False
+    except Exception as e:
+        import logging
+        logging.error(f"❌ Error configurando web logging: {e}")
+        return False
+
+
 def determine_plugin_categories(args):
     """Determina qué categorías de plugins activar según los argumentos"""
     
@@ -180,6 +239,9 @@ def main():
     
     # Configurar logging
     setup_logging(args.debug)
+    
+    # Configurar logging web (envío automático a backend)
+    setup_web_logging()
     
     # Determinar categorías de plugins
     plugin_categories = determine_plugin_categories(args)

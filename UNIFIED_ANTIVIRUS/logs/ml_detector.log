@@ -85,3 +85,4 @@
 2025-10-25 09:52:01,242 - plugin.ml_detector - INFO - ✅ Plugin 'ml_detector' activado exitosamente
 [2025-11-07 16:27:01] ml_detector - INFO - __init__:91 - 📝 Logger 'ml_detector' inicializado
 [2025-11-07 16:27:01] ml_detector - INFO - info:205 - Test de ml_detector - Web logging integrado
+2025-11-14 23:20:41,970 - plugin.ml_detector - INFO - 📄 Configuración cargada desde C:\Users\windows10\Documents\GitHub\ANTIVIRUS_CPP_PROFESSIONAL\UNIFIED_ANTIVIRUS\plugins\detectors\ml_detector\config.json
