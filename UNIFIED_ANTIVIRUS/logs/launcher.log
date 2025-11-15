@@ -73,3 +73,43 @@
 [2025-11-15 03:04:39] launcher - INFO - info:205 - 🌐 Web logging inicializado exitosamente
 [2025-11-15 03:04:39] launcher - INFO - info:205 - 📡 Backend URL: https://unified-antivirus-api.vercel.app/api/logs
 [2025-11-15 03:04:39] launcher - INFO - info:205 - 📤 Handler automático configurado - logs serán enviados al backend
+[2025-11-15 03:08:33] launcher - INFO - __init__:91 - 📝 Logger 'launcher' inicializado
+[2025-11-15 03:08:33] launcher - INFO - info:205 - ✅ Configuración web cargada desde config/web_logging_production.json
+[2025-11-15 03:08:33] launcher - INFO - info:205 - 🌐 Web logging inicializado exitosamente
+[2025-11-15 03:08:33] launcher - INFO - info:205 - 📡 Backend URL: https://unified-antivirus-api.vercel.app/api/logs
+[2025-11-15 03:08:33] launcher - ERROR - error:213 - ❌ Error inicializando WebLogSender: 'charmap' codec can't encode character '\U0001f517' in position 0: character maps to <undefined>
+Traceback (most recent call last):
+  File "C:\Users\windows10\Documents\GitHub\ANTIVIRUS_CPP_PROFESSIONAL\UNIFIED_ANTIVIRUS\launcher.py", line 191, in setup_web_logging
+    web_handler = setup_web_log_handler(web_sender)
+  File "C:\Users\windows10\Documents\GitHub\ANTIVIRUS_CPP_PROFESSIONAL\UNIFIED_ANTIVIRUS\utils\web_log_handler.py", line 145, in setup_web_log_handler
+    print("🔗 WebLogHandler configurado - todos los logs serán enviados al backend")
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python313\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\U0001f517' in position 0: character maps to <undefined>
+[2025-11-15 03:08:43] launcher - INFO - __init__:91 - 📝 Logger 'launcher' inicializado
+[2025-11-15 03:08:43] launcher - INFO - info:205 - ✅ Configuración web cargada desde config/web_logging_production.json
+[2025-11-15 03:08:43] launcher - INFO - info:205 - 🌐 Web logging inicializado exitosamente
+[2025-11-15 03:08:43] launcher - INFO - info:205 - 📡 Backend URL: https://unified-antivirus-api.vercel.app/api/logs
+[2025-11-15 03:08:43] launcher - ERROR - error:213 - ❌ Error inicializando WebLogSender: 'charmap' codec can't encode character '\U0001f517' in position 0: character maps to <undefined>
+Traceback (most recent call last):
+  File "C:\Users\windows10\Documents\GitHub\ANTIVIRUS_CPP_PROFESSIONAL\UNIFIED_ANTIVIRUS\launcher.py", line 191, in setup_web_logging
+    web_handler = setup_web_log_handler(web_sender)
+  File "C:\Users\windows10\Documents\GitHub\ANTIVIRUS_CPP_PROFESSIONAL\UNIFIED_ANTIVIRUS\utils\web_log_handler.py", line 145, in setup_web_log_handler
+    print("🔗 WebLogHandler configurado - todos los logs serán enviados al backend")
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python313\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\U0001f517' in position 0: character maps to <undefined>
+[2025-11-15 03:09:01] launcher - INFO - __init__:91 - 📝 Logger 'launcher' inicializado
+[2025-11-15 03:09:01] launcher - INFO - info:205 - ✅ Configuración web cargada desde config/web_logging_production.json
+[2025-11-15 03:09:01] launcher - INFO - info:205 - 🌐 Web logging inicializado exitosamente
+[2025-11-15 03:09:01] launcher - INFO - info:205 - 📡 Backend URL: https://unified-antivirus-api.vercel.app/api/logs
+[2025-11-15 03:09:01] launcher - INFO - info:205 - 📤 Handler automático configurado - logs serán enviados al backend
+[2025-11-15 03:09:04] launcher - INFO - __init__:91 - 📝 Logger 'launcher' inicializado
+[2025-11-15 03:09:04] launcher - INFO - info:205 - ✅ Configuración web cargada desde config/web_logging_production.json
+[2025-11-15 03:09:04] launcher - INFO - info:205 - 🌐 Web logging inicializado exitosamente
+[2025-11-15 03:09:04] launcher - INFO - info:205 - 📡 Backend URL: https://unified-antivirus-api.vercel.app/api/logs
+[2025-11-15 03:09:04] launcher - INFO - info:205 - 📤 Handler automático configurado - logs serán enviados al backend

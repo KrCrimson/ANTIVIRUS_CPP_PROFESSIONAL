@@ -142,5 +142,8 @@ def setup_web_log_handler(web_sender):
     root_logger = logging.getLogger()
     root_logger.addHandler(handler)
     
-    print("🔗 WebLogHandler configurado - todos los logs serán enviados al backend")
+    try:
+        print("🔗 WebLogHandler configurado - todos los logs serán enviados al backend")
+    except UnicodeEncodeError:
+        print("[WebLogHandler] Configurado - todos los logs seran enviados al backend")
     return handler

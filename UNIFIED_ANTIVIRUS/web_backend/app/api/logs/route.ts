@@ -24,7 +24,7 @@ const logSchema = Joi.object({
       component: Joi.string().optional(),
       metadata: Joi.object().optional(),  // Cambiado de 'data' a 'metadata' para consistencia
       data: Joi.object().optional()  // Mantener compatibilidad con versiones anteriores
-    })
+    }).unknown(true)  // Permitir campos adicionales
   ).min(1).required()
 })
 

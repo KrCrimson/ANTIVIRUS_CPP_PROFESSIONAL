@@ -11,6 +11,12 @@ import sys
 import argparse
 from pathlib import Path
 import time
+import io
+
+# Configurar encoding UTF-8 para Windows
+if sys.platform == 'win32':
+    sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8', errors='replace')
+    sys.stderr = io.TextIOWrapper(sys.stderr.buffer, encoding='utf-8', errors='replace')
 
 # Agregar el directorio actual al path para imports
 sys.path.insert(0, str(Path(__file__).parent))
