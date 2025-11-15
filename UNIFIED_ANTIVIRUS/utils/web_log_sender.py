@@ -21,7 +21,7 @@ from dataclasses import dataclass, asdict
 import logging
 
 # Configuración
-DEFAULT_API_ENDPOINT = "https://unified-antivirus-duzz48bmm-sebastians-projects-487d2baa.vercel.app/api/logs"
+DEFAULT_API_ENDPOINT = "https://unified-antivirus-api.vercel.app/api/logs"
 DEFAULT_API_KEY = "antivirus-key-2024-prod-12345"
 BATCH_SIZE = 50
 SEND_INTERVAL = 30  # segundos
@@ -97,7 +97,7 @@ class WebLogSender:
             timeout=timeout,
             headers={
                 "Content-Type": "application/json",
-                "X-API-Key": self.api_key,
+                "x-api-key": self.api_key,  # Minúscula para consistencia
                 "User-Agent": f"UnifiedAntivirus/{self.antivirus_version}"
             }
         )
@@ -179,7 +179,7 @@ class WebLogSender:
             timeout=timeout,
             headers={
                 "Content-Type": "application/json",
-                "X-API-Key": self.api_key,
+                "x-api-key": self.api_key,  # Minúscula para consistencia
                 "User-Agent": f"UnifiedAntivirus/{self.antivirus_version}"
             },
             loop=loop
