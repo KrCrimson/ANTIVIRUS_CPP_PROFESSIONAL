@@ -85,10 +85,11 @@ export const POST = requireAuth(async (request: NextRequest) => {
       try {
         await prisma.alert.create({
           data: {
+            type: log.level === 'CRITICAL' ? 'THREAT' : 'ERROR',
             severity: log.level === 'CRITICAL' ? 'CRITICAL' : 'HIGH',
             title: `${log.level}: ${log.component || log.logger}`,
             description: log.message,
-            status: 'OPEN',
+            resolved: false,
             log: {
               connect: {
                 id: (await prisma.logEntry.findFirst({
