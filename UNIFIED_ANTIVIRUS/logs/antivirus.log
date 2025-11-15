@@ -22484,3 +22484,571 @@ UnicodeEncodeError: 'charmap' codec can't encode character '\U0001f517' in posit
 2025-11-15 03:14:19,671 - web_log_sender_R3DCR0WN_a0683d4d - ERROR - Falló el envío de 50 logs después de 3 intentos
 2025-11-15 03:14:33,699 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: opera.exe - patrón: capture
 2025-11-15 03:14:33,699 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: opera.exe - Detección de suspicious_new_process en proceso opera.exe
+2025-11-15 09:14:03,723 - root - WARNING - ⚠️ Web logging no disponible: No module named 'aiohttp'
+2025-11-15 09:14:03,724 - core.plugin_registry - INFO - 🏪 PluginRegistry inicializado (Singleton)
+2025-11-15 09:14:03,724 - core.plugin_manager - INFO - 🎛️ PluginManager inicializado
+2025-11-15 09:14:03,724 - core.engine - INFO - 🛡️ UnifiedAntivirusEngine inicializado
+2025-11-15 09:14:03,725 - core.engine - INFO - 🚀 Iniciando Sistema Anti-Keylogger Unificado...
+2025-11-15 09:14:03,725 - PluginManager - INFO - 🔍 Iniciando descubrimiento de plugins...
+2025-11-15 09:14:03,725 - core.plugin_registry - INFO - 🔍 Descubriendo plugins en: plugins
+2025-11-15 09:14:03,772 - core.plugin_registry - INFO - ✅ Plugin 'behavior_detector' registrado en categoría 'detectors'
+2025-11-15 09:14:03,773 - core.plugin_registry - WARNING - ⚠️ Plugin 'behavior_detector' ya registrado, sobrescribiendo
+2025-11-15 09:14:03,773 - core.plugin_registry - INFO - ✅ Plugin 'behavior_detector' registrado en categoría 'detectors'
+2025-11-15 09:14:05,528 - core.plugin_registry - INFO - ✅ Plugin 'ml_detector' registrado en categoría 'detectors'
+2025-11-15 09:14:05,528 - core.plugin_registry - WARNING - ⚠️ Plugin 'ml_detector' ya registrado, sobrescribiendo
+2025-11-15 09:14:05,529 - core.plugin_registry - INFO - ✅ Plugin 'ml_detector' registrado en categoría 'detectors'
+2025-11-15 09:14:05,607 - core.plugin_registry - INFO - ✅ Plugin 'network_detector' registrado en categoría 'detectors'
+2025-11-15 09:14:05,747 - core.plugin_registry - INFO - ✅ Plugin 'alert_manager' registrado en categoría 'handlers'
+2025-11-15 09:14:05,758 - core.plugin_registry - INFO - ✅ Plugin 'logger_handler' registrado en categoría 'handlers'
+2025-11-15 09:14:05,770 - core.plugin_registry - INFO - ✅ Plugin 'quarantine_handler' registrado en categoría 'handlers'
+2025-11-15 09:14:05,770 - core.plugin_registry - INFO - ✅ Descubiertos 6 plugins
+2025-11-15 09:14:05,770 - PluginManager - INFO - ✅ Descubrimiento completado: 6 plugins encontrados
+2025-11-15 09:14:05,770 - core.event_bus - INFO - 📋 'UnifiedEngine' suscrito a eventos 'threat_detected'
+2025-11-15 09:14:05,770 - core.event_bus - INFO - 📋 'UnifiedEngine' suscrito a eventos 'plugin_error'
+2025-11-15 09:14:05,772 - plugins.detectors.behavior_detector.plugin - INFO - Configuración cargada desde C:\Users\HP\Documents\GitHub\ANTIVIRUS_CPP_PROFESSIONAL\UNIFIED_ANTIVIRUS\plugins\detectors\behavior_detector\config.json
+2025-11-15 09:14:05,773 - plugins.detectors.behavior_detector.plugin - INFO - [PLUGIN] behavior_detector inicializado
+2025-11-15 09:14:05,773 - core.plugin_registry - INFO - 🏭 Plugin 'behavior_detector' creado exitosamente
+2025-11-15 09:14:05,775 - plugin.behavior_detector - INFO - 📄 Configuración cargada desde C:\Users\HP\Documents\GitHub\ANTIVIRUS_CPP_PROFESSIONAL\UNIFIED_ANTIVIRUS\plugins\detectors\behavior_detector\config.json
+2025-11-15 09:14:05,776 - plugins.detectors.behavior_detector.plugin - INFO - Inicializando behavior_detector...
+2025-11-15 09:14:05,777 - plugins.detectors.behavior_detector.rule_engine - INFO - [RULE_ENGINE] Cargadas 6 reglas de detección
+2025-11-15 09:14:05,778 - plugins.detectors.behavior_detector.rule_engine - INFO - [RULE_ENGINE] Inicializado con 6 reglas
+2025-11-15 09:14:05,778 - plugins.detectors.behavior_detector.whitelist_manager - INFO - [WHITELIST] Cargados 18 procesos y 7 directorios
+2025-11-15 09:14:05,778 - plugins.detectors.behavior_detector.whitelist_manager - INFO - [WHITELIST] Inicializado: 18 procesos, 7 directorios
+2025-11-15 09:14:05,779 - plugins.detectors.behavior_detector.behavior_engine - INFO - [BEHAVIOR_ENGINE] Inicializado (threshold: 0.7, advanced: True)
+2025-11-15 09:14:05,779 - plugins.detectors.behavior_detector.plugin - INFO - ✅ behavior_detector inicializado correctamente
+2025-11-15 09:14:05,779 - plugins.detectors.behavior_detector.plugin - INFO - Iniciando behavior_detector...
+2025-11-15 09:14:05,780 - plugins.detectors.behavior_detector.plugin - INFO - [BEHAVIOR_DETECTOR] Iniciando monitoreo real de procesos
+2025-11-15 09:14:05,780 - plugins.detectors.behavior_detector.plugin - INFO - ✅ behavior_detector iniciado correctamente
+2025-11-15 09:14:05,788 - plugins.detectors.behavior_detector.plugin - ERROR - Error analizando proceso sospechoso: 'NoneType' object has no attribute 'lower'
+2025-11-15 09:14:05,788 - plugin.behavior_detector - INFO - ✅ Plugin 'behavior_detector' activado exitosamente
+2025-11-15 09:14:05,815 - core.event_bus - INFO - 📢 Publicando evento 'plugin_activated' de 'PluginManager' a 0 suscriptores
+2025-11-15 09:14:05,913 - PluginManager - INFO - ✅ Plugin 'behavior_detector' activado
+2025-11-15 09:14:05,936 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: chrome.exe - patrón: capture
+2025-11-15 09:14:05,936 - plugins.detectors.ml_detector.plugin - INFO - [ML_DETECTOR] Configuración cargada: 8 secciones
+2025-11-15 09:14:05,936 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: chrome.exe - Detección de suspicious_new_process en proceso chrome.exe
+2025-11-15 09:14:05,936 - plugins.detectors.ml_detector.plugin - INFO - [ML_DETECTOR] Plugin inicializado con configuración desde C:\Users\HP\Documents\GitHub\ANTIVIRUS_CPP_PROFESSIONAL\UNIFIED_ANTIVIRUS\plugins\detectors\ml_detector\config.json
+2025-11-15 09:14:05,937 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: chrome.exe - patrón: capture
+2025-11-15 09:14:05,937 - core.plugin_registry - INFO - 🏭 Plugin 'ml_detector' creado exitosamente
+2025-11-15 09:14:05,937 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: chrome.exe - Detección de suspicious_new_process en proceso chrome.exe
+2025-11-15 09:14:06,028 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: code.exe - patrón: capture
+2025-11-15 09:14:06,028 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: Code.exe - Detección de suspicious_new_process en proceso Code.exe
+2025-11-15 09:14:06,028 - plugin.ml_detector - INFO - 📄 Configuración cargada desde C:\Users\HP\Documents\GitHub\ANTIVIRUS_CPP_PROFESSIONAL\UNIFIED_ANTIVIRUS\plugins\detectors\ml_detector\config.json
+2025-11-15 09:14:06,039 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: chrome.exe - patrón: capture
+2025-11-15 09:14:06,040 - plugins.detectors.ml_detector.plugin - INFO - [ML_DETECTOR] Inicializando componentes ML...
+2025-11-15 09:14:06,040 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: chrome.exe - Detección de suspicious_new_process en proceso chrome.exe
+2025-11-15 09:14:06,142 - plugins.detectors.ml_detector.ml_engine - INFO - [ML_ENGINE] Clases cargadas: ['Benign', 'Keylogger']
+2025-11-15 09:14:06,312 - plugins.detectors.ml_detector.ml_engine - INFO - [ML_ENGINE] Metadatos cargados: 81 características
+2025-11-15 09:14:06,312 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: chrome.exe - patrón: capture
+2025-11-15 09:14:06,314 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: chrome.exe - Detección de suspicious_new_process en proceso chrome.exe
+2025-11-15 09:14:06,330 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: code.exe - patrón: capture
+2025-11-15 09:14:06,337 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: Code.exe - Detección de suspicious_new_process en proceso Code.exe
+2025-11-15 09:14:06,395 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: code.exe - patrón: capture
+2025-11-15 09:14:06,396 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: Code.exe - Detección de suspicious_new_process en proceso Code.exe
+2025-11-15 09:14:06,437 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: chrome.exe - patrón: capture
+2025-11-15 09:14:06,438 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: chrome.exe - Detección de suspicious_new_process en proceso chrome.exe
+2025-11-15 09:14:06,855 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: chrome.exe - patrón: capture
+2025-11-15 09:14:06,855 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: chrome.exe - Detección de suspicious_new_process en proceso chrome.exe
+2025-11-15 09:14:06,953 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: chrome.exe - patrón: capture
+2025-11-15 09:14:06,953 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: chrome.exe - Detección de suspicious_new_process en proceso chrome.exe
+2025-11-15 09:14:06,964 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: code.exe - patrón: capture
+2025-11-15 09:14:06,965 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: Code.exe - Detección de suspicious_new_process en proceso Code.exe
+2025-11-15 09:14:07,106 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: svchost.exe - patrón: capture
+2025-11-15 09:14:07,106 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: svchost.exe - Detección de suspicious_new_process en proceso svchost.exe
+2025-11-15 09:14:07,106 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: discord.exe - patrón: capture
+2025-11-15 09:14:07,107 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: Discord.exe - Detección de suspicious_new_process en proceso Discord.exe
+2025-11-15 09:14:07,107 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: chrome.exe - patrón: monitor
+2025-11-15 09:14:07,107 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: chrome.exe - Detección de suspicious_new_process en proceso chrome.exe
+2025-11-15 09:14:07,220 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: chrome.exe - patrón: capture
+2025-11-15 09:14:07,221 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: chrome.exe - Detección de suspicious_new_process en proceso chrome.exe
+2025-11-15 09:14:07,221 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: adskaccessuihost.exe - patrón: capture
+2025-11-15 09:14:07,222 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: AdskAccessUIHost.exe - Detección de suspicious_new_process en proceso AdskAccessUIHost.exe
+2025-11-15 09:14:07,241 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: code.exe - patrón: monitor
+2025-11-15 09:14:07,242 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: Code.exe - Detección de suspicious_new_process en proceso Code.exe
+2025-11-15 09:14:45,233 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: chrome.exe - patrón: capture
+2025-11-15 09:14:45,234 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: chrome.exe - Detección de suspicious_new_process en proceso chrome.exe
+2025-11-15 09:14:45,251 - plugins.detectors.ml_detector.ml_engine - INFO - [ML_ENGINE] ✅ Modelo ONNX validado: modelo_keylogger_from_datos.onnx
+2025-11-15 09:14:45,261 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: code.exe - patrón: capture
+2025-11-15 09:14:45,261 - plugins.detectors.ml_detector.ml_engine - INFO - [ML_ENGINE] ✅ Modelo ONNX cargado en 39.20s
+2025-11-15 09:14:45,262 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: Code.exe - Detección de suspicious_new_process en proceso Code.exe
+2025-11-15 09:14:45,263 - plugins.detectors.ml_detector.ml_engine - INFO - [ML_ENGINE] Inicializado (ONNX: True, Modelo: ONNX)
+2025-11-15 09:14:45,263 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: code.exe - patrón: capture
+2025-11-15 09:14:45,264 - plugins.detectors.ml_detector.feature_extractor - INFO - [FEATURES] NetworkFeatureExtractor inicializado con 81 características
+2025-11-15 09:14:45,264 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: Code.exe - Detección de suspicious_new_process en proceso Code.exe
+2025-11-15 09:14:45,264 - plugins.detectors.ml_detector.plugin - INFO - [ML_DETECTOR] ✅ Plugin inicializado (Modelo: ONNX)
+2025-11-15 09:14:45,284 - plugins.detectors.ml_detector.plugin - INFO - [ML_DETECTOR] ✅ Plugin iniciado y listo para detecciones
+2025-11-15 09:14:45,289 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: chrome.exe - patrón: capture
+2025-11-15 09:14:45,289 - plugin.ml_detector - INFO - ✅ Plugin 'ml_detector' activado exitosamente
+2025-11-15 09:14:45,289 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: chrome.exe - Detección de suspicious_new_process en proceso chrome.exe
+2025-11-15 09:14:45,289 - core.event_bus - INFO - 📢 Publicando evento 'plugin_activated' de 'PluginManager' a 0 suscriptores
+2025-11-15 09:14:45,303 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: chrome.exe - patrón: capture
+2025-11-15 09:14:45,304 - PluginManager - INFO - ✅ Plugin 'ml_detector' activado
+2025-11-15 09:14:45,304 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: chrome.exe - Detección de suspicious_new_process en proceso chrome.exe
+2025-11-15 09:14:45,305 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: msedge.exe - patrón: monitor
+2025-11-15 09:14:45,306 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: msedge.exe - Detección de suspicious_new_process en proceso msedge.exe
+2025-11-15 09:14:45,306 - network_detector - INFO - 🌐 Inicializando Network Detector Plugin...
+2025-11-15 09:14:45,306 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: chrome.exe - patrón: capture
+2025-11-15 09:14:45,307 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: chrome.exe - Detección de suspicious_new_process en proceso chrome.exe
+2025-11-15 09:14:45,307 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: discord.exe - patrón: monitor
+2025-11-15 09:14:45,307 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: Discord.exe - Detección de suspicious_new_process en proceso Discord.exe
+2025-11-15 09:14:45,308 - network_detector - INFO - 📋 Configuración cargada: 13 secciones
+2025-11-15 09:14:45,336 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: chrome.exe - patrón: capture
+2025-11-15 09:14:45,336 - network_detector - INFO - 🔧 Componentes básicos inicializados
+2025-11-15 09:14:45,336 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: chrome.exe - Detección de suspicious_new_process en proceso chrome.exe
+2025-11-15 09:14:45,336 - network_detector - INFO - 🛡️ Datos de seguridad básicos configurados
+2025-11-15 09:14:45,337 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: chrome.exe - patrón: capture
+2025-11-15 09:14:45,337 - network_detector - INFO - 📡 Preparado para suscribirse a 4 tipos de eventos
+2025-11-15 09:14:45,337 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: chrome.exe - Detección de suspicious_new_process en proceso chrome.exe
+2025-11-15 09:14:45,338 - network_detector - INFO - ✅ Network Detector Plugin inicializado correctamente
+2025-11-15 09:14:45,351 - core.plugin_registry - INFO - 🏭 Plugin 'network_detector' creado exitosamente
+2025-11-15 09:14:45,351 - network_detector - INFO - 🚀 Activando Network Detector Plugin...
+2025-11-15 09:14:45,351 - network_detector - INFO - ✅ Componentes verificados (modo básico)
+2025-11-15 09:14:45,351 - network_detector - INFO - ✅ Network Detector Plugin activado
+2025-11-15 09:14:45,352 - core.event_bus - INFO - 📢 Publicando evento 'plugin_activated' de 'PluginManager' a 0 suscriptores
+2025-11-15 09:14:45,352 - PluginManager - INFO - ✅ Plugin 'network_detector' activado
+2025-11-15 09:14:45,352 - PluginManager - INFO - 📂 Categoría 'detectors': 3/3 activados
+2025-11-15 09:14:45,353 - core.engine - INFO - ✅ Categoría 'detectors' activada
+2025-11-15 09:14:45,353 - PluginManager - INFO - 📂 Categoría 'monitors': 0/0 activados
+2025-11-15 09:14:45,353 - core.engine - WARNING - ⚠️ Problemas activando categoría 'monitors'
+2025-11-15 09:14:45,353 - core.plugin_registry - ERROR - ❌ Error creando plugin 'alert_manager': Can't instantiate abstract class AlertManagerPlugin without an implementation for abstract methods 'get_plugin_info', 'initialize', 'start', 'stop'
+2025-11-15 09:14:45,354 - core.plugin_registry - ERROR - ❌ Error creando plugin 'logger_handler': Can't instantiate abstract class LoggerHandlerPlugin without an implementation for abstract methods 'get_plugin_info', 'initialize', 'start', 'stop'
+2025-11-15 09:14:45,354 - core.plugin_registry - ERROR - ❌ Error creando plugin 'quarantine_handler': Can't instantiate abstract class QuarantineHandlerPlugin without an implementation for abstract methods 'get_plugin_info', 'initialize', 'start', 'stop'
+2025-11-15 09:14:45,354 - PluginManager - INFO - 📂 Categoría 'handlers': 0/3 activados
+2025-11-15 09:14:45,354 - core.engine - WARNING - ⚠️ Problemas activando categoría 'handlers'
+2025-11-15 09:14:45,354 - PluginManager - INFO - 📂 Categoría 'interfaces': 0/0 activados
+2025-11-15 09:14:45,354 - core.engine - WARNING - ⚠️ Problemas activando categoría 'interfaces'
+2025-11-15 09:14:45,355 - core.event_bus - INFO - 📢 Publicando evento 'system_started' de 'UnifiedEngine' a 0 suscriptores
+2025-11-15 09:14:45,355 - core.engine - INFO - ✅ Sistema iniciado exitosamente
+2025-11-15 09:14:45,355 - core.engine - INFO - 📊 Plugins activos: 3
+2025-11-15 09:14:45,355 - core.engine - INFO - 🚀 Iniciando Sistema Anti-Keylogger Unificado...
+2025-11-15 09:14:45,356 - PluginManager - INFO - 🔍 Iniciando descubrimiento de plugins...
+2025-11-15 09:14:45,356 - core.plugin_registry - INFO - 🔍 Descubriendo plugins en: plugins
+2025-11-15 09:14:45,356 - core.plugin_registry - WARNING - ⚠️ Plugin 'behavior_detector' ya registrado, sobrescribiendo
+2025-11-15 09:14:45,357 - core.plugin_registry - INFO - ✅ Plugin 'behavior_detector' registrado en categoría 'detectors'
+2025-11-15 09:14:45,357 - core.plugin_registry - WARNING - ⚠️ Plugin 'ml_detector' ya registrado, sobrescribiendo
+2025-11-15 09:14:45,357 - core.plugin_registry - INFO - ✅ Plugin 'ml_detector' registrado en categoría 'detectors'
+2025-11-15 09:14:45,358 - core.plugin_registry - WARNING - ⚠️ Plugin 'network_detector' ya registrado, sobrescribiendo
+2025-11-15 09:14:45,358 - core.plugin_registry - INFO - ✅ Plugin 'network_detector' registrado en categoría 'detectors'
+2025-11-15 09:14:45,360 - core.plugin_registry - WARNING - ⚠️ Plugin 'alert_manager' ya registrado, sobrescribiendo
+2025-11-15 09:14:45,361 - core.plugin_registry - INFO - ✅ Plugin 'alert_manager' registrado en categoría 'handlers'
+2025-11-15 09:14:45,363 - core.plugin_registry - WARNING - ⚠️ Plugin 'logger_handler' ya registrado, sobrescribiendo
+2025-11-15 09:14:45,363 - core.plugin_registry - INFO - ✅ Plugin 'logger_handler' registrado en categoría 'handlers'
+2025-11-15 09:14:45,365 - core.plugin_registry - WARNING - ⚠️ Plugin 'quarantine_handler' ya registrado, sobrescribiendo
+2025-11-15 09:14:45,365 - core.plugin_registry - INFO - ✅ Plugin 'quarantine_handler' registrado en categoría 'handlers'
+2025-11-15 09:14:45,365 - core.plugin_registry - INFO - ✅ Descubiertos 6 plugins
+2025-11-15 09:14:45,366 - PluginManager - INFO - ✅ Descubrimiento completado: 6 plugins encontrados
+2025-11-15 09:14:45,366 - core.event_bus - INFO - 📋 'UnifiedEngine' suscrito a eventos 'threat_detected'
+2025-11-15 09:14:45,366 - core.event_bus - INFO - 📋 'UnifiedEngine' suscrito a eventos 'plugin_error'
+2025-11-15 09:14:45,366 - PluginManager - WARNING - ⚠️ Plugin 'behavior_detector' ya está activo
+2025-11-15 09:14:45,366 - PluginManager - WARNING - ⚠️ Plugin 'ml_detector' ya está activo
+2025-11-15 09:14:45,367 - PluginManager - WARNING - ⚠️ Plugin 'network_detector' ya está activo
+2025-11-15 09:14:45,367 - PluginManager - INFO - 📂 Categoría 'detectors': 3/3 activados
+2025-11-15 09:14:45,367 - PluginManager - INFO - 📂 Categoría 'monitors': 0/0 activados
+2025-11-15 09:14:45,367 - core.plugin_registry - ERROR - ❌ Error creando plugin 'alert_manager': Can't instantiate abstract class AlertManagerPlugin without an implementation for abstract methods 'get_plugin_info', 'initialize', 'start', 'stop'
+2025-11-15 09:14:45,368 - core.plugin_registry - ERROR - ❌ Error creando plugin 'logger_handler': Can't instantiate abstract class LoggerHandlerPlugin without an implementation for abstract methods 'get_plugin_info', 'initialize', 'start', 'stop'
+2025-11-15 09:14:45,368 - core.plugin_registry - ERROR - ❌ Error creando plugin 'quarantine_handler': Can't instantiate abstract class QuarantineHandlerPlugin without an implementation for abstract methods 'get_plugin_info', 'initialize', 'start', 'stop'
+2025-11-15 09:14:45,368 - PluginManager - INFO - 📂 Categoría 'handlers': 0/3 activados
+2025-11-15 09:14:45,369 - core.event_bus - INFO - 📢 Publicando evento 'system_started' de 'UnifiedEngine' a 0 suscriptores
+2025-11-15 09:14:45,369 - core.engine - INFO - ✅ Sistema iniciado exitosamente
+2025-11-15 09:14:45,369 - core.engine - INFO - 📊 Plugins activos: 3
+2025-11-15 09:14:47,613 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Incremento súbito de memoria en python.exe: 94769152 -> 328196096
+2025-11-15 09:14:47,613 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_behavior_change: python.exe - Detección de suspicious_behavior_change en proceso python.exe
+2025-11-15 09:15:13,660 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Incremento súbito de memoria en RuntimeBroker.exe: 48365568 -> 144064512
+2025-11-15 09:15:13,660 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_behavior_change: RuntimeBroker.exe - Detección de suspicious_behavior_change en proceso RuntimeBroker.exe
+2025-11-15 09:15:16,589 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Uso elevado de CPU: RuntimeBroker.exe - 96.0%
+2025-11-15 09:15:16,590 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_behavior_change: RuntimeBroker.exe - Detección de suspicious_behavior_change en proceso RuntimeBroker.exe
+2025-11-15 09:15:19,561 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Uso elevado de CPU: RuntimeBroker.exe - 96.7%
+2025-11-15 09:15:19,561 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_behavior_change: RuntimeBroker.exe - Detección de suspicious_behavior_change en proceso RuntimeBroker.exe
+2025-11-15 09:15:22,522 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Uso elevado de CPU: RuntimeBroker.exe - 98.7%
+2025-11-15 09:15:22,523 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_behavior_change: RuntimeBroker.exe - Detección de suspicious_behavior_change en proceso RuntimeBroker.exe
+2025-11-15 09:17:24,001 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: chrome.exe - patrón: capture
+2025-11-15 09:17:24,001 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: chrome.exe - Detección de suspicious_new_process en proceso chrome.exe
+2025-11-15 09:17:24,033 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: chrome.exe - patrón: capture
+2025-11-15 09:17:24,033 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: chrome.exe - Detección de suspicious_new_process en proceso chrome.exe
+2025-11-15 09:17:39,234 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: code.exe - patrón: capture
+2025-11-15 09:17:39,234 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: Code.exe - Detección de suspicious_new_process en proceso Code.exe
+2025-11-15 09:18:44,310 - root - WARNING - ⚠️ Web logging no disponible: No module named 'aiohttp'
+2025-11-15 09:18:44,310 - core.plugin_registry - INFO - 🏪 PluginRegistry inicializado (Singleton)
+2025-11-15 09:18:44,310 - core.plugin_manager - INFO - 🎛️ PluginManager inicializado
+2025-11-15 09:18:44,310 - core.engine - INFO - 🛡️ UnifiedAntivirusEngine inicializado
+2025-11-15 09:18:44,311 - core.engine - INFO - 🚀 Iniciando Sistema Anti-Keylogger Unificado...
+2025-11-15 09:18:44,311 - PluginManager - INFO - 🔍 Iniciando descubrimiento de plugins...
+2025-11-15 09:18:44,311 - core.plugin_registry - INFO - 🔍 Descubriendo plugins en: plugins
+2025-11-15 09:18:44,319 - core.plugin_registry - INFO - ✅ Plugin 'behavior_detector' registrado en categoría 'detectors'
+2025-11-15 09:18:44,319 - core.plugin_registry - WARNING - ⚠️ Plugin 'behavior_detector' ya registrado, sobrescribiendo
+2025-11-15 09:18:44,319 - core.plugin_registry - INFO - ✅ Plugin 'behavior_detector' registrado en categoría 'detectors'
+2025-11-15 09:18:44,880 - core.plugin_registry - INFO - ✅ Plugin 'ml_detector' registrado en categoría 'detectors'
+2025-11-15 09:18:44,881 - core.plugin_registry - WARNING - ⚠️ Plugin 'ml_detector' ya registrado, sobrescribiendo
+2025-11-15 09:18:44,881 - core.plugin_registry - INFO - ✅ Plugin 'ml_detector' registrado en categoría 'detectors'
+2025-11-15 09:18:44,900 - core.plugin_registry - INFO - ✅ Plugin 'network_detector' registrado en categoría 'detectors'
+2025-11-15 09:18:44,931 - core.plugin_registry - INFO - ✅ Plugin 'alert_manager' registrado en categoría 'handlers'
+2025-11-15 09:18:44,933 - core.plugin_registry - INFO - ✅ Plugin 'logger_handler' registrado en categoría 'handlers'
+2025-11-15 09:18:44,935 - core.plugin_registry - INFO - ✅ Plugin 'quarantine_handler' registrado en categoría 'handlers'
+2025-11-15 09:18:44,935 - core.plugin_registry - INFO - ✅ Descubiertos 6 plugins
+2025-11-15 09:18:44,935 - PluginManager - INFO - ✅ Descubrimiento completado: 6 plugins encontrados
+2025-11-15 09:18:44,936 - core.event_bus - INFO - 📋 'UnifiedEngine' suscrito a eventos 'threat_detected'
+2025-11-15 09:18:44,936 - core.event_bus - INFO - 📋 'UnifiedEngine' suscrito a eventos 'plugin_error'
+2025-11-15 09:18:44,936 - plugins.detectors.behavior_detector.plugin - INFO - Configuración cargada desde C:\Users\HP\Documents\GitHub\ANTIVIRUS_CPP_PROFESSIONAL\UNIFIED_ANTIVIRUS\plugins\detectors\behavior_detector\config.json
+2025-11-15 09:18:44,937 - plugins.detectors.behavior_detector.plugin - INFO - [PLUGIN] behavior_detector inicializado
+2025-11-15 09:18:44,937 - core.plugin_registry - INFO - 🏭 Plugin 'behavior_detector' creado exitosamente
+2025-11-15 09:18:44,938 - plugin.behavior_detector - INFO - 📄 Configuración cargada desde C:\Users\HP\Documents\GitHub\ANTIVIRUS_CPP_PROFESSIONAL\UNIFIED_ANTIVIRUS\plugins\detectors\behavior_detector\config.json
+2025-11-15 09:18:44,938 - plugins.detectors.behavior_detector.plugin - INFO - Inicializando behavior_detector...
+2025-11-15 09:18:44,939 - plugins.detectors.behavior_detector.rule_engine - INFO - [RULE_ENGINE] Cargadas 6 reglas de detección
+2025-11-15 09:18:44,940 - plugins.detectors.behavior_detector.rule_engine - INFO - [RULE_ENGINE] Inicializado con 6 reglas
+2025-11-15 09:18:44,940 - plugins.detectors.behavior_detector.whitelist_manager - INFO - [WHITELIST] Cargados 18 procesos y 7 directorios
+2025-11-15 09:18:44,940 - plugins.detectors.behavior_detector.whitelist_manager - INFO - [WHITELIST] Inicializado: 18 procesos, 7 directorios
+2025-11-15 09:18:44,941 - plugins.detectors.behavior_detector.behavior_engine - INFO - [BEHAVIOR_ENGINE] Inicializado (threshold: 0.7, advanced: True)
+2025-11-15 09:18:44,941 - plugins.detectors.behavior_detector.plugin - INFO - ✅ behavior_detector inicializado correctamente
+2025-11-15 09:18:44,941 - plugins.detectors.behavior_detector.plugin - INFO - Iniciando behavior_detector...
+2025-11-15 09:18:44,942 - plugins.detectors.behavior_detector.plugin - INFO - [BEHAVIOR_DETECTOR] Iniciando monitoreo real de procesos
+2025-11-15 09:18:44,942 - plugins.detectors.behavior_detector.plugin - INFO - ✅ behavior_detector iniciado correctamente
+2025-11-15 09:18:44,950 - plugins.detectors.behavior_detector.plugin - ERROR - Error analizando proceso sospechoso: 'NoneType' object has no attribute 'lower'
+2025-11-15 09:18:44,950 - plugin.behavior_detector - INFO - ✅ Plugin 'behavior_detector' activado exitosamente
+2025-11-15 09:18:44,996 - core.event_bus - INFO - 📢 Publicando evento 'plugin_activated' de 'PluginManager' a 0 suscriptores
+2025-11-15 09:18:45,057 - PluginManager - INFO - ✅ Plugin 'behavior_detector' activado
+2025-11-15 09:18:45,090 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: chrome.exe - patrón: capture
+2025-11-15 09:18:45,096 - plugins.detectors.ml_detector.plugin - INFO - [ML_DETECTOR] Configuración cargada: 8 secciones
+2025-11-15 09:18:45,096 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: chrome.exe - Detección de suspicious_new_process en proceso chrome.exe
+2025-11-15 09:18:45,096 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: chrome.exe - patrón: capture
+2025-11-15 09:18:45,097 - plugins.detectors.ml_detector.plugin - INFO - [ML_DETECTOR] Plugin inicializado con configuración desde C:\Users\HP\Documents\GitHub\ANTIVIRUS_CPP_PROFESSIONAL\UNIFIED_ANTIVIRUS\plugins\detectors\ml_detector\config.json
+2025-11-15 09:18:45,097 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: chrome.exe - Detección de suspicious_new_process en proceso chrome.exe
+2025-11-15 09:18:45,097 - core.plugin_registry - INFO - 🏭 Plugin 'ml_detector' creado exitosamente
+2025-11-15 09:18:45,199 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: code.exe - patrón: capture
+2025-11-15 09:18:45,200 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: Code.exe - Detección de suspicious_new_process en proceso Code.exe
+2025-11-15 09:18:45,200 - plugin.ml_detector - INFO - 📄 Configuración cargada desde C:\Users\HP\Documents\GitHub\ANTIVIRUS_CPP_PROFESSIONAL\UNIFIED_ANTIVIRUS\plugins\detectors\ml_detector\config.json
+2025-11-15 09:18:45,210 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: chrome.exe - patrón: capture
+2025-11-15 09:18:45,210 - plugins.detectors.ml_detector.plugin - INFO - [ML_DETECTOR] Inicializando componentes ML...
+2025-11-15 09:18:45,211 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: chrome.exe - Detección de suspicious_new_process en proceso chrome.exe
+2025-11-15 09:18:45,299 - plugins.detectors.ml_detector.ml_engine - INFO - [ML_ENGINE] Clases cargadas: ['Benign', 'Keylogger']
+2025-11-15 09:18:45,409 - plugins.detectors.ml_detector.ml_engine - INFO - [ML_ENGINE] Metadatos cargados: 81 características
+2025-11-15 09:18:45,531 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: chrome.exe - patrón: capture
+2025-11-15 09:18:45,532 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: chrome.exe - Detección de suspicious_new_process en proceso chrome.exe
+2025-11-15 09:18:45,607 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: code.exe - patrón: capture
+2025-11-15 09:18:45,608 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: Code.exe - Detección de suspicious_new_process en proceso Code.exe
+2025-11-15 09:18:45,654 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: chrome.exe - patrón: capture
+2025-11-15 09:18:45,655 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: chrome.exe - Detección de suspicious_new_process en proceso chrome.exe
+2025-11-15 09:18:46,426 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: chrome.exe - patrón: capture
+2025-11-15 09:18:46,426 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: chrome.exe - Detección de suspicious_new_process en proceso chrome.exe
+2025-11-15 09:18:46,439 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: code.exe - patrón: capture
+2025-11-15 09:18:46,440 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: Code.exe - Detección de suspicious_new_process en proceso Code.exe
+2025-11-15 09:18:46,479 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: svchost.exe - patrón: capture
+2025-11-15 09:18:46,480 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: svchost.exe - Detección de suspicious_new_process en proceso svchost.exe
+2025-11-15 09:18:46,481 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: discord.exe - patrón: capture
+2025-11-15 09:18:46,481 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: Discord.exe - Detección de suspicious_new_process en proceso Discord.exe
+2025-11-15 09:18:46,482 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: chrome.exe - patrón: monitor
+2025-11-15 09:18:47,055 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: chrome.exe - Detección de suspicious_new_process en proceso chrome.exe
+2025-11-15 09:18:48,996 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Incremento súbito de memoria en python.exe: 93097984 -> 577380352
+2025-11-15 09:18:48,996 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_behavior_change: python.exe - Detección de suspicious_behavior_change en proceso python.exe
+2025-11-15 09:18:51,946 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Uso elevado de CPU: python.exe - 100.1%
+2025-11-15 09:18:51,946 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_behavior_change: python.exe - Detección de suspicious_behavior_change en proceso python.exe
+2025-11-15 09:18:54,918 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Uso elevado de CPU: python.exe - 99.3%
+2025-11-15 09:18:54,919 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_behavior_change: python.exe - Detección de suspicious_behavior_change en proceso python.exe
+2025-11-15 09:18:57,921 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Uso elevado de CPU: python.exe - 99.4%
+2025-11-15 09:18:57,921 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_behavior_change: python.exe - Detección de suspicious_behavior_change en proceso python.exe
+2025-11-15 09:20:36,041 - launcher - INFO - 📝 Logger 'launcher' inicializado
+2025-11-15 09:20:36,042 - launcher - INFO - ✅ Configuración web cargada desde config/web_logging_production.json
+2025-11-15 09:20:36,049 - web_log_sender_DESKTOP-6LTFADC_e4d190f1 - INFO - WebLogSender iniciado - ClientID: DESKTOP-6LTFADC_e4d190f1
+2025-11-15 09:20:36,049 - launcher - INFO - 🌐 Web logging inicializado exitosamente
+2025-11-15 09:20:36,050 - launcher - INFO - 📡 Backend URL: https://unified-antivirus-api.vercel.app/api/logs
+2025-11-15 09:20:36,051 - launcher - INFO - 📤 Handler automático configurado - logs serán enviados al backend
+2025-11-15 09:20:36,051 - core.plugin_registry - INFO - 🏪 PluginRegistry inicializado (Singleton)
+2025-11-15 09:20:36,052 - core.plugin_manager - INFO - 🎛️ PluginManager inicializado
+2025-11-15 09:20:36,052 - core.engine - INFO - 🛡️ UnifiedAntivirusEngine inicializado
+2025-11-15 09:20:36,052 - core.engine - INFO - 🚀 Iniciando Sistema Anti-Keylogger Unificado...
+2025-11-15 09:20:36,052 - PluginManager - INFO - 🔍 Iniciando descubrimiento de plugins...
+2025-11-15 09:20:36,052 - core.plugin_registry - INFO - 🔍 Descubriendo plugins en: plugins
+2025-11-15 09:20:36,060 - core.plugin_registry - INFO - ✅ Plugin 'behavior_detector' registrado en categoría 'detectors'
+2025-11-15 09:20:36,060 - core.plugin_registry - WARNING - ⚠️ Plugin 'behavior_detector' ya registrado, sobrescribiendo
+2025-11-15 09:20:36,060 - core.plugin_registry - INFO - ✅ Plugin 'behavior_detector' registrado en categoría 'detectors'
+2025-11-15 09:20:36,668 - core.plugin_registry - INFO - ✅ Plugin 'ml_detector' registrado en categoría 'detectors'
+2025-11-15 09:20:36,668 - core.plugin_registry - WARNING - ⚠️ Plugin 'ml_detector' ya registrado, sobrescribiendo
+2025-11-15 09:20:36,669 - core.plugin_registry - INFO - ✅ Plugin 'ml_detector' registrado en categoría 'detectors'
+2025-11-15 09:20:36,687 - core.plugin_registry - INFO - ✅ Plugin 'network_detector' registrado en categoría 'detectors'
+2025-11-15 09:20:36,724 - core.plugin_registry - INFO - ✅ Plugin 'alert_manager' registrado en categoría 'handlers'
+2025-11-15 09:20:36,729 - core.plugin_registry - INFO - ✅ Plugin 'logger_handler' registrado en categoría 'handlers'
+2025-11-15 09:20:36,732 - core.plugin_registry - INFO - ✅ Plugin 'quarantine_handler' registrado en categoría 'handlers'
+2025-11-15 09:20:36,732 - core.plugin_registry - INFO - ✅ Descubiertos 6 plugins
+2025-11-15 09:20:36,733 - PluginManager - INFO - ✅ Descubrimiento completado: 6 plugins encontrados
+2025-11-15 09:20:36,733 - core.event_bus - INFO - 📋 'UnifiedEngine' suscrito a eventos 'threat_detected'
+2025-11-15 09:20:36,733 - core.event_bus - INFO - 📋 'UnifiedEngine' suscrito a eventos 'plugin_error'
+2025-11-15 09:20:36,734 - plugins.detectors.behavior_detector.plugin - INFO - Configuración cargada desde C:\Users\HP\Documents\GitHub\ANTIVIRUS_CPP_PROFESSIONAL\UNIFIED_ANTIVIRUS\plugins\detectors\behavior_detector\config.json
+2025-11-15 09:20:36,735 - plugins.detectors.behavior_detector.plugin - INFO - [PLUGIN] behavior_detector inicializado
+2025-11-15 09:20:36,735 - core.plugin_registry - INFO - 🏭 Plugin 'behavior_detector' creado exitosamente
+2025-11-15 09:20:36,736 - plugin.behavior_detector - INFO - 📄 Configuración cargada desde C:\Users\HP\Documents\GitHub\ANTIVIRUS_CPP_PROFESSIONAL\UNIFIED_ANTIVIRUS\plugins\detectors\behavior_detector\config.json
+2025-11-15 09:20:36,736 - plugins.detectors.behavior_detector.plugin - INFO - Inicializando behavior_detector...
+2025-11-15 09:20:36,738 - plugins.detectors.behavior_detector.rule_engine - INFO - [RULE_ENGINE] Cargadas 6 reglas de detección
+2025-11-15 09:20:36,738 - plugins.detectors.behavior_detector.rule_engine - INFO - [RULE_ENGINE] Inicializado con 6 reglas
+2025-11-15 09:20:36,738 - plugins.detectors.behavior_detector.whitelist_manager - INFO - [WHITELIST] Cargados 18 procesos y 7 directorios
+2025-11-15 09:20:36,738 - plugins.detectors.behavior_detector.whitelist_manager - INFO - [WHITELIST] Inicializado: 18 procesos, 7 directorios
+2025-11-15 09:20:36,739 - plugins.detectors.behavior_detector.behavior_engine - INFO - [BEHAVIOR_ENGINE] Inicializado (threshold: 0.7, advanced: True)
+2025-11-15 09:20:36,739 - plugins.detectors.behavior_detector.plugin - INFO - ✅ behavior_detector inicializado correctamente
+2025-11-15 09:20:36,739 - plugins.detectors.behavior_detector.plugin - INFO - Iniciando behavior_detector...
+2025-11-15 09:20:36,740 - plugins.detectors.behavior_detector.plugin - INFO - [BEHAVIOR_DETECTOR] Iniciando monitoreo real de procesos
+2025-11-15 09:20:36,740 - plugins.detectors.behavior_detector.plugin - INFO - ✅ behavior_detector iniciado correctamente
+2025-11-15 09:20:36,751 - plugins.detectors.behavior_detector.plugin - ERROR - Error analizando proceso sospechoso: 'NoneType' object has no attribute 'lower'
+2025-11-15 09:20:36,751 - plugin.behavior_detector - INFO - ✅ Plugin 'behavior_detector' activado exitosamente
+2025-11-15 09:20:36,775 - core.event_bus - INFO - 📢 Publicando evento 'plugin_activated' de 'PluginManager' a 0 suscriptores
+2025-11-15 09:20:36,804 - PluginManager - INFO - ✅ Plugin 'behavior_detector' activado
+2025-11-15 09:20:36,870 - plugins.detectors.ml_detector.plugin - INFO - [ML_DETECTOR] Configuración cargada: 8 secciones
+2025-11-15 09:20:36,909 - plugins.detectors.ml_detector.plugin - INFO - [ML_DETECTOR] Plugin inicializado con configuración desde C:\Users\HP\Documents\GitHub\ANTIVIRUS_CPP_PROFESSIONAL\UNIFIED_ANTIVIRUS\plugins\detectors\ml_detector\config.json
+2025-11-15 09:20:36,909 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: chrome.exe - patrón: capture
+2025-11-15 09:20:36,910 - core.plugin_registry - INFO - 🏭 Plugin 'ml_detector' creado exitosamente
+2025-11-15 09:20:36,910 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: chrome.exe - Detección de suspicious_new_process en proceso chrome.exe
+2025-11-15 09:20:36,911 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: chrome.exe - patrón: capture
+2025-11-15 09:20:36,911 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: chrome.exe - Detección de suspicious_new_process en proceso chrome.exe
+2025-11-15 09:20:36,929 - plugin.ml_detector - INFO - 📄 Configuración cargada desde C:\Users\HP\Documents\GitHub\ANTIVIRUS_CPP_PROFESSIONAL\UNIFIED_ANTIVIRUS\plugins\detectors\ml_detector\config.json
+2025-11-15 09:20:36,979 - plugins.detectors.ml_detector.plugin - INFO - [ML_DETECTOR] Inicializando componentes ML...
+2025-11-15 09:20:37,007 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: code.exe - patrón: capture
+2025-11-15 09:20:37,008 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: Code.exe - Detección de suspicious_new_process en proceso Code.exe
+2025-11-15 09:20:37,016 - plugins.detectors.ml_detector.ml_engine - INFO - [ML_ENGINE] Clases cargadas: ['Benign', 'Keylogger']
+2025-11-15 09:20:37,022 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: chrome.exe - patrón: capture
+2025-11-15 09:20:37,023 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: chrome.exe - Detección de suspicious_new_process en proceso chrome.exe
+2025-11-15 09:20:37,023 - plugins.detectors.ml_detector.ml_engine - INFO - [ML_ENGINE] Metadatos cargados: 81 características
+2025-11-15 09:20:37,349 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: chrome.exe - patrón: capture
+2025-11-15 09:20:37,350 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: chrome.exe - Detección de suspicious_new_process en proceso chrome.exe
+2025-11-15 09:20:37,434 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: code.exe - patrón: capture
+2025-11-15 09:20:37,436 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: Code.exe - Detección de suspicious_new_process en proceso Code.exe
+2025-11-15 09:20:37,501 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: chrome.exe - patrón: capture
+2025-11-15 09:20:37,501 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: chrome.exe - Detección de suspicious_new_process en proceso chrome.exe
+2025-11-15 09:21:18,080 - plugins.detectors.ml_detector.ml_engine - INFO - [ML_ENGINE] ✅ Modelo ONNX validado: modelo_keylogger_from_datos.onnx
+2025-11-15 09:21:18,123 - plugins.detectors.ml_detector.ml_engine - INFO - [ML_ENGINE] ✅ Modelo ONNX cargado en 41.12s
+2025-11-15 09:21:18,161 - plugins.detectors.ml_detector.ml_engine - INFO - [ML_ENGINE] Inicializado (ONNX: True, Modelo: ONNX)
+2025-11-15 09:21:18,182 - plugins.detectors.ml_detector.feature_extractor - INFO - [FEATURES] NetworkFeatureExtractor inicializado con 81 características
+2025-11-15 09:21:18,212 - plugins.detectors.ml_detector.plugin - INFO - [ML_DETECTOR] ✅ Plugin inicializado (Modelo: ONNX)
+2025-11-15 09:21:18,241 - plugins.detectors.ml_detector.plugin - INFO - [ML_DETECTOR] ✅ Plugin iniciado y listo para detecciones
+2025-11-15 09:21:18,272 - plugin.ml_detector - INFO - ✅ Plugin 'ml_detector' activado exitosamente
+2025-11-15 09:21:18,317 - core.event_bus - INFO - 📢 Publicando evento 'plugin_activated' de 'PluginManager' a 0 suscriptores
+2025-11-15 09:21:18,409 - PluginManager - INFO - ✅ Plugin 'ml_detector' activado
+2025-11-15 09:21:18,507 - network_detector - INFO - 🌐 Inicializando Network Detector Plugin...
+2025-11-15 09:21:18,631 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: chrome.exe - patrón: capture
+2025-11-15 09:21:18,632 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: chrome.exe - Detección de suspicious_new_process en proceso chrome.exe
+2025-11-15 09:21:18,632 - network_detector - INFO - 📋 Configuración cargada: 13 secciones
+2025-11-15 09:21:18,643 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: code.exe - patrón: capture
+2025-11-15 09:21:18,643 - network_detector - INFO - 🔧 Componentes básicos inicializados
+2025-11-15 09:21:18,643 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: Code.exe - Detección de suspicious_new_process en proceso Code.exe
+2025-11-15 09:21:18,643 - network_detector - INFO - 🛡️ Datos de seguridad básicos configurados
+2025-11-15 09:21:18,670 - network_detector - INFO - 📡 Preparado para suscribirse a 4 tipos de eventos
+2025-11-15 09:21:18,680 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: svchost.exe - patrón: capture
+2025-11-15 09:21:18,680 - network_detector - INFO - ✅ Network Detector Plugin inicializado correctamente
+2025-11-15 09:21:18,680 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: svchost.exe - Detección de suspicious_new_process en proceso svchost.exe
+2025-11-15 09:21:18,680 - core.plugin_registry - INFO - 🏭 Plugin 'network_detector' creado exitosamente
+2025-11-15 09:21:18,681 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: discord.exe - patrón: capture
+2025-11-15 09:21:18,681 - network_detector - INFO - 🚀 Activando Network Detector Plugin...
+2025-11-15 09:21:18,681 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: Discord.exe - Detección de suspicious_new_process en proceso Discord.exe
+2025-11-15 09:21:18,682 - network_detector - INFO - ✅ Componentes verificados (modo básico)
+2025-11-15 09:21:18,682 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: chrome.exe - patrón: monitor
+2025-11-15 09:21:18,682 - network_detector - INFO - ✅ Network Detector Plugin activado
+2025-11-15 09:21:18,683 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: chrome.exe - Detección de suspicious_new_process en proceso chrome.exe
+2025-11-15 09:21:18,683 - core.event_bus - INFO - 📢 Publicando evento 'plugin_activated' de 'PluginManager' a 0 suscriptores
+2025-11-15 09:21:18,738 - PluginManager - INFO - ✅ Plugin 'network_detector' activado
+2025-11-15 09:21:18,750 - PluginManager - INFO - 📂 Categoría 'detectors': 3/3 activados
+2025-11-15 09:21:18,769 - core.engine - INFO - ✅ Categoría 'detectors' activada
+2025-11-15 09:21:18,782 - PluginManager - INFO - 📂 Categoría 'monitors': 0/0 activados
+2025-11-15 09:21:18,795 - core.engine - WARNING - ⚠️ Problemas activando categoría 'monitors'
+2025-11-15 09:21:18,831 - core.plugin_registry - ERROR - ❌ Error creando plugin 'alert_manager': Can't instantiate abstract class AlertManagerPlugin without an implementation for abstract methods 'get_plugin_info', 'initialize', 'start', 'stop'
+2025-11-15 09:21:18,846 - core.plugin_registry - ERROR - ❌ Error creando plugin 'logger_handler': Can't instantiate abstract class LoggerHandlerPlugin without an implementation for abstract methods 'get_plugin_info', 'initialize', 'start', 'stop'
+2025-11-15 09:21:18,850 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: chrome.exe - patrón: capture
+2025-11-15 09:21:18,850 - core.plugin_registry - ERROR - ❌ Error creando plugin 'quarantine_handler': Can't instantiate abstract class QuarantineHandlerPlugin without an implementation for abstract methods 'get_plugin_info', 'initialize', 'start', 'stop'
+2025-11-15 09:21:18,851 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: chrome.exe - Detección de suspicious_new_process en proceso chrome.exe
+2025-11-15 09:21:18,851 - PluginManager - INFO - 📂 Categoría 'handlers': 0/3 activados
+2025-11-15 09:21:18,852 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: chrome.exe - patrón: capture
+2025-11-15 09:21:18,852 - core.engine - WARNING - ⚠️ Problemas activando categoría 'handlers'
+2025-11-15 09:21:18,853 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: chrome.exe - Detección de suspicious_new_process en proceso chrome.exe
+2025-11-15 09:21:18,853 - PluginManager - INFO - 📂 Categoría 'interfaces': 0/0 activados
+2025-11-15 09:21:18,854 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: adskaccessuihost.exe - patrón: capture
+2025-11-15 09:21:18,854 - core.engine - WARNING - ⚠️ Problemas activando categoría 'interfaces'
+2025-11-15 09:21:18,854 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: AdskAccessUIHost.exe - Detección de suspicious_new_process en proceso AdskAccessUIHost.exe
+2025-11-15 09:21:18,855 - core.event_bus - INFO - 📢 Publicando evento 'system_started' de 'UnifiedEngine' a 0 suscriptores
+2025-11-15 09:21:18,881 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: code.exe - patrón: monitor
+2025-11-15 09:21:18,882 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: Code.exe - Detección de suspicious_new_process en proceso Code.exe
+2025-11-15 09:21:18,883 - core.engine - INFO - ✅ Sistema iniciado exitosamente
+2025-11-15 09:21:18,898 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: chrome.exe - patrón: capture
+2025-11-15 09:21:18,899 - core.engine - INFO - 📊 Plugins activos: 3
+2025-11-15 09:21:18,899 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: chrome.exe - Detección de suspicious_new_process en proceso chrome.exe
+2025-11-15 09:21:18,899 - core.engine - INFO - 🚀 Iniciando Sistema Anti-Keylogger Unificado...
+2025-11-15 09:21:18,900 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: chrome.exe - patrón: capture
+2025-11-15 09:21:18,900 - PluginManager - INFO - 🔍 Iniciando descubrimiento de plugins...
+2025-11-15 09:21:18,901 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: chrome.exe - Detección de suspicious_new_process en proceso chrome.exe
+2025-11-15 09:21:18,901 - core.plugin_registry - INFO - 🔍 Descubriendo plugins en: plugins
+2025-11-15 09:21:18,938 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: code.exe - patrón: capture
+2025-11-15 09:21:18,939 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: Code.exe - Detección de suspicious_new_process en proceso Code.exe
+2025-11-15 09:21:18,939 - core.plugin_registry - WARNING - ⚠️ Plugin 'behavior_detector' ya registrado, sobrescribiendo
+2025-11-15 09:21:18,939 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: code.exe - patrón: capture
+2025-11-15 09:21:18,940 - core.plugin_registry - INFO - ✅ Plugin 'behavior_detector' registrado en categoría 'detectors'
+2025-11-15 09:21:18,940 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: Code.exe - Detección de suspicious_new_process en proceso Code.exe
+2025-11-15 09:21:18,941 - core.plugin_registry - WARNING - ⚠️ Plugin 'ml_detector' ya registrado, sobrescribiendo
+2025-11-15 09:21:18,967 - core.plugin_registry - INFO - ✅ Plugin 'ml_detector' registrado en categoría 'detectors'
+2025-11-15 09:21:18,967 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: chrome.exe - patrón: capture
+2025-11-15 09:21:18,968 - core.plugin_registry - WARNING - ⚠️ Plugin 'network_detector' ya registrado, sobrescribiendo
+2025-11-15 09:21:18,968 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: chrome.exe - Detección de suspicious_new_process en proceso chrome.exe
+2025-11-15 09:21:18,968 - core.plugin_registry - INFO - ✅ Plugin 'network_detector' registrado en categoría 'detectors'
+2025-11-15 09:21:18,981 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: chrome.exe - patrón: capture
+2025-11-15 09:21:18,982 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: chrome.exe - Detección de suspicious_new_process en proceso chrome.exe
+2025-11-15 09:21:18,982 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: msedge.exe - patrón: monitor
+2025-11-15 09:21:18,983 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: msedge.exe - Detección de suspicious_new_process en proceso msedge.exe
+2025-11-15 09:21:18,984 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: chrome.exe - patrón: capture
+2025-11-15 09:21:18,984 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: chrome.exe - Detección de suspicious_new_process en proceso chrome.exe
+2025-11-15 09:21:18,984 - core.plugin_registry - WARNING - ⚠️ Plugin 'alert_manager' ya registrado, sobrescribiendo
+2025-11-15 09:21:18,985 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: discord.exe - patrón: monitor
+2025-11-15 09:21:18,985 - core.plugin_registry - INFO - ✅ Plugin 'alert_manager' registrado en categoría 'handlers'
+2025-11-15 09:21:18,985 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: Discord.exe - Detección de suspicious_new_process en proceso Discord.exe
+2025-11-15 09:21:18,996 - core.plugin_registry - WARNING - ⚠️ Plugin 'logger_handler' ya registrado, sobrescribiendo
+2025-11-15 09:21:19,012 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: chrome.exe - patrón: capture
+2025-11-15 09:21:19,012 - core.plugin_registry - INFO - ✅ Plugin 'logger_handler' registrado en categoría 'handlers'
+2025-11-15 09:21:19,012 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: chrome.exe - Detección de suspicious_new_process en proceso chrome.exe
+2025-11-15 09:21:19,013 - core.plugin_registry - WARNING - ⚠️ Plugin 'quarantine_handler' ya registrado, sobrescribiendo
+2025-11-15 09:21:19,024 - core.plugin_registry - INFO - ✅ Plugin 'quarantine_handler' registrado en categoría 'handlers'
+2025-11-15 09:21:19,024 - core.plugin_registry - INFO - ✅ Descubiertos 6 plugins
+2025-11-15 09:21:19,024 - PluginManager - INFO - ✅ Descubrimiento completado: 6 plugins encontrados
+2025-11-15 09:21:19,025 - core.event_bus - INFO - 📋 'UnifiedEngine' suscrito a eventos 'threat_detected'
+2025-11-15 09:21:19,025 - core.event_bus - INFO - 📋 'UnifiedEngine' suscrito a eventos 'plugin_error'
+2025-11-15 09:21:19,026 - PluginManager - WARNING - ⚠️ Plugin 'behavior_detector' ya está activo
+2025-11-15 09:21:19,026 - PluginManager - WARNING - ⚠️ Plugin 'ml_detector' ya está activo
+2025-11-15 09:21:19,026 - PluginManager - WARNING - ⚠️ Plugin 'network_detector' ya está activo
+2025-11-15 09:21:19,027 - PluginManager - INFO - 📂 Categoría 'detectors': 3/3 activados
+2025-11-15 09:21:19,028 - core.event_bus - INFO - 📢 Publicando evento 'system_started' de 'UnifiedEngine' a 0 suscriptores
+2025-11-15 09:21:19,028 - core.engine - INFO - ✅ Sistema iniciado exitosamente
+2025-11-15 09:21:19,028 - core.engine - INFO - 📊 Plugins activos: 3
+2025-11-15 09:21:31,071 - core.engine - INFO - 🛑 Señal recibida (2), iniciando shutdown...
+2025-11-15 09:21:31,073 - core.engine - INFO - 🛑 Iniciando shutdown del sistema...
+2025-11-15 09:21:31,073 - core.event_bus - INFO - 📢 Publicando evento 'system_shutdown_started' de 'UnifiedEngine' a 0 suscriptores
+2025-11-15 09:21:36,093 - plugins.detectors.behavior_detector.plugin - INFO - Deteniendo behavior_detector...
+2025-11-15 09:21:38,888 - plugins.detectors.behavior_detector.plugin - INFO - [BEHAVIOR_DETECTOR] Monitoreo de procesos terminado
+2025-11-15 09:21:38,890 - plugins.detectors.behavior_detector.plugin - INFO - ✅ behavior_detector detenido correctamente
+2025-11-15 09:21:38,891 - plugins.detectors.behavior_detector.plugin - INFO - Limpiando recursos de behavior_detector...
+2025-11-15 09:21:38,892 - plugins.detectors.behavior_detector.plugin - INFO - ✅ Recursos de behavior_detector limpiados
+2025-11-15 09:21:38,893 - plugin.behavior_detector - INFO - 🔴 Plugin 'behavior_detector' desactivado
+2025-11-15 09:21:38,894 - core.event_bus - INFO - 📢 Publicando evento 'plugin_deactivated' de 'PluginManager' a 0 suscriptores
+2025-11-15 09:21:38,896 - PluginManager - INFO - 🔴 Plugin 'behavior_detector' desactivado
+2025-11-15 09:21:38,898 - plugins.detectors.ml_detector.ml_engine - INFO - [ML_ENGINE] Motor ML cerrado correctamente
+2025-11-15 09:21:38,898 - plugins.detectors.ml_detector.plugin - INFO - [ML_DETECTOR] ✅ Plugin detenido correctamente
+2025-11-15 09:21:38,899 - plugin.ml_detector - INFO - 🔴 Plugin 'ml_detector' desactivado
+2025-11-15 09:21:38,899 - core.event_bus - INFO - 📢 Publicando evento 'plugin_deactivated' de 'PluginManager' a 0 suscriptores
+2025-11-15 09:21:38,900 - PluginManager - INFO - 🔴 Plugin 'ml_detector' desactivado
+2025-11-15 09:21:38,980 - core.event_bus - INFO - 📢 Publicando evento 'plugin_deactivated' de 'PluginManager' a 0 suscriptores
+2025-11-15 09:21:38,981 - PluginManager - INFO - 🔴 Plugin 'network_detector' desactivado
+2025-11-15 09:21:38,981 - PluginManager - INFO - 🛑 Shutdown: 3/3 plugins
+2025-11-15 09:21:38,981 - core.event_bus - INFO - 🧹 Historial de eventos limpiado
+2025-11-15 09:21:38,981 - core.engine - INFO - ✅ Sistema detenido exitosamente
+2025-11-15 09:21:38,982 - core.engine - INFO - 🛑 Iniciando shutdown del sistema...
+2025-11-15 09:21:38,982 - core.event_bus - INFO - 📢 Publicando evento 'system_shutdown_started' de 'UnifiedEngine' a 0 suscriptores
+2025-11-15 09:21:43,991 - PluginManager - INFO - 🛑 Shutdown: 0/0 plugins
+2025-11-15 09:21:43,992 - core.event_bus - INFO - 🧹 Historial de eventos limpiado
+2025-11-15 09:21:43,993 - core.engine - INFO - ✅ Sistema detenido exitosamente
+2025-11-15 09:23:30,019 - launcher - INFO - 📝 Logger 'launcher' inicializado
+2025-11-15 09:23:30,021 - launcher - INFO - ✅ Configuración web cargada desde config/web_logging_production.json
+2025-11-15 09:23:30,023 - web_log_sender_DESKTOP-6LTFADC_e22958f4 - INFO - WebLogSender iniciado - ClientID: DESKTOP-6LTFADC_e22958f4
+2025-11-15 09:23:30,023 - launcher - INFO - 🌐 Web logging inicializado exitosamente
+2025-11-15 09:23:30,024 - launcher - INFO - 📡 Backend URL: https://unified-antivirus-api.vercel.app/api/logs
+2025-11-15 09:23:30,025 - launcher - INFO - 📤 Handler automático configurado - logs serán enviados al backend
+2025-11-15 09:23:30,026 - core.plugin_registry - INFO - 🏪 PluginRegistry inicializado (Singleton)
+2025-11-15 09:23:30,026 - core.plugin_manager - INFO - 🎛️ PluginManager inicializado
+2025-11-15 09:23:30,026 - core.engine - INFO - 🛡️ UnifiedAntivirusEngine inicializado
+2025-11-15 09:23:30,026 - core.engine - INFO - 🚀 Iniciando Sistema Anti-Keylogger Unificado...
+2025-11-15 09:23:30,027 - PluginManager - INFO - 🔍 Iniciando descubrimiento de plugins...
+2025-11-15 09:23:30,027 - core.plugin_registry - INFO - 🔍 Descubriendo plugins en: plugins
+2025-11-15 09:23:30,046 - core.plugin_registry - INFO - ✅ Plugin 'behavior_detector' registrado en categoría 'detectors'
+2025-11-15 09:23:30,047 - core.plugin_registry - WARNING - ⚠️ Plugin 'behavior_detector' ya registrado, sobrescribiendo
+2025-11-15 09:23:30,047 - core.plugin_registry - INFO - ✅ Plugin 'behavior_detector' registrado en categoría 'detectors'
+2025-11-15 09:23:30,574 - core.plugin_registry - INFO - ✅ Plugin 'ml_detector' registrado en categoría 'detectors'
+2025-11-15 09:23:30,574 - core.plugin_registry - WARNING - ⚠️ Plugin 'ml_detector' ya registrado, sobrescribiendo
+2025-11-15 09:23:30,574 - core.plugin_registry - INFO - ✅ Plugin 'ml_detector' registrado en categoría 'detectors'
+2025-11-15 09:23:30,610 - core.plugin_registry - INFO - ✅ Plugin 'network_detector' registrado en categoría 'detectors'
+2025-11-15 09:23:30,641 - core.plugin_registry - INFO - ✅ Plugin 'alert_manager' registrado en categoría 'handlers'
+2025-11-15 09:23:30,645 - core.plugin_registry - INFO - ✅ Plugin 'logger_handler' registrado en categoría 'handlers'
+2025-11-15 09:23:30,647 - core.plugin_registry - INFO - ✅ Plugin 'quarantine_handler' registrado en categoría 'handlers'
+2025-11-15 09:23:30,648 - core.plugin_registry - INFO - ✅ Descubiertos 6 plugins
+2025-11-15 09:23:30,648 - PluginManager - INFO - ✅ Descubrimiento completado: 6 plugins encontrados
+2025-11-15 09:23:30,649 - core.event_bus - INFO - 📋 'UnifiedEngine' suscrito a eventos 'threat_detected'
+2025-11-15 09:23:30,649 - core.event_bus - INFO - 📋 'UnifiedEngine' suscrito a eventos 'plugin_error'
+2025-11-15 09:23:30,650 - plugins.detectors.behavior_detector.plugin - INFO - Configuración cargada desde C:\Users\HP\Documents\GitHub\ANTIVIRUS_CPP_PROFESSIONAL\UNIFIED_ANTIVIRUS\plugins\detectors\behavior_detector\config.json
+2025-11-15 09:23:30,650 - plugins.detectors.behavior_detector.plugin - INFO - [PLUGIN] behavior_detector inicializado
+2025-11-15 09:23:30,651 - core.plugin_registry - INFO - 🏭 Plugin 'behavior_detector' creado exitosamente
+2025-11-15 09:23:30,651 - plugin.behavior_detector - INFO - 📄 Configuración cargada desde C:\Users\HP\Documents\GitHub\ANTIVIRUS_CPP_PROFESSIONAL\UNIFIED_ANTIVIRUS\plugins\detectors\behavior_detector\config.json
+2025-11-15 09:23:30,652 - plugins.detectors.behavior_detector.plugin - INFO - Inicializando behavior_detector...
+2025-11-15 09:23:30,653 - plugins.detectors.behavior_detector.rule_engine - INFO - [RULE_ENGINE] Cargadas 6 reglas de detección
+2025-11-15 09:23:30,653 - plugins.detectors.behavior_detector.rule_engine - INFO - [RULE_ENGINE] Inicializado con 6 reglas
+2025-11-15 09:23:30,653 - plugins.detectors.behavior_detector.whitelist_manager - INFO - [WHITELIST] Cargados 18 procesos y 7 directorios
+2025-11-15 09:23:30,654 - plugins.detectors.behavior_detector.whitelist_manager - INFO - [WHITELIST] Inicializado: 18 procesos, 7 directorios
+2025-11-15 09:23:30,654 - plugins.detectors.behavior_detector.behavior_engine - INFO - [BEHAVIOR_ENGINE] Inicializado (threshold: 0.7, advanced: True)
+2025-11-15 09:23:30,654 - plugins.detectors.behavior_detector.plugin - INFO - ✅ behavior_detector inicializado correctamente
+2025-11-15 09:23:30,654 - plugins.detectors.behavior_detector.plugin - INFO - Iniciando behavior_detector...
+2025-11-15 09:23:30,655 - plugins.detectors.behavior_detector.plugin - INFO - [BEHAVIOR_DETECTOR] Iniciando monitoreo real de procesos
+2025-11-15 09:23:30,655 - plugins.detectors.behavior_detector.plugin - INFO - ✅ behavior_detector iniciado correctamente
+2025-11-15 09:23:30,681 - plugin.behavior_detector - INFO - ✅ Plugin 'behavior_detector' activado exitosamente
+2025-11-15 09:23:30,694 - core.event_bus - INFO - 📢 Publicando evento 'plugin_activated' de 'PluginManager' a 0 suscriptores
+2025-11-15 09:23:30,729 - PluginManager - INFO - ✅ Plugin 'behavior_detector' activado
+2025-11-15 09:23:30,793 - plugins.detectors.ml_detector.plugin - INFO - [ML_DETECTOR] Configuración cargada: 8 secciones
+2025-11-15 09:23:30,801 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: chrome.exe - patrón: capture
+2025-11-15 09:23:30,802 - plugins.detectors.ml_detector.plugin - INFO - [ML_DETECTOR] Plugin inicializado con configuración desde C:\Users\HP\Documents\GitHub\ANTIVIRUS_CPP_PROFESSIONAL\UNIFIED_ANTIVIRUS\plugins\detectors\ml_detector\config.json
+2025-11-15 09:23:30,802 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: chrome.exe - Detección de suspicious_new_process en proceso chrome.exe
+2025-11-15 09:23:30,802 - core.plugin_registry - INFO - 🏭 Plugin 'ml_detector' creado exitosamente
+2025-11-15 09:23:30,803 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: chrome.exe - patrón: capture
+2025-11-15 09:23:30,803 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: chrome.exe - Detección de suspicious_new_process en proceso chrome.exe
+2025-11-15 09:23:30,891 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: code.exe - patrón: capture
+2025-11-15 09:23:30,886 - plugin.ml_detector - INFO - 📄 Configuración cargada desde C:\Users\HP\Documents\GitHub\ANTIVIRUS_CPP_PROFESSIONAL\UNIFIED_ANTIVIRUS\plugins\detectors\ml_detector\config.json
+2025-11-15 09:23:30,891 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: Code.exe - Detección de suspicious_new_process en proceso Code.exe
+2025-11-15 09:23:30,893 - plugins.detectors.ml_detector.plugin - INFO - [ML_DETECTOR] Inicializando componentes ML...
+2025-11-15 09:23:30,904 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: chrome.exe - patrón: capture
+2025-11-15 09:23:30,905 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: chrome.exe - Detección de suspicious_new_process en proceso chrome.exe
+2025-11-15 09:23:30,916 - plugins.detectors.ml_detector.ml_engine - INFO - [ML_ENGINE] Clases cargadas: ['Benign', 'Keylogger']
+2025-11-15 09:23:30,997 - plugins.detectors.ml_detector.ml_engine - INFO - [ML_ENGINE] Metadatos cargados: 81 características
+2025-11-15 09:23:31,155 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: chrome.exe - patrón: capture
+2025-11-15 09:23:31,155 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: chrome.exe - Detección de suspicious_new_process en proceso chrome.exe
+2025-11-15 09:23:31,219 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: code.exe - patrón: capture
+2025-11-15 09:23:31,220 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: Code.exe - Detección de suspicious_new_process en proceso Code.exe
+2025-11-15 09:23:31,266 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: chrome.exe - patrón: capture
+2025-11-15 09:23:31,267 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: chrome.exe - Detección de suspicious_new_process en proceso chrome.exe
+2025-11-15 09:23:31,924 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: code.exe - patrón: capture
+2025-11-15 09:23:31,924 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: Code.exe - Detección de suspicious_new_process en proceso Code.exe
+2025-11-15 09:23:31,926 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: chrome.exe - patrón: capture
+2025-11-15 09:23:31,927 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: chrome.exe - Detección de suspicious_new_process en proceso chrome.exe
+2025-11-15 09:23:31,997 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: code.exe - patrón: capture
+2025-11-15 09:23:31,998 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: Code.exe - Detección de suspicious_new_process en proceso Code.exe
+2025-11-15 09:23:32,047 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: svchost.exe - patrón: capture
+2025-11-15 09:23:32,047 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: svchost.exe - Detección de suspicious_new_process en proceso svchost.exe
+2025-11-15 09:23:32,048 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: discord.exe - patrón: capture
+2025-11-15 09:23:32,049 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: Discord.exe - Detección de suspicious_new_process en proceso Discord.exe
+2025-11-15 09:23:32,049 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: chrome.exe - patrón: monitor
+2025-11-15 09:23:32,050 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: chrome.exe - Detección de suspicious_new_process en proceso chrome.exe
+2025-11-15 09:24:11,908 - core.engine - INFO - 🛑 Señal recibida (2), iniciando shutdown...
+2025-11-15 09:24:11,929 - core.engine - INFO - 🛑 Iniciando shutdown del sistema...
+2025-11-15 09:24:11,951 - core.event_bus - INFO - 📢 Publicando evento 'system_shutdown_started' de 'UnifiedEngine' a 0 suscriptores
+2025-11-15 09:24:12,029 - plugins.detectors.behavior_detector.plugin - INFO - Deteniendo behavior_detector...
+2025-11-15 09:24:12,034 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: chrome.exe - patrón: capture
+2025-11-15 09:24:12,035 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: chrome.exe - Detección de suspicious_new_process en proceso chrome.exe
+2025-11-15 09:24:12,035 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: chrome.exe - patrón: capture
+2025-11-15 09:24:12,036 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: chrome.exe - Detección de suspicious_new_process en proceso chrome.exe
+2025-11-15 09:24:12,036 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: adskaccessuihost.exe - patrón: capture
+2025-11-15 09:24:12,036 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: AdskAccessUIHost.exe - Detección de suspicious_new_process en proceso AdskAccessUIHost.exe
+2025-11-15 09:24:12,070 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: code.exe - patrón: monitor
+2025-11-15 09:24:12,071 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: Code.exe - Detección de suspicious_new_process en proceso Code.exe
+2025-11-15 09:24:12,088 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: chrome.exe - patrón: capture
+2025-11-15 09:24:12,088 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: chrome.exe - Detección de suspicious_new_process en proceso chrome.exe
+2025-11-15 09:24:12,089 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: chrome.exe - patrón: capture
+2025-11-15 09:24:12,089 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: chrome.exe - Detección de suspicious_new_process en proceso chrome.exe
+2025-11-15 09:24:12,126 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: code.exe - patrón: capture
+2025-11-15 09:24:12,126 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: Code.exe - Detección de suspicious_new_process en proceso Code.exe
+2025-11-15 09:24:12,127 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: code.exe - patrón: capture
+2025-11-15 09:24:12,128 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: Code.exe - Detección de suspicious_new_process en proceso Code.exe
+2025-11-15 09:24:12,162 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: chrome.exe - patrón: capture
+2025-11-15 09:24:12,163 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: chrome.exe - Detección de suspicious_new_process en proceso chrome.exe
+2025-11-15 09:24:12,179 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: chrome.exe - patrón: capture
+2025-11-15 09:24:12,179 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: chrome.exe - Detección de suspicious_new_process en proceso chrome.exe
+2025-11-15 09:24:12,180 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: msedge.exe - patrón: monitor
+2025-11-15 09:24:12,180 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: msedge.exe - Detección de suspicious_new_process en proceso msedge.exe
+2025-11-15 09:24:12,181 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: chrome.exe - patrón: capture
+2025-11-15 09:24:12,182 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: chrome.exe - Detección de suspicious_new_process en proceso chrome.exe
+2025-11-15 09:24:12,182 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: discord.exe - patrón: monitor
+2025-11-15 09:24:12,182 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: Discord.exe - Detección de suspicious_new_process en proceso Discord.exe
+2025-11-15 09:24:12,214 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] Proceso sospechoso detectado: chrome.exe - patrón: capture
+2025-11-15 09:24:12,214 - plugins.detectors.behavior_detector.plugin - WARNING - [DETECTION] suspicious_new_process: chrome.exe - Detección de suspicious_new_process en proceso chrome.exe
+2025-11-15 09:24:14,258 - plugins.detectors.behavior_detector.plugin - INFO - [BEHAVIOR_DETECTOR] Monitoreo de procesos terminado
+2025-11-15 09:24:14,266 - plugins.detectors.behavior_detector.plugin - INFO - ✅ behavior_detector detenido correctamente
+2025-11-15 09:24:14,267 - plugins.detectors.behavior_detector.plugin - INFO - Limpiando recursos de behavior_detector...
+2025-11-15 09:24:14,267 - plugins.detectors.behavior_detector.plugin - INFO - ✅ Recursos de behavior_detector limpiados
+2025-11-15 09:24:14,268 - plugin.behavior_detector - INFO - 🔴 Plugin 'behavior_detector' desactivado
+2025-11-15 09:24:14,268 - core.event_bus - INFO - 📢 Publicando evento 'plugin_deactivated' de 'PluginManager' a 0 suscriptores
+2025-11-15 09:24:14,269 - PluginManager - INFO - 🔴 Plugin 'behavior_detector' desactivado
+2025-11-15 09:24:14,269 - PluginManager - INFO - 🛑 Shutdown: 1/1 plugins
+2025-11-15 09:24:14,269 - core.event_bus - INFO - 🧹 Historial de eventos limpiado
+2025-11-15 09:24:14,269 - core.engine - INFO - ✅ Sistema detenido exitosamente

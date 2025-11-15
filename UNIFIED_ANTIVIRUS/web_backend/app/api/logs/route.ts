@@ -18,10 +18,10 @@ const logSchema = Joi.object({
       level: Joi.string().valid('DEBUG', 'INFO', 'WARNING', 'ERROR', 'CRITICAL').required(),
       logger: Joi.string().required(),
       message: Joi.string().required(),
-      module: Joi.string().optional().allow(null),
-      function: Joi.string().optional().allow(null),
-      line: Joi.number().optional().allow(null),
-      component: Joi.string().optional().allow(null),
+      module: Joi.alternatives().try(Joi.string(), Joi.allow(null)).optional(),
+      function: Joi.alternatives().try(Joi.string(), Joi.allow(null)).optional(),
+      line: Joi.alternatives().try(Joi.number(), Joi.allow(null)).optional(),
+      component: Joi.alternatives().try(Joi.string(), Joi.allow(null)).optional(),
       metadata: Joi.object().optional().allow(null),  // Campo metadata explícitamente permitido
       data: Joi.object().optional().allow(null)  // Mantener compatibilidad con versiones anteriores
     }).unknown(true)  // Permitir campos adicionales no definidos

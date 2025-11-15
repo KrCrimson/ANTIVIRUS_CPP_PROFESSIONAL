@@ -243,7 +243,30 @@ class NetworkDetectorPlugin(BasePlugin, DetectorInterface):
             self.logger.error(f"❌ Error activando Network Detector: {e}")
             return False
     
-    async def deactivate(self) -> bool:
+    def deactivate(self) -> bool:
+        """
+        🛑 Wrapper síncrono para desactivación del plugin.
+        """
+        try:
+            # Ejecutar la desactivación asíncrona en el loop actual
+            import asyncio
+            
+            # Intentar obtener el loop actual
+            try:
+                loop = asyncio.get_running_loop()
+                # Si hay un loop corriendo, crear una tarea
+                task = asyncio.create_task(self._deactivate_async())
+                # Para evitar el warning, no esperamos el resultado
+                return True
+            except RuntimeError:
+                # No hay loop corriendo, crear uno nuevo
+                return asyncio.run(self._deactivate_async())
+                
+        except Exception as e:
+            self.logger.error(f"❌ Error en deactivate wrapper: {e}")
+            return False
+
+    async def _deactivate_async(self) -> bool:
         """
         🛑 Template Method: Desactivación del plugin.
         

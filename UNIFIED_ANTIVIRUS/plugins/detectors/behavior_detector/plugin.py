@@ -466,9 +466,9 @@ class BehaviorDetectorPlugin(BasePlugin, DetectorInterface):
     def _analyze_suspicious_process(self, process_data: Dict, suspicious_patterns: List[str]) -> bool:
         """Analiza si un proceso es sospechoso"""
         try:
-            name = process_data.get('name', '').lower()
-            exe = process_data.get('exe', '').lower()
-            cmdline = process_data.get('cmdline', '').lower()
+            name = (process_data.get('name') or '').lower()
+            exe = (process_data.get('exe') or '').lower()
+            cmdline = (process_data.get('cmdline') or '').lower()
             
             # Verificar patrones sospechosos en el nombre
             for pattern in suspicious_patterns:
@@ -509,7 +509,7 @@ class BehaviorDetectorPlugin(BasePlugin, DetectorInterface):
             
             # Verificar uso elevado de CPU (excluir procesos del sistema)
             cpu_percent = current_data.get('cpu_percent', 0)
-            process_name = current_data.get('name', '').lower()
+            process_name = (current_data.get('name') or '').lower()
             
             # Lista de procesos que pueden usar mucha CPU legítimamente
             legitimate_high_cpu = ['chrome.exe', 'firefox.exe', 'code.exe', 'system idle process', 

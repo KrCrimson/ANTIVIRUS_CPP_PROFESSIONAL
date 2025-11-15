@@ -249,7 +249,8 @@ class WebLogSender:
                         break
                     else:
                         error_text = await response.text()
-                        self.logger.warning(f"Error HTTP {response.status}: {error_text}")
+                        self.logger.error(f"❌ Error HTTP {response.status}: {error_text}")
+                        self.logger.error(f"📤 Payload enviado: {json.dumps(payload, indent=2)}")
                         
             except aiohttp.ClientError as e:
                 self.stats["connection_errors"] += 1
