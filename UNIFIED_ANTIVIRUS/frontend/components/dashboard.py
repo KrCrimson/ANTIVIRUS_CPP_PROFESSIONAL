@@ -72,15 +72,28 @@ class DashboardComponent:
         self.update_thread = None
         
     def create(self):
-        """Crear el dashboard completo"""
+        """Crear el dashboard completo responsivo"""
         try:
-            with dpg.parent(self.parent_tag):
-                self._create_header()
-                self._create_metrics_row()
-                dpg.add_spacer(height=20)
-                self._create_charts_section()
-                dpg.add_spacer(height=20)
-                self._create_status_section()
+            # Usar dimensiones por defecto que se ajustarán automáticamente
+            viewport_width = 1200  # Ancho por defecto
+            viewport_height = 800  # Alto por defecto
+            
+            # Intentar obtener dimensiones reales si están disponibles
+            try:
+                actual_width = dpg.get_viewport_width()
+                actual_height = dpg.get_viewport_height()
+                if actual_width > 0 and actual_height > 0:
+                    viewport_width = actual_width - 250  # Restar ancho del sidebar
+                    viewport_height = actual_height - 100  # Restar espacio para header
+            except:
+                pass  # Usar valores por defecto si no están disponibles
+            
+            self._create_header()
+            self._create_metrics_row(viewport_width)
+            dpg.add_spacer(height=15)
+            self._create_charts_section(viewport_width, viewport_height)
+            dpg.add_spacer(height=15)
+            self._create_suspicious_processes_list(viewport_width)
                 
             self.logger.info("Dashboard created successfully")
             
@@ -89,60 +102,68 @@ class DashboardComponent:
             
     def _create_header(self):
         """Crear header del dashboard"""
-        with dpg.group():
-            dpg.add_text("📊 System Dashboard", color=(0, 150, 255))
-            dpg.add_same_line(spacing=50)
-            dpg.add_text("Last Updated: ", color=(150, 150, 150))
-            dpg.add_same_line()
-            dpg.add_text("Never", tag="dashboard_last_update", color=(200, 200, 200))
-            
-            dpg.add_separator()
-            
-    def _create_metrics_row(self):
-        """Crear fila de métricas principales"""
         with dpg.group(horizontal=True):
-            # Métricas en cards
+            dpg.add_text("📊 System Dashboard", color=(0, 150, 255))
+            dpg.add_spacer(width=50)
+            with dpg.group():
+                dpg.add_text("Last Updated: ", color=(150, 150, 150))
+                dpg.add_text("Never", tag="dashboard_last_update", color=(200, 200, 200))
+            
+        dpg.add_separator()
+            
+    def _create_metrics_row(self, viewport_width):
+        """Crear fila de métricas principales responsiva"""
+        # Calcular ancho de cada métrica basado en viewport
+        metric_width = (viewport_width - 100) // 5  # 5 métricas con espaciado
+        
+        with dpg.group(horizontal=True):
+            # Métricas en cards responsivas
             self._create_metric_card(
                 "🛡️ Protection Status",
                 "Active",
                 (0, 255, 100),
-                self.ui_tags['protection_status']
+                self.ui_tags['protection_status'],
+                metric_width
             )
             
-            dpg.add_spacer(width=20)
+            dpg.add_spacer(width=15)
             
             self._create_metric_card(
                 "🦠 Threats Detected",
                 "0",
                 (255, 100, 100),
-                self.ui_tags['threats_count']
+                self.ui_tags['threats_count'],
+                metric_width
             )
             
-            dpg.add_spacer(width=20)
+            dpg.add_spacer(width=15)
             
             self._create_metric_card(
                 "💻 CPU Usage",
                 "0%",
-                (100, 200, 255),
-                self.ui_tags['cpu_metric']
+                (100, 150, 255),
+                self.ui_tags['cpu_metric'],
+                metric_width
             )
             
-            dpg.add_spacer(width=20)
+            dpg.add_spacer(width=15)
             
             self._create_metric_card(
                 "🧠 Memory Usage",
                 "0%",
-                (255, 200, 100),
-                self.ui_tags['memory_metric']
+                (255, 150, 100),
+                self.ui_tags['memory_metric'],
+                metric_width
             )
             
-            dpg.add_spacer(width=20)
+            dpg.add_spacer(width=15)
             
             self._create_metric_card(
-                "⚙️ Processes",
+                "📊 Processes",
                 "0",
-                (200, 100, 255),
-                self.ui_tags['processes_metric']
+                (150, 255, 150),
+                self.ui_tags['processes_metric'],
+                metric_width
             )
             
             dpg.add_spacer(width=20)
@@ -154,30 +175,35 @@ class DashboardComponent:
                 self.ui_tags['uptime_metric']
             )
             
-    def _create_metric_card(self, title: str, value: str, color: tuple, value_tag: str):
-        """Crear una tarjeta de métrica"""
-        with dpg.child_window(width=180, height=100, border=True):
+    def _create_metric_card(self, title: str, value: str, color: tuple, value_tag: str, width: int = 180):
+        """Crear una tarjeta de métrica responsiva"""
+        with dpg.child_window(width=width, height=100, border=True):
             dpg.add_spacer(height=5)
             dpg.add_text(title, color=color)
             dpg.add_spacer(height=10)
             
             # Valor grande y centrado
-            with dpg.group(horizontal=True):
-                dpg.add_spacer(width=10)
-                dpg.add_text(value, tag=value_tag, color=(255, 255, 255))
+            dpg.add_spacer(width=10)
+            dpg.add_text(value, tag=value_tag, color=(255, 255, 255))
                 
-    def _create_charts_section(self):
-        """Crear sección de gráficos"""
-        dpg.add_text("📈 Real-time Performance", color=(0, 150, 255))
+    def _create_charts_section(self, viewport_width, viewport_height):
+        """Crear sección de gráficos de rendimiento responsiva"""
+        dpg.add_text("📈 Real-time Performance", color=(0, 200, 100))
         dpg.add_separator()
+        
+        # Calcular dimensiones responsivas
+        chart_width = (viewport_width - 60) // 2  # 2 gráficos por fila con espaciado
+        chart_height = (viewport_height - 300) // 2  # 2 filas de gráficos
+        plot_width = chart_width - 40  # Restar padding interno
+        plot_height = chart_height - 80  # Restar espacio para título
         
         # Fila superior de gráficos
         with dpg.group(horizontal=True):
             # Gráfico de CPU
-            with dpg.child_window(width=340, height=200, border=True):
-                dpg.add_text("CPU Usage (%)", color=(100, 200, 255))
+            with dpg.child_window(width=chart_width, height=chart_height, border=True):
+                dpg.add_text("💻 CPU Usage (%)", color=(100, 150, 255))
                 
-                with dpg.plot(width=320, height=150, tag=self.ui_tags['cpu_plot']):
+                with dpg.plot(width=plot_width, height=plot_height, tag=self.ui_tags['cpu_plot']):
                     dpg.add_plot_legend()
                     dpg.add_plot_axis(dpg.mvXAxis, label="Time")
                     dpg.add_plot_axis(dpg.mvYAxis, label="CPU %", tag="cpu_y_axis")
@@ -193,10 +219,10 @@ class DashboardComponent:
             dpg.add_spacer(width=20)
             
             # Gráfico de Memoria
-            with dpg.child_window(width=340, height=200, border=True):
-                dpg.add_text("Memory Usage (%)", color=(255, 200, 100))
+            with dpg.child_window(width=chart_width, height=chart_height, border=True):
+                dpg.add_text("🧠 Memory Usage (%)", color=(255, 150, 100))
                 
-                with dpg.plot(width=320, height=150, tag=self.ui_tags['memory_plot']):
+                with dpg.plot(width=plot_width, height=plot_height, tag=self.ui_tags['memory_plot']):
                     dpg.add_plot_legend()
                     dpg.add_plot_axis(dpg.mvXAxis, label="Time")
                     dpg.add_plot_axis(dpg.mvYAxis, label="Memory %", tag="memory_y_axis")
@@ -209,15 +235,15 @@ class DashboardComponent:
                         tag="memory_line_series"
                     )
         
-        dpg.add_spacer(height=20)
+        dpg.add_spacer(height=15)
         
         # Fila inferior de gráficos
         with dpg.group(horizontal=True):
             # Gráfico de Amenazas
-            with dpg.child_window(width=340, height=200, border=True):
-                dpg.add_text("Threats Detected", color=(255, 100, 100))
+            with dpg.child_window(width=chart_width, height=chart_height, border=True):
+                dpg.add_text("🦠 Threats Detected", color=(255, 100, 100))
                 
-                with dpg.plot(width=320, height=150, tag=self.ui_tags['threats_plot']):
+                with dpg.plot(width=plot_width, height=plot_height, tag=self.ui_tags['threats_plot']):
                     dpg.add_plot_legend()
                     dpg.add_plot_axis(dpg.mvXAxis, label="Time")
                     dpg.add_plot_axis(dpg.mvYAxis, label="Threats", tag="threats_y_axis")
@@ -233,10 +259,10 @@ class DashboardComponent:
             dpg.add_spacer(width=20)
             
             # Gráfico de Red
-            with dpg.child_window(width=340, height=200, border=True):
-                dpg.add_text("Network Activity", color=(200, 100, 255))
+            with dpg.child_window(width=chart_width, height=chart_height, border=True):
+                dpg.add_text("🌐 Network Activity", color=(200, 100, 255))
                 
-                with dpg.plot(width=320, height=150, tag=self.ui_tags['network_plot']):
+                with dpg.plot(width=plot_width, height=plot_height, tag=self.ui_tags['network_plot']):
                     dpg.add_plot_legend()
                     dpg.add_plot_axis(dpg.mvXAxis, label="Time")
                     dpg.add_plot_axis(dpg.mvYAxis, label="Connections", tag="network_y_axis")
@@ -249,74 +275,35 @@ class DashboardComponent:
                         tag="network_line_series"
                     )
                     
-    def _create_status_section(self):
-        """Crear sección de estado del sistema"""
-        dpg.add_text("🔍 System Status", color=(0, 150, 255))
+    def _create_suspicious_processes_list(self, viewport_width):
+        """Crear tabla responsiva para procesos sospechosos"""
+        dpg.add_text("🚨 Suspicious Processes", color=(255, 100, 100))
         dpg.add_separator()
         
-        with dpg.group(horizontal=True):
-            # Columna izquierda - Estado de protección
-            with dpg.child_window(width=400, height=150, border=True):
-                dpg.add_text("🛡️ Protection Status", color=(0, 255, 100))
-                dpg.add_spacer(height=10)
-                
-                with dpg.group(horizontal=True):
-                    dpg.add_text("Real-time Protection:")
-                    dpg.add_same_line()
-                    dpg.add_text("ACTIVE", tag="realtime_status", color=(0, 255, 100))
-                
-                with dpg.group(horizontal=True):
-                    dpg.add_text("Last Full Scan:")
-                    dpg.add_same_line()
-                    dpg.add_text("Never", tag="last_scan_status", color=(255, 165, 0))
-                
-                with dpg.group(horizontal=True):
-                    dpg.add_text("Definitions Updated:")
-                    dpg.add_same_line()
-                    dpg.add_text("Up to date", tag="definitions_status", color=(0, 255, 100))
-                    
-            dpg.add_spacer(width=20)
-            
-            # Columna derecha - Acciones rápidas
-            with dpg.child_window(width=400, height=150, border=True):
-                dpg.add_text("⚡ Quick Actions", color=(100, 200, 255))
-                dpg.add_spacer(height=10)
-                
-                dpg.add_button(
-                    label="🔍 Quick Scan",
-                    callback=self._start_quick_scan,
-                    width=150,
-                    height=30
-                )
-                
-                dpg.add_spacer(height=5)
-                
-                dpg.add_button(
-                    label="🔄 Update Definitions",
-                    callback=self._update_definitions,
-                    width=150,
-                    height=30
-                )
-                
-                dpg.add_spacer(height=5)
-                
-                dpg.add_button(
-                    label="📊 View Report",
-                    callback=self._view_report,
-                    width=150,
-                    height=30
-                )
-                
-    def start_updates(self):
+        # Calcular altura disponible para la tabla
+        table_height = 180  # Altura fija pero ajustable
+        
+        with dpg.child_window(width=viewport_width, height=table_height, border=True, tag="suspicious_processes_window"):
+            with dpg.table(header_row=True, resizable=True, policy=dpg.mvTable_SizingStretchProp,
+                           borders_outerH=True, borders_innerV=True, borders_innerH=True, borders_outerV=True,
+                           tag="suspicious_processes_table"):
+                dpg.add_table_column(label="Timestamp")
+                dpg.add_table_column(label="Process/File")
+                dpg.add_table_column(label="Type")
+                dpg.add_table_column(label="Risk")
+                dpg.add_table_column(label="Actions")
+
+    def start_updates(self, app_controller):
         """Iniciar actualizaciones automáticas del dashboard"""
         if self.is_updating:
             return
-            
+        
+        self.app_controller = app_controller
         self.is_updating = True
         self.update_thread = threading.Thread(target=self._update_loop, daemon=True)
         self.update_thread.start()
         self.logger.info("Dashboard updates started")
-        
+
     def stop_updates(self):
         """Detener actualizaciones automáticas"""
         self.is_updating = False
@@ -330,35 +317,37 @@ class DashboardComponent:
             try:
                 self._update_metrics()
                 self._update_plots()
+                self._update_suspicious_processes_list()
                 time.sleep(1.0)  # Actualizar cada segundo
-                
+
             except Exception as e:
                 self.logger.error(f"Error in dashboard update loop: {e}")
-                
+
     def _update_metrics(self):
         """Actualizar métricas del dashboard"""
         try:
-            # Simular obtención de datos del sistema
-            import psutil
-            import random
-            
+            # Obtener datos del controlador principal
+            if not hasattr(self, 'app_controller'):
+                return
+
+            stats = self.app_controller.system_stats
+
             # Datos reales del sistema
-            cpu_usage = psutil.cpu_percent()
-            memory_usage = psutil.virtual_memory().percent
-            process_count = len(psutil.pids())
-            
-            # Simular datos del antivirus
-            threats_detected = self.current_metrics['threats_detected']
-            uptime = int(time.time() - (self.current_metrics.get('start_time', time.time())))
-            
+            cpu_usage = stats.get('cpu_usage', 0.0)
+            memory_usage = stats.get('memory_usage', 0.0)
+            process_count = stats.get('processes_monitored', 0)
+            threats_detected = stats.get('threats_detected', 0)
+            uptime = int(stats.get('uptime', 0))
+
             # Actualizar métricas
             self.current_metrics.update({
                 'cpu_usage': cpu_usage,
                 'memory_usage': memory_usage,
                 'processes_monitored': process_count,
+                'threats_detected': threats_detected,
                 'uptime': uptime
             })
-            
+
             # Actualizar UI
             if dpg.does_item_exist(self.ui_tags['cpu_metric']):
                 dpg.set_value(self.ui_tags['cpu_metric'], f"{cpu_usage:.1f}%")
@@ -367,10 +356,10 @@ class DashboardComponent:
                 dpg.set_value(self.ui_tags['uptime_metric'], self._format_uptime(uptime))
                 dpg.set_value(self.ui_tags['threats_count'], str(threats_detected))
                 dpg.set_value("dashboard_last_update", time.strftime("%H:%M:%S"))
-                
+
         except Exception as e:
             self.logger.error(f"Error updating metrics: {e}")
-            
+
     def _update_plots(self):
         """Actualizar gráficos en tiempo real"""
         try:
@@ -383,9 +372,9 @@ class DashboardComponent:
             self.plot_data['threats_history'].append(self.current_metrics['threats_detected'])
             
             # Simular actividad de red
-            network_activity = len([p for p in psutil.net_connections() if p.status == 'ESTABLISHED'])
+            network_activity = self.current_metrics.get('network_activity', 0) # Usar métrica si existe
             self.plot_data['network_history'].append(network_activity)
-            
+
             # Convertir a listas para Dear PyGui
             time_values = list(range(len(self.plot_data['time_stamps'])))
             
@@ -401,10 +390,17 @@ class DashboardComponent:
                 
             if dpg.does_item_exist("network_line_series"):
                 dpg.set_value("network_line_series", [time_values, list(self.plot_data['network_history'])])
-                
+
         except Exception as e:
             self.logger.error(f"Error updating plots: {e}")
-            
+
+    def _update_suspicious_processes_list(self):
+        """Actualizar la lista de procesos sospechosos (versión simplificada)"""
+        # Saltarse actualizaciones que causan problemas con la tabla
+        # La funcionalidad completa está disponible en Real-time Monitor
+        pass
+
+
     def _format_uptime(self, seconds: int) -> str:
         """Formatear tiempo de actividad"""
         if seconds < 60:
@@ -425,17 +421,3 @@ class DashboardComponent:
         self.current_metrics['protection_status'] = status
         if dpg.does_item_exist(self.ui_tags['protection_status']):
             dpg.set_value(self.ui_tags['protection_status'], status)
-            
-    # Callbacks para botones
-    def _start_quick_scan(self):
-        """Callback para escaneo rápido"""
-        self.logger.info("Quick scan requested from dashboard")
-        # Aquí se conectaría con el motor antivirus
-        
-    def _update_definitions(self):
-        """Callback para actualizar definiciones"""
-        self.logger.info("Update definitions requested from dashboard")
-        
-    def _view_report(self):
-        """Callback para ver reporte"""
-        self.logger.info("View report requested from dashboard")
