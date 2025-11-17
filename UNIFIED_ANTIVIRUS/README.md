@@ -8,9 +8,17 @@ Bienvenido al índice central de documentación del Sistema Anti-Keylogger Unifi
 
 ## 🎯 Descripción General
 
-Sistema avanzado de detección y prevención de keyloggers desarrollado en Python. Implementa múltiples capas de detección utilizando análisis de comportamiento, machine learning, monitoreo de red y análisis heurístico para identificar y neutralizar amenazas de captura de teclado en tiempo real.
+Sistema antivirus profesional desarrollado en Python con **interfaz moderna Dear PyGui** y arquitectura modular avanzada. Implementa múltiples capas de detección utilizando análisis de comportamiento, machine learning (modelos ONNX), monitoreo de red y análisis heurístico para identificar y neutralizar amenazas en tiempo real.
 
-Este sistema antivirus modular utiliza una arquitectura basada en plugins con patrones de diseño de software avanzados (Facade, Observer, Strategy, Template Method, Factory) para proporcionar protección integral contra keyloggers y spyware.
+Este sistema antivirus de próxima generación utiliza una arquitectura basada en plugins con patrones de diseño de software avanzados (Facade, Observer, Strategy, Template Method, Factory) e integra metodologías modernas de desarrollo como **TDD automático**, **IAST security testing** y **MDSD code generation**.
+
+### 🔥 **Características Destacadas Recientes:**
+- ✨ **Interfaz moderna** con Dear PyGui 2.1.0 (dashboard responsivo)
+- 🎯 **Sistema de documentación** organizado con rama `docs-only` dedicada
+- 🛡️ **Detección real** de amenazas sin datos ficticios
+- 📊 **10 archivos de log** independientes con monitoreo en tiempo real
+- 🧪 **Integración TDD/IAST/MDSD** automática
+- 🌐 **Dashboard web** con FastAPI para monitoreo centralizado
 
 ---
 
@@ -59,9 +67,11 @@ Este sistema antivirus modular utiliza una arquitectura basada en plugins con pa
 
 ## 📂 DIRECTORIOS Y RECURSOS
 
-### 📚 **Recursos Adicionales**
+### 📚 **Recursos y Ramas del Proyecto**
 - 📑 **[Directorio XD](./xd/README.md)** - Recursos y documentación adicional
 - 📝 **[MDSD](./mdsd/README.md)** - Documentación de desarrollo dirigido por modelos
+- 📖 **Rama `docs-only`** - Rama especializada con **solo archivos Markdown** (60 archivos de documentación)
+- 🌿 **Rama `UNIFIED_ANTIVIRUS`** - Rama principal con código completo del sistema
 
 ---
 
@@ -344,18 +354,24 @@ Editar `config/unified_config.toml` para ajustar:
 Implementa el patrón de entrada única para el sistema. Utiliza `argparse` para configuración flexible por línea de comandos. Inicia el motor principal y mantiene el programa en ejecución hasta recibir señal de terminación.
 
 ### `production_launcher.py`
-**Propósito**: Launcher de producción con interfaz Dear PyGui moderna
+**Propósito**: Launcher de producción con interfaz Dear PyGui moderna ⭐ **RECOMENDADO**
 
-**Funcionalidad**:
-- Interfaz gráfica moderna con Dear PyGui 2.1.0
-- Dashboard con métricas en tiempo real
-- Visualización de amenazas detectadas
-- Sistema de logs estructurado con colores
-- Control de protección (iniciar/detener)
-- Integración completa con todos los plugins
+**Funcionalidades Avanzadas**:
+- 🎨 **Interfaz moderna** con Dear PyGui 2.1.0 (GPU-accelerated)
+- 📊 **Dashboard responsivo** que se adapta al tamaño de pantalla del usuario
+- 🛡️ **Monitor de amenazas** con sistema de análisis de árboles de decisión en español
+- 📈 **Métricas en tiempo real** con gráficos dinámicos y contadores
+- 🎛️ **Panel de configuración** dinámico con modos preset (Básico/Avanzado/Experto)
+- 📋 **Visualización de logs** estructurada con códigos de color por tipo
+- 🔄 **Control total** de protección (iniciar/detener/reiniciar)
+- 🌐 **Integración completa** con todos los 8 plugins del sistema
 
-**Descripción Técnica**:
-Aplicación Dear PyGui con arquitectura robusta. Utiliza threading para comunicación asíncrona con el motor antivirus. Implementa sistema de actualización en tiempo real sin bloqueos. Interfaz moderna y responsiva optimizada para producción.
+**Mejoras Técnicas Implementadas**:
+- ✅ **Dashboard responsivo** con cálculos de viewport automáticos
+- ✅ **Modal de amenazas** mejorado con botón "X" funcional
+- ✅ **Interfaz en español** completa con árboles de decisión detallados
+- ✅ **Configuración dinámica** con indicadores visuales de estado
+- ✅ **Sin errores dpg.parent()** - arquitectura completamente estable
 
 ### `professional_ui_robust.py`
 **Propósito**: Interfaz gráfica profesional legacy con tkinter
@@ -640,6 +656,32 @@ tail -f logs/iast_security.log
 - **Filtrado por severidad**: Configuración independiente por plugin
 - **Monitoreo en tiempo real**: `monitor_all_logs.py` para visualización simultánea
 
+## 🌿 Ramas del Repositorio
+
+### **Rama Principal: `UNIFIED_ANTIVIRUS`**
+- 🚀 Código completo del sistema antivirus
+- 💻 Todos los archivos fuente y dependencias
+- 🔧 Configuraciones y modelos ML
+- 📊 Sistema completo con 10 archivos de log
+
+### **Rama Documentación: `docs-only`** 📖
+- 📝 **Solo archivos Markdown** (60 documentos)
+- 📚 Documentación completa sin código fuente
+- 🎯 Ideal para revisión de documentación
+- 🔗 Estructura de carpetas preservada
+- 📋 Perfecto para distribución de docs
+
+```bash
+# Cambiar a rama de documentación
+git checkout docs-only
+
+# Ver solo archivos .md
+ls **/*.md
+
+# Volver a rama principal
+git checkout UNIFIED_ANTIVIRUS
+```
+
 ## 🤝 Contribución
 
 Este es un proyecto académico del curso de Sistemas Comportamentales.
@@ -733,7 +775,43 @@ Proyecto académico - Universidad Privada de Tacna
 
 Estudiantes del curso de Sistemas Comportamentales - UPT
 
-## 🎉 Características Avanzadas Recientes
+## 🎉 Mejoras Implementadas Recientemente (Noviembre 2025)
+
+### ✅ **Dashboard Responsivo Completo**
+- 📱 **Adaptación automática** al tamaño de pantalla del usuario
+- 📏 **Cálculos de viewport** dinámicos para todos los componentes
+- 🎨 **Tarjetas de métricas** que se escalan proporcionalmente
+- 📊 **Gráficos redimensionables** que mantienen la legibilidad
+
+### ✅ **Sistema de Gestión de Modals Mejorado**
+- ❌ **Botón "X" funcional** en modales de detalles de amenazas
+- 🔧 **Callbacks de cierre** correctamente implementados
+- 🪟 **Gestión de ventanas** sin errores de dpg.parent()
+- ⚡ **Rendimiento optimizado** sin bloqueos de UI
+
+### ✅ **Interfaz Completamente en Español**
+- 🇪🇸 **Traducción completa** del threat viewer y componentes
+- 🌳 **Árboles de decisión detallados** para análisis de amenazas
+- 📋 **Terminología técnica** precisa y profesional
+- 🔍 **Explicaciones paso a paso** del proceso de análisis
+
+### ✅ **Configuración Dinámica Avanzada**
+- 🎚️ **Modos preset** (Básico, Avanzado, Experto)
+- 💡 **Indicadores visuales** de estado activo
+- 📊 **Paneles informativos** dinámicos por configuración
+- ⚙️ **Aplicación en tiempo real** de cambios
+
+### ✅ **Sistema de Documentación Organizado**
+- 📚 **Rama `docs-only`** dedicada con 60 archivos Markdown
+- 🗂️ **Estructura preservada** sin código fuente
+- 📖 **Navegación mejorada** entre documentos
+- 🔗 **Enlaces internos** actualizados y funcionales
+
+### ✅ **Arquitectura de UI Estable**
+- 🏗️ **Sin errores dpg.parent()** - completamente resuelto
+- 🧵 **Threading seguro** para comunicación UI-backend
+- 🔄 **Actualización asíncrona** sin bloqueos
+- 💾 **Gestión de memoria** optimizada para UI
 
 ### ✅ **Sistema Completo de Logs Individuales**
 - **10 archivos de log** independientes por plugin
@@ -747,12 +825,6 @@ Estudiantes del curso de Sistemas Comportamentales - UPT
 - **MDSD code generation** cada 120 segundos
 - **Threading concurrente** para máximo rendimiento
 
-### ✅ **Interfaz Moderna Dear PyGui**
-- **UI responsiva** y moderna
-- **Métricas en tiempo real** actualizadas
-- **Gestión completa** de plugins
-- **Control total** del sistema
-
 ### ✅ **Detección Real de Amenazas**
 - **Sin datos ficticios** - solo detecciones reales
 - **Análisis de procesos** en tiempo real
@@ -762,12 +834,16 @@ Estudiantes del curso de Sistemas Comportamentales - UPT
 ## 📈 Estadísticas del Sistema
 
 ```
-📊 Plugins Totales: 8
-📝 Archivos de Log: 10  
-🧪 Tests Automáticos: TDD + IAST
-🏗️ Generación de Código: MDSD
-🛡️ Detección en Tiempo Real: ✅
-🎨 Interfaz Moderna: Dear PyGui 2.1.0
+📊 Plugins Totales: 8 (detección multi-capa)
+📝 Archivos de Log: 10 (logs independientes por plugin)
+📖 Documentos MD: 60 (rama docs-only dedicada)
+🧪 Tests Automáticos: TDD + IAST integrados
+🏗️ Generación de Código: MDSD automático
+🛡️ Detección Real: ✅ (sin datos ficticios)
+🎨 Interfaz Moderna: Dear PyGui 2.1.0 (GPU-accelerated)
+🌐 Dashboard Web: FastAPI + HTML5
+🔧 Patrones de Diseño: 5 (Facade, Observer, Strategy, etc.)
+📊 Métricas en Tiempo Real: ✅ (dashboard responsivo)
 ```
 
 <<<<<<< Updated upstream
@@ -797,5 +873,42 @@ Estudiantes del curso de Sistemas Comportamentales - UPT
 =======
 ---
 
-**Nota**: Este sistema está diseñado para propósitos educativos y de investigación en el curso de Sistemas Comportamentales. Implementa metodologías avanzadas de desarrollo (TDD, IAST, MDSD) integradas con detección de amenazas en tiempo real. Para uso en producción, se recomienda realizar auditorías de seguridad adicionales y pruebas exhaustivas.
+## 📞 SOPORTE Y AYUDA
+
+### 🆘 **¿Problemas?**
+- 🔧 **Configuración**: Ver [Guía de Usuario](./config/GUIA_USUARIO_CONFIGURACION.md)
+- 🐛 **Bugs**: Revisar [Tests](./tests/README.md) y ejecutar diagnósticos
+- 🔍 **Detección**: Consultar [Detectores README](./plugins/detectors/README.md)
+- 🌐 **Web Monitoring**: Verificar [configuración web](./client_monitor_config.json)
+- 🎨 **UI Issues**: La interfaz Dear PyGui es completamente estable tras las mejoras de noviembre 2025
+
+### 📚 **Documentación Clave**
+- 📖 **Funcionamiento**: [Documentación Técnica](./doc/COMO_FUNCIONA_TECHNICAL_README.md)
+- ⚙️ **Configuración**: [README de Config](./config/README.md)
+- 🧪 **Testing**: [Guía TDD](./tests/GUIA_IMPLEMENTACION_TDD.md)
+- 🏗️ **Arquitectura**: [Core README](./core/README.md)
+- 📚 **Solo Docs**: Rama `docs-only` con documentación pura
+
+### 🚀 **Comandos Rápidos**
+```bash
+# Interfaz moderna recomendada
+python production_launcher.py
+
+# Monitoreo de logs en tiempo real
+python monitor_all_logs.py
+
+# Rama de documentación solamente
+git checkout docs-only
+
+# Tests automáticos
+python -m pytest tests/
+```
+
+---
+
+**Nota**: Este sistema antivirus de próxima generación está diseñado para propósitos educativos y de investigación en el curso de **Sistemas Comportamentales - UPT**. 
+
+**Características Destacadas Nov 2025**: Implementa metodologías avanzadas de desarrollo (TDD, IAST, MDSD) integradas con detección de amenazas en tiempo real, interfaz Dear PyGui completamente responsiva, sistema de documentación organizado en ramas especializadas, y arquitectura de plugins estable sin errores conocidos.
+
+**Para Producción**: Se recomienda realizar auditorías de seguridad adicionales y pruebas exhaustivas. El sistema actual tiene una base sólida para entornos de producción con todas las mejoras de estabilidad implementadas.
 >>>>>>> Stashed changes
