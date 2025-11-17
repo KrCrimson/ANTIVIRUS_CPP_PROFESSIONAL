@@ -26,33 +26,53 @@ class ThreatViewerComponent:
         self.app_controller = app_controller
         self.logger = logging.getLogger("ThreatViewer")
         
+        # Inicializar variables de estado
+        self.current_view = "current"     # "current", "all", o "simple"
+        self.view_mode = "grouped"        # "grouped" o "simple"
+        self.selected_threat = None       # Amenaza seleccionada
+        self.simple_threats_map = {}      # Mapeo para vista simple
+        self.grouped_threats = {}         # Amenazas agrupadas
+        self.expanded_groups = set()      # Grupos expandidos
+        
         self.ui_tags = {
             "threat_list": "threat_viewer_threat_list",
             "decision_tree_container": "threat_viewer_decision_tree_container"
         }
 
     def render(self):
-        """Crear la vista del visualizador de amenazas."""
+        """Crear la vista del visualizador de amenazas con filtros y agrupación."""
         dpg.add_text("🔬 Analizador de Amenazas", color=(255, 100, 255))
         dpg.add_separator()
-            
+        
+        # Botones de filtrado con estilos mejorados
         with dpg.group(horizontal=True):
-            # Panel izquierdo: Lista de amenazas
-            with dpg.child_window(width=300, height=-1, tag="threat_list_container"):
-                dpg.add_text("Amenazas Detectadas")
-                dpg.add_listbox(
-                    items=[], 
-                    tag=self.ui_tags['threat_list'],
-                    callback=self._on_threat_selected,
-                    num_items=20
-                )
+            btn_current = dpg.add_button(label="🎯 Apps Sospechosas Actuales", callback=self._show_current_threats, tag="btn_current_threats")
+            btn_all = dpg.add_button(label="📋 Ver Todas las Detecciones", callback=self._show_all_detections, tag="btn_all_detections")
+            btn_simple = dpg.add_button(label="📝 Versión Simple", callback=self._show_simple_view, tag="btn_simple_view")
+            btn_refresh = dpg.add_button(label="🔄 Actualizar", callback=self._refresh_threats)
+            
+            # Aplicar temas a los botones para mejor visibilidad
+            self._apply_button_themes(btn_current, btn_all, btn_simple, btn_refresh)
+        
+        dpg.add_separator()
+        
+        # Las variables de estado ya están inicializadas en __init__
+        
+        with dpg.group(horizontal=True):
+            # Panel izquierdo: Lista de amenazas con agrupación
+            with dpg.child_window(width=350, height=-1, tag="threat_list_container"):
+                dpg.add_text("Amenazas Detectadas", tag="threat_list_title")
+                
+                # Contenedor scrollable para la lista agrupada
+                with dpg.child_window(width=-1, height=-1, tag="threat_grouped_container"):
+                    pass  # Se llenará dinámicamente
             
             # Panel derecho: Visualizador del árbol de decisión
             with dpg.child_window(width=-1, height=-1, tag=self.ui_tags['decision_tree_container']):
                 dpg.add_text("Selecciona una amenaza de la lista para ver el proceso de análisis.", tag="threat_viewer_placeholder")
 
         # Llenar la lista de amenazas al renderizar
-        self._update_threat_list()
+        self._update_threat_display()
         
         # Agregar botones de acción globales
         dpg.add_spacer(height=10)
@@ -61,17 +81,355 @@ class ThreatViewerComponent:
             dpg.add_button(label="🔒 Cuarentena Seleccionado", callback=self._quarantine_selected_threat)
             dpg.add_button(label="📍 Localizar Seleccionado", callback=self._locate_selected_threat)
             dpg.add_button(label="✅ Lista Blanca Seleccionado", callback=self._whitelist_selected_threat)
-
-    def _update_threat_list(self):
-        """Actualiza la lista de amenazas desde el controlador principal."""
-        threats = self.app_controller.get_active_threats()
-        threat_names = [f"{t.get('name', 'Unknown')} ({t.get('risk', 'N/A')})" for t in threats]
         
-        if dpg.does_item_exist(self.ui_tags['threat_list']):
-            dpg.configure_item(self.ui_tags['threat_list'], items=threat_names)
+        # Área de mensajes de acción
+        dpg.add_spacer(height=5)
+        self.container = self.parent_tag  # Para mensajes de acción
+
+    def _show_current_threats(self):
+        """Mostrar solo las amenazas actuales/sospechosas principales."""
+        self.current_view = "current"
+        self.view_mode = "grouped"
+        self._update_threat_display()
+        
+        # Actualizar título
+        if dpg.does_item_exist("threat_list_title"):
+            dpg.set_value("threat_list_title", "🎯 Apps Sospechosas Actuales")
+    
+    def _show_all_detections(self):
+        """Mostrar todas las detecciones históricas."""
+        self.current_view = "all"
+        self.view_mode = "grouped"
+        self._update_threat_display()
+        
+        # Actualizar título
+        if dpg.does_item_exist("threat_list_title"):
+            dpg.set_value("threat_list_title", "📋 Todas las Detecciones")
+    
+    def _show_simple_view(self):
+        """Mostrar vista simple (versión anterior)."""
+        self.current_view = "current"
+        self.view_mode = "simple"
+        self._update_threat_display()
+        
+        # Actualizar título
+        if dpg.does_item_exist("threat_list_title"):
+            dpg.set_value("threat_list_title", "📝 Vista Simple")
+    
+    def _refresh_threats(self):
+        """Refrescar la lista de amenazas."""
+        self._update_threat_display()
+    
+    def _update_threat_display(self):
+        """Actualiza la vista de amenazas con agrupación o vista simple."""
+        # Limpiar contenedor
+        if dpg.does_item_exist("threat_grouped_container"):
+            children = dpg.get_item_children("threat_grouped_container", 1)
+            if children:
+                for child in children:
+                    dpg.delete_item(child)
+        
+        # Obtener amenazas según el filtro actual
+        if self.current_view == "current":
+            threats = self._get_current_threats()
+        else:
+            threats = self._get_all_threats()
+        
+        # Renderizar según el modo de vista
+        if self.view_mode == "simple":
+            self._render_simple_threats(threats)
+        else:
+            # Agrupar amenazas por nombre de proceso
+            grouped = self._group_threats(threats)
+            # Renderizar grupos
+            self._render_grouped_threats(grouped)
+    
+    def _get_current_threats(self):
+        """Obtener solo las amenazas más críticas actuales."""
+        all_threats = self.app_controller.get_active_threats()
+        
+        # Filtrar solo amenazas de riesgo HIGH y CRITICAL, o con score alto
+        current_threats = []
+        for threat in all_threats:
+            risk = threat.get('risk', 'UNKNOWN')
+            score = threat.get('score', 0)
+            
+            if risk in ['HIGH', 'CRITICAL'] or score >= 0.3:
+                current_threats.append(threat)
+        
+        # Limitar a las 20 más importantes
+        current_threats.sort(key=lambda x: (
+            {'CRITICAL': 4, 'HIGH': 3, 'MEDIUM': 2, 'LOW': 1}.get(x.get('risk', 'UNKNOWN'), 0),
+            x.get('score', 0)
+        ), reverse=True)
+        
+        return current_threats[:20]
+    
+    def _get_all_threats(self):
+        """Obtener todas las amenazas detectadas."""
+        # Aquí podríamos leer de logs o una base de datos
+        # Por ahora, usar las amenazas activas como ejemplo expandido
+        all_threats = self.app_controller.get_active_threats()
+        
+        # Simular más amenazas leyendo desde logs
+        try:
+            import os
+            log_path = os.path.join(os.path.dirname(__file__), '..', '..', 'logs', 'antivirus.log')
+            
+            if os.path.exists(log_path):
+                recent_detections = self._parse_log_threats(log_path)
+                all_threats.extend(recent_detections)
+        except Exception as e:
+            self.logger.warning(f"No se pudieron cargar amenazas del log: {e}")
+        
+        return all_threats
+    
+    def _parse_log_threats(self, log_path):
+        """Parsear amenazas del archivo de log."""
+        threats = []
+        try:
+            with open(log_path, 'r', encoding='utf-8') as f:
+                lines = f.readlines()[-500:]  # Últimas 500 líneas
+            
+            for line in lines:
+                if 'Keylogger detectado:' in line:
+                    # Extraer información del log
+                    import re
+                    match = re.search(r'Keylogger detectado: ([^(]+)\(PID: (\d+), Score: ([\d.]+)\)', line)
+                    if match:
+                        process_name = match.group(1).strip()
+                        pid = int(match.group(2))
+                        score = float(match.group(3))
+                        
+                        # Determinar nivel de riesgo basado en score
+                        if score >= 0.35:
+                            risk = 'HIGH'
+                        elif score >= 0.25:
+                            risk = 'MEDIUM'
+                        else:
+                            risk = 'LOW'
+                        
+                        threats.append({
+                            'name': process_name,
+                            'pid': pid,
+                            'score': score,
+                            'risk': risk,
+                            'type': 'Keylogger',
+                            'timestamp': line.split(' - ')[0],
+                            'details': f"Detectado en logs - Score: {score}"
+                        })
+        except Exception as e:
+            self.logger.error(f"Error parseando logs: {e}")
+        
+        return threats
+    
+    def _group_threats(self, threats):
+        """Agrupar amenazas por nombre de proceso."""
+        grouped = {}
+        
+        for threat in threats:
+            process_name = threat.get('name', 'Unknown')
+            
+            if process_name not in grouped:
+                grouped[process_name] = {
+                    'threats': [],
+                    'count': 0,
+                    'max_risk': 'LOW',
+                    'max_score': 0
+                }
+            
+            grouped[process_name]['threats'].append(threat)
+            grouped[process_name]['count'] += 1
+            
+            # Actualizar máximo riesgo y score
+            threat_risk = threat.get('risk', 'LOW')
+            threat_score = threat.get('score', 0)
+            
+            risk_levels = {'LOW': 1, 'MEDIUM': 2, 'HIGH': 3, 'CRITICAL': 4}
+            if risk_levels.get(threat_risk, 1) > risk_levels.get(grouped[process_name]['max_risk'], 1):
+                grouped[process_name]['max_risk'] = threat_risk
+            
+            if threat_score > grouped[process_name]['max_score']:
+                grouped[process_name]['max_score'] = threat_score
+        
+        return grouped
+    
+    def _render_grouped_threats(self, grouped_threats):
+        """Renderizar amenazas agrupadas con expansión."""
+        for process_name, group_data in grouped_threats.items():
+            count = group_data['count']
+            max_risk = group_data['max_risk']
+            max_score = group_data['max_score']
+            
+            # Color basado en el riesgo máximo - Mejorados para mejor contraste
+            risk_colors = {
+                'LOW': (50, 180, 50),      # Verde más oscuro
+                'MEDIUM': (220, 180, 20),  # Amarillo más oscuro/dorado
+                'HIGH': (230, 100, 50),    # Naranja más vibrante
+                'CRITICAL': (200, 50, 50)  # Rojo más oscuro pero visible
+            }
+            color = risk_colors.get(max_risk, (150, 150, 150))
+            
+            if count == 1:
+                # Amenaza individual
+                threat = group_data['threats'][0]
+                self._render_single_threat(threat, color)
+            else:
+                # Grupo expandible
+                group_id = f"group_{process_name}"
+                is_expanded = group_id in self.expanded_groups
+                
+                # Botón de grupo
+                expand_icon = "📂" if is_expanded else "📁"
+                group_label = f"{expand_icon} {process_name} ({count} detecciones) - {max_risk}"
+                
+                if dpg.add_button(
+                    label=group_label,
+                    callback=lambda s, a, u=group_id: self._toggle_group(u),
+                    parent="threat_grouped_container"
+                ):
+                    dpg.bind_item_theme(dpg.last_item(), self._create_threat_theme(color))
+                
+                # Mostrar elementos del grupo si está expandido
+                if is_expanded:
+                    with dpg.group(parent="threat_grouped_container", indent=20):
+                        for i, threat in enumerate(group_data['threats']):
+                            self._render_single_threat(threat, color, f"  └─ Instancia {i+1}")
+    
+    def _render_single_threat(self, threat, color, prefix=""):
+        """Renderizar una amenaza individual."""
+        name = threat.get('name', 'Unknown')
+        risk = threat.get('risk', 'N/A')
+        pid = threat.get('pid', 'N/A')
+        score = threat.get('score', 0)
+        
+        label = f"{prefix}{name} (PID:{pid}) - {risk} (Score:{score:.2f})"
+        
+        if dpg.add_selectable(
+            label=label,
+            callback=lambda s, a, u=threat: self._on_threat_selected_new(u),
+            parent="threat_grouped_container"
+        ):
+            dpg.bind_item_theme(dpg.last_item(), self._create_threat_theme(color))
+    
+    def _render_simple_threats(self, threats):
+        """Renderizar amenazas en vista simple (versión anterior)."""
+        # Crear listbox tradicional
+        threat_names = []
+        self.simple_threats_map = {}  # Mapear nombres a objetos de amenaza
+        
+        for i, threat in enumerate(threats):
+            name = threat.get('name', 'Unknown')
+            risk = threat.get('risk', 'N/A')
+            pid = threat.get('pid', 'N/A')
+            score = threat.get('score', 0)
+            
+            # Formatear nombre con información detallada
+            display_name = f"{name} (PID:{pid}) - {risk} (Score:{score:.2f})"
+            threat_names.append(display_name)
+            self.simple_threats_map[display_name] = threat
+        
+        # Crear listbox si no existe
+        if not dpg.does_item_exist("simple_threat_listbox"):
+            dpg.add_listbox(
+                items=threat_names,
+                tag="simple_threat_listbox",
+                callback=self._on_simple_threat_selected,
+                num_items=min(20, len(threat_names)),
+                parent="threat_grouped_container"
+            )
+        else:
+            dpg.configure_item("simple_threat_listbox", items=threat_names)
+    
+    def _on_simple_threat_selected(self, sender, app_data):
+        """Callback para selección en vista simple."""
+        if app_data in self.simple_threats_map:
+            self.selected_threat = self.simple_threats_map[app_data]
+            self._display_decision_tree(self.selected_threat)
+    
+    def _create_threat_theme(self, color):
+        """Crear tema visual para amenaza con mejor contraste."""
+        # Colores mejorados con mejor contraste
+        enhanced_color = (
+            min(255, max(50, color[0])),  # Asegurar mínimo brillo
+            min(255, max(50, color[1])),
+            min(255, max(50, color[2]))
+        )
+        
+        hover_color = (
+            min(255, enhanced_color[0] + 40),
+            min(255, enhanced_color[1] + 40), 
+            min(255, enhanced_color[2] + 40)
+        )
+        
+        with dpg.theme() as theme:
+            with dpg.theme_component(dpg.mvButton):
+                dpg.add_theme_color(dpg.mvThemeCol_Button, enhanced_color, category=dpg.mvThemeCat_Core)
+                dpg.add_theme_color(dpg.mvThemeCol_ButtonHovered, hover_color, category=dpg.mvThemeCat_Core)
+                dpg.add_theme_color(dpg.mvThemeCol_Text, (255, 255, 255), category=dpg.mvThemeCat_Core)  # Texto blanco
+            with dpg.theme_component(dpg.mvSelectable):
+                dpg.add_theme_color(dpg.mvThemeCol_HeaderHovered, enhanced_color, category=dpg.mvThemeCat_Core)
+                dpg.add_theme_color(dpg.mvThemeCol_HeaderActive, hover_color, category=dpg.mvThemeCat_Core)
+                dpg.add_theme_color(dpg.mvThemeCol_Text, (255, 255, 255), category=dpg.mvThemeCat_Core)  # Texto blanco
+        return theme
+    
+    def _apply_button_themes(self, btn_current, btn_all, btn_simple, btn_refresh):
+        """Aplicar temas de colores a los botones de filtrado."""
+        try:
+            # Tema para botón de apps actuales (azul)
+            with dpg.theme(tag="theme_current_btn") as current_theme:
+                with dpg.theme_component(dpg.mvButton):
+                    dpg.add_theme_color(dpg.mvThemeCol_Button, (40, 120, 200), category=dpg.mvThemeCat_Core)
+                    dpg.add_theme_color(dpg.mvThemeCol_ButtonHovered, (60, 140, 220), category=dpg.mvThemeCat_Core)
+                    dpg.add_theme_color(dpg.mvThemeCol_Text, (255, 255, 255), category=dpg.mvThemeCat_Core)
+            
+            # Tema para botón de todas las detecciones (verde)
+            with dpg.theme(tag="theme_all_btn") as all_theme:
+                with dpg.theme_component(dpg.mvButton):
+                    dpg.add_theme_color(dpg.mvThemeCol_Button, (50, 150, 50), category=dpg.mvThemeCat_Core)
+                    dpg.add_theme_color(dpg.mvThemeCol_ButtonHovered, (70, 170, 70), category=dpg.mvThemeCat_Core)
+                    dpg.add_theme_color(dpg.mvThemeCol_Text, (255, 255, 255), category=dpg.mvThemeCat_Core)
+            
+            # Tema para botón de versión simple (morado)
+            with dpg.theme(tag="theme_simple_btn") as simple_theme:
+                with dpg.theme_component(dpg.mvButton):
+                    dpg.add_theme_color(dpg.mvThemeCol_Button, (120, 60, 180), category=dpg.mvThemeCat_Core)
+                    dpg.add_theme_color(dpg.mvThemeCol_ButtonHovered, (140, 80, 200), category=dpg.mvThemeCat_Core)
+                    dpg.add_theme_color(dpg.mvThemeCol_Text, (255, 255, 255), category=dpg.mvThemeCat_Core)
+            
+            # Tema para botón de actualizar (gris)
+            with dpg.theme(tag="theme_refresh_btn") as refresh_theme:
+                with dpg.theme_component(dpg.mvButton):
+                    dpg.add_theme_color(dpg.mvThemeCol_Button, (80, 80, 80), category=dpg.mvThemeCat_Core)
+                    dpg.add_theme_color(dpg.mvThemeCol_ButtonHovered, (100, 100, 100), category=dpg.mvThemeCat_Core)
+                    dpg.add_theme_color(dpg.mvThemeCol_Text, (255, 255, 255), category=dpg.mvThemeCat_Core)
+            
+            # Aplicar temas a los botones
+            dpg.bind_item_theme(btn_current, current_theme)
+            dpg.bind_item_theme(btn_all, all_theme)
+            dpg.bind_item_theme(btn_simple, simple_theme)
+            dpg.bind_item_theme(btn_refresh, refresh_theme)
+            
+        except Exception as e:
+            self.logger.warning(f"No se pudieron aplicar temas a los botones: {e}")
+    
+    def _toggle_group(self, group_id):
+        """Alternar expansión de grupo."""
+        if group_id in self.expanded_groups:
+            self.expanded_groups.remove(group_id)
+        else:
+            self.expanded_groups.add(group_id)
+        
+        # Refrescar display
+        self._update_threat_display()
+    
+    def _on_threat_selected_new(self, threat):
+        """Callback mejorado para selección de amenaza."""
+        self.selected_threat = threat
+        self._display_decision_tree(threat)
 
     def _on_threat_selected(self, sender, app_data):
-        """Callback que se ejecuta al seleccionar una amenaza de la lista."""
+        """Callback que se ejecuta al seleccionar una amenaza de la lista (compatibilidad)."""
         selected_threat_name = app_data
         threats = self.app_controller.get_active_threats()
         
@@ -83,6 +441,7 @@ class ThreatViewerComponent:
                 break
         
         if selected_threat:
+            self.selected_threat = selected_threat
             self._display_decision_tree(selected_threat)
 
     def _display_decision_tree(self, threat: Dict[str, Any]):
@@ -335,51 +694,159 @@ class ThreatViewerComponent:
     
     def _stop_selected_threat(self):
         """Detener la amenaza seleccionada"""
-        if dpg.does_item_exist(self.ui_tags['threat_list']):
-            selected = dpg.get_value(self.ui_tags['threat_list'])
-            if selected:
-                threats = self.app_controller.get_active_threats()
-                for threat in threats:
-                    if f"{threat.get('name', 'Unknown')} ({threat.get('risk', 'N/A')})" == selected:
-                        success, msg = self.app_controller.perform_backend_action('stop_process', {'pid': threat.get('pid')})
-                        self.logger.info(f"Stop action result: {msg}")
-                        break
+        if not hasattr(self, 'selected_threat') or not self.selected_threat:
+            self._show_action_message("⚠️ Selecciona una amenaza primero", (255, 200, 0))
+            return
+            
+        threat = self.selected_threat
+        pid = threat.get('pid')
+        if not pid:
+            self._show_action_message("❌ PID no disponible para esta amenaza", (255, 100, 100))
+            return
+        
+        process_name = threat.get('name', 'Unknown')
+        self._show_action_message(f"🛑 Deteniendo proceso {process_name} (PID:{pid})...", (255, 255, 0))
+        
+        try:
+            success, msg = self.app_controller.perform_backend_action('stop_process', {'pid': pid})
+            
+            if success:
+                self._show_action_message(f"✅ Proceso detenido: {msg}", (100, 255, 100))
+                self.logger.info(f"✅ Stop action successful: {msg}")
+                # Refrescar la lista después de detener el proceso
+                self._refresh_threats()
+            else:
+                self._show_action_message(f"❌ Error deteniendo proceso: {msg}", (255, 100, 100))
+                self.logger.error(f"❌ Stop action failed: {msg}")
+        except Exception as e:
+            self._show_action_message(f"❌ Error interno: {str(e)}", (255, 100, 100))
+            self.logger.error(f"❌ Stop action exception: {e}")
     
     def _quarantine_selected_threat(self):
         """Poner en cuarentena la amenaza seleccionada"""
-        if dpg.does_item_exist(self.ui_tags['threat_list']):
-            selected = dpg.get_value(self.ui_tags['threat_list'])
-            if selected:
-                threats = self.app_controller.get_active_threats()
-                for threat in threats:
-                    if f"{threat.get('name', 'Unknown')} ({threat.get('risk', 'N/A')})" == selected:
-                        success, msg = self.app_controller.perform_backend_action('quarantine_file', {'path': threat.get('path')})
-                        self.logger.info(f"Quarantine action result: {msg}")
-                        break
+        if not hasattr(self, 'selected_threat') or not self.selected_threat:
+            self._show_action_message("⚠️ Seleccionuna amenaza primero", (255, 200, 0))
+            return
+            
+        threat = self.selected_threat
+        
+        # Intentar obtener la ruta del archivo
+        path = threat.get('path')
+        process_name = threat.get('name', 'Unknown')
+        pid = threat.get('pid')
+        
+        # Si no hay path, intentar construir uno basado en el PID
+        if not path and pid:
+            try:
+                import psutil
+                process = psutil.Process(pid)
+                path = process.exe()
+            except:
+                pass
+        
+        if not path:
+            self._show_action_message("❌ No se pudo determinar la ruta del archivo para cuarentena", (255, 100, 100))
+            return
+        
+        self._show_action_message(f"🔒 Poniendo en cuarentena: {process_name}...", (255, 255, 0))
+        
+        try:
+            success, msg = self.app_controller.perform_backend_action('quarantine_file', {'path': path})
+            
+            if success:
+                self._show_action_message(f"✅ Archivo en cuarentena: {msg}", (100, 255, 100))
+                self.logger.info(f"✅ Quarantine action successful: {msg}")
+                # Refrescar la lista después de la cuarentena
+                self._refresh_threats()
+            else:
+                self._show_action_message(f"❌ Error en cuarentena: {msg}", (255, 100, 100))
+                self.logger.error(f"❌ Quarantine action failed: {msg}")
+        except Exception as e:
+            self._show_action_message(f"❌ Error interno: {str(e)}", (255, 100, 100))
+            self.logger.error(f"❌ Quarantine action exception: {e}")
     
     def _locate_selected_threat(self):
         """Localizar la amenaza seleccionada"""
-        if dpg.does_item_exist(self.ui_tags['threat_list']):
-            selected = dpg.get_value(self.ui_tags['threat_list'])
-            if selected:
-                threats = self.app_controller.get_active_threats()
-                for threat in threats:
-                    if f"{threat.get('name', 'Unknown')} ({threat.get('risk', 'N/A')})" == selected:
-                        import subprocess
-                        import os
-                        path = threat.get('path')
-                        if path and os.path.exists(path):
-                            subprocess.run(['explorer', '/select,', os.path.normpath(path)])
-                        break
+        if not hasattr(self, 'selected_threat') or not self.selected_threat:
+            self._show_action_message("⚠️ Selecciona una amenaza primero", (255, 200, 0))
+            return
+            
+        threat = self.selected_threat
+        path = threat.get('path')
+        pid = threat.get('pid')
+        
+        # Si no hay path, intentar obtenerlo del PID
+        if not path and pid:
+            try:
+                import psutil
+                process = psutil.Process(pid)
+                path = process.exe()
+            except:
+                pass
+        
+        if path:
+            try:
+                import subprocess
+                import os
+                if os.path.exists(path):
+                    subprocess.run(['explorer', '/select,', os.path.normpath(path)])
+                    self._show_action_message(f"📍 Abriendo ubicación: {path}", (100, 255, 255))
+                else:
+                    self._show_action_message("❌ El archivo ya no existe en la ubicación", (255, 100, 100))
+            except Exception as e:
+                self._show_action_message(f"❌ Error localizando archivo: {str(e)}", (255, 100, 100))
+        else:
+            self._show_action_message("❌ No se pudo determinar la ubicación del archivo", (255, 100, 100))
     
     def _whitelist_selected_threat(self):
         """Agregar la amenaza seleccionada a la whitelist"""
-        if dpg.does_item_exist(self.ui_tags['threat_list']):
-            selected = dpg.get_value(self.ui_tags['threat_list'])
-            if selected:
-                threats = self.app_controller.get_active_threats()
-                for threat in threats:
-                    if f"{threat.get('name', 'Unknown')} ({threat.get('risk', 'N/A')})" == selected:
-                        success, msg = self.app_controller.perform_backend_action('whitelist_item', {'identifier': threat.get('name')})
-                        self.logger.info(f"Whitelist action result: {msg}")
-                        break
+        if not hasattr(self, 'selected_threat') or not self.selected_threat:
+            self._show_action_message("⚠️ Selecciona una amenaza primero", (255, 200, 0))
+            return
+            
+        threat = self.selected_threat
+        identifier = threat.get('name', 'Unknown')
+        
+        self._show_action_message(f"✅ Agregando {identifier} a la whitelist...", (255, 255, 0))
+        
+        try:
+            success, msg = self.app_controller.perform_backend_action('whitelist_item', {'identifier': identifier})
+            
+            if success:
+                self._show_action_message(f"✅ Agregado a whitelist: {msg}", (100, 255, 100))
+                self.logger.info(f"✅ Whitelist action successful: {msg}")
+                # Refrescar la lista después de agregar a whitelist
+                self._refresh_threats()
+            else:
+                self._show_action_message(f"❌ Error en whitelist: {msg}", (255, 100, 100))
+                self.logger.error(f"❌ Whitelist action failed: {msg}")
+        except Exception as e:
+            self._show_action_message(f"❌ Error interno: {str(e)}", (255, 100, 100))
+            self.logger.error(f"❌ Whitelist action exception: {e}")
+    
+    def _show_action_message(self, message: str, color: tuple = (255, 255, 255)):
+        """Mostrar mensaje de acción en la interfaz"""
+        try:
+            # Crear o actualizar área de mensajes
+            if not hasattr(self, 'action_message_tag'):
+                self.action_message_tag = f"{self.view_id}_action_message"
+            
+            # Limpiar mensaje anterior si existe
+            if dpg.does_item_exist(self.action_message_tag):
+                dpg.delete_item(self.action_message_tag)
+            
+            # Agregar nuevo mensaje con color
+            dpg.add_text(message, color=color, tag=self.action_message_tag, parent=self.container)
+            
+            # Auto-limpiar mensaje después de 5 segundos
+            def clear_message():
+                import time
+                time.sleep(5)
+                if dpg.does_item_exist(self.action_message_tag):
+                    dpg.delete_item(self.action_message_tag)
+            
+            import threading
+            threading.Thread(target=clear_message, daemon=True).start()
+            
+        except Exception as e:
+            self.logger.error(f"Error mostrando mensaje de acción: {e}")

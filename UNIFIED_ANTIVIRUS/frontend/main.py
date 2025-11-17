@@ -258,7 +258,10 @@ class AntivirusProfessionalUI:
             'keylogger_detection': True,
             'ml_sensitivity': 75,
             'behavior_threshold': 70,
-            'auto_quarantine': False,
+            'auto_quarantine': True,  # Activado por defecto para mayor seguridad
+            'auto_quarantine_threshold': 0.7,  # Score mínimo para auto cuarentena
+            'quarantine_high_risk_only': True,  # Solo cuarentena automática para alto riesgo
+            'confirm_quarantine': False,  # No confirmar cuarentena automática
             'auto_block_network': True,
             'max_cpu_usage': 30,  # Arreglar nombre
             'max_memory_mb': 512,  # Arreglar nombre
@@ -350,35 +353,203 @@ class AntivirusProfessionalUI:
     def perform_backend_action(self, action: str, data: dict) -> Tuple[bool, str]:
         """
         Punto central para enviar acciones al backend.
-        Esto es una simulación. La lógica real estaría en el motor.
+        Integra correctamente con el engine real para acciones de seguridad.
         """
         self.logger.info(f"Performing backend action: {action} with data: {data}")
         
-        # SIMULACIÓN - Aquí iría la llamada real al self.engine
-        if action == 'stop_process':
-            pid = data.get('pid')
-            try:
-                p = psutil.Process(pid)
-                p.terminate() # o p.kill()
-                return True, f"Process {pid} terminated."
-            except psutil.NoSuchProcess:
-                return False, f"Process {pid} not found."
-            except Exception as e:
-                return False, str(e)
+        try:
+            if action == 'stop_process':
+                pid = data.get('pid')
+                if not pid:
+                    return False, "PID no proporcionado"
+                
+                # Intentar usar el engine real si está disponible
+                if self.engine and hasattr(self.engine, 'stop_process'):
+                    result = self.engine.stop_process(pid)
+                    return result, f"Proceso {pid} {'terminado' if result else 'no pudo ser terminado'}"
+                else:
+                    # Fallback a psutil directo
+                    import psutil
+                    try:
+                        process = psutil.Process(pid)
+                        process.terminate()
+                        # Esperar un poco para la terminación graceful
+                        try:
+                            process.wait(timeout=3)
+                        except psutil.TimeoutExpired:
+                            process.kill()  # Forzar si no responde
+                        return True, f"Proceso {pid} terminado exitosamente"
+                    except psutil.NoSuchProcess:
+                        return False, f"Proceso {pid} no encontrado"
+                    except psutil.AccessDenied:
+                        return False, f"Acceso denegado para terminar proceso {pid}"
+                    except Exception as e:
+                        return False, f"Error terminando proceso {pid}: {str(e)}"
 
-        elif action == 'quarantine_file':
-            path = data.get('path')
-            # La lógica de cuarentena real y segura debe estar en el backend.
-            # Esto es solo una demostración para la UI.
-            return True, f"File '{path}' has been scheduled for quarantine by the backend."
+            elif action == 'quarantine_file':
+                path = data.get('path')
+                if not path:
+                    return False, "Ruta de archivo no proporcionada"
+                
+                # Intentar usar el handler de cuarentena del engine
+                if self.engine and hasattr(self.engine, 'plugin_manager'):
+                    try:
+                        # Buscar el plugin de cuarentena
+                        quarantine_plugin = None
+                        for plugin in self.engine.plugin_manager.plugins.values():
+                            if hasattr(plugin, 'quarantine_file'):
+                                quarantine_plugin = plugin
+                                break
+                        
+                        if quarantine_plugin:
+                            result = quarantine_plugin.quarantine_file(
+                                file_path=path,
+                                reason="Acción manual del usuario",
+                                metadata={"source": "frontend_action", "timestamp": time.time()}
+                            )
+                            if result:
+                                self.quarantine_items.append({
+                                    'path': path,
+                                    'timestamp': time.time(),
+                                    'reason': 'Manual quarantine'
+                                })
+                                return True, f"Archivo '{path}' puesto en cuarentena exitosamente"
+                            else:
+                                return False, f"No se pudo poner el archivo en cuarentena: {path}"
+                        else:
+                            # Fallback: mover a directorio de cuarentena manual
+                            return self._manual_quarantine(path)
+                    except Exception as e:
+                        self.logger.error(f"Error en cuarentena con plugin: {e}")
+                        return self._manual_quarantine(path)
+                else:
+                    # Fallback si no hay engine
+                    return self._manual_quarantine(path)
 
-        elif action == 'whitelist_item':
-            identifier = data.get('identifier')
-            if identifier not in self.whitelist_items:
-                self.whitelist_items.append(identifier)
-            return True, f"'{identifier}' has been added to the whitelist in the backend."
+            elif action == 'whitelist_item':
+                identifier = data.get('identifier')
+                if not identifier:
+                    return False, "Identificador no proporcionado"
+                
+                # Intentar usar el engine real para whitelist
+                if self.engine and hasattr(self.engine, 'add_to_whitelist'):
+                    result = self.engine.add_to_whitelist(identifier)
+                    return result, f"'{identifier}' {'agregado a' if result else 'no pudo ser agregado a'} la whitelist"
+                else:
+                    # Fallback local
+                    if identifier not in self.whitelist_items:
+                        self.whitelist_items.append(identifier)
+                    return True, f"'{identifier}' agregado a la whitelist local"
             
-        return False, "Action not implemented in backend simulation."
+            elif action == 'auto_quarantine':
+                # Activar/desactivar auto cuarentena
+                enabled = data.get('enabled', False)
+                self.system_settings['auto_quarantine'] = enabled
+                self.save_settings()
+                return True, f"Auto-cuarentena {'activada' if enabled else 'desactivada'}"
+                
+            return False, f"Acción '{action}' no implementada"
+            
+        except Exception as e:
+            self.logger.error(f"Error ejecutando acción {action}: {e}")
+            return False, f"Error interno: {str(e)}"
+    
+    def _manual_quarantine(self, file_path: str) -> Tuple[bool, str]:
+        """
+        Método de cuarentena manual como fallback cuando no hay plugin disponible
+        """
+        import shutil
+        import hashlib
+        from datetime import datetime
+        
+        try:
+            source_path = Path(file_path)
+            if not source_path.exists():
+                return False, f"Archivo no existe: {file_path}"
+            
+            # Crear directorio de cuarentena
+            quarantine_dir = Path(self.root_dir) / "quarantine"
+            quarantine_dir.mkdir(exist_ok=True)
+            
+            # Generar nombre único para el archivo en cuarentena
+            file_hash = hashlib.md5(str(source_path).encode()).hexdigest()[:8]
+            timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+            quarantine_name = f"{timestamp}_{file_hash}_{source_path.name}"
+            quarantine_path = quarantine_dir / quarantine_name
+            
+            # Copiar archivo a cuarentena
+            shutil.copy2(source_path, quarantine_path)
+            
+            # Crear archivo de metadatos
+            metadata = {
+                "original_path": str(source_path),
+                "quarantine_path": str(quarantine_path),
+                "timestamp": datetime.now().isoformat(),
+                "reason": "Manual quarantine from frontend",
+                "file_size": source_path.stat().st_size,
+                "file_hash": file_hash
+            }
+            
+            metadata_path = quarantine_dir / f"{quarantine_name}.metadata.json"
+            with open(metadata_path, 'w') as f:
+                json.dump(metadata, f, indent=2)
+            
+            # Agregar a la lista local
+            self.quarantine_items.append({
+                'path': file_path,
+                'quarantine_path': str(quarantine_path),
+                'timestamp': time.time(),
+                'reason': 'Manual quarantine (fallback)'
+            })
+            
+            # Opcional: eliminar archivo original (comentado por seguridad)
+            # source_path.unlink()
+            
+            return True, f"Archivo copiado a cuarentena: {quarantine_path}"
+            
+        except Exception as e:
+            self.logger.error(f"Error en cuarentena manual: {e}")
+            return False, f"Error en cuarentena manual: {str(e)}"
+    
+    def _process_auto_quarantine(self, threat: Dict[str, Any]):
+        """
+        Procesar auto cuarentena para una amenaza detectada
+        """
+        try:
+            # Extraer información de la amenaza
+            threat_level = threat.get('risk', 'UNKNOWN')
+            threat_score = threat.get('score', 0)
+            threat_path = threat.get('path')
+            
+            # Verificar si debe aplicarse auto cuarentena
+            auto_threshold = self.system_settings.get('auto_quarantine_threshold', 0.7)
+            high_risk_only = self.system_settings.get('quarantine_high_risk_only', True)
+            
+            should_quarantine = False
+            
+            if high_risk_only:
+                # Solo cuarentena para alto riesgo
+                should_quarantine = threat_level in ['HIGH', 'CRITICAL']
+            else:
+                # Cuarentena basada en score
+                should_quarantine = threat_score >= auto_threshold
+            
+            if should_quarantine and threat_path:
+                self.logger.info(f"Aplicando auto-cuarentena a: {threat_path} (riesgo: {threat_level}, score: {threat_score})")
+                
+                # Ejecutar cuarentena
+                success, message = self.perform_backend_action('quarantine_file', {'path': threat_path})
+                
+                if success:
+                    self.logger.info(f"Auto-cuarentena exitosa: {message}")
+                    # Marcar la amenaza como cuarentenada
+                    threat['quarantined'] = True
+                    threat['quarantine_timestamp'] = time.time()
+                else:
+                    self.logger.warning(f"Auto-cuarentena falló: {message}")
+            
+        except Exception as e:
+            self.logger.error(f"Error en auto-cuarentena: {e}")
 
     def load_settings(self):
         """Cargar configuraciones desde un archivo"""
@@ -533,17 +704,33 @@ class AntivirusProfessionalUI:
                         real_threats = self.engine.get_active_threats()
                         
                         # Convertir formato del motor al formato del frontend
+                        new_threats_detected = []
                         self.active_threats = []
                         for threat in real_threats:
-                            self.active_threats.append({
+                            formatted_threat = {
                                 'timestamp': threat.get('timestamp', time.strftime('%H:%M:%S')),
                                 'name': threat.get('name', 'Unknown'),
                                 'pid': threat.get('pid', 0),
                                 'type': threat.get('type', 'Unknown'),
                                 'risk': threat.get('level', 'MEDIUM'),
                                 'cpu': threat.get('cpu_percent', 0),
+                                'score': threat.get('score', 0),
+                                'path': threat.get('path'),
                                 'details': f"PID: {threat.get('pid', 0)}, Level: {threat.get('level', 'UNKNOWN')}"
-                            })
+                            }
+                            self.active_threats.append(formatted_threat)
+                            
+                            # Verificar si es una nueva amenaza para auto cuarentena
+                            if not threat.get('processed_quarantine', False):
+                                new_threats_detected.append(formatted_threat)
+                                # Marcar como procesada
+                                if hasattr(threat, '__setitem__'):
+                                    threat['processed_quarantine'] = True
+                        
+                        # Procesar auto cuarentena para nuevas amenazas
+                        if new_threats_detected and self.system_settings.get('auto_quarantine', False):
+                            for new_threat in new_threats_detected:
+                                self._process_auto_quarantine(new_threat)
                     
                     # Actualizar contadores
                     self.threat_count = len(self.active_threats)

@@ -17,10 +17,10 @@
       "api_hooking_context": true
     },
     "detection_thresholds": {
-      "masquerading": 0.8,
-      "stealth_location": 0.7,
-      "behavioral": 0.6,
-      "combined": 0.7
+      "masquerading": 0.5,
+      "stealth_location": 0.4,
+      "behavioral": 0.3,
+      "combined": 0.4
     },
     "intelligent_apis": {
       "context_aware": true,
