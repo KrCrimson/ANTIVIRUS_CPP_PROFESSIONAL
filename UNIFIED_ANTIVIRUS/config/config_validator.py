@@ -25,8 +25,8 @@ class ConfigurationValidator:
             if profiles_file.exists():
                 with open(profiles_file, "r", encoding="utf-8") as f:
                     return json.load(f)
-        except Exception:
-            pass
+        except Exception as e:
+            print(f"Error cargando perfiles seguros: {e}")
 
         # Configuración por defecto si no existe el archivo
         return {
