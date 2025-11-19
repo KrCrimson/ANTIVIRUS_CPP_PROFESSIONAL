@@ -15,6 +15,7 @@ import time
 # Agregar el directorio actual al path para imports
 sys.path.insert(0, str(Path(__file__).parent))
 
+
 from core import UnifiedAntivirusEngine
 
 
@@ -32,10 +33,11 @@ Ejemplos de uso:
     )
 
     parser.add_argument(
-        "--config",
-        "-c",
+        "--config", "-c",
         default="config/unified_config.toml",
-        help="Archivo de configuración (default: config/unified_config.toml)",
+        help=(
+            "Archivo de configuración (default: config/unified_config.toml)"
+        ),
     )
 
     parser.add_argument(
