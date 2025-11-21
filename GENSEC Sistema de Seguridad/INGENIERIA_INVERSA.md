@@ -10,7 +10,7 @@ Este documento presenta los resultados del análisis de ingeniería inversa del 
 
 ### ¿Qué es realmente este sistema según el código fuente?
 
-**GENSEC** es un **framework de investigación académica para análisis comportamental de keyloggers** basado en Python, desarrollado como proyecto de curso de Sistemas Comportamentales en la Universidad Privada de Tacna (UPT).
+**GENSEC** es un **framework de análisis comportamental de keyloggers** basado en Python, desarrollado como proyecto de curso de Sistemas Comportamentales en la Universidad Privada de Tacna (UPT).
 
 ### Componentes Principales
 
