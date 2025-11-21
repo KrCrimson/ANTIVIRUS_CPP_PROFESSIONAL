@@ -65,3 +65,20 @@
 {"timestamp": "2025-11-08T21:04:51.133246", "level": "INFO", "logger": "AntivirusUI", "message": "Switching to view: logs", "module": "logger", "function": "info", "line": 205}
 {"timestamp": "2025-11-08T21:04:59.493051", "level": "INFO", "logger": "AntivirusUI", "message": "Switching to view: dashboard", "module": "logger", "function": "info", "line": 205}
 {"timestamp": "2025-11-08T21:05:21.273026", "level": "INFO", "logger": "AntivirusUI", "message": "🛑 Shutting down application...", "module": "logger", "function": "info", "line": 205}
+{"timestamp": "2025-11-20T20:55:53.905998", "level": "INFO", "logger": "AntivirusUI", "message": "📝 Logger 'AntivirusUI' inicializado", "module": "logger", "function": "__init__", "line": 91}
+{"timestamp": "2025-11-20T20:55:53.906886", "level": "INFO", "logger": "AntivirusUI", "message": "🚀 Iniciando Antivirus Professional UI (Dear PyGui)", "module": "logger", "function": "info", "line": 205}
+{"timestamp": "2025-11-20T20:55:53.910567", "level": "INFO", "logger": "AntivirusUI", "message": "✅ Sistema de métricas simplificado inicializado", "module": "logger", "function": "info", "line": 205}
+{"timestamp": "2025-11-20T20:55:53.911759", "level": "INFO", "logger": "AntivirusUI", "message": "✅ Settings loaded from ui_settings.json", "module": "logger", "function": "info", "line": 205}
+{"timestamp": "2025-11-20T20:55:53.912520", "level": "INFO", "logger": "AntivirusUI", "message": "🚀 Starting Antivirus Professional UI...", "module": "logger", "function": "info", "line": 205}
+{"timestamp": "2025-11-20T20:55:53.913840", "level": "INFO", "logger": "AntivirusUI", "message": "✅ Fuente cargada: Segoe UI", "module": "logger", "function": "info", "line": 205}
+{"timestamp": "2025-11-20T20:55:54.008212", "level": "INFO", "logger": "AntivirusUI", "message": "🛡️ Inicializando motor antivirus...", "module": "logger", "function": "info", "line": 205}
+{"timestamp": "2025-11-20T20:55:54.009558", "level": "INFO", "logger": "AntivirusUI", "message": "✅ Motor creado - Tipo: FULL", "module": "logger", "function": "info", "line": 205}
+{"timestamp": "2025-11-20T20:55:54.018815", "level": "ERROR", "logger": "AntivirusUI", "message": "❌ Falló la inicialización del motor", "module": "logger", "function": "error", "line": 213}
+{"timestamp": "2025-11-20T20:55:54.019544", "level": "WARNING", "logger": "AntivirusUI", "message": "⚠️ Activando modo demo - usando datos básicos...", "module": "logger", "function": "warning", "line": 209}
+{"timestamp": "2025-11-20T20:55:54.019951", "level": "INFO", "logger": "AntivirusUI", "message": "✅ Modo demo configurado", "module": "logger", "function": "info", "line": 205}
+{"timestamp": "2025-11-20T20:55:54.020236", "level": "INFO", "logger": "AntivirusUI", "message": "🟡 Backend Status: DEMO MODE", "module": "logger", "function": "info", "line": 205}
+{"timestamp": "2025-11-20T20:56:01.606562", "level": "INFO", "logger": "AntivirusUI", "message": "🛑 Shutting down application...", "module": "logger", "function": "info", "line": 205}
+{"timestamp": "2025-11-20T20:56:01.607162", "level": "INFO", "logger": "AntivirusUI", "message": "🛡️ Deteniendo motor antivirus...", "module": "logger", "function": "info", "line": 205}
+{"timestamp": "2025-11-20T20:56:02.618121", "level": "INFO", "logger": "AntivirusUI", "message": "✅ Application shutdown complete", "module": "logger", "function": "info", "line": 205}
+{"timestamp": "2025-11-20T20:56:02.618698", "level": "INFO", "logger": "AntivirusUI", "message": "🛑 Shutting down application...", "module": "logger", "function": "info", "line": 205}
+{"timestamp": "2025-11-20T20:56:02.619090", "level": "INFO", "logger": "AntivirusUI", "message": "🛡️ Deteniendo motor antivirus...", "module": "logger", "function": "info", "line": 205}
