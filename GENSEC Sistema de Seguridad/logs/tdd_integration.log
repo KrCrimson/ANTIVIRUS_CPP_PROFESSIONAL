@@ -1,0 +1,53 @@
+2025-11-20 20:29:05,729 - tdd_integration - INFO - 🧪 TDD Integration Worker iniciado
+2025-11-20 20:29:05,795 - tdd_integration - INFO - 🧪 Ejecutando tests TDD...
+2025-11-20 20:29:05,945 - tdd_integration - INFO - 🔍 Ejecutando tests en: tests/tdd_01_api_hooking_detection
+2025-11-20 20:29:44,358 - tdd_integration - ERROR - ⏰ Timeout ejecutando tests en tests/tdd_01_api_hooking_detection
+2025-11-20 20:29:44,512 - tdd_integration - INFO - 🔍 Ejecutando tests en: tests/tdd_02_port_detection
+2025-11-20 20:29:46,500 - tdd_integration - INFO - ✅ Tests en tests/tdd_02_port_detection: PASSED
+2025-11-20 20:29:46,505 - tdd_integration - INFO - ✅ Ciclo TDD completado
+2025-11-20 20:30:46,519 - tdd_integration - INFO - 🧪 Ejecutando tests TDD...
+2025-11-20 20:30:46,603 - tdd_integration - INFO - 🔍 Ejecutando tests en: tests/tdd_01_api_hooking_detection
+2025-11-20 20:30:48,142 - tdd_integration - INFO - ✅ Tests en tests/tdd_01_api_hooking_detection: PASSED
+2025-11-20 20:30:48,143 - tdd_integration - INFO - 🔍 Ejecutando tests en: tests/tdd_02_port_detection
+2025-11-20 20:30:49,636 - tdd_integration - INFO - ✅ Tests en tests/tdd_02_port_detection: PASSED
+2025-11-20 20:30:49,712 - tdd_integration - INFO - ✅ Ciclo TDD completado
+2025-11-20 20:31:46,755 - tdd_integration - INFO - 🛑 TDD Integration Worker detenido
+2025-11-20 20:51:57,960 - tdd_integration - INFO - 🧪 TDD Integration Worker iniciado
+2025-11-20 20:51:57,961 - tdd_integration - INFO - 🧪 Ejecutando tests TDD...
+2025-11-20 20:51:57,961 - tdd_integration - INFO - 🔍 Ejecutando tests en: tests/tdd_01_api_hooking_detection
+2025-11-20 20:52:36,153 - tdd_integration - ERROR - ⏰ Timeout ejecutando tests en tests/tdd_01_api_hooking_detection
+2025-11-20 20:52:36,329 - tdd_integration - INFO - 🔍 Ejecutando tests en: tests/tdd_02_port_detection
+2025-11-20 20:52:37,773 - tdd_integration - INFO - ✅ Tests en tests/tdd_02_port_detection: PASSED
+2025-11-20 20:52:37,773 - tdd_integration - INFO - ✅ Ciclo TDD completado
+2025-11-20 20:52:39,415 - tdd_integration - INFO - 🛑 TDD Integration Worker detenido
+2025-11-20 20:52:52,635 - tdd_integration - INFO - 🧪 TDD Integration Worker iniciado
+2025-11-20 20:52:52,636 - tdd_integration - INFO - 🧪 Ejecutando tests TDD...
+2025-11-20 20:52:52,639 - tdd_integration - INFO - 🔍 Ejecutando tests en: tests/tdd_01_api_hooking_detection
+2025-11-20 20:53:31,012 - tdd_integration - ERROR - ⏰ Timeout ejecutando tests en tests/tdd_01_api_hooking_detection
+2025-11-20 20:53:31,147 - tdd_integration - INFO - 🔍 Ejecutando tests en: tests/tdd_02_port_detection
+2025-11-20 20:53:32,892 - tdd_integration - INFO - ✅ Tests en tests/tdd_02_port_detection: PASSED
+2025-11-20 20:53:32,892 - tdd_integration - INFO - ✅ Ciclo TDD completado
+2025-11-20 20:53:37,770 - tdd_integration - INFO - 🛑 TDD Integration Worker detenido
+2025-11-20 20:56:41,394 - tdd_integration - INFO - 🧪 TDD Integration Worker iniciado
+2025-11-20 20:56:41,412 - tdd_integration - INFO - 🧪 Ejecutando tests TDD...
+2025-11-20 20:56:41,435 - tdd_integration - INFO - 🔍 Ejecutando tests en: tests/tdd_01_api_hooking_detection
+2025-11-20 20:58:53,065 - tdd_integration - INFO - 🧪 TDD Integration Worker iniciado
+2025-11-20 20:58:53,122 - tdd_integration - INFO - 🧪 Ejecutando tests TDD...
+2025-11-20 20:58:53,313 - tdd_integration - INFO - 🔍 Ejecutando tests en: tests/tdd_01_api_hooking_detection
+2025-11-20 20:59:33,615 - tdd_integration - ERROR - ⏰ Timeout ejecutando tests en tests/tdd_01_api_hooking_detection
+2025-11-20 20:59:33,696 - tdd_integration - INFO - 🔍 Ejecutando tests en: tests/tdd_02_port_detection
+2025-11-20 20:59:35,600 - tdd_integration - INFO - ✅ Tests en tests/tdd_02_port_detection: PASSED
+2025-11-20 20:59:35,600 - tdd_integration - INFO - ✅ Ciclo TDD completado
+2025-11-20 21:00:35,604 - tdd_integration - INFO - 🧪 Ejecutando tests TDD...
+2025-11-20 21:00:35,604 - tdd_integration - INFO - 🔍 Ejecutando tests en: tests/tdd_01_api_hooking_detection
+2025-11-20 21:00:37,309 - tdd_integration - INFO - ✅ Tests en tests/tdd_01_api_hooking_detection: PASSED
+2025-11-20 21:00:37,310 - tdd_integration - INFO - 🔍 Ejecutando tests en: tests/tdd_02_port_detection
+2025-11-20 21:00:38,806 - tdd_integration - INFO - ✅ Tests en tests/tdd_02_port_detection: PASSED
+2025-11-20 21:00:38,807 - tdd_integration - INFO - ✅ Ciclo TDD completado
+2025-11-20 21:01:38,824 - tdd_integration - INFO - 🧪 Ejecutando tests TDD...
+2025-11-20 21:01:38,862 - tdd_integration - INFO - 🔍 Ejecutando tests en: tests/tdd_01_api_hooking_detection
+2025-11-20 21:01:40,411 - tdd_integration - INFO - ✅ Tests en tests/tdd_01_api_hooking_detection: PASSED
+2025-11-20 21:01:40,412 - tdd_integration - INFO - 🔍 Ejecutando tests en: tests/tdd_02_port_detection
+2025-11-20 21:01:41,929 - tdd_integration - INFO - ✅ Tests en tests/tdd_02_port_detection: PASSED
+2025-11-20 21:01:42,026 - tdd_integration - INFO - ✅ Ciclo TDD completado
+2025-11-20 21:02:00,677 - tdd_integration - INFO - 🛑 TDD Integration Worker detenido

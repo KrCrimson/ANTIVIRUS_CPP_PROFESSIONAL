@@ -1,0 +1,63 @@
+2025-11-20 20:29:05,926 - mdsd_generator - INFO - 🏗️ MDSD Generator Worker iniciado
+2025-11-20 20:29:06,028 - mdsd_generator - INFO - 🏗️ Ejecutando generación MDSD...
+2025-11-20 20:29:06,224 - mdsd_generator - INFO - ⚙️ Ejecutando Workflow Engine...
+2025-11-20 20:29:06,786 - mdsd_generator - WARNING - ⚠️ Workflow Engine terminó con advertencias
+2025-11-20 20:29:06,786 - mdsd_generator - INFO - 🔧 Verificando Simple Generator...
+2025-11-20 20:29:44,340 - mdsd_generator - ERROR - ❌ Error verificando Simple Generator: Command '['C:\\Users\\HP\\AppData\\Local\\Programs\\Python\\Python313\\python.exe', 'C:\\Users\\HP\\Documents\\GitHub\\ANTIVIRUS_CPP_PROFESSIONAL\\GENSEC Sistema de Seguridad\\mdsd\\simple_generator.py']' timed out after 15 seconds
+2025-11-20 20:29:44,413 - mdsd_generator - INFO - 📝 Generando template: Ransomware Detector
+2025-11-20 20:29:45,638 - mdsd_generator - INFO - 📝 Generando template: Trojan Detector
+2025-11-20 20:29:46,639 - mdsd_generator - INFO - 📝 Generando template: Rootkit Detector
+2025-11-20 20:29:47,642 - mdsd_generator - INFO - 📝 Generando template: Spyware Detector
+2025-11-20 20:29:48,680 - mdsd_generator - INFO - ✅ Ciclo MDSD completado
+2025-11-20 20:31:46,754 - mdsd_generator - INFO - 🛑 MDSD Generator Worker detenido
+2025-11-20 20:51:57,962 - mdsd_generator - INFO - 🏗️ MDSD Generator Worker iniciado
+2025-11-20 20:51:57,962 - mdsd_generator - INFO - 🏗️ Ejecutando generación MDSD...
+2025-11-20 20:51:57,963 - mdsd_generator - INFO - ⚙️ Ejecutando Workflow Engine...
+2025-11-20 20:51:58,216 - mdsd_generator - WARNING - ⚠️ Workflow Engine terminó con advertencias
+2025-11-20 20:51:58,223 - mdsd_generator - INFO - 🔧 Verificando Simple Generator...
+2025-11-20 20:52:36,129 - mdsd_generator - INFO - 📋 Simple Generator verificado
+2025-11-20 20:52:36,288 - mdsd_generator - INFO - 📝 Generando template: Ransomware Detector
+2025-11-20 20:52:37,368 - mdsd_generator - INFO - 📝 Generando template: Trojan Detector
+2025-11-20 20:52:38,369 - mdsd_generator - INFO - 📝 Generando template: Rootkit Detector
+2025-11-20 20:52:39,370 - mdsd_generator - INFO - 📝 Generando template: Spyware Detector
+2025-11-20 20:52:40,370 - mdsd_generator - INFO - ✅ Ciclo MDSD completado
+2025-11-20 20:52:40,371 - mdsd_generator - INFO - 🛑 MDSD Generator Worker detenido
+2025-11-20 20:52:52,639 - mdsd_generator - INFO - 🏗️ MDSD Generator Worker iniciado
+2025-11-20 20:52:52,640 - mdsd_generator - INFO - 🏗️ Ejecutando generación MDSD...
+2025-11-20 20:52:52,641 - mdsd_generator - INFO - ⚙️ Ejecutando Workflow Engine...
+2025-11-20 20:52:52,857 - mdsd_generator - WARNING - ⚠️ Workflow Engine terminó con advertencias
+2025-11-20 20:52:52,857 - mdsd_generator - INFO - 🔧 Verificando Simple Generator...
+2025-11-20 20:53:31,208 - mdsd_generator - INFO - 📋 Simple Generator verificado
+2025-11-20 20:53:31,315 - mdsd_generator - INFO - 📝 Generando template: Ransomware Detector
+2025-11-20 20:53:32,445 - mdsd_generator - INFO - 📝 Generando template: Trojan Detector
+2025-11-20 20:53:33,497 - mdsd_generator - INFO - 📝 Generando template: Rootkit Detector
+2025-11-20 20:53:34,562 - mdsd_generator - INFO - 📝 Generando template: Spyware Detector
+2025-11-20 20:53:35,580 - mdsd_generator - INFO - ✅ Ciclo MDSD completado
+2025-11-20 20:53:37,770 - mdsd_generator - INFO - 🛑 MDSD Generator Worker detenido
+2025-11-20 20:56:41,436 - mdsd_generator - INFO - 🏗️ MDSD Generator Worker iniciado
+2025-11-20 20:56:41,439 - mdsd_generator - INFO - 🏗️ Ejecutando generación MDSD...
+2025-11-20 20:56:41,440 - mdsd_generator - INFO - ⚙️ Ejecutando Workflow Engine...
+2025-11-20 20:56:41,662 - mdsd_generator - WARNING - ⚠️ Workflow Engine terminó con advertencias
+2025-11-20 20:56:41,663 - mdsd_generator - INFO - 🔧 Verificando Simple Generator...
+2025-11-20 20:58:53,300 - mdsd_generator - INFO - 🏗️ MDSD Generator Worker iniciado
+2025-11-20 20:58:53,399 - mdsd_generator - INFO - 🏗️ Ejecutando generación MDSD...
+2025-11-20 20:58:53,563 - mdsd_generator - INFO - ⚙️ Ejecutando Workflow Engine...
+2025-11-20 20:58:54,232 - mdsd_generator - WARNING - ⚠️ Workflow Engine terminó con advertencias
+2025-11-20 20:58:54,274 - mdsd_generator - INFO - 🔧 Verificando Simple Generator...
+2025-11-20 20:58:54,577 - mdsd_generator - INFO - 📋 Simple Generator verificado
+2025-11-20 20:58:54,578 - mdsd_generator - INFO - 📝 Generando template: Ransomware Detector
+2025-11-20 20:59:33,585 - mdsd_generator - INFO - 📝 Generando template: Trojan Detector
+2025-11-20 20:59:34,630 - mdsd_generator - INFO - 📝 Generando template: Rootkit Detector
+2025-11-20 20:59:35,707 - mdsd_generator - INFO - 📝 Generando template: Spyware Detector
+2025-11-20 20:59:36,708 - mdsd_generator - INFO - ✅ Ciclo MDSD completado
+2025-11-20 21:01:36,709 - mdsd_generator - INFO - 🏗️ Ejecutando generación MDSD...
+2025-11-20 21:01:36,710 - mdsd_generator - INFO - ⚙️ Ejecutando Workflow Engine...
+2025-11-20 21:01:36,864 - mdsd_generator - WARNING - ⚠️ Workflow Engine terminó con advertencias
+2025-11-20 21:01:36,864 - mdsd_generator - INFO - 🔧 Verificando Simple Generator...
+2025-11-20 21:01:36,972 - mdsd_generator - INFO - 📋 Simple Generator verificado
+2025-11-20 21:01:36,972 - mdsd_generator - INFO - 📝 Generando template: Ransomware Detector
+2025-11-20 21:01:37,983 - mdsd_generator - INFO - 📝 Generando template: Trojan Detector
+2025-11-20 21:01:38,986 - mdsd_generator - INFO - 📝 Generando template: Rootkit Detector
+2025-11-20 21:01:40,081 - mdsd_generator - INFO - 📝 Generando template: Spyware Detector
+2025-11-20 21:01:41,082 - mdsd_generator - INFO - ✅ Ciclo MDSD completado
+2025-11-20 21:02:00,675 - mdsd_generator - INFO - 🛑 MDSD Generator Worker detenido

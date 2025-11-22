@@ -1,0 +1,45 @@
+2025-11-20 20:55:53,905 - AntivirusUI - INFO - 📝 Logger 'AntivirusUI' inicializado
+2025-11-20 20:55:53,906 - AntivirusUI - INFO - 🚀 Iniciando Antivirus Professional UI (Dear PyGui)
+2025-11-20 20:55:53,910 - AntivirusUI - INFO - ✅ Sistema de métricas simplificado inicializado
+2025-11-20 20:55:53,911 - AntivirusUI - INFO - ✅ Settings loaded from ui_settings.json
+2025-11-20 20:55:53,912 - AntivirusUI - INFO - 🚀 Starting Antivirus Professional UI...
+2025-11-20 20:55:53,913 - AntivirusUI - INFO - ✅ Fuente cargada: Segoe UI
+2025-11-20 20:55:53,916 - Dashboard - INFO - Dashboard created successfully
+2025-11-20 20:55:53,917 - RealtimeMonitor - INFO - Real-time monitor updates started.
+2025-11-20 20:55:54,007 - Dashboard - INFO - Dashboard updates started
+2025-11-20 20:55:54,008 - AntivirusUI - INFO - 🛡️ Inicializando motor antivirus...
+2025-11-20 20:55:54,009 - core.plugin_registry - INFO - 🏪 PluginRegistry inicializado (Singleton)
+2025-11-20 20:55:54,009 - core.plugin_manager - INFO - 🎛️ PluginManager inicializado
+2025-11-20 20:55:54,009 - core.engine - INFO - 🛡️ UnifiedAntivirusEngine inicializado
+2025-11-20 20:55:54,009 - AntivirusUI - INFO - ✅ Motor creado - Tipo: FULL
+2025-11-20 20:55:54,010 - core.engine - INFO - 🚀 Iniciando Sistema Anti-Keylogger Unificado...
+2025-11-20 20:55:54,011 - PluginManager - INFO - 🔍 Iniciando descubrimiento de plugins...
+2025-11-20 20:55:54,016 - core.plugin_registry - INFO - 🔍 Descubriendo plugins en: plugins
+2025-11-20 20:55:54,017 - core.plugin_registry - INFO - ✅ Descubiertos 0 plugins
+2025-11-20 20:55:54,018 - PluginManager - WARNING - ⚠️ No se encontraron plugins
+2025-11-20 20:55:54,018 - core.engine - ERROR - ❌ Falló el descubrimiento de plugins
+2025-11-20 20:55:54,018 - AntivirusUI - ERROR - ❌ Falló la inicialización del motor
+2025-11-20 20:55:54,019 - AntivirusUI - WARNING - ⚠️ Activando modo demo - usando datos básicos...
+2025-11-20 20:55:54,019 - AntivirusUI - INFO - ✅ Modo demo configurado
+2025-11-20 20:55:54,020 - AntivirusUI - INFO - 🟡 Backend Status: DEMO MODE
+2025-11-20 20:56:01,606 - AntivirusUI - INFO - 🛑 Shutting down application...
+2025-11-20 20:56:01,607 - AntivirusUI - INFO - 🛡️ Deteniendo motor antivirus...
+2025-11-20 20:56:01,607 - core.engine - INFO - 🛑 Iniciando shutdown del sistema...
+2025-11-20 20:56:01,608 - core.event_bus - INFO - 📢 Publicando evento 'system_shutdown_started' de 'UnifiedEngine' a 0 suscriptores
+2025-11-20 20:56:01,609 - core.engine - INFO - 🛑 Forzando shutdown de plugins...
+2025-11-20 20:56:01,609 - PluginManager - INFO - 🔥 INICIANDO SHUTDOWN_ALL_PLUGINS
+2025-11-20 20:56:01,610 - PluginManager - INFO - 🔥 Plugins activos a desactivar: []
+2025-11-20 20:56:01,611 - PluginManager - INFO - 🛑 Shutdown: 0/0 plugins
+2025-11-20 20:56:01,611 - core.event_bus - INFO - 🧹 Historial de eventos limpiado
+2025-11-20 20:56:01,614 - core.engine - INFO - ✅ Sistema detenido exitosamente
+2025-11-20 20:56:02,618 - AntivirusUI - INFO - ✅ Application shutdown complete
+2025-11-20 20:56:02,618 - AntivirusUI - INFO - 🛑 Shutting down application...
+2025-11-20 20:56:02,619 - AntivirusUI - INFO - 🛡️ Deteniendo motor antivirus...
+2025-11-20 20:56:02,619 - core.engine - INFO - 🛑 Iniciando shutdown del sistema...
+2025-11-20 20:56:02,619 - core.event_bus - INFO - 📢 Publicando evento 'system_shutdown_started' de 'UnifiedEngine' a 0 suscriptores
+2025-11-20 20:56:02,620 - core.engine - INFO - 🛑 Forzando shutdown de plugins...
+2025-11-20 20:56:02,620 - PluginManager - INFO - 🔥 INICIANDO SHUTDOWN_ALL_PLUGINS
+2025-11-20 20:56:02,620 - PluginManager - INFO - 🔥 Plugins activos a desactivar: []
+2025-11-20 20:56:02,620 - PluginManager - INFO - 🛑 Shutdown: 0/0 plugins
+2025-11-20 20:56:02,621 - core.event_bus - INFO - 🧹 Historial de eventos limpiado
+2025-11-20 20:56:02,621 - core.engine - INFO - ✅ Sistema detenido exitosamente

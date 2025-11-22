@@ -1,0 +1,58 @@
+2025-11-20 20:29:05,137 - integration_engine - INFO - 🔄 Integration Engine Plugin inicializado
+2025-11-20 20:29:05,354 - plugin.integration_engine - INFO - 📄 Configuración cargada desde C:\Users\HP\Documents\GitHub\ANTIVIRUS_CPP_PROFESSIONAL\GENSEC Sistema de Seguridad\plugins\detectors\integration_engine\config.json
+2025-11-20 20:29:05,384 - plugin.integration_engine - INFO - 🚀 Inicializando Integration Engine...
+2025-11-20 20:29:05,493 - plugin.integration_engine - INFO - ✅ Integration Engine inicializado correctamente
+2025-11-20 20:29:05,556 - plugin.integration_engine - INFO - 🚀 Iniciando Integration Engine...
+2025-11-20 20:29:05,644 - plugin.integration_engine - INFO - 🧪 TDD Worker iniciado
+2025-11-20 20:29:05,780 - plugin.integration_engine - INFO - 🛡️ IAST Worker iniciado
+2025-11-20 20:29:05,912 - plugin.integration_engine - INFO - 🏗️ MDSD Worker iniciado
+2025-11-20 20:29:05,993 - plugin.integration_engine - INFO - ✅ Integration Engine iniciado - Todas las integraciones activas
+2025-11-20 20:29:06,161 - plugin.integration_engine - INFO - ✅ Plugin 'integration_engine' activado exitosamente
+2025-11-20 20:31:46,753 - plugin.integration_engine - INFO - 🛑 Deteniendo Integration Engine...
+2025-11-20 20:31:46,758 - plugin.integration_engine - INFO - ✅ Integration Engine detenido correctamente
+2025-11-20 20:51:57,091 - integration_engine - INFO - 🔄 Integration Engine Plugin inicializado
+2025-11-20 20:51:57,956 - plugin.integration_engine - INFO - 📄 Configuración cargada desde C:\Users\HP\Documents\GitHub\ANTIVIRUS_CPP_PROFESSIONAL\GENSEC Sistema de Seguridad\plugins\detectors\integration_engine\config.json
+2025-11-20 20:51:57,958 - plugin.integration_engine - INFO - 🚀 Inicializando Integration Engine...
+2025-11-20 20:51:57,959 - plugin.integration_engine - INFO - ✅ Integration Engine inicializado correctamente
+2025-11-20 20:51:57,959 - plugin.integration_engine - INFO - 🚀 Iniciando Integration Engine...
+2025-11-20 20:51:57,960 - plugin.integration_engine - INFO - 🧪 TDD Worker iniciado
+2025-11-20 20:51:57,961 - plugin.integration_engine - INFO - 🛡️ IAST Worker iniciado
+2025-11-20 20:51:57,961 - plugin.integration_engine - INFO - 🏗️ MDSD Worker iniciado
+2025-11-20 20:51:57,962 - plugin.integration_engine - INFO - ✅ Integration Engine iniciado - Todas las integraciones activas
+2025-11-20 20:51:57,963 - plugin.integration_engine - INFO - ✅ Plugin 'integration_engine' activado exitosamente
+2025-11-20 20:52:39,415 - plugin.integration_engine - INFO - 🛑 Deteniendo Integration Engine...
+2025-11-20 20:52:40,445 - plugin.integration_engine - INFO - ✅ Integration Engine detenido correctamente
+2025-11-20 20:52:51,471 - integration_engine - INFO - 🔄 Integration Engine Plugin inicializado
+2025-11-20 20:52:52,370 - plugin.integration_engine - INFO - 📄 Configuración cargada desde C:\Users\HP\Documents\GitHub\ANTIVIRUS_CPP_PROFESSIONAL\GENSEC Sistema de Seguridad\plugins\detectors\integration_engine\config.json
+2025-11-20 20:52:52,387 - plugin.integration_engine - INFO - 🚀 Inicializando Integration Engine...
+2025-11-20 20:52:52,465 - plugin.integration_engine - INFO - ✅ Integration Engine inicializado correctamente
+2025-11-20 20:52:52,513 - plugin.integration_engine - INFO - 🚀 Iniciando Integration Engine...
+2025-11-20 20:52:52,590 - plugin.integration_engine - INFO - 🧪 TDD Worker iniciado
+2025-11-20 20:52:52,636 - plugin.integration_engine - INFO - 🛡️ IAST Worker iniciado
+2025-11-20 20:52:52,639 - plugin.integration_engine - INFO - 🏗️ MDSD Worker iniciado
+2025-11-20 20:52:52,640 - plugin.integration_engine - INFO - ✅ Integration Engine iniciado - Todas las integraciones activas
+2025-11-20 20:52:52,641 - plugin.integration_engine - INFO - ✅ Plugin 'integration_engine' activado exitosamente
+2025-11-20 20:53:37,770 - plugin.integration_engine - INFO - 🛑 Deteniendo Integration Engine...
+2025-11-20 20:53:39,617 - plugin.integration_engine - INFO - ✅ Integration Engine detenido correctamente
+2025-11-20 20:56:40,826 - integration_engine - INFO - 🔄 Integration Engine Plugin inicializado
+2025-11-20 20:56:40,899 - plugin.integration_engine - INFO - 📄 Configuración cargada desde C:\Users\HP\Documents\GitHub\ANTIVIRUS_CPP_PROFESSIONAL\GENSEC Sistema de Seguridad\plugins\detectors\integration_engine\config.json
+2025-11-20 20:56:40,914 - plugin.integration_engine - INFO - 🚀 Inicializando Integration Engine...
+2025-11-20 20:56:41,229 - plugin.integration_engine - INFO - ✅ Integration Engine inicializado correctamente
+2025-11-20 20:56:41,246 - plugin.integration_engine - INFO - 🚀 Iniciando Integration Engine...
+2025-11-20 20:56:41,345 - plugin.integration_engine - INFO - 🧪 TDD Worker iniciado
+2025-11-20 20:56:41,412 - plugin.integration_engine - INFO - 🛡️ IAST Worker iniciado
+2025-11-20 20:56:41,436 - plugin.integration_engine - INFO - 🏗️ MDSD Worker iniciado
+2025-11-20 20:56:41,439 - plugin.integration_engine - INFO - ✅ Integration Engine iniciado - Todas las integraciones activas
+2025-11-20 20:56:41,440 - plugin.integration_engine - INFO - ✅ Plugin 'integration_engine' activado exitosamente
+2025-11-20 20:58:52,331 - integration_engine - INFO - 🔄 Integration Engine Plugin inicializado
+2025-11-20 20:58:52,730 - plugin.integration_engine - INFO - 📄 Configuración cargada desde C:\Users\HP\Documents\GitHub\ANTIVIRUS_CPP_PROFESSIONAL\GENSEC Sistema de Seguridad\plugins\detectors\integration_engine\config.json
+2025-11-20 20:58:52,777 - plugin.integration_engine - INFO - 🚀 Inicializando Integration Engine...
+2025-11-20 20:58:52,881 - plugin.integration_engine - INFO - ✅ Integration Engine inicializado correctamente
+2025-11-20 20:58:52,946 - plugin.integration_engine - INFO - 🚀 Iniciando Integration Engine...
+2025-11-20 20:58:53,030 - plugin.integration_engine - INFO - 🧪 TDD Worker iniciado
+2025-11-20 20:58:53,104 - plugin.integration_engine - INFO - 🛡️ IAST Worker iniciado
+2025-11-20 20:58:53,262 - plugin.integration_engine - INFO - 🏗️ MDSD Worker iniciado
+2025-11-20 20:58:53,390 - plugin.integration_engine - INFO - ✅ Integration Engine iniciado - Todas las integraciones activas
+2025-11-20 20:58:53,500 - plugin.integration_engine - INFO - ✅ Plugin 'integration_engine' activado exitosamente
+2025-11-20 21:02:00,674 - plugin.integration_engine - INFO - 🛑 Deteniendo Integration Engine...
+2025-11-20 21:02:00,680 - plugin.integration_engine - INFO - ✅ Integration Engine detenido correctamente

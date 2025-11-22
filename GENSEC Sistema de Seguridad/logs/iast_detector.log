@@ -1,0 +1,17 @@
+2025-11-20 20:51:56,262 - plugin.iast_detector - INFO - 📄 Configuración cargada desde C:\Users\HP\Documents\GitHub\ANTIVIRUS_CPP_PROFESSIONAL\GENSEC Sistema de Seguridad\plugins\detectors\iast_detector\config.json
+2025-11-20 20:51:56,279 - plugin.iast_detector - INFO - 🚀 Inicializando IAST Detector Plugin...
+2025-11-20 20:51:56,462 - plugin.iast_detector - INFO - ✅ IAST Engine iniciado y monitoreando vulnerabilidades
+2025-11-20 20:51:56,710 - plugin.iast_detector - INFO - ✅ IAST Detector iniciado
+2025-11-20 20:51:56,911 - plugin.iast_detector - INFO - ✅ Plugin 'iast_detector' activado exitosamente
+2025-11-20 20:52:39,412 - plugin.iast_detector - ERROR - ❌ Error deteniendo IAST detector: 'IASTDetector' object has no attribute 'stop_monitoring'
+2025-11-20 20:52:50,669 - plugin.iast_detector - INFO - 📄 Configuración cargada desde C:\Users\HP\Documents\GitHub\ANTIVIRUS_CPP_PROFESSIONAL\GENSEC Sistema de Seguridad\plugins\detectors\iast_detector\config.json
+2025-11-20 20:52:50,711 - plugin.iast_detector - INFO - 🚀 Inicializando IAST Detector Plugin...
+2025-11-20 20:52:50,897 - plugin.iast_detector - INFO - ✅ IAST Engine iniciado y monitoreando vulnerabilidades
+2025-11-20 20:52:50,914 - plugin.iast_detector - INFO - ✅ IAST Detector iniciado
+2025-11-20 20:52:50,960 - plugin.iast_detector - INFO - ✅ Plugin 'iast_detector' activado exitosamente
+2025-11-20 20:53:37,767 - plugin.iast_detector - ERROR - ❌ Error deteniendo IAST detector: 'IASTDetector' object has no attribute 'stop_monitoring'
+2025-11-20 20:56:39,577 - plugin.iast_detector - INFO - 📄 Configuración cargada desde C:\Users\HP\Documents\GitHub\ANTIVIRUS_CPP_PROFESSIONAL\GENSEC Sistema de Seguridad\plugins\detectors\iast_detector\config.json
+2025-11-20 20:56:39,611 - plugin.iast_detector - INFO - 🚀 Inicializando IAST Detector Plugin...
+2025-11-20 20:56:39,811 - plugin.iast_detector - INFO - ✅ IAST Engine iniciado y monitoreando vulnerabilidades
+2025-11-20 20:56:39,962 - plugin.iast_detector - INFO - ✅ IAST Detector iniciado
+2025-11-20 20:56:40,030 - plugin.iast_detector - INFO - ✅ Plugin 'iast_detector' activado exitosamente
