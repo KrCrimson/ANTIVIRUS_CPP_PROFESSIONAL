@@ -1,0 +1,18 @@
+{
+    "name": "web_log_handler",
+    "version": "1.0.0", 
+    "description": "Handler para enviar logs al backend web",
+    "type": "handler",
+    "priority": 50,
+    "dependencies": [],
+    "config": {
+        "enabled": true,
+        "api_url": "https://unified-shield-le8n9y4ro-sebastians-projects-487d2baa.vercel.app/api",
+        "api_key": "5n8nAQro47O7bA8cjJXzHJxeTmKNQ9OcqRDurA1Xk4Y",
+        "batch_size": 10,
+        "flush_interval": 5.0,
+        "timeout": 30.0,
+        "max_retries": 3,
+        "buffer_size": 1000
+    }
+}

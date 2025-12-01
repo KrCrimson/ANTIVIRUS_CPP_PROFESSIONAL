@@ -1,0 +1,43 @@
+2025-12-01 02:05:42,909 - plugins.handlers.web_log_handler.plugin - INFO - [WEB_LOG_HANDLER] Inicializado - Instance ID: R3DCR0WN-1e40a53e-20251201
+2025-12-01 02:05:42,909 - plugins.handlers.web_log_handler.plugin - ERROR - [WEB_LOG_HANDLER] Error inicializando: no running event loop
+2025-12-01 02:05:42,909 - plugins.handlers.web_log_handler.plugin - INFO - [WEB_LOG_HANDLER] Inicializado - Instance ID: R3DCR0WN-8f8dff5c-20251201
+2025-12-01 02:05:42,909 - plugins.handlers.web_log_handler.plugin - ERROR - [WEB_LOG_HANDLER] Error inicializando: no running event loop
+2025-12-01 02:16:17,907 - plugins.handlers.web_log_handler.plugin - INFO - [WEB_LOG_HANDLER] Inicializado - Instance ID: R3DCR0WN-7cb77fc9-20251201
+2025-12-01 02:16:18,162 - plugins.handlers.web_log_handler.plugin - INFO - ✅ WebLogHandler configurado exitosamente
+2025-12-01 02:16:18,162 - plugins.handlers.web_log_handler.plugin - INFO - [WEB_LOG_HANDLER] Suscripciones a eventos completadas
+2025-12-01 02:16:18,162 - plugins.handlers.web_log_handler.plugin - INFO - [WEB_LOG_HANDLER] Plugin iniciado - Sender activado en thread separado
+2025-12-01 02:16:18,162 - plugins.handlers.web_log_handler.plugin - ERROR - [WEB_LOG_HANDLER] Error procesando alerta de seguridad: 'Event' object has no attribute 'get'
+2025-12-01 02:16:18,162 - plugins.handlers.web_log_handler.plugin - INFO - ✅ Sesión HTTP creada exitosamente
+2025-12-01 02:16:18,162 - plugins.handlers.web_log_handler.plugin - ERROR - [WEB_LOG_HANDLER] Error procesando alerta de seguridad: 'Event' object has no attribute 'get'
+2025-12-01 02:16:18,162 - plugins.handlers.web_log_handler.plugin - ERROR - [WEB_LOG_HANDLER] Error procesando alerta de seguridad: 'Event' object has no attribute 'get'
+2025-12-01 02:33:30,122 - plugins.handlers.web_log_handler.plugin - INFO - [WEB_LOG_HANDLER] Inicializado - Instance ID: R3DCR0WN-eef32c74-20251201
+2025-12-01 02:33:30,122 - plugins.handlers.web_log_handler.plugin - INFO - ✅ WebLogHandler configurado exitosamente
+2025-12-01 02:33:30,122 - plugins.handlers.web_log_handler.plugin - INFO - [WEB_LOG_HANDLER] Suscripciones a eventos completadas
+2025-12-01 02:33:30,122 - plugins.handlers.web_log_handler.plugin - INFO - [WEB_LOG_HANDLER] Plugin iniciado - Sender activado en thread separado
+2025-12-01 02:33:30,122 - plugins.handlers.web_log_handler.plugin - INFO - ✅ Sesión HTTP creada exitosamente
+2025-12-01 02:33:30,122 - plugins.handlers.web_log_handler.plugin - ERROR - Health check error: Cannot connect to host localhost:8000 ssl:default [El equipo remoto rechazó la conexión de red]
+2025-12-01 02:33:30,122 - plugins.handlers.web_log_handler.plugin - WARNING - ❌ WebLogHandler no pudo conectar: Health check failed
+2025-12-01 02:33:30,122 - plugins.handlers.web_log_handler.plugin - INFO - [WEB_LOG_HANDLER] Iniciando loop de envío de logs
+2025-12-01 02:34:35,713 - plugins.handlers.web_log_handler.plugin - INFO - [WEB_LOG_HANDLER] Inicializado - Instance ID: R3DCR0WN-ade4ecc9-20251201
+2025-12-01 02:34:50,384 - plugins.handlers.web_log_handler.plugin - INFO - ✅ WebLogHandler configurado exitosamente
+2025-12-01 02:34:50,384 - plugins.handlers.web_log_handler.plugin - INFO - [WEB_LOG_HANDLER] Suscripciones a eventos completadas
+2025-12-01 02:34:50,384 - plugins.handlers.web_log_handler.plugin - INFO - [WEB_LOG_HANDLER] Plugin iniciado - Sender activado en thread separado
+2025-12-01 02:34:50,384 - plugins.handlers.web_log_handler.plugin - INFO - ✅ Sesión HTTP creada exitosamente
+2025-12-01 02:34:50,384 - plugins.handlers.web_log_handler.plugin - ERROR - Health check error: Cannot connect to host localhost:8000 ssl:default [El equipo remoto rechazó la conexión de red]
+2025-12-01 02:34:50,384 - plugins.handlers.web_log_handler.plugin - WARNING - ❌ WebLogHandler no pudo conectar: Health check failed
+2025-12-01 02:34:50,384 - plugins.handlers.web_log_handler.plugin - INFO - [WEB_LOG_HANDLER] Iniciando loop de envío de logs
+2025-12-01 02:34:50,384 - plugins.handlers.web_log_handler.plugin - ERROR - [WEB_LOG_HANDLER] Error enviando batch (intento 1): Cannot connect to host localhost:8000 ssl:default [El equipo remoto rechazó la conexión de red]
+2025-12-01 02:34:50,384 - plugins.handlers.web_log_handler.plugin - ERROR - [WEB_LOG_HANDLER] Error enviando batch (intento 2): Cannot connect to host localhost:8000 ssl:default [El equipo remoto rechazó la conexión de red]
+2025-12-01 02:48:05,251 - plugins.handlers.web_log_handler.plugin - INFO - [WEB_LOG_HANDLER] Inicializado - Instance ID: R3DCR0WN-6602e317-20251201
+2025-12-01 02:48:26,548 - plugins.handlers.web_log_handler.plugin - INFO - [WEB_LOG_HANDLER] Inicializado - Instance ID: R3DCR0WN-554700e1-20251201
+2025-12-01 02:48:32,713 - plugins.handlers.web_log_handler.plugin - INFO - ✅ WebLogHandler configurado exitosamente
+2025-12-01 02:48:32,713 - plugins.handlers.web_log_handler.plugin - INFO - [WEB_LOG_HANDLER] Suscripciones a eventos completadas
+2025-12-01 02:48:32,713 - plugins.handlers.web_log_handler.plugin - INFO - [WEB_LOG_HANDLER] Plugin iniciado - Sender activado en thread separado
+2025-12-01 02:48:32,713 - plugins.handlers.web_log_handler.plugin - INFO - ✅ Sesión HTTP creada exitosamente
+2025-12-01 02:48:32,713 - plugins.handlers.web_log_handler.plugin - ERROR - Health check error: Cannot connect to host localhost:8000 ssl:default [El equipo remoto rechazó la conexión de red]
+2025-12-01 02:48:32,713 - plugins.handlers.web_log_handler.plugin - WARNING - ❌ WebLogHandler no pudo conectar: Health check failed
+2025-12-01 02:48:32,713 - plugins.handlers.web_log_handler.plugin - INFO - [WEB_LOG_HANDLER] Iniciando loop de envío de logs
+2025-12-01 02:48:32,713 - plugins.handlers.web_log_handler.plugin - INFO - [WEB_LOG_HANDLER] Deteniendo plugin...
+2025-12-01 02:48:32,713 - plugins.handlers.web_log_handler.plugin - ERROR - [WEB_LOG_HANDLER] Error deteniendo: no running event loop
+2025-12-01 02:48:32,713 - plugins.handlers.web_log_handler.plugin - INFO - [WEB_LOG_HANDLER] Deteniendo plugin...
+2025-12-01 02:48:32,713 - plugins.handlers.web_log_handler.plugin - ERROR - [WEB_LOG_HANDLER] Error deteniendo: no running event loop

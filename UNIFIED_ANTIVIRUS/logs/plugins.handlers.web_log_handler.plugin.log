@@ -1,0 +1,171 @@
+[2025-12-01 01:27:36] plugins.handlers.web_log_handler.plugin - INFO - __init__:91 - 📝 Logger 'plugins.handlers.web_log_handler.plugin' inicializado
+[2025-12-01 01:30:41] plugins.handlers.web_log_handler.plugin - INFO - __init__:91 - 📝 Logger 'plugins.handlers.web_log_handler.plugin' inicializado
+[2025-12-01 01:57:12] plugins.handlers.web_log_handler.plugin - INFO - __init__:91 - 📝 Logger 'plugins.handlers.web_log_handler.plugin' inicializado
+[2025-12-01 02:00:48] plugins.handlers.web_log_handler.plugin - INFO - __init__:91 - 📝 Logger 'plugins.handlers.web_log_handler.plugin' inicializado
+[2025-12-01 02:03:20] plugins.handlers.web_log_handler.plugin - INFO - __init__:91 - 📝 Logger 'plugins.handlers.web_log_handler.plugin' inicializado
+[2025-12-01 02:04:50] plugins.handlers.web_log_handler.plugin - INFO - __init__:91 - 📝 Logger 'plugins.handlers.web_log_handler.plugin' inicializado
+[2025-12-01 02:05:14] plugins.handlers.web_log_handler.plugin - INFO - __init__:91 - 📝 Logger 'plugins.handlers.web_log_handler.plugin' inicializado
+[2025-12-01 02:05:15] plugins.handlers.web_log_handler.plugin - INFO - info:205 - [WEB_LOG_HANDLER] Inicializado - Instance ID: R3DCR0WN-c8e2bb4c-20251201
+[2025-12-01 02:05:15] plugins.handlers.web_log_handler.plugin - ERROR - error:213 - [WEB_LOG_HANDLER] Error inicializando: no running event loop
+[2025-12-01 02:05:28] plugins.handlers.web_log_handler.plugin - INFO - __init__:91 - 📝 Logger 'plugins.handlers.web_log_handler.plugin' inicializado
+[2025-12-01 02:05:29] plugins.handlers.web_log_handler.plugin - INFO - info:205 - [WEB_LOG_HANDLER] Inicializado - Instance ID: R3DCR0WN-1e40a53e-20251201
+[2025-12-01 02:05:29] plugins.handlers.web_log_handler.plugin - ERROR - error:213 - [WEB_LOG_HANDLER] Error inicializando: no running event loop
+[2025-12-01 02:05:29] plugins.handlers.web_log_handler.plugin - INFO - info:205 - [WEB_LOG_HANDLER] Inicializado - Instance ID: R3DCR0WN-8f8dff5c-20251201
+[2025-12-01 02:05:29] plugins.handlers.web_log_handler.plugin - ERROR - error:213 - [WEB_LOG_HANDLER] Error inicializando: no running event loop
+[2025-12-01 02:06:29] plugins.handlers.web_log_handler.plugin - INFO - __init__:91 - 📝 Logger 'plugins.handlers.web_log_handler.plugin' inicializado
+[2025-12-01 02:10:12] plugins.handlers.web_log_handler.plugin - INFO - __init__:91 - 📝 Logger 'plugins.handlers.web_log_handler.plugin' inicializado
+[2025-12-01 02:10:21] plugins.handlers.web_log_handler.plugin - INFO - __init__:91 - 📝 Logger 'plugins.handlers.web_log_handler.plugin' inicializado
+[2025-12-01 02:11:12] plugins.handlers.web_log_handler.plugin - INFO - __init__:91 - 📝 Logger 'plugins.handlers.web_log_handler.plugin' inicializado
+[2025-12-01 02:11:13] plugins.handlers.web_log_handler.plugin - INFO - info:205 - [WEB_LOG_HANDLER] Inicializado - Instance ID: R3DCR0WN-742ec60b-20251201
+[2025-12-01 02:11:13] plugins.handlers.web_log_handler.plugin - ERROR - error:213 - [WEB_LOG_HANDLER] Error inicializando: no running event loop
+[2025-12-01 02:11:56] plugins.handlers.web_log_handler.plugin - INFO - __init__:91 - 📝 Logger 'plugins.handlers.web_log_handler.plugin' inicializado
+[2025-12-01 02:11:57] plugins.handlers.web_log_handler.plugin - INFO - info:205 - [WEB_LOG_HANDLER] Inicializado - Instance ID: R3DCR0WN-3ad4ce16-20251201
+[2025-12-01 02:11:57] plugins.handlers.web_log_handler.plugin - ERROR - error:213 - [WEB_LOG_HANDLER] Error inicializando: no running event loop
+[2025-12-01 02:12:31] plugins.handlers.web_log_handler.plugin - INFO - __init__:91 - 📝 Logger 'plugins.handlers.web_log_handler.plugin' inicializado
+[2025-12-01 02:12:32] plugins.handlers.web_log_handler.plugin - INFO - info:205 - [WEB_LOG_HANDLER] Inicializado - Instance ID: R3DCR0WN-04ef69d5-20251201
+[2025-12-01 02:12:32] plugins.handlers.web_log_handler.plugin - ERROR - error:213 - [WEB_LOG_HANDLER] Error inicializando: no running event loop
+[2025-12-01 02:13:04] plugins.handlers.web_log_handler.plugin - INFO - __init__:91 - 📝 Logger 'plugins.handlers.web_log_handler.plugin' inicializado
+[2025-12-01 02:13:05] plugins.handlers.web_log_handler.plugin - INFO - info:205 - [WEB_LOG_HANDLER] Inicializado - Instance ID: R3DCR0WN-6f52c99d-20251201
+[2025-12-01 02:13:05] plugins.handlers.web_log_handler.plugin - ERROR - error:213 - [WEB_LOG_HANDLER] Error inicializando: no running event loop
+[2025-12-01 02:13:35] plugins.handlers.web_log_handler.plugin - INFO - __init__:91 - 📝 Logger 'plugins.handlers.web_log_handler.plugin' inicializado
+[2025-12-01 02:13:36] plugins.handlers.web_log_handler.plugin - INFO - info:205 - [WEB_LOG_HANDLER] Inicializado - Instance ID: R3DCR0WN-9124893d-20251201
+[2025-12-01 02:13:36] plugins.handlers.web_log_handler.plugin - INFO - info:205 - ✅ WebLogHandler configurado exitosamente
+[2025-12-01 02:13:36] plugins.handlers.web_log_handler.plugin - INFO - info:205 - [WEB_LOG_HANDLER] Suscripciones a eventos completadas
+[2025-12-01 02:13:36] plugins.handlers.web_log_handler.plugin - INFO - info:205 - [WEB_LOG_HANDLER] Plugin iniciado - Sender activado en thread separado
+[2025-12-01 02:13:36] plugins.handlers.web_log_handler.plugin - INFO - info:205 - ✅ Sesión HTTP creada exitosamente
+[2025-12-01 02:13:38] plugins.handlers.web_log_handler.plugin - ERROR - error:213 - Health check error: Cannot connect to host localhost:8000 ssl:default [El equipo remoto rechazó la conexión de red]
+[2025-12-01 02:13:41] plugins.handlers.web_log_handler.plugin - WARNING - warning:209 - ❌ WebLogHandler no pudo conectar: Health check failed
+[2025-12-01 02:13:52] plugins.handlers.web_log_handler.plugin - INFO - __init__:91 - 📝 Logger 'plugins.handlers.web_log_handler.plugin' inicializado
+[2025-12-01 02:15:11] plugins.handlers.web_log_handler.plugin - INFO - __init__:91 - 📝 Logger 'plugins.handlers.web_log_handler.plugin' inicializado
+[2025-12-01 02:15:12] plugins.handlers.web_log_handler.plugin - INFO - info:205 - [WEB_LOG_HANDLER] Inicializado - Instance ID: R3DCR0WN-c810ce5c-20251201
+[2025-12-01 02:15:12] plugins.handlers.web_log_handler.plugin - INFO - info:205 - ✅ WebLogHandler configurado exitosamente
+[2025-12-01 02:15:12] plugins.handlers.web_log_handler.plugin - INFO - info:205 - [WEB_LOG_HANDLER] Suscripciones a eventos completadas
+[2025-12-01 02:15:12] plugins.handlers.web_log_handler.plugin - INFO - info:205 - [WEB_LOG_HANDLER] Plugin iniciado - Sender activado en thread separado
+[2025-12-01 02:15:12] plugins.handlers.web_log_handler.plugin - INFO - info:205 - ✅ Sesión HTTP creada exitosamente
+[2025-12-01 02:15:15] plugins.handlers.web_log_handler.plugin - ERROR - error:213 - Health check error: Cannot connect to host localhost:8000 ssl:default [El equipo remoto rechazó la conexión de red]
+[2025-12-01 02:15:32] plugins.handlers.web_log_handler.plugin - INFO - __init__:91 - 📝 Logger 'plugins.handlers.web_log_handler.plugin' inicializado
+[2025-12-01 02:16:08] plugins.handlers.web_log_handler.plugin - INFO - info:205 - [WEB_LOG_HANDLER] Inicializado - Instance ID: R3DCR0WN-7cb77fc9-20251201
+[2025-12-01 02:16:08] plugins.handlers.web_log_handler.plugin - INFO - info:205 - ✅ WebLogHandler configurado exitosamente
+[2025-12-01 02:16:08] plugins.handlers.web_log_handler.plugin - INFO - info:205 - [WEB_LOG_HANDLER] Suscripciones a eventos completadas
+[2025-12-01 02:16:08] plugins.handlers.web_log_handler.plugin - ERROR - error:213 - [WEB_LOG_HANDLER] Error procesando alerta de seguridad: 'Event' object has no attribute 'get'
+[2025-12-01 02:16:08] plugins.handlers.web_log_handler.plugin - INFO - info:205 - [WEB_LOG_HANDLER] Plugin iniciado - Sender activado en thread separado
+[2025-12-01 02:16:08] plugins.handlers.web_log_handler.plugin - INFO - info:205 - ✅ Sesión HTTP creada exitosamente
+[2025-12-01 02:16:08] plugins.handlers.web_log_handler.plugin - ERROR - error:213 - [WEB_LOG_HANDLER] Error procesando alerta de seguridad: 'Event' object has no attribute 'get'
+[2025-12-01 02:16:08] plugins.handlers.web_log_handler.plugin - ERROR - error:213 - [WEB_LOG_HANDLER] Error procesando alerta de seguridad: 'Event' object has no attribute 'get'
+[2025-12-01 02:16:08] plugins.handlers.web_log_handler.plugin - ERROR - error:213 - [WEB_LOG_HANDLER] Error procesando alerta de seguridad: 'Event' object has no attribute 'get'
+[2025-12-01 02:16:08] plugins.handlers.web_log_handler.plugin - ERROR - error:213 - [WEB_LOG_HANDLER] Error procesando alerta de seguridad: 'Event' object has no attribute 'get'
+[2025-12-01 02:16:09] plugins.handlers.web_log_handler.plugin - ERROR - error:213 - [WEB_LOG_HANDLER] Error procesando alerta de seguridad: 'Event' object has no attribute 'get'
+[2025-12-01 02:16:09] plugins.handlers.web_log_handler.plugin - ERROR - error:213 - [WEB_LOG_HANDLER] Error procesando alerta de seguridad: 'Event' object has no attribute 'get'
+[2025-12-01 02:16:09] plugins.handlers.web_log_handler.plugin - ERROR - error:213 - [WEB_LOG_HANDLER] Error procesando alerta de seguridad: 'Event' object has no attribute 'get'
+[2025-12-01 02:16:09] plugins.handlers.web_log_handler.plugin - ERROR - error:213 - [WEB_LOG_HANDLER] Error procesando alerta de seguridad: 'Event' object has no attribute 'get'
+[2025-12-01 02:16:09] plugins.handlers.web_log_handler.plugin - ERROR - error:213 - [WEB_LOG_HANDLER] Error procesando alerta de seguridad: 'Event' object has no attribute 'get'
+[2025-12-01 02:16:09] plugins.handlers.web_log_handler.plugin - ERROR - error:213 - [WEB_LOG_HANDLER] Error procesando alerta de seguridad: 'Event' object has no attribute 'get'
+[2025-12-01 02:16:09] plugins.handlers.web_log_handler.plugin - ERROR - error:213 - [WEB_LOG_HANDLER] Error procesando alerta de seguridad: 'Event' object has no attribute 'get'
+[2025-12-01 02:16:09] plugins.handlers.web_log_handler.plugin - ERROR - error:213 - [WEB_LOG_HANDLER] Error procesando alerta de seguridad: 'Event' object has no attribute 'get'
+[2025-12-01 02:16:09] plugins.handlers.web_log_handler.plugin - ERROR - error:213 - [WEB_LOG_HANDLER] Error procesando alerta de seguridad: 'Event' object has no attribute 'get'
+[2025-12-01 02:16:09] plugins.handlers.web_log_handler.plugin - ERROR - error:213 - [WEB_LOG_HANDLER] Error procesando alerta de seguridad: 'Event' object has no attribute 'get'
+[2025-12-01 02:16:09] plugins.handlers.web_log_handler.plugin - ERROR - error:213 - [WEB_LOG_HANDLER] Error procesando alerta de seguridad: 'Event' object has no attribute 'get'
+[2025-12-01 02:16:09] plugins.handlers.web_log_handler.plugin - ERROR - error:213 - [WEB_LOG_HANDLER] Error procesando alerta de seguridad: 'Event' object has no attribute 'get'
+[2025-12-01 02:16:09] plugins.handlers.web_log_handler.plugin - ERROR - error:213 - [WEB_LOG_HANDLER] Error procesando alerta de seguridad: 'Event' object has no attribute 'get'
+[2025-12-01 02:16:09] plugins.handlers.web_log_handler.plugin - ERROR - error:213 - [WEB_LOG_HANDLER] Error procesando alerta de seguridad: 'Event' object has no attribute 'get'
+[2025-12-01 02:16:09] plugins.handlers.web_log_handler.plugin - ERROR - error:213 - [WEB_LOG_HANDLER] Error procesando alerta de seguridad: 'Event' object has no attribute 'get'
+[2025-12-01 02:16:09] plugins.handlers.web_log_handler.plugin - ERROR - error:213 - [WEB_LOG_HANDLER] Error procesando alerta de seguridad: 'Event' object has no attribute 'get'
+[2025-12-01 02:16:09] plugins.handlers.web_log_handler.plugin - ERROR - error:213 - [WEB_LOG_HANDLER] Error procesando alerta de seguridad: 'Event' object has no attribute 'get'
+[2025-12-01 02:16:09] plugins.handlers.web_log_handler.plugin - ERROR - error:213 - [WEB_LOG_HANDLER] Error procesando alerta de seguridad: 'Event' object has no attribute 'get'
+[2025-12-01 02:16:09] plugins.handlers.web_log_handler.plugin - ERROR - error:213 - [WEB_LOG_HANDLER] Error procesando alerta de seguridad: 'Event' object has no attribute 'get'
+[2025-12-01 02:16:09] plugins.handlers.web_log_handler.plugin - ERROR - error:213 - [WEB_LOG_HANDLER] Error procesando alerta de seguridad: 'Event' object has no attribute 'get'
+[2025-12-01 02:16:09] plugins.handlers.web_log_handler.plugin - ERROR - error:213 - [WEB_LOG_HANDLER] Error procesando alerta de seguridad: 'Event' object has no attribute 'get'
+[2025-12-01 02:16:09] plugins.handlers.web_log_handler.plugin - ERROR - error:213 - [WEB_LOG_HANDLER] Error procesando alerta de seguridad: 'Event' object has no attribute 'get'
+[2025-12-01 02:16:09] plugins.handlers.web_log_handler.plugin - ERROR - error:213 - [WEB_LOG_HANDLER] Error procesando alerta de seguridad: 'Event' object has no attribute 'get'
+[2025-12-01 02:16:09] plugins.handlers.web_log_handler.plugin - ERROR - error:213 - [WEB_LOG_HANDLER] Error procesando alerta de seguridad: 'Event' object has no attribute 'get'
+[2025-12-01 02:16:09] plugins.handlers.web_log_handler.plugin - ERROR - error:213 - [WEB_LOG_HANDLER] Error procesando alerta de seguridad: 'Event' object has no attribute 'get'
+[2025-12-01 02:16:09] plugins.handlers.web_log_handler.plugin - ERROR - error:213 - [WEB_LOG_HANDLER] Error procesando alerta de seguridad: 'Event' object has no attribute 'get'
+[2025-12-01 02:16:09] plugins.handlers.web_log_handler.plugin - ERROR - error:213 - [WEB_LOG_HANDLER] Error procesando alerta de seguridad: 'Event' object has no attribute 'get'
+[2025-12-01 02:16:09] plugins.handlers.web_log_handler.plugin - ERROR - error:213 - [WEB_LOG_HANDLER] Error procesando alerta de seguridad: 'Event' object has no attribute 'get'
+[2025-12-01 02:16:09] plugins.handlers.web_log_handler.plugin - ERROR - error:213 - [WEB_LOG_HANDLER] Error procesando alerta de seguridad: 'Event' object has no attribute 'get'
+[2025-12-01 02:16:09] plugins.handlers.web_log_handler.plugin - ERROR - error:213 - [WEB_LOG_HANDLER] Error procesando alerta de seguridad: 'Event' object has no attribute 'get'
+[2025-12-01 02:16:09] plugins.handlers.web_log_handler.plugin - ERROR - error:213 - [WEB_LOG_HANDLER] Error procesando alerta de seguridad: 'Event' object has no attribute 'get'
+[2025-12-01 02:16:09] plugins.handlers.web_log_handler.plugin - ERROR - error:213 - [WEB_LOG_HANDLER] Error procesando alerta de seguridad: 'Event' object has no attribute 'get'
+[2025-12-01 02:16:09] plugins.handlers.web_log_handler.plugin - ERROR - error:213 - [WEB_LOG_HANDLER] Error procesando alerta de seguridad: 'Event' object has no attribute 'get'
+[2025-12-01 02:16:09] plugins.handlers.web_log_handler.plugin - ERROR - error:213 - [WEB_LOG_HANDLER] Error procesando alerta de seguridad: 'Event' object has no attribute 'get'
+[2025-12-01 02:16:09] plugins.handlers.web_log_handler.plugin - ERROR - error:213 - [WEB_LOG_HANDLER] Error procesando alerta de seguridad: 'Event' object has no attribute 'get'
+[2025-12-01 02:16:09] plugins.handlers.web_log_handler.plugin - ERROR - error:213 - [WEB_LOG_HANDLER] Error procesando alerta de seguridad: 'Event' object has no attribute 'get'
+[2025-12-01 02:16:09] plugins.handlers.web_log_handler.plugin - ERROR - error:213 - [WEB_LOG_HANDLER] Error procesando alerta de seguridad: 'Event' object has no attribute 'get'
+[2025-12-01 02:16:09] plugins.handlers.web_log_handler.plugin - ERROR - error:213 - [WEB_LOG_HANDLER] Error procesando alerta de seguridad: 'Event' object has no attribute 'get'
+[2025-12-01 02:16:09] plugins.handlers.web_log_handler.plugin - ERROR - error:213 - [WEB_LOG_HANDLER] Error procesando alerta de seguridad: 'Event' object has no attribute 'get'
+[2025-12-01 02:16:09] plugins.handlers.web_log_handler.plugin - ERROR - error:213 - [WEB_LOG_HANDLER] Error procesando alerta de seguridad: 'Event' object has no attribute 'get'
+[2025-12-01 02:16:09] plugins.handlers.web_log_handler.plugin - ERROR - error:213 - [WEB_LOG_HANDLER] Error procesando alerta de seguridad: 'Event' object has no attribute 'get'
+[2025-12-01 02:16:09] plugins.handlers.web_log_handler.plugin - ERROR - error:213 - [WEB_LOG_HANDLER] Error procesando alerta de seguridad: 'Event' object has no attribute 'get'
+[2025-12-01 02:16:09] plugins.handlers.web_log_handler.plugin - ERROR - error:213 - [WEB_LOG_HANDLER] Error procesando alerta de seguridad: 'Event' object has no attribute 'get'
+[2025-12-01 02:16:09] plugins.handlers.web_log_handler.plugin - ERROR - error:213 - [WEB_LOG_HANDLER] Error procesando alerta de seguridad: 'Event' object has no attribute 'get'
+[2025-12-01 02:16:09] plugins.handlers.web_log_handler.plugin - ERROR - error:213 - [WEB_LOG_HANDLER] Error procesando alerta de seguridad: 'Event' object has no attribute 'get'
+[2025-12-01 02:16:09] plugins.handlers.web_log_handler.plugin - ERROR - error:213 - [WEB_LOG_HANDLER] Error procesando alerta de seguridad: 'Event' object has no attribute 'get'
+[2025-12-01 02:16:09] plugins.handlers.web_log_handler.plugin - ERROR - error:213 - [WEB_LOG_HANDLER] Error procesando alerta de seguridad: 'Event' object has no attribute 'get'
+[2025-12-01 02:16:09] plugins.handlers.web_log_handler.plugin - ERROR - error:213 - [WEB_LOG_HANDLER] Error procesando alerta de seguridad: 'Event' object has no attribute 'get'
+[2025-12-01 02:16:09] plugins.handlers.web_log_handler.plugin - ERROR - error:213 - [WEB_LOG_HANDLER] Error procesando alerta de seguridad: 'Event' object has no attribute 'get'
+[2025-12-01 02:16:09] plugins.handlers.web_log_handler.plugin - ERROR - error:213 - [WEB_LOG_HANDLER] Error procesando alerta de seguridad: 'Event' object has no attribute 'get'
+[2025-12-01 02:16:09] plugins.handlers.web_log_handler.plugin - ERROR - error:213 - [WEB_LOG_HANDLER] Error procesando alerta de seguridad: 'Event' object has no attribute 'get'
+[2025-12-01 02:16:09] plugins.handlers.web_log_handler.plugin - ERROR - error:213 - [WEB_LOG_HANDLER] Error procesando alerta de seguridad: 'Event' object has no attribute 'get'
+[2025-12-01 02:16:09] plugins.handlers.web_log_handler.plugin - ERROR - error:213 - [WEB_LOG_HANDLER] Error procesando alerta de seguridad: 'Event' object has no attribute 'get'
+[2025-12-01 02:16:09] plugins.handlers.web_log_handler.plugin - ERROR - error:213 - [WEB_LOG_HANDLER] Error procesando alerta de seguridad: 'Event' object has no attribute 'get'
+[2025-12-01 02:16:11] plugins.handlers.web_log_handler.plugin - ERROR - error:213 - Health check error: Cannot connect to host localhost:8000 ssl:default [El equipo remoto rechazó la conexión de red]
+[2025-12-01 02:16:11] plugins.handlers.web_log_handler.plugin - ERROR - error:213 - [WEB_LOG_HANDLER] Error procesando alerta de seguridad: 'Event' object has no attribute 'get'
+[2025-12-01 02:16:12] plugins.handlers.web_log_handler.plugin - ERROR - error:213 - [WEB_LOG_HANDLER] Error procesando alerta de seguridad: 'Event' object has no attribute 'get'
+[2025-12-01 02:16:12] plugins.handlers.web_log_handler.plugin - ERROR - error:213 - [WEB_LOG_HANDLER] Error procesando alerta de seguridad: 'Event' object has no attribute 'get'
+[2025-12-01 02:16:12] plugins.handlers.web_log_handler.plugin - ERROR - error:213 - [WEB_LOG_HANDLER] Error procesando alerta de seguridad: 'Event' object has no attribute 'get'
+[2025-12-01 02:16:13] plugins.handlers.web_log_handler.plugin - ERROR - error:213 - [WEB_LOG_HANDLER] Error procesando alerta de seguridad: 'Event' object has no attribute 'get'
+[2025-12-01 02:32:45] plugins.handlers.web_log_handler.plugin - INFO - __init__:91 - 📝 Logger 'plugins.handlers.web_log_handler.plugin' inicializado
+[2025-12-01 02:33:15] plugins.handlers.web_log_handler.plugin - INFO - __init__:91 - 📝 Logger 'plugins.handlers.web_log_handler.plugin' inicializado
+[2025-12-01 02:33:16] plugins.handlers.web_log_handler.plugin - INFO - info:205 - [WEB_LOG_HANDLER] Inicializado - Instance ID: R3DCR0WN-eef32c74-20251201
+[2025-12-01 02:33:16] plugins.handlers.web_log_handler.plugin - INFO - info:205 - ✅ WebLogHandler configurado exitosamente
+[2025-12-01 02:33:16] plugins.handlers.web_log_handler.plugin - INFO - info:205 - [WEB_LOG_HANDLER] Suscripciones a eventos completadas
+[2025-12-01 02:33:16] plugins.handlers.web_log_handler.plugin - INFO - info:205 - [WEB_LOG_HANDLER] Plugin iniciado - Sender activado en thread separado
+[2025-12-01 02:33:16] plugins.handlers.web_log_handler.plugin - INFO - info:205 - ✅ Sesión HTTP creada exitosamente
+[2025-12-01 02:33:19] plugins.handlers.web_log_handler.plugin - ERROR - error:213 - Health check error: Cannot connect to host localhost:8000 ssl:default [El equipo remoto rechazó la conexión de red]
+[2025-12-01 02:33:19] plugins.handlers.web_log_handler.plugin - WARNING - warning:209 - ❌ WebLogHandler no pudo conectar: Health check failed
+[2025-12-01 02:33:19] plugins.handlers.web_log_handler.plugin - INFO - info:205 - [WEB_LOG_HANDLER] Iniciando loop de envío de logs
+[2025-12-01 02:33:48] plugins.handlers.web_log_handler.plugin - INFO - __init__:91 - 📝 Logger 'plugins.handlers.web_log_handler.plugin' inicializado
+[2025-12-01 02:34:26] plugins.handlers.web_log_handler.plugin - INFO - info:205 - [WEB_LOG_HANDLER] Inicializado - Instance ID: R3DCR0WN-ade4ecc9-20251201
+[2025-12-01 02:34:26] plugins.handlers.web_log_handler.plugin - INFO - info:205 - ✅ WebLogHandler configurado exitosamente
+[2025-12-01 02:34:26] plugins.handlers.web_log_handler.plugin - INFO - info:205 - [WEB_LOG_HANDLER] Suscripciones a eventos completadas
+[2025-12-01 02:34:26] plugins.handlers.web_log_handler.plugin - INFO - info:205 - [WEB_LOG_HANDLER] Plugin iniciado - Sender activado en thread separado
+[2025-12-01 02:34:26] plugins.handlers.web_log_handler.plugin - INFO - info:205 - ✅ Sesión HTTP creada exitosamente
+[2025-12-01 02:34:28] plugins.handlers.web_log_handler.plugin - ERROR - error:213 - Health check error: Cannot connect to host localhost:8000 ssl:default [El equipo remoto rechazó la conexión de red]
+[2025-12-01 02:34:28] plugins.handlers.web_log_handler.plugin - WARNING - warning:209 - ❌ WebLogHandler no pudo conectar: Health check failed
+[2025-12-01 02:34:28] plugins.handlers.web_log_handler.plugin - INFO - info:205 - [WEB_LOG_HANDLER] Iniciando loop de envío de logs
+[2025-12-01 02:34:36] plugins.handlers.web_log_handler.plugin - ERROR - error:213 - [WEB_LOG_HANDLER] Error enviando batch (intento 1): Cannot connect to host localhost:8000 ssl:default [El equipo remoto rechazó la conexión de red]
+[2025-12-01 02:34:39] plugins.handlers.web_log_handler.plugin - ERROR - error:213 - [WEB_LOG_HANDLER] Error enviando batch (intento 2): Cannot connect to host localhost:8000 ssl:default [El equipo remoto rechazó la conexión de red]
+[2025-12-01 02:34:44] plugins.handlers.web_log_handler.plugin - ERROR - error:213 - [WEB_LOG_HANDLER] Error enviando batch (intento 3): Cannot connect to host localhost:8000 ssl:default [El equipo remoto rechazó la conexión de red]
+[2025-12-01 02:34:51] plugins.handlers.web_log_handler.plugin - ERROR - error:213 - [WEB_LOG_HANDLER] Error enviando batch (intento 1): Cannot connect to host localhost:8000 ssl:default [El equipo remoto rechazó la conexión de red]
+[2025-12-01 02:34:55] plugins.handlers.web_log_handler.plugin - ERROR - error:213 - [WEB_LOG_HANDLER] Error enviando batch (intento 2): Cannot connect to host localhost:8000 ssl:default [El equipo remoto rechazó la conexión de red]
+[2025-12-01 02:34:59] plugins.handlers.web_log_handler.plugin - ERROR - error:213 - [WEB_LOG_HANDLER] Error enviando batch (intento 3): Cannot connect to host localhost:8000 ssl:default [El equipo remoto rechazó la conexión de red]
+[2025-12-01 02:46:30] plugins.handlers.web_log_handler.plugin - INFO - __init__:91 - 📝 Logger 'plugins.handlers.web_log_handler.plugin' inicializado
+[2025-12-01 02:46:35] plugins.handlers.web_log_handler.plugin - INFO - __init__:91 - 📝 Logger 'plugins.handlers.web_log_handler.plugin' inicializado
+[2025-12-01 02:46:59] plugins.handlers.web_log_handler.plugin - INFO - __init__:91 - 📝 Logger 'plugins.handlers.web_log_handler.plugin' inicializado
+[2025-12-01 02:47:18] plugins.handlers.web_log_handler.plugin - INFO - __init__:91 - 📝 Logger 'plugins.handlers.web_log_handler.plugin' inicializado
+[2025-12-01 02:47:39] plugins.handlers.web_log_handler.plugin - INFO - __init__:91 - 📝 Logger 'plugins.handlers.web_log_handler.plugin' inicializado
+[2025-12-01 02:47:56] plugins.handlers.web_log_handler.plugin - INFO - info:205 - [WEB_LOG_HANDLER] Inicializado - Instance ID: R3DCR0WN-6602e317-20251201
+[2025-12-01 02:47:56] plugins.handlers.web_log_handler.plugin - INFO - info:205 - ✅ WebLogHandler configurado exitosamente
+[2025-12-01 02:47:56] plugins.handlers.web_log_handler.plugin - INFO - info:205 - [WEB_LOG_HANDLER] Suscripciones a eventos completadas
+[2025-12-01 02:47:56] plugins.handlers.web_log_handler.plugin - INFO - info:205 - [WEB_LOG_HANDLER] Plugin iniciado - Sender activado en thread separado
+[2025-12-01 02:47:56] plugins.handlers.web_log_handler.plugin - INFO - info:205 - ✅ Sesión HTTP creada exitosamente
+[2025-12-01 02:47:58] plugins.handlers.web_log_handler.plugin - ERROR - error:213 - Health check error: Cannot connect to host localhost:8000 ssl:default [El equipo remoto rechazó la conexión de red]
+[2025-12-01 02:47:58] plugins.handlers.web_log_handler.plugin - WARNING - warning:209 - ❌ WebLogHandler no pudo conectar: Health check failed
+[2025-12-01 02:47:58] plugins.handlers.web_log_handler.plugin - INFO - info:205 - [WEB_LOG_HANDLER] Iniciando loop de envío de logs
+[2025-12-01 02:48:06] plugins.handlers.web_log_handler.plugin - ERROR - error:213 - [WEB_LOG_HANDLER] Error enviando batch (intento 1): Cannot connect to host localhost:8000 ssl:default [El equipo remoto rechazó la conexión de red]
+[2025-12-01 02:48:09] plugins.handlers.web_log_handler.plugin - ERROR - error:213 - [WEB_LOG_HANDLER] Error enviando batch (intento 2): Cannot connect to host localhost:8000 ssl:default [El equipo remoto rechazó la conexión de red]
+[2025-12-01 02:48:13] plugins.handlers.web_log_handler.plugin - ERROR - error:213 - [WEB_LOG_HANDLER] Error enviando batch (intento 3): Cannot connect to host localhost:8000 ssl:default [El equipo remoto rechazó la conexión de red]
+[2025-12-01 02:48:17] plugins.handlers.web_log_handler.plugin - INFO - info:205 - [WEB_LOG_HANDLER] Inicializado - Instance ID: R3DCR0WN-554700e1-20251201
+[2025-12-01 02:48:17] plugins.handlers.web_log_handler.plugin - INFO - info:205 - ✅ WebLogHandler configurado exitosamente
+[2025-12-01 02:48:17] plugins.handlers.web_log_handler.plugin - INFO - info:205 - [WEB_LOG_HANDLER] Suscripciones a eventos completadas
+[2025-12-01 02:48:17] plugins.handlers.web_log_handler.plugin - INFO - info:205 - [WEB_LOG_HANDLER] Plugin iniciado - Sender activado en thread separado
+[2025-12-01 02:48:17] plugins.handlers.web_log_handler.plugin - INFO - info:205 - ✅ Sesión HTTP creada exitosamente
+[2025-12-01 02:48:19] plugins.handlers.web_log_handler.plugin - ERROR - error:213 - Health check error: Cannot connect to host localhost:8000 ssl:default [El equipo remoto rechazó la conexión de red]
+[2025-12-01 02:48:19] plugins.handlers.web_log_handler.plugin - WARNING - warning:209 - ❌ WebLogHandler no pudo conectar: Health check failed
+[2025-12-01 02:48:19] plugins.handlers.web_log_handler.plugin - INFO - info:205 - [WEB_LOG_HANDLER] Iniciando loop de envío de logs
+[2025-12-01 02:48:23] plugins.handlers.web_log_handler.plugin - INFO - info:205 - [WEB_LOG_HANDLER] Deteniendo plugin...
+[2025-12-01 02:48:23] plugins.handlers.web_log_handler.plugin - ERROR - error:213 - [WEB_LOG_HANDLER] Error deteniendo: no running event loop
+[2025-12-01 02:48:23] plugins.handlers.web_log_handler.plugin - INFO - info:205 - [WEB_LOG_HANDLER] Deteniendo plugin...
+[2025-12-01 02:48:23] plugins.handlers.web_log_handler.plugin - ERROR - error:213 - [WEB_LOG_HANDLER] Error deteniendo: no running event loop
+[2025-12-01 02:48:24] plugins.handlers.web_log_handler.plugin - INFO - info:205 - [WEB_LOG_HANDLER] Sender loop cancelado
+[2025-12-01 02:49:36] plugins.handlers.web_log_handler.plugin - INFO - __init__:91 - 📝 Logger 'plugins.handlers.web_log_handler.plugin' inicializado

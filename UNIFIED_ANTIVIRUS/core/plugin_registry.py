@@ -154,13 +154,27 @@ class PluginRegistry:
             if not plugin_path:
                 plugin_path = f"plugins/{cls.get_category(plugin_name)}/{plugin_name}"
             
-            # Crear instancia con solo los argumentos que acepta el constructor
-            # Los plugins esperan config_path como argumento opcional
-            config_path = kwargs.get('config_path')
-            if config_path:
-                instance = plugin_class(config_path=config_path)
+            # Crear instancia según el tipo de constructor del plugin
+            import inspect
+            sig = inspect.signature(plugin_class.__init__)
+            params = list(sig.parameters.keys())
+            
+            # Si el constructor tiene plugin_name y plugin_path, usar el nuevo formato BasePlugin
+            if 'plugin_name' in params and 'plugin_path' in params:
+                instance = plugin_class(plugin_name, plugin_path)
+                logger.debug(f"Plugin '{plugin_name}' creado con formato BasePlugin")
+            # Si el constructor acepta config_path, usar el formato antiguo
+            elif 'config_path' in params:
+                config_path = kwargs.get('config_path')
+                if config_path:
+                    instance = plugin_class(config_path=config_path)
+                else:
+                    instance = plugin_class()
+                logger.debug(f"Plugin '{plugin_name}' creado con formato legacy")
             else:
+                # Por defecto, intentar sin argumentos
                 instance = plugin_class()
+                logger.debug(f"Plugin '{plugin_name}' creado sin argumentos")
             logger.info(f"🏭 Plugin '{plugin_name}' creado exitosamente")
             return instance
             
@@ -169,11 +183,14 @@ class PluginRegistry:
             return None
     
     @classmethod
-    def discover_plugins(cls, base_path: Path) -> int:
+    def discover_plugins(cls, base_path) -> int:
         """
         Descubre plugins automáticamente en un directorio.
         
         Busca archivos plugin.py en subdirectorios y los importa.
+        
+        Args:
+            base_path: String o Path del directorio base de plugins
         
         Returns:
             Número de plugins descubiertos
@@ -181,6 +198,10 @@ class PluginRegistry:
         discovered = 0
         
         try:
+            # Convertir a Path si es string
+            if isinstance(base_path, str):
+                base_path = Path(base_path)
+            
             logger.info(f"🔍 Descubriendo plugins en: {base_path}")
             
             # Buscar en cada categoría

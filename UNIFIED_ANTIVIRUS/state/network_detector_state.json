@@ -1,0 +1,15 @@
+{
+  "metrics": {
+    "connections_analyzed": 0,
+    "c2_communications_detected": 0,
+    "data_exfiltration_detected": 0,
+    "beacon_patterns_found": 0,
+    "malicious_ips_blocked": 0,
+    "suspicious_domains_flagged": 0,
+    "threats_detected_total": 0,
+    "analysis_errors": 0
+  },
+  "active_connections_count": 0,
+  "threat_cache_size": 0,
+  "last_update": "2025-12-01T02:48:23.712300"
+}

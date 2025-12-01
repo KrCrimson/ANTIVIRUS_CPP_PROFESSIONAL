@@ -2,17 +2,90 @@
 Database models for Web Logging Server
 =====================================
 
-SQLAlchemy models for storing antivirus logs
+SQLAlchemy models for storing antivirus logs with multi-instance support
 """
 
-from sqlalchemy import Column, Integer, String, DateTime, Text, Float, Index
+from sqlalchemy import Column, Integer, String, DateTime, Text, Float, Index, ForeignKey
 from sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy.orm import relationship
 from sqlalchemy.sql import func
 from datetime import datetime
 from typing import Optional
 import json
+import uuid
 
 Base = declarative_base()
+
+
+class AntivirusInstance(Base):
+    """
+    Represents a unique antivirus installation/instance
+    
+    Each computer that downloads and installs the antivirus
+    gets a unique instance ID for tracking and log association.
+    """
+    __tablename__ = "antivirus_instances"
+    
+    # Primary key - UUID for global uniqueness
+    id = Column(String(36), primary_key=True, index=True)  # UUID format
+    
+    # Instance metadata
+    hostname = Column(String(255), nullable=True)  # Computer hostname
+    os_info = Column(String(200), nullable=True)  # OS type and version
+    antivirus_version = Column(String(50), nullable=True)  # Antivirus version installed
+    
+    # Location/network info
+    ip_address = Column(String(45), nullable=True)  # IPv4 or IPv6
+    mac_address = Column(String(17), nullable=True)  # MAC address
+    
+    # Status tracking
+    status = Column(String(20), default="active", index=True)  # active, inactive, uninstalled
+    last_seen = Column(DateTime(timezone=True), nullable=True, index=True)
+    
+    # Installation info
+    first_seen = Column(DateTime(timezone=True), server_default=func.now())
+    install_date = Column(DateTime(timezone=True), nullable=True)
+    
+    # Custom metadata as JSON
+    metadata = Column(Text, nullable=True)  # JSON string for flexible data
+    
+    # Relationship to logs
+    logs = relationship("LogEntry", back_populates="instance", cascade="all, delete-orphan")
+    
+    # Index for quick lookups
+    __table_args__ = (
+        Index('idx_status_lastseen', status, last_seen.desc()),
+        Index('idx_hostname', hostname),
+    )
+    
+    def __repr__(self):
+        return f"<AntivirusInstance(id={self.id}, hostname={self.hostname}, status={self.status})>"
+    
+    def to_dict(self) -> dict:
+        """Convert instance to dictionary for JSON serialization"""
+        result = {
+            'id': self.id,
+            'hostname': self.hostname,
+            'os_info': self.os_info,
+            'antivirus_version': self.antivirus_version,
+            'ip_address': self.ip_address,
+            'mac_address': self.mac_address,
+            'status': self.status,
+            'last_seen': self.last_seen.isoformat() if self.last_seen else None,
+            'first_seen': self.first_seen.isoformat() if self.first_seen else None,
+            'install_date': self.install_date.isoformat() if self.install_date else None,
+        }
+        
+        # Parse metadata JSON if present
+        if self.metadata:
+            try:
+                result['metadata'] = json.loads(self.metadata)
+            except json.JSONDecodeError:
+                result['metadata'] = {'raw': self.metadata}
+        else:
+            result['metadata'] = {}
+        
+        return result
 
 
 class LogEntry(Base):
@@ -27,18 +100,24 @@ class LogEntry(Base):
     # Primary key
     id = Column(Integer, primary_key=True, index=True)
     
+    # Foreign key to antivirus instance
+    instance_id = Column(String(36), ForeignKey('antivirus_instances.id'), nullable=True, index=True)
+    
     # Core log data
     timestamp = Column(DateTime(timezone=True), nullable=False, index=True)
     level = Column(String(20), nullable=False, index=True)  # INFO, WARNING, ERROR, etc.
     component = Column(String(100), nullable=False, index=True)  # core.engine, plugins.detector
     message = Column(Text, nullable=False)
     
-    # Source information
+    # Source information (legacy - now prefer instance_id)
     source_host = Column(String(100), nullable=True, index=True)  # Which antivirus instance
     source_process = Column(String(50), nullable=True)  # Process name/PID
     
     # Structured extra data as JSON
     extra_data = Column(Text, nullable=True)  # JSON string for flexible data
+    
+    # Relationship to instance
+    instance = relationship("AntivirusInstance", back_populates="logs")
     
     # Performance metrics (if available)
     cpu_usage = Column(Float, nullable=True)
@@ -59,6 +138,7 @@ class LogEntry(Base):
         Index('idx_component_timestamp', component, timestamp),
         Index('idx_threat_severity', threat_type, severity),
         Index('idx_received_at_desc', received_at.desc()),
+        Index('idx_instance_timestamp', instance_id, timestamp.desc()),
     )
     
     def __repr__(self):
@@ -68,6 +148,7 @@ class LogEntry(Base):
         """Convert log entry to dictionary for JSON serialization"""
         result = {
             'id': self.id,
+            'instance_id': self.instance_id,
             'timestamp': self.timestamp.isoformat() if self.timestamp else None,
             'level': self.level,
             'component': self.component,
@@ -82,6 +163,14 @@ class LogEntry(Base):
             'created_at': self.created_at.isoformat() if self.created_at else None,
             'received_at': self.received_at.isoformat() if self.received_at else None,
         }
+        
+        # Include instance info if available
+        if self.instance:
+            result['instance'] = {
+                'id': self.instance.id,
+                'hostname': self.instance.hostname,
+                'status': self.instance.status
+            }
         
         # Parse extra_data JSON if present
         if self.extra_data:

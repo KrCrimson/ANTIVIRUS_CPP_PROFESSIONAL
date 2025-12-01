@@ -18,6 +18,7 @@ import psutil
 
 # Importar componentes del core
 import sys
+from core.event_bus import event_bus
 from pathlib import Path
 
 # Añadir el directorio raíz al sys.path si no está presente
@@ -549,9 +550,8 @@ class BehaviorDetectorPlugin(BasePlugin, DetectorInterface):
             }
             
             # Publicar evento en el EventBus
-            if hasattr(self, 'event_bus') and self.event_bus:
-                self.event_bus.publish('security_alert', detection_event)
-                logger.info(f"[ALERT] {detection_type}: {process_data.get('name')} (PID: {process_data.get('pid')})")
+            event_bus.publish('security_alert', detection_event, source="behavior_detector")
+            logger.info(f"[ALERT] {detection_type}: {process_data.get('name')} (PID: {process_data.get('pid')})")
             
             # Log de la detección
             logger.warning(f"[DETECTION] {detection_type}: {process_data.get('name')} - {detection_event['description']}")

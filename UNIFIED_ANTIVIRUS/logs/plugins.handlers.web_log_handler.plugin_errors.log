@@ -1,0 +1,89 @@
+[2025-12-01 02:05:15] plugins.handlers.web_log_handler.plugin - ERROR - error:213 - [WEB_LOG_HANDLER] Error inicializando: no running event loop
+[2025-12-01 02:05:29] plugins.handlers.web_log_handler.plugin - ERROR - error:213 - [WEB_LOG_HANDLER] Error inicializando: no running event loop
+[2025-12-01 02:05:29] plugins.handlers.web_log_handler.plugin - ERROR - error:213 - [WEB_LOG_HANDLER] Error inicializando: no running event loop
+[2025-12-01 02:11:13] plugins.handlers.web_log_handler.plugin - ERROR - error:213 - [WEB_LOG_HANDLER] Error inicializando: no running event loop
+[2025-12-01 02:11:57] plugins.handlers.web_log_handler.plugin - ERROR - error:213 - [WEB_LOG_HANDLER] Error inicializando: no running event loop
+[2025-12-01 02:12:32] plugins.handlers.web_log_handler.plugin - ERROR - error:213 - [WEB_LOG_HANDLER] Error inicializando: no running event loop
+[2025-12-01 02:13:05] plugins.handlers.web_log_handler.plugin - ERROR - error:213 - [WEB_LOG_HANDLER] Error inicializando: no running event loop
+[2025-12-01 02:13:38] plugins.handlers.web_log_handler.plugin - ERROR - error:213 - Health check error: Cannot connect to host localhost:8000 ssl:default [El equipo remoto rechazó la conexión de red]
+[2025-12-01 02:15:15] plugins.handlers.web_log_handler.plugin - ERROR - error:213 - Health check error: Cannot connect to host localhost:8000 ssl:default [El equipo remoto rechazó la conexión de red]
+[2025-12-01 02:16:08] plugins.handlers.web_log_handler.plugin - ERROR - error:213 - [WEB_LOG_HANDLER] Error procesando alerta de seguridad: 'Event' object has no attribute 'get'
+[2025-12-01 02:16:08] plugins.handlers.web_log_handler.plugin - ERROR - error:213 - [WEB_LOG_HANDLER] Error procesando alerta de seguridad: 'Event' object has no attribute 'get'
+[2025-12-01 02:16:08] plugins.handlers.web_log_handler.plugin - ERROR - error:213 - [WEB_LOG_HANDLER] Error procesando alerta de seguridad: 'Event' object has no attribute 'get'
+[2025-12-01 02:16:08] plugins.handlers.web_log_handler.plugin - ERROR - error:213 - [WEB_LOG_HANDLER] Error procesando alerta de seguridad: 'Event' object has no attribute 'get'
+[2025-12-01 02:16:08] plugins.handlers.web_log_handler.plugin - ERROR - error:213 - [WEB_LOG_HANDLER] Error procesando alerta de seguridad: 'Event' object has no attribute 'get'
+[2025-12-01 02:16:09] plugins.handlers.web_log_handler.plugin - ERROR - error:213 - [WEB_LOG_HANDLER] Error procesando alerta de seguridad: 'Event' object has no attribute 'get'
+[2025-12-01 02:16:09] plugins.handlers.web_log_handler.plugin - ERROR - error:213 - [WEB_LOG_HANDLER] Error procesando alerta de seguridad: 'Event' object has no attribute 'get'
+[2025-12-01 02:16:09] plugins.handlers.web_log_handler.plugin - ERROR - error:213 - [WEB_LOG_HANDLER] Error procesando alerta de seguridad: 'Event' object has no attribute 'get'
+[2025-12-01 02:16:09] plugins.handlers.web_log_handler.plugin - ERROR - error:213 - [WEB_LOG_HANDLER] Error procesando alerta de seguridad: 'Event' object has no attribute 'get'
+[2025-12-01 02:16:09] plugins.handlers.web_log_handler.plugin - ERROR - error:213 - [WEB_LOG_HANDLER] Error procesando alerta de seguridad: 'Event' object has no attribute 'get'
+[2025-12-01 02:16:09] plugins.handlers.web_log_handler.plugin - ERROR - error:213 - [WEB_LOG_HANDLER] Error procesando alerta de seguridad: 'Event' object has no attribute 'get'
+[2025-12-01 02:16:09] plugins.handlers.web_log_handler.plugin - ERROR - error:213 - [WEB_LOG_HANDLER] Error procesando alerta de seguridad: 'Event' object has no attribute 'get'
+[2025-12-01 02:16:09] plugins.handlers.web_log_handler.plugin - ERROR - error:213 - [WEB_LOG_HANDLER] Error procesando alerta de seguridad: 'Event' object has no attribute 'get'
+[2025-12-01 02:16:09] plugins.handlers.web_log_handler.plugin - ERROR - error:213 - [WEB_LOG_HANDLER] Error procesando alerta de seguridad: 'Event' object has no attribute 'get'
+[2025-12-01 02:16:09] plugins.handlers.web_log_handler.plugin - ERROR - error:213 - [WEB_LOG_HANDLER] Error procesando alerta de seguridad: 'Event' object has no attribute 'get'
+[2025-12-01 02:16:09] plugins.handlers.web_log_handler.plugin - ERROR - error:213 - [WEB_LOG_HANDLER] Error procesando alerta de seguridad: 'Event' object has no attribute 'get'
+[2025-12-01 02:16:09] plugins.handlers.web_log_handler.plugin - ERROR - error:213 - [WEB_LOG_HANDLER] Error procesando alerta de seguridad: 'Event' object has no attribute 'get'
+[2025-12-01 02:16:09] plugins.handlers.web_log_handler.plugin - ERROR - error:213 - [WEB_LOG_HANDLER] Error procesando alerta de seguridad: 'Event' object has no attribute 'get'
+[2025-12-01 02:16:09] plugins.handlers.web_log_handler.plugin - ERROR - error:213 - [WEB_LOG_HANDLER] Error procesando alerta de seguridad: 'Event' object has no attribute 'get'
+[2025-12-01 02:16:09] plugins.handlers.web_log_handler.plugin - ERROR - error:213 - [WEB_LOG_HANDLER] Error procesando alerta de seguridad: 'Event' object has no attribute 'get'
+[2025-12-01 02:16:09] plugins.handlers.web_log_handler.plugin - ERROR - error:213 - [WEB_LOG_HANDLER] Error procesando alerta de seguridad: 'Event' object has no attribute 'get'
+[2025-12-01 02:16:09] plugins.handlers.web_log_handler.plugin - ERROR - error:213 - [WEB_LOG_HANDLER] Error procesando alerta de seguridad: 'Event' object has no attribute 'get'
+[2025-12-01 02:16:09] plugins.handlers.web_log_handler.plugin - ERROR - error:213 - [WEB_LOG_HANDLER] Error procesando alerta de seguridad: 'Event' object has no attribute 'get'
+[2025-12-01 02:16:09] plugins.handlers.web_log_handler.plugin - ERROR - error:213 - [WEB_LOG_HANDLER] Error procesando alerta de seguridad: 'Event' object has no attribute 'get'
+[2025-12-01 02:16:09] plugins.handlers.web_log_handler.plugin - ERROR - error:213 - [WEB_LOG_HANDLER] Error procesando alerta de seguridad: 'Event' object has no attribute 'get'
+[2025-12-01 02:16:09] plugins.handlers.web_log_handler.plugin - ERROR - error:213 - [WEB_LOG_HANDLER] Error procesando alerta de seguridad: 'Event' object has no attribute 'get'
+[2025-12-01 02:16:09] plugins.handlers.web_log_handler.plugin - ERROR - error:213 - [WEB_LOG_HANDLER] Error procesando alerta de seguridad: 'Event' object has no attribute 'get'
+[2025-12-01 02:16:09] plugins.handlers.web_log_handler.plugin - ERROR - error:213 - [WEB_LOG_HANDLER] Error procesando alerta de seguridad: 'Event' object has no attribute 'get'
+[2025-12-01 02:16:09] plugins.handlers.web_log_handler.plugin - ERROR - error:213 - [WEB_LOG_HANDLER] Error procesando alerta de seguridad: 'Event' object has no attribute 'get'
+[2025-12-01 02:16:09] plugins.handlers.web_log_handler.plugin - ERROR - error:213 - [WEB_LOG_HANDLER] Error procesando alerta de seguridad: 'Event' object has no attribute 'get'
+[2025-12-01 02:16:09] plugins.handlers.web_log_handler.plugin - ERROR - error:213 - [WEB_LOG_HANDLER] Error procesando alerta de seguridad: 'Event' object has no attribute 'get'
+[2025-12-01 02:16:09] plugins.handlers.web_log_handler.plugin - ERROR - error:213 - [WEB_LOG_HANDLER] Error procesando alerta de seguridad: 'Event' object has no attribute 'get'
+[2025-12-01 02:16:09] plugins.handlers.web_log_handler.plugin - ERROR - error:213 - [WEB_LOG_HANDLER] Error procesando alerta de seguridad: 'Event' object has no attribute 'get'
+[2025-12-01 02:16:09] plugins.handlers.web_log_handler.plugin - ERROR - error:213 - [WEB_LOG_HANDLER] Error procesando alerta de seguridad: 'Event' object has no attribute 'get'
+[2025-12-01 02:16:09] plugins.handlers.web_log_handler.plugin - ERROR - error:213 - [WEB_LOG_HANDLER] Error procesando alerta de seguridad: 'Event' object has no attribute 'get'
+[2025-12-01 02:16:09] plugins.handlers.web_log_handler.plugin - ERROR - error:213 - [WEB_LOG_HANDLER] Error procesando alerta de seguridad: 'Event' object has no attribute 'get'
+[2025-12-01 02:16:09] plugins.handlers.web_log_handler.plugin - ERROR - error:213 - [WEB_LOG_HANDLER] Error procesando alerta de seguridad: 'Event' object has no attribute 'get'
+[2025-12-01 02:16:09] plugins.handlers.web_log_handler.plugin - ERROR - error:213 - [WEB_LOG_HANDLER] Error procesando alerta de seguridad: 'Event' object has no attribute 'get'
+[2025-12-01 02:16:09] plugins.handlers.web_log_handler.plugin - ERROR - error:213 - [WEB_LOG_HANDLER] Error procesando alerta de seguridad: 'Event' object has no attribute 'get'
+[2025-12-01 02:16:09] plugins.handlers.web_log_handler.plugin - ERROR - error:213 - [WEB_LOG_HANDLER] Error procesando alerta de seguridad: 'Event' object has no attribute 'get'
+[2025-12-01 02:16:09] plugins.handlers.web_log_handler.plugin - ERROR - error:213 - [WEB_LOG_HANDLER] Error procesando alerta de seguridad: 'Event' object has no attribute 'get'
+[2025-12-01 02:16:09] plugins.handlers.web_log_handler.plugin - ERROR - error:213 - [WEB_LOG_HANDLER] Error procesando alerta de seguridad: 'Event' object has no attribute 'get'
+[2025-12-01 02:16:09] plugins.handlers.web_log_handler.plugin - ERROR - error:213 - [WEB_LOG_HANDLER] Error procesando alerta de seguridad: 'Event' object has no attribute 'get'
+[2025-12-01 02:16:09] plugins.handlers.web_log_handler.plugin - ERROR - error:213 - [WEB_LOG_HANDLER] Error procesando alerta de seguridad: 'Event' object has no attribute 'get'
+[2025-12-01 02:16:09] plugins.handlers.web_log_handler.plugin - ERROR - error:213 - [WEB_LOG_HANDLER] Error procesando alerta de seguridad: 'Event' object has no attribute 'get'
+[2025-12-01 02:16:09] plugins.handlers.web_log_handler.plugin - ERROR - error:213 - [WEB_LOG_HANDLER] Error procesando alerta de seguridad: 'Event' object has no attribute 'get'
+[2025-12-01 02:16:09] plugins.handlers.web_log_handler.plugin - ERROR - error:213 - [WEB_LOG_HANDLER] Error procesando alerta de seguridad: 'Event' object has no attribute 'get'
+[2025-12-01 02:16:09] plugins.handlers.web_log_handler.plugin - ERROR - error:213 - [WEB_LOG_HANDLER] Error procesando alerta de seguridad: 'Event' object has no attribute 'get'
+[2025-12-01 02:16:09] plugins.handlers.web_log_handler.plugin - ERROR - error:213 - [WEB_LOG_HANDLER] Error procesando alerta de seguridad: 'Event' object has no attribute 'get'
+[2025-12-01 02:16:09] plugins.handlers.web_log_handler.plugin - ERROR - error:213 - [WEB_LOG_HANDLER] Error procesando alerta de seguridad: 'Event' object has no attribute 'get'
+[2025-12-01 02:16:09] plugins.handlers.web_log_handler.plugin - ERROR - error:213 - [WEB_LOG_HANDLER] Error procesando alerta de seguridad: 'Event' object has no attribute 'get'
+[2025-12-01 02:16:09] plugins.handlers.web_log_handler.plugin - ERROR - error:213 - [WEB_LOG_HANDLER] Error procesando alerta de seguridad: 'Event' object has no attribute 'get'
+[2025-12-01 02:16:09] plugins.handlers.web_log_handler.plugin - ERROR - error:213 - [WEB_LOG_HANDLER] Error procesando alerta de seguridad: 'Event' object has no attribute 'get'
+[2025-12-01 02:16:09] plugins.handlers.web_log_handler.plugin - ERROR - error:213 - [WEB_LOG_HANDLER] Error procesando alerta de seguridad: 'Event' object has no attribute 'get'
+[2025-12-01 02:16:09] plugins.handlers.web_log_handler.plugin - ERROR - error:213 - [WEB_LOG_HANDLER] Error procesando alerta de seguridad: 'Event' object has no attribute 'get'
+[2025-12-01 02:16:09] plugins.handlers.web_log_handler.plugin - ERROR - error:213 - [WEB_LOG_HANDLER] Error procesando alerta de seguridad: 'Event' object has no attribute 'get'
+[2025-12-01 02:16:09] plugins.handlers.web_log_handler.plugin - ERROR - error:213 - [WEB_LOG_HANDLER] Error procesando alerta de seguridad: 'Event' object has no attribute 'get'
+[2025-12-01 02:16:09] plugins.handlers.web_log_handler.plugin - ERROR - error:213 - [WEB_LOG_HANDLER] Error procesando alerta de seguridad: 'Event' object has no attribute 'get'
+[2025-12-01 02:16:09] plugins.handlers.web_log_handler.plugin - ERROR - error:213 - [WEB_LOG_HANDLER] Error procesando alerta de seguridad: 'Event' object has no attribute 'get'
+[2025-12-01 02:16:11] plugins.handlers.web_log_handler.plugin - ERROR - error:213 - Health check error: Cannot connect to host localhost:8000 ssl:default [El equipo remoto rechazó la conexión de red]
+[2025-12-01 02:16:11] plugins.handlers.web_log_handler.plugin - ERROR - error:213 - [WEB_LOG_HANDLER] Error procesando alerta de seguridad: 'Event' object has no attribute 'get'
+[2025-12-01 02:16:12] plugins.handlers.web_log_handler.plugin - ERROR - error:213 - [WEB_LOG_HANDLER] Error procesando alerta de seguridad: 'Event' object has no attribute 'get'
+[2025-12-01 02:16:12] plugins.handlers.web_log_handler.plugin - ERROR - error:213 - [WEB_LOG_HANDLER] Error procesando alerta de seguridad: 'Event' object has no attribute 'get'
+[2025-12-01 02:16:12] plugins.handlers.web_log_handler.plugin - ERROR - error:213 - [WEB_LOG_HANDLER] Error procesando alerta de seguridad: 'Event' object has no attribute 'get'
+[2025-12-01 02:16:13] plugins.handlers.web_log_handler.plugin - ERROR - error:213 - [WEB_LOG_HANDLER] Error procesando alerta de seguridad: 'Event' object has no attribute 'get'
+[2025-12-01 02:33:19] plugins.handlers.web_log_handler.plugin - ERROR - error:213 - Health check error: Cannot connect to host localhost:8000 ssl:default [El equipo remoto rechazó la conexión de red]
+[2025-12-01 02:34:28] plugins.handlers.web_log_handler.plugin - ERROR - error:213 - Health check error: Cannot connect to host localhost:8000 ssl:default [El equipo remoto rechazó la conexión de red]
+[2025-12-01 02:34:36] plugins.handlers.web_log_handler.plugin - ERROR - error:213 - [WEB_LOG_HANDLER] Error enviando batch (intento 1): Cannot connect to host localhost:8000 ssl:default [El equipo remoto rechazó la conexión de red]
+[2025-12-01 02:34:39] plugins.handlers.web_log_handler.plugin - ERROR - error:213 - [WEB_LOG_HANDLER] Error enviando batch (intento 2): Cannot connect to host localhost:8000 ssl:default [El equipo remoto rechazó la conexión de red]
+[2025-12-01 02:34:44] plugins.handlers.web_log_handler.plugin - ERROR - error:213 - [WEB_LOG_HANDLER] Error enviando batch (intento 3): Cannot connect to host localhost:8000 ssl:default [El equipo remoto rechazó la conexión de red]
+[2025-12-01 02:34:51] plugins.handlers.web_log_handler.plugin - ERROR - error:213 - [WEB_LOG_HANDLER] Error enviando batch (intento 1): Cannot connect to host localhost:8000 ssl:default [El equipo remoto rechazó la conexión de red]
+[2025-12-01 02:34:55] plugins.handlers.web_log_handler.plugin - ERROR - error:213 - [WEB_LOG_HANDLER] Error enviando batch (intento 2): Cannot connect to host localhost:8000 ssl:default [El equipo remoto rechazó la conexión de red]
+[2025-12-01 02:34:59] plugins.handlers.web_log_handler.plugin - ERROR - error:213 - [WEB_LOG_HANDLER] Error enviando batch (intento 3): Cannot connect to host localhost:8000 ssl:default [El equipo remoto rechazó la conexión de red]
+[2025-12-01 02:47:58] plugins.handlers.web_log_handler.plugin - ERROR - error:213 - Health check error: Cannot connect to host localhost:8000 ssl:default [El equipo remoto rechazó la conexión de red]
+[2025-12-01 02:48:06] plugins.handlers.web_log_handler.plugin - ERROR - error:213 - [WEB_LOG_HANDLER] Error enviando batch (intento 1): Cannot connect to host localhost:8000 ssl:default [El equipo remoto rechazó la conexión de red]
+[2025-12-01 02:48:09] plugins.handlers.web_log_handler.plugin - ERROR - error:213 - [WEB_LOG_HANDLER] Error enviando batch (intento 2): Cannot connect to host localhost:8000 ssl:default [El equipo remoto rechazó la conexión de red]
+[2025-12-01 02:48:13] plugins.handlers.web_log_handler.plugin - ERROR - error:213 - [WEB_LOG_HANDLER] Error enviando batch (intento 3): Cannot connect to host localhost:8000 ssl:default [El equipo remoto rechazó la conexión de red]
+[2025-12-01 02:48:19] plugins.handlers.web_log_handler.plugin - ERROR - error:213 - Health check error: Cannot connect to host localhost:8000 ssl:default [El equipo remoto rechazó la conexión de red]
+[2025-12-01 02:48:23] plugins.handlers.web_log_handler.plugin - ERROR - error:213 - [WEB_LOG_HANDLER] Error deteniendo: no running event loop
+[2025-12-01 02:48:23] plugins.handlers.web_log_handler.plugin - ERROR - error:213 - [WEB_LOG_HANDLER] Error deteniendo: no running event loop

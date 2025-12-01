@@ -1,3 +1,30 @@
+# =================== MONITOR DE LOGS ===================
+def run_web_log_monitor():
+    import logging
+    import json
+    import time
+    from pathlib import Path
+
+    # Cargar configuración
+    # Buscar el archivo de configuración en la raíz del proyecto
+    import os
+    root_dir = Path(__file__).resolve().parents[2]
+    config_path = root_dir / "client_monitor_config.json"
+    if not config_path.exists():
+        print(f"No se encontró client_monitor_config.json en {root_dir}")
+        return
+    with open(config_path, "r", encoding="utf-8") as f:
+        config = json.load(f)
+
+    handler = create_web_log_handler(config)
+    logger = logging.getLogger("antivirus_monitor")
+    logger.setLevel(getattr(logging, config.get("log_level", "INFO").upper()))
+    logger.addHandler(handler)
+
+    # Enviar logs periódicamente (puedes reemplazar por integración real)
+    while True:
+        logger.info("Monitor activo, enviando log de prueba")
+        time.sleep(config.get("send_interval", 30))
 """
 Web Log Handler - HTTP Handler para envío de logs al backend web
 ===============================================================
@@ -16,6 +43,7 @@ from datetime import datetime, timedelta
 from typing import Dict, Any, Optional, List
 from pathlib import Path
 import os
+from .client_identity import ClientIdentity
 
 
 class WebLogHandler(logging.Handler):
@@ -28,6 +56,7 @@ class WebLogHandler(logging.Handler):
     - Fallback a archivo si falla
     - Rate limiting interno
     - Batch processing para performance
+    - Identificación única de cliente
     """
     
     def __init__(self, 
@@ -65,6 +94,10 @@ class WebLogHandler(logging.Handler):
         self.max_retries = max_retries
         self.timeout = timeout
         
+        # Identidad del cliente
+        self.client_identity = ClientIdentity()
+        self.instance_id = self.client_identity.instance_id
+        
         # Buffer y threading
         self.buffer = queue.Queue(maxsize=buffer_size)
         self.is_running = True
@@ -99,9 +132,39 @@ class WebLogHandler(logging.Handler):
             'User-Agent': 'AntivirusLogger/1.0'
         }
         
-        # Test inicial de conectividad
+        # Test inicial de conectividad y registro
+        self._register_instance()
         self._test_connection()
     
+    def _register_instance(self):
+        """Registra la instancia en el backend"""
+        try:
+            register_url = self.api_url.replace('/logs', '/instances')
+            
+            # Datos de la instancia
+            instance_data = {
+                "id": self.instance_id,
+                "hostname": self.client_identity.hostname,
+                "os_info": self.client_identity.get_metadata().get("os_info"),
+                "antivirus_version": self.client_identity.get_metadata().get("version"),
+                "status": "active"
+            }
+            
+            response = requests.post(
+                register_url,
+                json=instance_data,
+                headers=self.headers,
+                timeout=5
+            )
+            
+            if response.status_code in [200, 201]:
+                print(f"Instancia registrada exitosamente: {self.instance_id}")
+            else:
+                print(f"Error registrando instancia: {response.status_code} - {response.text}")
+                
+        except Exception as e:
+            print(f"No se pudo registrar la instancia: {e}")
+
     def _setup_fallback_handler(self, fallback_file: str):
         """Configura handler de fallback a archivo"""
         try:
@@ -119,7 +182,7 @@ class WebLogHandler(logging.Handler):
                 )
             )
         except Exception as e:
-            print(f"⚠️ Error configurando fallback handler: {e}")
+            print(f"Error configurando fallback handler: {e}")
     
     def _test_connection(self):
         """Test inicial de conectividad con el backend"""
@@ -131,14 +194,14 @@ class WebLogHandler(logging.Handler):
             if response.status_code == 200:
                 self.stats['is_connected'] = True
                 self.stats['last_success'] = datetime.now()
-                print(f"✅ WebLogHandler conectado a {self.api_url}")
+                print(f"WebLogHandler conectado a {self.api_url}")
             else:
                 raise requests.RequestException(f"Health check failed: {response.status_code}")
                 
         except Exception as e:
             self.stats['is_connected'] = False
             self.stats['last_error'] = str(e)
-            print(f"⚠️ WebLogHandler no pudo conectar: {e}")
+            print(f"WebLogHandler no pudo conectar: {e}")
     
     def emit(self, record: logging.LogRecord):
         """
@@ -170,7 +233,7 @@ class WebLogHandler(logging.Handler):
             # Error formateando - usar fallback
             if self.fallback_handler:
                 self.fallback_handler.emit(record)
-            print(f"❌ Error en WebLogHandler.emit: {e}")
+            print(f"Error en WebLogHandler.emit: {e}")
     
     def _format_log_record(self, record: logging.LogRecord) -> Dict[str, Any]:
         """
@@ -188,6 +251,7 @@ class WebLogHandler(logging.Handler):
             'level': record.levelname,
             'message': record.getMessage(),
             'component': record.name,
+            'instance_id': self.instance_id,  # ID único del cliente
             'details': {
                 'module': record.module,
                 'function': record.funcName,
@@ -242,7 +306,7 @@ class WebLogHandler(logging.Handler):
                     self.last_flush = datetime.now()
                     
             except Exception as e:
-                print(f"❌ Error en worker loop: {e}")
+                print(f"Error en worker loop: {e}")
                 time.sleep(1)
     
     def _send_batch(self, batch: List[Dict[str, Any]]):
@@ -292,12 +356,12 @@ class WebLogHandler(logging.Handler):
                 if attempt < self.max_retries:
                     # Backoff exponencial
                     wait_time = (2 ** attempt) * 1.0
-                    print(f"⚠️ Error enviando logs (intento {attempt + 1}/{self.max_retries + 1}). "
+                    print(f"Error enviando logs (intento {attempt + 1}/{self.max_retries + 1}). "
                           f"Reintentando en {wait_time}s: {e}")
                     time.sleep(wait_time)
                 else:
                     # Falló todos los intentos - usar fallback
-                    print(f"❌ Error enviando logs después de {self.max_retries + 1} intentos: {e}")
+                    print(f"Error enviando logs después de {self.max_retries + 1} intentos: {e}")
                     
                     if self.fallback_handler:
                         for log_data in batch:
@@ -435,5 +499,5 @@ def create_web_log_handler(config: Dict[str, Any]) -> Optional[WebLogHandler]:
             level=getattr(logging, config.get('level', 'INFO').upper())
         )
     except Exception as e:
-        print(f"❌ Error creando WebLogHandler: {e}")
+        print(f"Error creando WebLogHandler: {e}")
         return None

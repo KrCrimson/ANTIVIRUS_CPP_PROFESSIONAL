@@ -5,8 +5,8 @@ a = Analysis(
     ['professional_ui_robust.py'],
     pathex=[],
     binaries=[],
-    datas=[('config', 'config'), ('core', 'core'), ('plugins', 'plugins'), ('models', 'models'), ('utils', 'utils'), ('web_templates', 'web_templates')],
-    hiddenimports=['psutil', 'tkinter', 'queue', 'requests', 'fastapi', 'uvicorn', 'jinja2', 'sqlite3'],
+    datas=[],
+    hiddenimports=[],
     hookspath=[],
     hooksconfig={},
     runtime_hooks=[],
@@ -35,5 +35,4 @@ exe = EXE(
     target_arch=None,
     codesign_identity=None,
     entitlements_file=None,
-    icon=['keylogger.ico'],
 )
