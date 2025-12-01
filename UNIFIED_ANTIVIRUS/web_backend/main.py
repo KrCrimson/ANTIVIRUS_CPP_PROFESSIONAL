@@ -148,6 +148,27 @@ async def receive_log(
                 db_log = DBLogEntry(
                     timestamp=datetime.fromisoformat(log.timestamp.replace('Z', '+00:00')).replace(tzinfo=None),
                     level=log.level,
+                    component=log.component,
+                    message=log.message,
+                    instance_id=log.instance_id,
+                    details=log.details
+                )
+                db.add(db_log)
+                db.commit()
+                db.refresh(db_log)
+                log_id = str(db_log.id)
+                
+                if log.instance_id:
+                    instance = db.query(DBInstance).filter(DBInstance.id == log.instance_id).first()
+                    if instance:
+                        instance.last_seen = datetime.utcnow()
+                        db.commit()
+                
+                db.close()
+                return LogResponse(
+                    success=True,
+                    message="Log guardado en PostgreSQL",
+                    log_id=log_id
                 )
             except Exception as e:
                 db.close()
@@ -205,6 +226,15 @@ async def register_instance(
                         hostname=instance.hostname,
                         os_info=instance.os_info,
                         antivirus_version=instance.antivirus_version,
+                        status=instance.status
+                    )
+                    db.add(db_instance)
+                    message = "Instancia registrada en PostgreSQL"
+                
+                db.commit()
+                db.close()
+                
+                return {
                     "success": True,
                     "message": message,
                     "instance_id": instance.id
@@ -232,9 +262,7 @@ async def register_instance(
                 "instance": instance_data
             }
     except Exception as e:
-        import traceback
-        tb = traceback.format_exc()
-        raise HTTPException(status_code=500, detail=f"Error registrando instancia: {str(e)} | Traceback: {tb}")
+        raise HTTPException(status_code=500, detail=f"Error registrando instancia: {str(e)}")
 
 @app.get("/api/logs")
 async def get_logs(
@@ -354,7 +382,8 @@ async def get_stats(api_key: str = Depends(verify_api_key)):
                     last_log_data = {
                         "timestamp": last_log.timestamp.isoformat(),
                         "level": last_log.level,
-                        "message": last_log.message
+                        "message": last_log.message,
+                        "received_at": last_log.received_at.isoformat()
                     }
                 
                 db.close()
