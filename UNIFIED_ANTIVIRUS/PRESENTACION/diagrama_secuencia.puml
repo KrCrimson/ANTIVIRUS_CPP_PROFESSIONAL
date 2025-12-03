@@ -1,0 +1,78 @@
+@startuml Unified_Shield_Sequence
+!theme plain
+
+skinparam backgroundColor #FFFFFF
+skinparam sequenceArrowColor #667eea
+skinparam sequenceLifeLineBorderColor #667eea
+skinparam sequenceParticipantBackgroundColor #FAFAFA
+skinparam sequenceParticipantBorderColor #667eea
+
+title Unified Shield - Flujo de Datos en Tiempo Real
+
+actor "Antivirus\nClient" as client
+participant "Monitor\nScript" as monitor
+participant "Vercel\nAPI" as api
+database "PostgreSQL\n(Neon)" as db
+participant "Web\nDashboard" as dashboard
+
+== Registro de Instancia ==
+client -> monitor : Iniciar monitor
+monitor -> api : POST /api/instances\n{id, hostname, os_info}
+api -> api : Validar API Key
+api -> db : INSERT INTO\nantivirus_instances_v5
+db --> api : Confirmación
+api --> monitor : 200 OK\n{success: true}
+
+== Envío de Logs ==
+client -> monitor : Evento de seguridad\n(Threat detected)
+monitor -> monitor : Serializar a JSON
+monitor -> api : POST /api/logs\n{timestamp, level, message}
+api -> api : Validar schema\n(Pydantic)
+api -> db : INSERT INTO\nlog_entries_v5
+db --> api : Log ID: 3653
+api -> db : UPDATE instances\nSET last_seen = NOW()
+db --> api : Updated
+api --> monitor : 200 OK\n{log_id: "3653"}
+
+== Visualización en Dashboard ==
+dashboard -> api : GET /api/stats
+api -> db : SELECT COUNT(*)\nGROUP BY level
+db --> api : Aggregated data
+api --> dashboard : JSON response\n{total_logs: 3653}
+dashboard -> dashboard : Renderizar gráficos\n(Chart.js)
+
+== Auto-refresh (cada 30s) ==
+loop Every 30 seconds
+    dashboard -> api : GET /api/logs?limit=100
+    api -> db : SELECT * FROM log_entries\nORDER BY received_at DESC
+    db --> api : Latest logs
+    api --> dashboard : JSON array
+    dashboard -> dashboard : Actualizar tabla
+end
+
+== Manejo de Errores ==
+client -> monitor : Evento crítico
+monitor -> api : POST /api/logs
+api -> api : Validación fallida
+api --> monitor : 500 Internal Error\n{detail: "Error..."}
+monitor -> monitor : Retry (1/4)
+monitor -> api : POST /api/logs\n(retry)
+api -> db : INSERT successful
+db --> api : OK
+api --> monitor : 200 OK
+
+note right of monitor
+  **Configuración:**
+  • Retry: 4 intentos
+  • Timeout: 30s
+  • Buffer: 100 logs
+end note
+
+note right of db
+  **Optimización:**
+  • Índices en level, component
+  • Connection pooling
+  • Auto-vacuum
+end note
+
+@enduml

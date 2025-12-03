@@ -1,0 +1,92 @@
+@startuml Unified_Shield_Components
+!theme plain
+
+skinparam backgroundColor #FFFFFF
+skinparam componentBackgroundColor #FAFAFA
+skinparam componentBorderColor #667eea
+skinparam interfaceBackgroundColor #10b981
+skinparam databaseBackgroundColor #3b82f6
+
+title Unified Shield - Diagrama de Componentes
+
+package "Cliente Antivirus (Python)" {
+    [professional_ui_robust.py] as UI
+    [WebLogHandler Plugin] as Plugin
+    [start_monitor_client.py] as Monitor
+    
+    UI ..> Plugin : <<use>>
+    Plugin ..> Monitor : <<use>>
+}
+
+package "Backend API (FastAPI)" {
+    [main.py] as API
+    [database.py] as Models
+    
+    interface "REST Endpoints" as REST
+    interface "Authentication" as Auth
+    
+    API - REST
+    API ..> Auth : <<use>>
+    API ..> Models : <<use>>
+}
+
+package "Frontend (Web)" {
+    [index.html] as HTML
+    [Chart.js] as Charts
+    [JavaScript Logic] as JS
+    
+    HTML ..> JS : <<use>>
+    JS ..> Charts : <<use>>
+}
+
+database "PostgreSQL (Neon)" {
+    [log_entries_v5] as LogsTable
+    [antivirus_instances_v5] as InstancesTable
+}
+
+' Conexiones
+Monitor --> REST : HTTP POST
+REST --> Models : SQLAlchemy
+Models --> LogsTable : INSERT/SELECT
+Models --> InstancesTable : INSERT/UPDATE
+JS --> REST : Fetch API
+REST --> JS : JSON Response
+
+' Notas
+note right of Monitor
+  **Responsabilidades:**
+  • Capturar eventos
+  • Enviar logs vía HTTP
+  • Gestionar reintentos
+  • Identificar instancia (UUID)
+end note
+
+note right of API
+  **Responsabilidades:**
+  • Validar requests (Pydantic)
+  • Autenticar (API Key)
+  • Persistir en DB
+  • Exponer endpoints REST
+end note
+
+note right of HTML
+  **Responsabilidades:**
+  • Mostrar estadísticas
+  • Renderizar gráficos
+  • Filtrar logs
+  • Auto-refresh
+end note
+
+note bottom of LogsTable
+  **Schema:**
+  • id (PK)
+  • timestamp
+  • level (indexed)
+  • component (indexed)
+  • message
+  • instance_id (FK)
+  • details (JSON)
+  • received_at
+end note
+
+@enduml

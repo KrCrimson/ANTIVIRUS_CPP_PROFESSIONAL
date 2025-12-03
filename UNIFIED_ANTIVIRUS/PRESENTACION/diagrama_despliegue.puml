@@ -1,0 +1,100 @@
+@startuml Unified_Shield_Deployment
+!theme plain
+
+skinparam backgroundColor #FFFFFF
+skinparam defaultFontName Arial
+skinparam ArrowColor #667eea
+skinparam ArrowThickness 2
+
+title Unified Shield - Diagrama de Despliegue (CI/CD Pipeline)
+
+' Desarrollador
+actor "Developer" as dev #667eea
+
+' GitHub
+node "GitHub" as github {
+    artifact "Repository" as repo
+    component "GitHub Actions" as actions
+}
+
+' Vercel
+cloud "Vercel Platform" as vercel {
+    node "Build Server" as build
+    node "Edge Network" as edge {
+        component "us-east-1" as us_east
+        component "eu-west-1" as eu_west
+        component "ap-southeast-1" as ap_se
+    }
+}
+
+' Neon Database
+cloud "Neon (AWS)" as neon {
+    database "PostgreSQL\nServerless" as db {
+        storage "Compute Layer\n(Auto-scaling)" as compute
+        storage "Storage Layer\n(Separated)" as storage
+    }
+}
+
+' Usuarios
+actor "End Users\n(Global)" as users #10b981
+
+' Flujo de deployment
+dev -right-> repo : git push
+repo -down-> actions : Webhook trigger
+actions -right-> build : Deploy
+build -down-> edge : Distribute
+edge -down-> db : Connect
+
+' Acceso de usuarios
+users -up-> edge : HTTPS Request
+edge -right-> db : Query Data
+
+' Notas
+note right of github
+  **Version Control**
+  • main branch (production)
+  • develop branch (staging)
+  • Protected branches
+  • PR reviews required
+end note
+
+note right of build
+  **Build Process**
+  1. Clone repository
+  2. Install dependencies
+  3. Run tests
+  4. Build assets
+  5. Deploy to Edge
+  
+  **Time:** ~15 seconds
+end note
+
+note bottom of edge
+  **Global CDN**
+  • 70+ locations worldwide
+  • Auto-scaling
+  • Zero downtime deploys
+  • HTTPS/TLS 1.3
+  
+  **Latency:** < 50ms
+end note
+
+note left of db
+  **Serverless PostgreSQL**
+  • Auto-suspend (5 min)
+  • Auto-scaling (0.25-4 vCPU)
+  • Daily backups
+  • Point-in-time recovery
+  
+  **Storage:** 10 GB (free tier)
+end note
+
+' URLs
+note bottom of users
+  **Access Points:**
+  Dashboard: https://unified-shield.vercel.app/dashboard
+  API: https://unified-shield.vercel.app/api
+  Health: https://unified-shield.vercel.app/api/health
+end note
+
+@enduml

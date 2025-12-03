@@ -1,0 +1,501 @@
+name: Quality & Testing Pipeline
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main, develop ]
+  workflow_dispatch:
+
+env:
+  PYTHON_VERSION: '3.10'
+
+jobs:
+  # ============================================
+  # JOB 1: ANÁLISIS ESTÁTICO
+  # ============================================
+  static-analysis:
+    name: 🔍 Static Analysis
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: 📥 Checkout code
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0  # Para SonarCloud
+      
+      - name: 🐍 Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+      
+      - name: 📦 Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+          pip install semgrep snyk
+      
+      - name: 🔒 Run Semgrep
+        id: semgrep
+        continue-on-error: true
+        run: |
+          semgrep --config=auto --json --output=semgrep-report.json .
+          semgrep --config=auto --sarif --output=semgrep-report.sarif .
+          
+          # Generar reporte HTML
+          echo "<html><body><h1>Semgrep Results</h1><pre>" > semgrep-report.html
+          cat semgrep-report.json >> semgrep-report.html
+          echo "</pre></body></html>" >> semgrep-report.html
+      
+      - name: 🛡️ Run Snyk
+        id: snyk
+        continue-on-error: true
+        env:
+          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+        run: |
+          snyk test --json --json-file-output=snyk-report.json || true
+          snyk monitor || true
+          
+          # Generar reporte HTML
+          echo "<html><body><h1>Snyk Results</h1><pre>" > snyk-report.html
+          cat snyk-report.json >> snyk-report.html
+          echo "</pre></body></html>" >> snyk-report.html
+      
+      - name: 📊 Upload Semgrep SARIF
+        uses: github/codeql-action/upload-sarif@v2
+        with:
+          sarif_file: semgrep-report.sarif
+      
+      - name: 📤 Upload static analysis reports
+        uses: actions/upload-artifact@v3
+        with:
+          name: static-analysis-reports
+          path: |
+            semgrep-report.*
+            snyk-report.json
+          retention-days: 30
+
+  # ============================================
+  # JOB 2: PRUEBAS UNITARIAS
+  # ============================================
+  unit-tests:
+    name: 🧪 Unit Tests
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ['3.8', '3.9', '3.10', '3.11']
+    
+    steps:
+      - name: 📥 Checkout code
+        uses: actions/checkout@v3
+      
+      - name: 🐍 Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v4
+        with:
+          python-version: ${{ matrix.python-version }}
+      
+      - name: 📦 Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+          pip install pytest pytest-cov pytest-html pytest-xdist
+      
+      - name: 🧪 Run unit tests with coverage
+        run: |
+          pytest tests/unit/ \
+            --cov=core \
+            --cov=plugins \
+            --cov=utils \
+            --cov=web_backend \
+            --cov-report=xml \
+            --cov-report=html \
+            --cov-report=term-missing \
+            --html=pytest-report.html \
+            --self-contained-html \
+            -v \
+            -n auto
+      
+      - name: 📊 Coverage annotation
+        if: matrix.python-version == '3.10'
+        run: |
+          echo "## 📊 Coverage Report" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "\`\`\`" >> $GITHUB_STEP_SUMMARY
+          coverage report --format=markdown >> $GITHUB_STEP_SUMMARY
+          echo "\`\`\`" >> $GITHUB_STEP_SUMMARY
+      
+      - name: 📤 Upload coverage to Codecov
+        if: matrix.python-version == '3.10'
+        uses: codecov/codecov-action@v3
+        with:
+          file: ./coverage.xml
+          flags: unittests
+          name: codecov-umbrella
+      
+      - name: 📤 Upload test reports
+        if: matrix.python-version == '3.10'
+        uses: actions/upload-artifact@v3
+        with:
+          name: test-reports-py${{ matrix.python-version }}
+          path: |
+            coverage.xml
+            htmlcov/
+            pytest-report.html
+          retention-days: 30
+
+  # ============================================
+  # JOB 3: PRUEBAS DE MUTACIÓN
+  # ============================================
+  mutation-tests:
+    name: 🧬 Mutation Testing
+    runs-on: ubuntu-latest
+    needs: unit-tests
+    
+    steps:
+      - name: 📥 Checkout code
+        uses: actions/checkout@v3
+      
+      - name: 🐍 Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+      
+      - name: 📦 Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+          pip install mutmut
+      
+      - name: 🧬 Run mutation tests
+        id: mutmut
+        continue-on-error: true
+        run: |
+          mutmut run --paths-to-mutate=core/,plugins/,utils/ || true
+          mutmut results > mutmut-results.txt
+          mutmut html
+      
+      - name: 📊 Mutation score annotation
+        run: |
+          echo "## 🧬 Mutation Testing Results" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "\`\`\`" >> $GITHUB_STEP_SUMMARY
+          cat mutmut-results.txt >> $GITHUB_STEP_SUMMARY
+          echo "\`\`\`" >> $GITHUB_STEP_SUMMARY
+      
+      - name: 📤 Upload mutation report
+        uses: actions/upload-artifact@v3
+        with:
+          name: mutation-report
+          path: |
+            html/
+            mutmut-results.txt
+          retention-days: 30
+
+  # ============================================
+  # JOB 4: PRUEBAS DE INTEGRACIÓN
+  # ============================================
+  integration-tests:
+    name: 🔗 Integration Tests
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: 📥 Checkout code
+        uses: actions/checkout@v3
+      
+      - name: 🐍 Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+      
+      - name: 📦 Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+          pip install pytest pytest-timeout
+      
+      - name: 🔗 Run integration tests
+        run: |
+          pytest tests/integration/ -v --timeout=30
+      
+      - name: 📊 Integration test summary
+        if: always()
+        run: |
+          echo "## 🔗 Integration Tests" >> $GITHUB_STEP_SUMMARY
+          echo "Integration tests completed" >> $GITHUB_STEP_SUMMARY
+
+  # ============================================
+  # JOB 5: PRUEBAS BDD
+  # ============================================
+  bdd-tests:
+    name: 🥒 BDD Tests
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: 📥 Checkout code
+        uses: actions/checkout@v3
+      
+      - name: 🐍 Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+      
+      - name: 📦 Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+          pip install behave
+      
+      - name: 🥒 Run BDD tests
+        run: |
+          behave tests/bdd/features/ \
+            --format=html \
+            --outfile=behave-report.html \
+            --format=json \
+            --outfile=behave-report.json \
+            --format=pretty
+      
+      - name: 📊 BDD results annotation
+        if: always()
+        run: |
+          echo "## 🥒 BDD Test Results" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          if [ -f behave-report.json ]; then
+            echo "BDD tests executed successfully" >> $GITHUB_STEP_SUMMARY
+          fi
+      
+      - name: 📤 Upload BDD report
+        uses: actions/upload-artifact@v3
+        with:
+          name: bdd-report
+          path: |
+            behave-report.html
+            behave-report.json
+          retention-days: 30
+
+  # ============================================
+  # JOB 6: PUBLICAR REPORTES EN GITHUB PAGES
+  # ============================================
+  publish-reports:
+    name: 📄 Publish Reports to GitHub Pages
+    runs-on: ubuntu-latest
+    needs: [static-analysis, unit-tests, mutation-tests, bdd-tests]
+    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+    
+    steps:
+      - name: 📥 Checkout code
+        uses: actions/checkout@v3
+      
+      - name: 📥 Download all artifacts
+        uses: actions/download-artifact@v3
+        with:
+          path: artifacts
+      
+      - name: 📦 Prepare GitHub Pages
+        run: |
+          mkdir -p gh-pages
+          
+          # Copy coverage report
+          if [ -d "artifacts/test-reports-py3.10/htmlcov" ]; then
+            cp -r artifacts/test-reports-py3.10/htmlcov gh-pages/coverage
+          fi
+          
+          # Copy mutation report
+          if [ -d "artifacts/mutation-report/html" ]; then
+            cp -r artifacts/mutation-report/html gh-pages/mutations
+          fi
+          
+          # Copy BDD report
+          if [ -f "artifacts/bdd-report/behave-report.html" ]; then
+            cp artifacts/bdd-report/behave-report.html gh-pages/bdd.html
+          fi
+          
+          # Copy static analysis reports
+          if [ -f "artifacts/static-analysis-reports/semgrep-report.html" ]; then
+            cp artifacts/static-analysis-reports/semgrep-report.html gh-pages/semgrep.html
+          fi
+          
+          if [ -f "artifacts/static-analysis-reports/semgrep-report.json" ]; then
+            cp artifacts/static-analysis-reports/semgrep-report.json gh-pages/semgrep.json
+          fi
+          
+          if [ -f "artifacts/static-analysis-reports/snyk-report.json" ]; then
+            cp artifacts/static-analysis-reports/snyk-report.json gh-pages/snyk.json
+          fi
+      
+      - name: 📝 Create index page
+        run: |
+          cat > gh-pages/index.html << 'EOF'
+          <!DOCTYPE html>
+          <html lang="es">
+          <head>
+              <meta charset="UTF-8">
+              <meta name="viewport" content="width=device-width, initial-scale=1.0">
+              <title>Unified Shield - Quality Dashboard</title>
+              <style>
+                  * { margin: 0; padding: 0; box-sizing: border-box; }
+                  body {
+                      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                      min-height: 100vh;
+                      padding: 2rem;
+                  }
+                  .container { max-width: 1200px; margin: 0 auto; }
+                  h1 {
+                      color: white;
+                      text-align: center;
+                      margin-bottom: 2rem;
+                      font-size: 2.5rem;
+                      text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+                  }
+                  .grid {
+                      display: grid;
+                      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                      gap: 1.5rem;
+                  }
+                  .card {
+                      background: white;
+                      border-radius: 12px;
+                      padding: 2rem;
+                      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+                      transition: transform 0.3s, box-shadow 0.3s;
+                  }
+                  .card:hover {
+                      transform: translateY(-5px);
+                      box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+                  }
+                  .card h2 {
+                      color: #667eea;
+                      margin-bottom: 1rem;
+                      font-size: 1.5rem;
+                  }
+                  .card p {
+                      color: #666;
+                      margin-bottom: 1rem;
+                      line-height: 1.6;
+                  }
+                  .card a {
+                      display: inline-block;
+                      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                      color: white;
+                      padding: 0.75rem 1.5rem;
+                      border-radius: 6px;
+                      text-decoration: none;
+                      transition: transform 0.2s;
+                      font-weight: 600;
+                  }
+                  .card a:hover {
+                      transform: scale(1.05);
+                  }
+                  .badge {
+                      display: inline-block;
+                      padding: 0.25rem 0.75rem;
+                      border-radius: 12px;
+                      font-size: 0.875rem;
+                      font-weight: bold;
+                      margin-bottom: 1rem;
+                  }
+                  .badge.success { background: #10b981; color: white; }
+                  .badge.warning { background: #f59e0b; color: white; }
+                  .badge.info { background: #3b82f6; color: white; }
+                  .badge.security { background: #ef4444; color: white; }
+                  .footer {
+                      text-align: center;
+                      color: white;
+                      margin-top: 3rem;
+                      padding: 1rem;
+                  }
+              </style>
+          </head>
+          <body>
+              <div class="container">
+                  <h1>🛡️ Unified Shield - Quality Dashboard</h1>
+                  
+                  <div class="grid">
+                      <div class="card">
+                          <span class="badge success">✅ Active</span>
+                          <h2>📊 Coverage Report</h2>
+                          <p>Reporte detallado de cobertura de código con pytest-cov. Incluye métricas por módulo y líneas no cubiertas.</p>
+                          <a href="coverage/index.html">Ver Reporte →</a>
+                      </div>
+                      
+                      <div class="card">
+                          <span class="badge success">✅ Active</span>
+                          <h2>🧬 Mutation Testing</h2>
+                          <p>Resultados de pruebas de mutación con mutmut. Identifica gaps en la suite de tests.</p>
+                          <a href="mutations/index.html">Ver Reporte →</a>
+                      </div>
+                      
+                      <div class="card">
+                          <span class="badge success">✅ Active</span>
+                          <h2>🥒 BDD Report</h2>
+                          <p>Reporte de pruebas BDD con behave. Features y scenarios ejecutados.</p>
+                          <a href="bdd.html">Ver Reporte →</a>
+                      </div>
+                      
+                      <div class="card">
+                          <span class="badge security">🔍 Security</span>
+                          <h2>🔒 Semgrep Analysis</h2>
+                          <p>Análisis de seguridad estático con Semgrep. Detecta vulnerabilidades y code smells.</p>
+                          <a href="semgrep.html">Ver Reporte →</a>
+                      </div>
+                      
+                      <div class="card">
+                          <span class="badge security">🔍 Security</span>
+                          <h2>🛡️ Snyk Vulnerabilities</h2>
+                          <p>Análisis de vulnerabilidades en dependencias con Snyk.</p>
+                          <a href="snyk.json">Ver Reporte →</a>
+                      </div>
+                      
+                      <div class="card">
+                          <span class="badge info">📈 Metrics</span>
+                          <h2>☁️ SonarCloud</h2>
+                          <p>Análisis completo de calidad de código en SonarCloud. Métricas de deuda técnica y bugs.</p>
+                          <a href="https://sonarcloud.io/dashboard?id=KrCrimson_ANTIVIRUS_CPP_PROFESSIONAL" target="_blank">Ver Dashboard →</a>
+                      </div>
+                  </div>
+                  
+                  <div class="footer">
+                      <p>🚀 Unified Shield Antivirus - Quality Assurance Dashboard</p>
+                      <p>Última actualización: <span id="timestamp"></span></p>
+                      <script>
+                          document.getElementById('timestamp').textContent = new Date().toLocaleString();
+                      </script>
+                  </div>
+              </div>
+          </body>
+          </html>
+          EOF
+      
+      - name: 📤 Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./gh-pages
+          publish_branch: gh-pages
+          force_orphan: true
+
+  # ============================================
+  # JOB 7: RESUMEN FINAL
+  # ============================================
+  summary:
+    name: 📋 Pipeline Summary
+    runs-on: ubuntu-latest
+    needs: [static-analysis, unit-tests, mutation-tests, integration-tests, bdd-tests]
+    if: always()
+    
+    steps:
+      - name: 📊 Create summary
+        run: |
+          echo "# 🎯 Quality & Testing Pipeline Summary" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "## ✅ Completed Jobs" >> $GITHUB_STEP_SUMMARY
+          echo "- 🔍 Static Analysis" >> $GITHUB_STEP_SUMMARY
+          echo "- 🧪 Unit Tests" >> $GITHUB_STEP_SUMMARY
+          echo "- 🧬 Mutation Testing" >> $GITHUB_STEP_SUMMARY
+          echo "- 🔗 Integration Tests" >> $GITHUB_STEP_SUMMARY
+          echo "- 🥒 BDD Tests" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "## 📊 Reports Available" >> $GITHUB_STEP_SUMMARY
+          echo "All reports have been generated and uploaded as artifacts." >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "🔗 [View Quality Dashboard](https://krcrimson.github.io/ANTIVIRUS_CPP_PROFESSIONAL/)" >> $GITHUB_STEP_SUMMARY

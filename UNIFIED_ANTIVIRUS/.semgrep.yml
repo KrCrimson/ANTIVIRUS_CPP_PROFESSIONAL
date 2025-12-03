@@ -1,0 +1,164 @@
+# Configuración de Semgrep
+
+rules:
+  # ============================================
+  # REGLAS DE SEGURIDAD
+  # ============================================
+  
+  - id: python-eval-detected
+    pattern: eval(...)
+    message: "Uso de eval() detectado - riesgo de ejecución de código arbitrario"
+    severity: ERROR
+    languages: [python]
+    metadata:
+      category: security
+      cwe: "CWE-95: Improper Neutralization of Directives in Dynamically Evaluated Code"
+      owasp: "A03:2021 - Injection"
+    
+  - id: sql-injection-risk
+    patterns:
+      - pattern: |
+          $QUERY = f"... {$VAR} ..."
+          ...
+          execute($QUERY)
+      - pattern-not: execute("...", ...)
+    message: "Posible SQL injection - usar queries parametrizadas"
+    severity: ERROR
+    languages: [python]
+    metadata:
+      category: security
+      cwe: "CWE-89: SQL Injection"
+      owasp: "A03:2021 - Injection"
+  
+  - id: hardcoded-credentials
+    patterns:
+      - pattern: $VAR = "..."
+      - metavariable-regex:
+          metavariable: $VAR
+          regex: (PASSWORD|API_KEY|SECRET|TOKEN|PRIVATE_KEY)
+    message: "Credenciales hardcodeadas detectadas - usar variables de entorno"
+    severity: WARNING
+    languages: [python]
+    metadata:
+      category: security
+      cwe: "CWE-798: Use of Hard-coded Credentials"
+      owasp: "A07:2021 - Identification and Authentication Failures"
+  
+  - id: pickle-load-unsafe
+    pattern: pickle.load(...)
+    message: "Deserialización insegura con pickle - puede ejecutar código arbitrario"
+    severity: WARNING
+    languages: [python]
+    metadata:
+      category: security
+      cwe: "CWE-502: Deserialization of Untrusted Data"
+      owasp: "A08:2021 - Software and Data Integrity Failures"
+  
+  - id: path-traversal-risk
+    patterns:
+      - pattern: open($PATH, ...)
+      - pattern-not: open(Path(...).resolve(), ...)
+      - pattern-not: open(os.path.abspath(...), ...)
+    message: "Posible path traversal - validar y sanitizar rutas de archivos"
+    severity: WARNING
+    languages: [python]
+    metadata:
+      category: security
+      cwe: "CWE-22: Path Traversal"
+      owasp: "A01:2021 - Broken Access Control"
+  
+  - id: command-injection
+    patterns:
+      - pattern: os.system($CMD)
+      - pattern-not: os.system("...")
+    message: "Posible command injection - evitar os.system con input de usuario"
+    severity: ERROR
+    languages: [python]
+    metadata:
+      category: security
+      cwe: "CWE-78: OS Command Injection"
+      owasp: "A03:2021 - Injection"
+  
+  - id: weak-crypto
+    patterns:
+      - pattern: hashlib.md5(...)
+      - pattern: hashlib.sha1(...)
+    message: "Algoritmo criptográfico débil - usar SHA-256 o superior"
+    severity: WARNING
+    languages: [python]
+    metadata:
+      category: security
+      cwe: "CWE-327: Use of a Broken or Risky Cryptographic Algorithm"
+      owasp: "A02:2021 - Cryptographic Failures"
+  
+  # ============================================
+  # REGLAS DE CALIDAD DE CÓDIGO
+  # ============================================
+  
+  - id: bare-except
+    pattern: |
+      try:
+        ...
+      except:
+        ...
+    message: "Evitar except genérico - capturar excepciones específicas"
+    severity: INFO
+    languages: [python]
+    metadata:
+      category: best-practice
+  
+  - id: assert-in-production
+    pattern: assert $COND
+    message: "Evitar assert en código de producción - usar if con raise"
+    severity: INFO
+    languages: [python]
+    metadata:
+      category: best-practice
+  
+  - id: print-statement
+    pattern: print(...)
+    message: "Usar logging en lugar de print para código de producción"
+    severity: INFO
+    languages: [python]
+    metadata:
+      category: best-practice
+  
+  - id: todo-fixme-comments
+    patterns:
+      - pattern-regex: "# TODO:.*"
+      - pattern-regex: "# FIXME:.*"
+    message: "Comentario TODO/FIXME encontrado - crear issue en GitHub"
+    severity: INFO
+    languages: [python]
+    metadata:
+      category: maintainability
+  
+  # ============================================
+  # REGLAS ESPECÍFICAS DEL PROYECTO
+  # ============================================
+  
+  - id: missing-type-hints
+    pattern: |
+      def $FUNC(...):
+        ...
+    pattern-not: |
+      def $FUNC(...) -> ...:
+        ...
+    message: "Función sin type hints - agregar anotaciones de tipo"
+    severity: INFO
+    languages: [python]
+    metadata:
+      category: best-practice
+  
+  - id: logging-sensitive-data
+    patterns:
+      - pattern: logger.$LEVEL(f"... {$VAR} ...")
+      - metavariable-regex:
+          metavariable: $VAR
+          regex: (password|token|secret|key|credential)
+    message: "Posible logging de información sensible"
+    severity: WARNING
+    languages: [python]
+    metadata:
+      category: security
+      cwe: "CWE-532: Information Exposure Through Log Files"

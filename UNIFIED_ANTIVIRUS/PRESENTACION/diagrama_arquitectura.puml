@@ -1,0 +1,88 @@
+@startuml Unified_Shield_Architecture
+
+skinparam backgroundColor #FFFFFF
+skinparam defaultFontName Arial
+skinparam defaultFontSize 12
+
+title Unified Shield - Arquitectura del Sistema
+
+' Cliente Antivirus
+package "Cliente Antivirus\n(Local Machine)" as client #FAFAFA {
+    component "professional_ui_robust.py" as ui #667eea
+    component "WebLogHandler Plugin" as plugin #667eea
+    component "start_monitor_client.py" as monitor #667eea
+    
+    ui -down-> plugin : Eventos
+    plugin -down-> monitor : Buffer de logs
+}
+
+' API Backend
+cloud "Vercel Edge Network" as vercel #3b82f6 {
+    package "Backend API\n(FastAPI)" as backend {
+        component "main.py" as api #3b82f6
+        component "database.py" as db_models #3b82f6
+        
+        api -down-> db_models : SQLAlchemy
+    }
+}
+
+' Base de Datos
+database "PostgreSQL\n(Neon Serverless)" as postgres #10b981 {
+    storage "log_entries_v5" as logs_table
+    storage "antivirus_instances_v5" as instances_table
+}
+
+' Dashboard Web
+frame "Web Dashboard\n(Browser)" as dashboard #f59e0b {
+    component "index.html" as html #f59e0b
+    component "Chart.js" as charts #f59e0b
+    
+    html -down-> charts : Visualización
+}
+
+' Flujos de datos
+monitor -right-> api : HTTP POST\n/api/logs\n/api/instances
+api -down-> postgres : SQL INSERT\nSQL SELECT
+dashboard -up-> api : REST API\nGET /api/stats\nGET /api/logs
+postgres -up-> api : Query Results
+
+' Notas
+note right of monitor
+  **Autenticación:**
+  X-API-Key header
+  
+  **Formato:**
+  JSON payload
+  
+  **Retry:**
+  4 intentos
+end note
+
+note right of postgres
+  **Almacenamiento:**
+  Persistente
+  
+  **Backup:**
+  Diario automático
+  
+  **Retention:**
+  Ilimitado
+end note
+
+note bottom of dashboard
+  **Actualización:**
+  Auto-refresh 30s
+  
+  **Responsive:**
+  Desktop, Tablet, Mobile
+end note
+
+' Leyenda
+legend right
+  |<#667eea>   | Cliente (Python) |
+  |<#3b82f6>   | Backend (FastAPI) |
+  |<#10b981>   | Database (PostgreSQL) |
+  |<#f59e0b>   | Frontend (HTML/JS) |
+endlegend
+
+@enduml
